@@ -52,7 +52,7 @@ nnoremap <Leader>? :Maps<CR>
 
 "ESC REPLACEMENT
 inoremap ö <esc>
-inoremap ß <esc>
+" inoremap ß <esc>
 
 nnoremap <C-a><C-w> :set wrap<CR>
 nnoremap <C-a><C-e> :set nowrap<CR>
@@ -146,7 +146,7 @@ set fillchars+=vert:\
 map <Leader>tv <C-w>t<C-w>H
 map <Leader>th <C-w>t<C-w>K
 
-nnoremap <A-q> :BClose!<CR>
+nnoremap <A-q> :Bclose!<CR>
 
 "open terminal window
 "nnoremap <F9> :vsplit<CR>
@@ -154,8 +154,9 @@ nnoremap <A-q> :BClose!<CR>
 "edit mode - quit and save
 nnoremap <C-x> :Bclose!<CR>
 " nnoremap <C-a><C-k> :q!<CR>
-nnoremap <M-k> :Bclose!<CR>
-nnoremap <C-q> :Bclose!<CR>
+nnoremap <M-k> :close!<CR>
+nnoremap <M-q> :close!<CR>
+nnoremap <C-q> :close!<CR>
 " nnoremap <C-w> :q!<CR>
 nnoremap <C-s> :w!<CR>
 nnoremap <C-z> :redo<CR>
@@ -210,3 +211,6 @@ nmap <silent> <A-Down> :wincmd j<CR>
 "bashing
 nnoremap <C-a><F5> ::! bash %<CR>
 nnoremap <C-a><F8> :.w !bash<CR>
+
+"Undotree window layout
+" let g:undotree_WindowLayout = 2
