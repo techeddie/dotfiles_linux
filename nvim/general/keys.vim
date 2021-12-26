@@ -58,13 +58,12 @@ nnoremap <C-a><C-w> :set wrap<CR>
 nnoremap <C-a><C-e> :set nowrap<CR>
 " nnoremap <C-v> :Vifm<CR>
 nnoremap <F4> :Bclose!<CR>
-nnoremap <F9> :FZF<CR>
 nnoremap <F6> :Lf<CR>
 "
 "TABBING
 nnoremap <C-a><C-n> :bn<CR>
 nnoremap <C-a><C-p> :bp<CR>
-nnoremap <C-n> :bn<CR>
+nnoremap <C-n> :tabnew<CR>
 nnoremap <A-Right> :bn<CR>
 nnoremap <A-Left> :bp<CR>
 nnoremap <Ca-p> :bprevious<CR>
@@ -76,10 +75,10 @@ nmap <m-i> gT
 " imap <F15> <C-Tab>
 " imap <F6> <C-S-Tab>
 
-nnoremap <C-Tab> :bnext<CR>
+" nnoremap <C-Tab> :bnext<CR>
 nnoremap <CS-Tab> b:prev<CR>
 " nnoremap <C-Tab> :bn<CR>
-nnoremap <C-t> :tabnew<CR> <C-m>
+" nnoremap <C-t> :tabnew<CR> <C-m>
 
 "show open files via fzf
 nnoremap <C-b> ::BuffergatorOpen<CR>
@@ -127,7 +126,7 @@ nnoremap <F2> :Vifm<CR>
 nnoremap <C-f> :BLines<CR>
 nnoremap <C-h> :History<CR>
 " nnoremap <C-f> :BLines '<CR>
-nnoremap <C-t> :tabnew<CR>
+" nnoremap <C-t> :tabnew<CR>
 noremap <F10> :write!<CR>
 "jump up and down
 noremap <C-Up> <C-y>
@@ -154,9 +153,8 @@ nnoremap <A-q> :Bclose!<CR>
 "edit mode - quit and save
 nnoremap <C-x> :Bclose!<CR>
 " nnoremap <C-a><C-k> :q!<CR>
-nnoremap <M-k> :close!<CR>
-nnoremap <M-q> :close!<CR>
-nnoremap <C-q> :close!<CR>
+nnoremap <M-k> :Bclose!<CR>
+nnoremap <C-q> :Bclose!<CR>
 " nnoremap <C-w> :q!<CR>
 nnoremap <C-s> :w!<CR>
 nnoremap <C-z> :redo<CR>
@@ -212,5 +210,3 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nnoremap <C-a><F5> ::! bash %<CR>
 nnoremap <C-a><F8> :.w !bash<CR>
 
-"Undotree window layout
-" let g:undotree_WindowLayout = 2
