@@ -57,8 +57,8 @@ inoremap ö <esc>
 nnoremap <C-a><C-w> :set wrap<CR>
 nnoremap <C-a><C-e> :set nowrap<CR>
 " nnoremap <C-v> :Vifm<CR>
-nnoremap <F4> :Bclose!<CR>
-nnoremap <F6> :Lf<CR>
+" nnoremap <F4> :Bclose!<CR>
+" nnoremap <F6> :Lf<CR>
 "
 "TABBING
 nnoremap <C-a><C-n> :bn<CR>
@@ -120,8 +120,7 @@ nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
 
 "function keys mapping
 nnoremap <F1> :Startify<CR>
-nnoremap <F4> :Bclose<CR>
-nnoremap <F3> :FZF<CR>
+nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 nnoremap <C-f> :BLines<CR>
 nnoremap <C-h> :History<CR>
@@ -136,7 +135,10 @@ noremap <C-Down> <C-e>
 " noremap <C-Down> <C-e>
 nnoremap <v-E> x
 
+"change current word
 noremap cw ce
+" noremap <C-e> ce
+noremap <C-c> ce
 "split
 set splitbelow splitright
 set fillchars+=vert:\
@@ -147,8 +149,6 @@ map <Leader>th <C-w>t<C-w>K
 
 nnoremap <A-q> :Bclose!<CR>
 
-"open terminal window
-"nnoremap <F9> :vsplit<CR>
 
 "edit mode - quit and save
 nnoremap <C-x> :Bclose!<CR>
@@ -159,6 +159,7 @@ nnoremap <C-q> :Bclose!<CR>
 nnoremap <C-s> :w!<CR>
 nnoremap <C-z> :redo<CR>
 nnoremap <C-k> :q!<CR>
+nnoremap <F4> ZQ
 
 "save in insert mode
 inoremap <M-s> <C-O>:w<CR><Esc>
@@ -171,7 +172,7 @@ inoremap <M-o> <C-O>:w<CR><Esc>
 "autocmd vimenter * if !argc() | NERDTree | endif
 
 "terminal window
-let g:floaterm_keymap_toggle = '<F9>'
+" let g:floaterm_keymap_toggle = '<F9>'
 
 "MOVE MARKED LINE UP AND DOWN
 xnoremap <C-Up> :move '<-2<CR>gv-gv
@@ -199,7 +200,9 @@ nnoremap <silent> gD :BufferLinePickClose<CR>
   
 "NAVIGATE BETWEEN WINDOWS
 nmap <silent> <S-Left> :wincmd h<CR>
+nmap <silent> <S-h> :wincmd h<CR>
 nmap <silent> <S-Right> :wincmd l<CR>
+nmap <silent> <S-l> :wincmd l<CR>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -207,6 +210,9 @@ nmap <silent> <A-Down> :wincmd j<CR>
 " nmap <silent> <A-Right> :wincmd l<CR>
 
 "bashing
-nnoremap <C-a><F5> ::! bash %<CR>
-nnoremap <C-a><F8> :.w !bash<CR>
+nnoremap <F5> ::! bash %<CR>
+nnoremap <F8> :.w !bash<CR>
 
+"TERMINAL
+" let g:test#custom_strategies = {'termwrapper': function('TermWrapperStrategy')}
+" let g:test#strategy = 'termwrapper'

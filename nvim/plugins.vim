@@ -78,10 +78,10 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'airblade/vim-rooter'
 
 "teleskop
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'nvim-telescope/telescope-fzy-native.nvim'
+"Plug 'nvim-lua/popup.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 "fuzzy finder                                                                                              
 " Plug 'kien/ctrlp.vim'
@@ -95,12 +95,17 @@ Plug 'frazrepo/vim-rainbow'
 " Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 "Sneak Plugin Search arroun
-" Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
 "rename plugin
-" Plug 'lilydjwg/colorizer'
+"Plug 'lilydjwg/colorizer'
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 " Plug 'ryanoasis/vim-devicons' cons without colours
 Plug 'akinsho/bufferline.nvim'
 " Plug 'martinsione/darkplus.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'LoricAndre/OneTerm.nvim'
+"Plug 's1n7ax/nvim-terminal'
+"Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+"Plug 'ray-x/lsp_signature.nvim'
+
 call plug#end()
