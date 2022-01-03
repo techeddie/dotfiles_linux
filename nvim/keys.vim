@@ -158,8 +158,8 @@ nnoremap <C-q> :Bclose!<CR>
 " nnoremap <C-w> :q!<CR>
 nnoremap <C-s> :w!<CR>
 nnoremap <C-z> :redo<CR>
-nnoremap <C-k> :q!<CR>
-nnoremap <F4> ZQ
+nnoremap <C-k> :qall!<CR>
+nnoremap <F4> :qall!<CR>
 
 "save in insert mode
 inoremap <M-s> <C-O>:w<CR><Esc>
