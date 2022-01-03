@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "STARTIFY BOOKMARK
 let g:startify_bookmarks = [
-      \ {'p': '~/.config/nvim/git-sources/plugins.vim'}, 
+      \ {'p': '~/.config/nvim/plugins.vim'}, 
       \ {'n': '~/.config/nvim/init.vim'},
-      \ {'k': '~/.config/nvim/general/keys.vim'},
-      \ {'s': '~/.config/nvim/general/settings.vim'},
+      \ {'k': '~/.config/nvim/keys.vim'},
+      \ {'s': '~/.config/nvim/settings.vim'},
       \ {'v' : '~/.config/vifm/vifmrc'}, 
       \ {'z' : '~/.zshrc'},
       \ {'i' : '~/.config/i3/config'},
