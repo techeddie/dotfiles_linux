@@ -2,12 +2,18 @@
 "RELOAD SESSION
 nnoremap <C-r> :source $HOME/.config/nvim/init.vim <CR>
 
+"DEFAULT MOVE VIA DISPLAY LINES
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
 ""##########################################################""
 let mapleader=" " "map space as leder key
 nnoremap <Leader>o :w!<CR>
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim <CR>
 
-"Explorer NetRW
+"EXPLORER NETRW
 nnoremap <Leader>e :Explore<CR>
 
 "WELCOME MANAGER
@@ -19,7 +25,7 @@ nnoremap <Leader>w :w!<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>q :Bclose!<CR>
 
-"open new file from current buffer path
+"OPEN NEW FILE FROM CURRENT BUFFER PATH
 "o = open regular
 "oh = open horizonzal
 "ov = open vertical
@@ -60,7 +66,7 @@ nnoremap <Leader>l :Lf<CR>
 "UPPERCASE
 nnoremap <Leader>u gUU
 
-"Mappings
+"MAPPINGS
 nnoremap <Leader>? :Maps<CR>
 ""##########################################################""
 
@@ -68,11 +74,7 @@ nnoremap <Leader>? :Maps<CR>
 inoremap ö <esc>
 " inoremap ß <esc>
 
-nnoremap <C-a><C-w> :set wrap<CR>
-nnoremap <C-a><C-e> :set nowrap<CR>
-" nnoremap <C-v> :Vifm<CR>
-" nnoremap <F4> :Bclose!<CR>
-" nnoremap <F6> :Lf<CR>
+nnoremap <M-w> :set wrap<CR>
 "
 "TABBING
 nnoremap <C-a><C-n> :bn<CR>

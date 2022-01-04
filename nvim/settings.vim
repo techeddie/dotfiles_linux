@@ -10,7 +10,7 @@ syntax on
 "SET SECTION
 set cursorline
 set nu
-set nowrap
+" set nowrap
 set number
 set autoread
 set splitbelow splitright
