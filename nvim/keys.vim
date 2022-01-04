@@ -7,6 +7,9 @@ let mapleader=" " "map space as leder key
 nnoremap <Leader>o :w!<CR>
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim <CR>
 
+"Explorer NetRW
+nnoremap <Leader>e :Explore<CR>
+
 "WELCOME MANAGER
 nnoremap <Leader>s :Startify<CR>
 nnoremap <Leader>m :Startify<CR>
@@ -15,6 +18,17 @@ nnoremap <Leader>m :Startify<CR>
 nnoremap <Leader>w :w!<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>q :Bclose!<CR>
+
+"open new file from current buffer path
+"o = open regular
+"oh = open horizonzal
+"ov = open vertical
+"ov = open tabbed
+"
+map <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>oh :sp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ov :vsp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ot :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "HISTORY TREE
 nnoremap <Leader>h :UndotreeShow<CR> :UndotreeFocus<CR>
@@ -31,7 +45,7 @@ nnoremap <Leader>pu :PlugUpdate<CR>
 nnoremap <Leader>pg :PlugUpgrade<CR>
 
 "SHOW TABS - BUFFER
-nnoremap <Leader>t :tabs<CR>
+" nnoremap <Leader>t :tabs<CR>
 
 "comment current line
 nnoremap <Leader>c :Commentary<CR>
@@ -217,3 +231,4 @@ nnoremap <F8> :.w !bash<CR>
 "TERMINAL
 " let g:test#custom_strategies = {'termwrapper': function('TermWrapperStrategy')}
 " let g:test#strategy = 'termwrapper'
+
