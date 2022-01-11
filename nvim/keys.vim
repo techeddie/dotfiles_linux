@@ -31,6 +31,14 @@ map <leader>ov :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ot :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 
+map <leader>o :Of<CR>
+map <leader>ocp :Of<CR>
+map <leader>nh :set nohlsearch<CR>
+map <leader>nhl :set nohlsearch<CR>
+map <leader>nhls :set nohlsearch<CR>
+map <leader>hl :set hlsearch<CR>
+map <leader>hs :set hlsearch<CR>
+
 "COMMAND MODE ALTERNATIVES
 noremap ; :
 noremap + :
@@ -180,6 +188,8 @@ nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
 nnoremap <C-z> :redo<CR>
 nnoremap <C-k> :qall!<CR>
+nnoremap F6 :qall!<CR>
+nnoremap # :qall!<CR>
 nnoremap <F4> :qall!<CR>
 
 "save in insert mode
@@ -247,10 +257,3 @@ command Wd :cd %:h
 command Of :edit %:h
 "get content
 command Gf :read !ls 
-map <leader>o :Of<CR>
-map <leader>ocp :Of<CR>
-map <leader>nh :set nohlsearch<CR>
-map <leader>nhl :set nohlsearch<CR>
-map <leader>nhls :set nohlsearch<CR>
-map <leader>hl :set hlsearch<CR>
-map <leader>hs :set hlsearch<CR>
