@@ -27,7 +27,7 @@ set ignorecase
 set encoding=UTF-8
 set exrc "testing"
 set relativenumber
-set nohlsearch
+" set nohlsearch
 set hidden "testing"
 set scrolloff=8
 set splitright

@@ -177,6 +177,7 @@ nnoremap <M-k> :Bclose!<CR>
 nnoremap <C-q> :Bclose!<CR>
 " nnoremap <C-w> :q!<CR>
 nnoremap <C-s> :w!<CR>
+noremap ü :w! <Cr>
 nnoremap <C-z> :redo<CR>
 nnoremap <C-k> :qall!<CR>
 nnoremap <F4> :qall!<CR>
@@ -185,7 +186,6 @@ nnoremap <F4> :qall!<CR>
 inoremap <M-s> <C-O>:w<CR><Esc>
 inoremap <M-o> <C-O>:w<CR><Esc>
 
-  noremap ü :w! <Cr>
   " noremap <F10> <C-\><C-o>:w!<CR>
   " sdfsdfsdfsdf
 " inoremap <F10> <C-\><C-o>:w!<CR>
@@ -198,7 +198,7 @@ inoremap <M-o> <C-O>:w<CR><Esc>
 xnoremap <C-Up> :move '<-2<CR>gv-gv
 xnoremap <C-Down> :move '>+1<CR>gv-gv
 
-"DD DOT YANK
+"DD DOT YANK TO CLIPBOARD
 nnoremap d "xd
 vnoremap d "xd
 
@@ -249,3 +249,8 @@ command Of :edit %:h
 command Gf :read !ls 
 map <leader>o :Of<CR>
 map <leader>ocp :Of<CR>
+map <leader>nh :set nohlsearch<CR>
+map <leader>nhl :set nohlsearch<CR>
+map <leader>nhls :set nohlsearch<CR>
+map <leader>hl :set hlsearch<CR>
+map <leader>hs :set hlsearch<CR>
