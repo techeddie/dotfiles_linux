@@ -2,18 +2,12 @@
 "RELOAD SESSION
 nnoremap <C-r> :source $HOME/.config/nvim/init.vim <CR>
 
-"DEFAULT MOVE VIA DISPLAY LINES
-nnoremap k gk
-nnoremap gk k
-nnoremap j gj
-nnoremap gj j
-
 ""##########################################################""
 let mapleader=" " "map space as leder key
-nnoremap <Leader>o :w!<CR>
+" nnoremap <Leader>o :w!<CR>
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim <CR>
 
-"EXPLORER NETRW
+"Explorer NetRW
 nnoremap <Leader>e :Explore<CR>
 
 "WELCOME MANAGER
@@ -25,16 +19,22 @@ nnoremap <Leader>w :w!<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>q :Bclose!<CR>
 
-"OPEN NEW FILE FROM CURRENT BUFFER PATH
+"open new file from current buffer path
 "o = open regular
 "oh = open horizonzal
 "ov = open vertical
 "ov = open tabbed
 "
-map <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+" map <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>oh :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ov :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ot :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+
+"COMMAND MODE ALTERNATIVES
+noremap ; :
+noremap + :
+noremap - :
 
 "HISTORY TREE
 nnoremap <Leader>h :UndotreeShow<CR> :UndotreeFocus<CR>
@@ -66,7 +66,7 @@ nnoremap <Leader>l :Lf<CR>
 "UPPERCASE
 nnoremap <Leader>u gUU
 
-"MAPPINGS
+"Mappings
 nnoremap <Leader>? :Maps<CR>
 ""##########################################################""
 
@@ -74,7 +74,11 @@ nnoremap <Leader>? :Maps<CR>
 inoremap ö <esc>
 " inoremap ß <esc>
 
-nnoremap <M-w> :set wrap<CR>
+nnoremap <C-a><C-w> :set wrap<CR>
+nnoremap <C-a><C-e> :set nowrap<CR>
+" nnoremap <C-v> :Vifm<CR>
+" nnoremap <F4> :Bclose!<CR>
+" nnoremap <F6> :Lf<CR>
 "
 "TABBING
 nnoremap <C-a><C-n> :bn<CR>
@@ -234,3 +238,14 @@ nnoremap <F8> :.w !bash<CR>
 " let g:test#custom_strategies = {'termwrapper': function('TermWrapperStrategy')}
 " let g:test#strategy = 'termwrapper'
 
+"PATH COMMANDS
+"get current path from buffer
+command Gp :cd %:h
+command Cwd :cd %:h
+command Wd :cd %:h
+"get current path from buffer
+command Of :edit %:h
+"get content
+command Gf :read !ls 
+map <leader>o :Of<CR>
+map <leader>ocp :Of<CR>
