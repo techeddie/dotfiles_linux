@@ -199,7 +199,7 @@ nnoremap <C-z> :redo<CR>
 nnoremap <C-k> :qall!<CR>
 nnoremap ß :qall!<CR>
  
-nnoremap # :qall!<CR>
+" nnoremap # :qall!<CR>
 nnoremap <F4> :qall!<CR>
 
 "save in insert mode
