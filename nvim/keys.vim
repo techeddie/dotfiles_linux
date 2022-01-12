@@ -152,10 +152,13 @@ nnoremap <F1> :Startify<CR>
 nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 nnoremap <C-f> :BLines<CR>
+nnoremap <M-f> :BLines<CR>
 nnoremap <C-h> :History<CR>
 " nnoremap <C-f> :BLines '<CR>
 " nnoremap <C-t> :tabnew<CR>
 noremap <F10> :write!<CR>
+noremap <M-s> :write!<CR>
+noremap <M-s> :write!<CR>
 "jump up and down
 noremap <C-Up> <C-y>
 noremap <C-Down> <C-e>
