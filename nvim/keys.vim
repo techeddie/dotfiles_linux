@@ -2,6 +2,7 @@
 "RELOAD SESSION
 nnoremap <C-r> :source $HOME/.config/nvim/init.vim <CR>
 
+
 ""##########################################################""
 let mapleader=" " "map space as leder key
 " nnoremap <Leader>o :w!<CR>
@@ -92,6 +93,7 @@ nnoremap <C-a><C-e> :set nowrap<CR>
 nnoremap <C-a><C-n> :bn<CR>
 nnoremap <C-a><C-p> :bp<CR>
 nnoremap <C-n> :tabnew<CR>
+nnoremap <M-n> :tabnew<CR>
 nnoremap <A-Right> :bn<CR>
 nnoremap <A-Left> :bp<CR>
 nnoremap <Ca-p> :bprevious<CR>
@@ -99,6 +101,9 @@ nnoremap <Ca-p> :bprevious<CR>
 " set <F16>=^[[1;6I
 nmap <C-i> gt
 nmap <m-i> gT
+
+"always paste below
+nmap p :pu<CR>
 " nmap <F16> <C-S-Tab>
 " imap <F15> <C-Tab>
 " imap <F6> <C-S-Tab>
@@ -263,3 +268,11 @@ command Of :edit %:h
 "get content
 command Gf :read !ls 
 noremap - '
+
+"SCROOL SMOOTH DOWN
+nnoremap <M-e> <C-e>
+
+"INSERT A NEWLINE WITHOUT ENTERING IN INSERT MODE, VIM
+nmap <CR> :a<CR><CR>.<CR>
+nmap oo :a<CR><CR>.<CR>
+nmap nl :a<CR><CR>.<CR>
