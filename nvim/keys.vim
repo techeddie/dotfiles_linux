@@ -123,7 +123,8 @@ noremap <M-y> Yp
 "noremap <C-k> 10k 
 "<C-y>
 " nnoremap <C-Down> 10j
-"nnoremap <C-j> 10j
+nnoremap <M-d> 10j
+nnoremap <M-l> 10k
 "<C-e>
 
 
@@ -252,8 +253,10 @@ nnoremap <F8> :.w !bash<CR>
 "get current path from buffer
 command Gp :cd %:h
 command Cwd :cd %:h
+command Cp :cd %:h
 command Wd :cd %:h
 "get current path from buffer
 command Of :edit %:h
 "get content
 command Gf :read !ls 
+noremap - '
