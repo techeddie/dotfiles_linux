@@ -197,7 +197,8 @@ nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
 nnoremap <C-z> :redo<CR>
 nnoremap <C-k> :qall!<CR>
-nnoremap F6 :qall!<CR>
+nnoremap ß :qall!<CR>
+ 
 nnoremap # :qall!<CR>
 nnoremap <F4> :qall!<CR>
 
