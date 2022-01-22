@@ -174,9 +174,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "" Coc Settings
 " Execute Powershell
-nmap <F5> :CocCommand powershell.execute<cr>
-nmap <F8> :CocCommand powershell.evaluateLine<cr>
-vmap <F8> :CocCommand powershell.evaluateSelection<cr>
+nmap <C-5> :CocCommand powershell.execute<cr>
+nmap <C-8> :CocCommand powershell.evaluateLine<cr>
+vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
 nmap <C-j> :CocCommand powershell.toggleTerminal<cr>
 imap <C-j> :CocCommand powershell.toggleTerminal<cr>
 

@@ -84,28 +84,23 @@ inoremap ö <esc>
 " inoremap ß <esc>
 
 nnoremap <C-a><C-w> :set wrap<CR>
-nnoremap <C-a><C-e> :set nowrap<CR>
-" nnoremap <C-v> :Vifm<CR>
-" nnoremap <F4> :Bclose!<CR>
-" nnoremap <F6> :Lf<CR>
+nnoremap <C-a><C-n> :set nowrap<CR>
 "
 "TABBING
-nnoremap <C-a><C-n> :bn<CR>
-nnoremap <C-a><C-p> :bp<CR>
+" nnoremap <C-a><C-n> :bn<CR>
+" nnoremap <C-a><C-p> :bp<CR>
 nnoremap <C-n> :tabnew<CR>
 nnoremap <M-n> :tabnew<CR>
 nnoremap <A-Right> :bn<CR>
 nnoremap <A-Left> :bp<CR>
 nnoremap <Ca-p> :bprevious<CR>
-" set <F15>=^[[1;5I
-" set <F16>=^[[1;6I
-nmap <C-i> gt
-nmap <m-i> gT
+" nmap <C-i> gt
+" nmap <m-i> gT
 
 "always paste below
-nmap p :pu<CR>
-" nmap <F16> <C-S-Tab>
-" imap <F15> <C-Tab>
+" nmap p :pu<CR>
+
+" ??
 " imap <F6> <C-S-Tab>
 
 " nnoremap <C-Tab> :bnext<CR>
@@ -136,11 +131,6 @@ nnoremap <M-l> 10k
 "resize
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
-
-"function keys mapping
-nnoremap <F1> :Startify<CR>
-nnoremap <M-m> :Startify<CR>
-nnoremap <C-m> :Startify<CR>
 
 "NAVIGATE BETWEEN WINDOWS
 " nmap <silent> <A-Up> :wincmd k<CR>
@@ -268,6 +258,7 @@ command Wd :cd %:h
 command Of :edit %:h
 "get content
 command Gf :read !ls 
+"jump to mark
 noremap - '
 
 "SCROOL SMOOTH DOWN
@@ -277,3 +268,9 @@ nnoremap <M-e> <C-e>
 nmap <CR> :a<CR><CR>.<CR>
 nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
+
+"function keys mapping
+nnoremap <F1> :Startify<CR>
+nnoremap <M-m> :Startify<CR>
+nnoremap <C-m> :Startify<CR>
+

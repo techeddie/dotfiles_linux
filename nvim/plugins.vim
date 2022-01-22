@@ -107,5 +107,6 @@ Plug 'LoricAndre/OneTerm.nvim'
 "Plug 's1n7ax/nvim-terminal'
 "Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 "Plug 'ray-x/lsp_signature.nvim'
+" Plug 'chentau/marks.nvim'
 
 call plug#end()

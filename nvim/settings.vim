@@ -23,17 +23,17 @@ set noswapfile
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
-set ignorecase
 set encoding=UTF-8
 set exrc "testing"
 set relativenumber
-" set nohlsearch
+set nohlsearch
 set hidden "testing"
 set scrolloff=8
 set splitright
 set autoread
 set cursorline
 set ignorecase
+set smartcase
 set history=200
 set shortmess+=c  "don't give |ins-completion-menu| messages.
 set signcolumn=yes "always show signcolumns
