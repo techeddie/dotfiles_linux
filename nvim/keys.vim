@@ -41,7 +41,7 @@ map <leader>hl :set hlsearch<CR>
 map <leader>hs :set hlsearch<CR>
 
 "COMMAND MODE ALTERNATIVES
-noremap ; :
+" noremap ; :
 noremap + :
 noremap - :
 
