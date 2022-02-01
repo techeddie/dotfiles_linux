@@ -81,6 +81,7 @@ nnoremap <Leader>? :Maps<CR>
 
 "ESC REPLACEMENT
 inoremap ö <esc>
+inoremap ; <esc>
 " inoremap ß <esc>
 
 nnoremap <C-a><C-w> :set wrap<CR>
