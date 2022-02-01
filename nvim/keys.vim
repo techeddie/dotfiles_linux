@@ -98,7 +98,7 @@ nnoremap <Ca-p> :bprevious<CR>
 " nmap <m-i> gT
 
 "always paste below
-" nmap p :pu<CR>
+nmap p :pu<CR>
 
 " ??
 " imap <F6> <C-S-Tab>
