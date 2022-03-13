@@ -133,6 +133,8 @@ mark h ~/
 command! df clear & df -h %m 2> /dev/null
 command! diff clear & vim -d %f %F
 command! zip clear & zip -r %f.zip %f
+command! bak clear & tar -zcvf "%f.last.tar.gz" "%f"
+
 command! run clear & bash ./%f
 command! exec clear & bash ./%f 
 command! make clear & !!make %a
