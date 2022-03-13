@@ -478,6 +478,7 @@ nnoremap <c-S> :write<cr>
 nnoremap <F4> :q!<cr>
 nnoremap q :q!<cr>
 nnoremap <C-x> :q!<cr>
+nnoremap <C-k> :q!<cr>
 
 "Open selected images in gimp
 "nnoremap gp :!gimp %f & <cr>
