@@ -126,8 +126,8 @@ noremap <M-y> Yp
 "noremap <C-k> 10k 
 "<C-y>
 " nnoremap <C-Down> 10j
-nnoremap <M-d> 10j
-nnoremap <M-l> 10k
+" nnoremap <M-d> 10j
+" nnoremap <M-l> 10k
 "<C-e>
 
 
@@ -149,8 +149,11 @@ nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
 nnoremap <F1> :Startify<CR>
 nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
+
+"fuzzy find through lines
 nnoremap <C-f> :BLines<CR>
 nnoremap <M-f> :BLines<CR>
+nnoremap <M-l> :BLines<CR>
 nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History<CR>
   "Repgrip

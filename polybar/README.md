@@ -1,4 +1,4 @@
-#POLYBAR
+# POLYBAR
 
 My favourite panel, customized on i3 window manager:
 
