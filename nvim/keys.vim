@@ -99,7 +99,7 @@ nnoremap <Ca-p> :bprevious<CR>
 " nmap <m-i> gT
 
 "always paste below
-nmap p :pu<CR>
+" nmap p :pu<CR>
 
 " ??
 " imap <F6> <C-S-Tab>
@@ -112,7 +112,9 @@ nnoremap <CS-Tab> b:prev<CR>
 "show open files via fzf
 nnoremap <C-b> ::BuffergatorOpen<CR>
 nnoremap <C-l> ::Buffers<CR>
-nnoremap <M-b> ::Buffers<CR> 
+nnoremap <M-b> ::Buffers<CR>
+"check tab
+nnoremap <C-Tab> ::Buffers<CR>  
 nnoremap <M-v> ::vsplit<CR>
 nnoremap <M-h> ::split<CR>
 
@@ -149,7 +151,10 @@ nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 nnoremap <C-f> :BLines<CR>
 nnoremap <M-f> :BLines<CR>
+nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History<CR>
+  "Repgrip
+nnoremap <M-t> :Rg<CR>
 " nnoremap <C-f> :BLines '<CR>
 " nnoremap <C-t> :tabnew<CR>
 noremap <F10> :write!<CR>
