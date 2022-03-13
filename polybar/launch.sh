@@ -82,7 +82,7 @@ fi
 
 
 # CUSTOM SCRIPTS TO AUTOLOAD
-#set display output
+#check display output
 sh ~/scripts/checkDisplayOutput.sh
 
 #set mouse accel 
@@ -90,7 +90,6 @@ sh ~/scripts/setMouseGXTAccel.sh
 
 #nitrogen wallpaper restore
 nitrogen --restore
-#lock screen
 
 #screen locker
 sh ~/.config/xautolock/locker.sh
