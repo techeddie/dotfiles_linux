@@ -12,4 +12,3 @@ sessions/
 /lsp_signature.nvim
 /toggleterm.nvim
 /vifm.vim
-.gitignore
