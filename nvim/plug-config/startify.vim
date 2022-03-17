@@ -3,7 +3,7 @@
 let g:startify_bookmarks = [
       \ {'p': '~/.config/nvim/plugins.vim'}, 
       \ {'n': '~/.config/nvim/init.vim'},
-      \ {'k': '~/.config/nvim/keys.vim'},
+      \ {'e': '~/.config/nvim/keys.vim'},
       \ {'s': '~/.config/nvim/settings.vim'},
       \ {'v' : '~/.config/vifm/vifmrc'}, 
       \ {'z' : '~/.zshrc'},

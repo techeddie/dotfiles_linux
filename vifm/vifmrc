@@ -392,6 +392,8 @@ filextype */
         \ {View in thunar}
         \ Thunar %f &,
 
+filextype *.pdf xreader
+fileviewer *.pdf xreader-previewer
 " Syntax highlighting in preview
 "
 " Explicitly set highlight type for some extensions
