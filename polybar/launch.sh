@@ -94,4 +94,7 @@ nitrogen --restore
 #screen locker
 sh ~/.config/xautolock/locker.sh
 
+#show update popup windows
+sh ~/.config/polybar/forest/scripts/updates.sh
+
 echo "Bars launched..."

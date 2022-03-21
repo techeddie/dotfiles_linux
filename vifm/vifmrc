@@ -62,12 +62,6 @@ colorscheme ph
 "molokai
 "onedark
 
-" Format for displaying time in file list. For example:
-" TIME_STAMP_FORMAT=%m/%d-%H:%M
-" See man date or man strftime for details.
-
-set timefmt=%m/%d\ %H:%M
-
 " Show list of matches on tab completion in command-line mode
 
 set wildmenu
@@ -428,7 +422,7 @@ fileviewer *.pdf xreader-previewer
 " GETTING ICONS TO DISPLAY IN VIFM
 " You need the next 14 lines!
 
-" file types
+" file types icons
 set classify=' :dir:/, :exe:, :reg:, :link:'
 " various file names
 set classify+=' ::../::, ::*.sh::, ::*.[hc]pp::, ::*.[hc]::, ::/^copying|license$/::, ::.git/,,*.git/::, ::*.epub,,*.fb2,,*.djvu::, ::*.pdf::, ::*.htm,,*.html,,**.[sx]html,,*.xml::'
@@ -458,7 +452,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
 "
-" set viewcolumns=-{name}..,6{}.
+set viewcolumns=-{name}..,6{}.
 
 " Filter-out build and temporary files
 "
@@ -586,9 +580,14 @@ nnoremap j '
 " let $VIFM_SERVER_NAME = v:servername
 
 " show date and time modified
-set viewcolumns=*{name}..,16{mtime},7{}.
-map > :!vifmimg inc<CR>
-map < :!vifmimg dec<CR>
+
+set timefmt=%d/%m/%y\ %H:%M
+" set viewcolumns=*{name}..,16{mtime}
+set viewcolumns=-{name}..,6{size},6{mtime},11{perms}
+
+"not working
+" map > :!vifmimg inc<CR>
+" map < :!vifmimg dec<CR>
 
 "find forward
 nnoremap f =
@@ -597,5 +596,5 @@ nnoremap f =
 nnoremap <Shift c> :copy!<cr>
 
 "make zip
-nnoremap <C z> :zip<cr>
+nnoremap <C z> :zip<cr
 

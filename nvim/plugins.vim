@@ -84,7 +84,7 @@ Plug 'airblade/vim-rooter'
 "Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 "fuzzy finder                                                                                              
-" Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 "fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

@@ -7,5 +7,6 @@ source $HOME/.config/nvim/plug-config/buffertabs.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
 source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/toggleterm.vim
+source $HOME/.config/nvim/plug-config/ctrlp.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/keys.vim
