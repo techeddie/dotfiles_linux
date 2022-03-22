@@ -160,6 +160,9 @@ nnoremap <C-h> :History<CR>
 nnoremap <M-t> :Rg<CR>
 " nnoremap <C-f> :BLines '<CR>
 " nnoremap <C-t> :tabnew<CR>
+noremap <F7> :q!<CR>
+inoremap <F7> :q!<CR>
+
 noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
 noremap <M-s> :write!<CR>
