@@ -33,6 +33,7 @@ set splitright
 set autoread
 set cursorline
 set ignorecase
+" set spell
 set smartcase
 set history=200
 set shortmess+=c  "don't give |ins-completion-menu| messages.
