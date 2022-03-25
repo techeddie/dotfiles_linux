@@ -10,9 +10,10 @@ let mapleader=" "
 "SPACE COMMANDS
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim <CR>
 
-"Explorer NetRW
+"EXPLORER
 nnoremap <Leader>e :Explore<CR>
 nnoremap <Leader>l :Lf<CR>
+nnoremap <M-l> :Lf<CR>
 
 "WELCOME MANAGER
 nnoremap <Leader>s :Startify<CR>
@@ -135,7 +136,6 @@ nnoremap <F2> :Vifm<CR>
 "FUZZY FIND THROUGH LINES
 nnoremap <C-f> :BLines<CR>
 nnoremap <M-f> :BLines<CR>
-nnoremap <M-l> :BLines<CR>
 nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History<CR>
 
@@ -246,4 +246,5 @@ nmap nl :a<CR><CR>.<CR>
 nnoremap <F1> :Startify<CR>
 nnoremap <M-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
+
 

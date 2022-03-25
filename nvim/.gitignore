@@ -1,4 +1,5 @@
 plugged/*
+**/plugged/*.vim	
 gitpush.sh
 gitpull.sh
 undodir/
@@ -12,3 +13,4 @@ sessions/
 /lsp_signature.nvim
 /toggleterm.nvim
 /vifm.vim
+*gitignore
