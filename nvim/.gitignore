@@ -1,8 +1,8 @@
-~/.gitignore
-!/**/plugged.tar.gz
+!plug.vim
+!nvim/autoload/plug.vim
+!autoload/plugged/plugged.tar.gz
 plugged/*
-!autoload/plug.vim
-**/plugged/*.vim	
+.gitignore
 gitpush.sh
 gitpull.sh
 undodir/
