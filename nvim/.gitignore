@@ -1,4 +1,7 @@
+~/.gitignore
+!/**/plugged.tar.gz
 plugged/*
+!autoload/plug.vim
 **/plugged/*.vim	
 gitpush.sh
 gitpull.sh
@@ -7,10 +10,8 @@ undodir/
 *.nvim
 /sessions
 sessions/
-.gitignore
 /OneTerm.nvim
 /bufferline.nvim
 /lsp_signature.nvim
 /toggleterm.nvim
 /vifm.vim
-*gitignore

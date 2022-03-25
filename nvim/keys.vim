@@ -246,5 +246,3 @@ nmap nl :a<CR><CR>.<CR>
 nnoremap <F1> :Startify<CR>
 nnoremap <M-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
-
-
