@@ -172,7 +172,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-"" Coc Settings
+"" COC SETTINGS
 " Execute Powershell
 nmap <C-5> :CocCommand powershell.execute<cr>
 nmap <C-8> :CocCommand powershell.evaluateLine<cr>

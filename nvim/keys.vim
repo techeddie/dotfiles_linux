@@ -42,6 +42,11 @@ map <leader>nhls :set nohlsearch<CR>
 map <leader>hl :set hlsearch<CR>
 map <leader>hs :set hlsearch<CR>
 
+" Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
+" Note that you must use nmap/xmap instead of their non-recursive versions (nnoremap/xnoremap).
+nmap <leader>q <plug>(QuickScopeToggle)
+xmap <leader>q <plug>(QuickScopeToggle)
+
 "COMMAND MODE ALTERNATIVES
 " noremap ; :
 noremap + :w! <CR>
@@ -83,8 +88,9 @@ inoremap ö <esc>
 noremap ; <esc>
 " inoremap ß <esc>
 
+"WRAP UNWRAP
 nnoremap <C-a><C-w> :set wrap<CR>
-nnoremap <C-a><C-n> :set nowrap<CR>
+nnoremap <C-a><C-e> :set nowrap<CR>
 "
 "TABBING
 " nnoremap <C-a><C-n> :bn<CR>
@@ -111,9 +117,6 @@ nnoremap <M-h> ::split<CR>
 "COPY AND PASTE CURRENT LINE
 noremap <M-y> Yp 
 
-"INSERT EMPTY LINE BELOW
-nnoremap 8 :s/\n/\r\r/g<CR>
-"RESIZE
 
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
@@ -241,9 +244,12 @@ nnoremap <M-e> <C-e>
 nmap <CR> :a<CR><CR>.<CR>
 nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
+nnoremap 8 :s/\n/\r\r/g<CR>
 
 "FUNCTION KEYS MAPPING
 nnoremap <F1> :Startify<CR>
 nnoremap <M-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
 
+"TOGGLE VIM RAINBOW HIGHLIGHTING
+nnoremap <M-7> :RainbowToggle<CR>
