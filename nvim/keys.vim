@@ -252,4 +252,4 @@ nnoremap <M-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
-nnoremap <M-7> :RainbowToggle<CR>
+nnoremap <M-6> :RainbowToggle<CR>
