@@ -7,111 +7,31 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-"
-" Stable version of coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Keeping up to date with master
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-"file history
-Plug 'mbbill/undotree'
-
-" Better Syntax Support
-Plug 'sheerun/vim-polyglot'
-" Plug 'vim-syntastic/syntastic'
-
-" File Explorer
-"Plug 'scrooloose/NERDTree'
-"Automatic quote and bracket completion - Auto pairs for '(' '[' '{'
-Plug 'jiangmiao/auto-pairs'
-
-"Comment lines
-Plug 'tpope/vim-commentary'
-
-" Session Manager
-"Plug 'xolox/vim-session'
-"Plug 'xolox/vim-misc'
-
-
-"Colours for VIM bar"
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Comment Plugin"
-"Plug 'scrooloose/nerdcommenter'
-
-"Autoformat"
-Plug 'sbdchd/neoformat'
-
-"autonerdtree open"
-"Plug 'jistr/vim-nerdtree-tabs'
-
-Plug 'ptzz/lf.vim'
-Plug 'rbgrouleff/bclose.vim'
-
-
-" On-demand lazy load
-" Plug 'liuchengxu/vim-which-key'
-
-"TESTING whichkey
-
-"To register the descriptions when using the on-demand load feature,
-" use the autocmd hook to call which_key#register(), e.g., register for the Space key:
-" autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
-
-"floaterm
-Plug 'voldikss/vim-floaterm'
-
-"Show last files on startup
-Plug 'mhinz/vim-startify'
-
-"vifm
-Plug 'vifm/vifm.vim'
-
-"highligh current line
-Plug 'junegunn/limelight.vim'
-
-"tabs
-Plug 'jeetsukumaran/vim-buffergator'
-
-"repgreip search in project
-Plug 'airblade/vim-rooter'
-
-"teleskop
-"Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
-"Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-"fuzzy finder                                                                                              
-Plug 'kien/ctrlp.vim'
-
-"fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-"rainbow brackets
-Plug 'frazrepo/vim-rainbow'
-" Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-"Sneak Plugin Search arroun
-"Plug 'justinmk/vim-sneak'
-"rename plugin
-"Plug 'lilydjwg/colorizer'
-Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-" Plug 'ryanoasis/vim-devicons' cons without colours
-Plug 'akinsho/bufferline.nvim'
-" Plug 'martinsione/darkplus.nvim'
-Plug 'akinsho/toggleterm.nvim'
-Plug 'LoricAndre/OneTerm.nvim'
-"Plug 's1n7ax/nvim-terminal'
-"Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
-"Plug 'ray-x/lsp_signature.nvim'
-" Plug 'chentau/marks.nvim'
-
-"help with f and t - finding
-Plug 'unblevable/quick-scope'
-
-Plug 'lilydjwg/colorizer'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'mbbill/undotree'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tpope/vim-commentary'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'sbdchd/neoformat'
+  Plug 'ptzz/lf.vim'
+  Plug 'rbgrouleff/bclose.vim'
+  Plug 'voldikss/vim-floaterm'
+  Plug 'mhinz/vim-startify'
+  Plug 'vifm/vifm.vim'
+  Plug 'junegunn/limelight.vim'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'airblade/vim-rooter'
+  Plug 'kien/ctrlp.vim'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'frazrepo/vim-rainbow'
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'akinsho/bufferline.nvim'
+  Plug 'akinsho/toggleterm.nvim'
+  Plug 'LoricAndre/OneTerm.nvim'
+  Plug 'unblevable/quick-scope'
+  Plug 'lilydjwg/colorizer'
 call plug#end()
