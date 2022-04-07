@@ -1,10 +1,10 @@
 "COPY FROM CLIPBOARD
 	set clipboard=unnamedplus
 "COLOR_THEME
-" set background=dark
-" colorscheme slate
+	" set background=dark
+	" colorscheme slate "alternative
 	colorscheme PaperColor
-	let g:airline_theme='papercolor'
+	" let g:airline_theme='papercolor'
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SYNTAX
 	syntax on
@@ -34,7 +34,7 @@
 	set autoread
 	" There are certain files that we would never want to edit with Vim. Wildmenu will ignore files with these extensions.
 	set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-	set cursorline
+	" set cursorline
 	set ignorecase
 	" set spell
 	set smartcase
@@ -44,8 +44,8 @@
 	set wildmenu "Enable auto completion menu after pressing TAB.
 	set wildmode=full "Enable auto completion menu after pressing TAB.
 
- """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set wildmode=list:longest "Make wildmenu behave like similar to Bash completion.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"SET WILDMODE=LIST:LONGEST "MAKE WILDMENU BEHAVE LIKE SIMILAR TO BASH COMPLETION.
 	let g:python3_host_prog = '/usr/bin/python3'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SPLIT WINDOWS AND FOCUS
@@ -135,8 +135,9 @@
 	"let g:airline_theme='<theme>' " <theme> is a valid theme name"
 	" <theme> is a valid theme name
 	" let g:airline_theme='dark theme with powerline symbols'
-	let g:airline#extensions#tabline#enabled = 1
-	let g:airline#extensions#tabline#buffer_nr_show = 1
+	" let g:airline#extensions#tabline#enabled = 1
+	" let g:airline#extensions#tabline#buffer_nr_show = 1
+
 	" Floaterm
 	let g:floaterm_gitcommit='floaterm'
 	let g:floaterm_autoinsert=1
@@ -144,5 +145,15 @@
 	let g:floaterm_height=0.8
 	let g:floaterm_wintitle=0
 	let g:floaterm_autoclose=1
+
 	"syntax match Tab /\t/
-	"hi Tab gui=underline guifg=blue ctermbg=blue
+	" hi Tab gui=underline guifg=blue ctermbg=blue
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"CUSTOM COMMANDS
+	command! Config execute "e ~/.config/nvim/settings.vim"
+	command! Settings execute "e ~/.config/nvim/settings.vim"
+	command! PlugConfig execute "e ~/.config/nvim/plugins.vim"
+	command! Init execute "e ~/.config/nvim/init.vim"
+	command! Keys execute "e ~/.config/nvim/keys.vim"
+	command! Filename execute ":echo expand('%:p')"
+

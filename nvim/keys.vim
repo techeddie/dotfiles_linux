@@ -79,6 +79,15 @@ nnoremap <Leader>l :Lf<CR>
 "UPPERCASE
 nnoremap <Leader>u gUU
 
+"Normal mode: Jump to definition under cursor
+nnoremap <leader>j :AnyJump<CR>
+" Visual mode: jump to selected text in visual mode
+xnoremap <leader>j :AnyJumpVisual<CR>
+" Normal mode: open previous opened file (after jump)
+nnoremap <leader>ab :AnyJumpBack<CR>
+" Normal mode: open last closed search window again
+nnoremap <leader>al :AnyJumpLastResults<CR>
+
 "Mappings
 nnoremap <Leader>? :Maps<CR>
 ""##########################################################""
@@ -137,13 +146,15 @@ nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 
 "FUZZY FIND THROUGH LINES
-nnoremap <C-f> :BLines<CR>
-nnoremap <M-f> :BLines<CR>
-nnoremap <M-i> :BLines<CR>
-nnoremap <C-h> :History<CR>
+nnoremap <C-f> :BLines!<CR>
+nnoremap // :BLines!<CR>
+nnoremap <M-f> :BLines!<CR>
+nnoremap <M-i> :BLines!<CR>
+nnoremap <C-h> :History!<CR>
 
 "Repgrip
-nnoremap <M-g> :Rg<CR>
+nnoremap <M-g> :Rg!<CR>
+nnoremap ?? :Rg!<CR>
 
 "SAVE WRITE QUIT OPERATIONS
 noremap <F7> :q!<CR>
@@ -253,3 +264,6 @@ nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
+
+
+
