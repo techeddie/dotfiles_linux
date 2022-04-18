@@ -73,16 +73,16 @@ nnoremap <Leader>c :Commentary<CR>
 nnoremap <Leader>y Yp
 
 "RUN FUZZY FINDER
-nnoremap <Leader>f :Lf<CR>
+" nnoremap <Leader>f :Lf<CR>
 nnoremap <Leader>l :Lf<CR>
 
 "UPPERCASE
 nnoremap <Leader>u gUU
 
 "Normal mode: Jump to definition under cursor
-nnoremap <leader>j :AnyJump<CR>
+nnoremap <leader>f :AnyJump<CR>
 " Visual mode: jump to selected text in visual mode
-xnoremap <leader>j :AnyJumpVisual<CR>
+xnoremap <leader>f :AnyJumpVisual<CR>
 " Normal mode: open previous opened file (after jump)
 nnoremap <leader>ab :AnyJumpBack<CR>
 " Normal mode: open last closed search window again
@@ -146,10 +146,10 @@ nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 
 "FUZZY FIND THROUGH LINES
-nnoremap <C-f> :BLines!<CR>
-nnoremap // :BLines!<CR>
-nnoremap <M-f> :BLines!<CR>
-nnoremap <M-i> :BLines!<CR>
+nnoremap <C-f> :BLines<CR>
+nnoremap // :BLines<CR>
+nnoremap <M-f> :BLines<CR>
+nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History!<CR>
 
 "Repgrip
@@ -163,6 +163,7 @@ noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
 nnoremap <C-x> :Bclose!<CR>
 nnoremap <M-k> :Bclose!<CR>
+nnoremap <M-q> :Bclose!<CR>
 nnoremap <C-q> :Bclose!<CR>
 nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
