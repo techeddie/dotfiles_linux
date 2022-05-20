@@ -138,11 +138,9 @@ nnoremap <F2> :Vifm<CR>
 "FUZZY FIND THROUGH LINES
 " nnoremap <C-f> :BLines<CR>
 nnoremap // :BLines<CR>
-" nnoremap <M-f> :BLines<CR>
-" nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History!<CR>
 
-"Repgrip
+"REPGRIP
 nnoremap <M-g> :Rg!<CR>
 nnoremap ?? :Rg!<CR>
 
@@ -165,11 +163,11 @@ nnoremap ß :qall!<CR>
 nnoremap <F4> :qall!<CR>
 " nnoremap <A-q> :Bclose!<CR>
 
-"JUMP UP AND DOWN
+"GO UP AND DOWN
 noremap <C-Up> <C-y>
 noremap <C-Down> <C-e>
 
-"change current word
+"CHANGE CURRENT WORD
 noremap cw ce
 
 
@@ -260,10 +258,3 @@ nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
-
-" Feel free to map the shortcut you want
-nnoremap S :SwitchBuffer <cr>
-nnoremap <C-Tab> :SwitchBuffer <cr>
-set switchbuf=usetab
-
-nnoremap <c-m> :Startify<cr>
