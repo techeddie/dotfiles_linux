@@ -109,11 +109,6 @@ nnoremap <C-n> :tabnew<CR>
 " nnoremap <M-n> :tabnew<CR>
 nnoremap <A-Right> :bn<CR>
 nnoremap <A-Left> :bp<CR>
-" nnoremap <Ca-p> :bprevious<CR>
-" nnoremap <C-Tab> :bnext<CR>
-" nnoremap <CS-Tab> b:prev<CR>
-" nnoremap <C-Tab> :bn<CR>
-" nnoremap <C-t> :tabnew<CR> <C-m>
 
 "SHOW BUFFERS VIA FZF
 nnoremap <C-b> ::BuffergatorOpen<CR>
@@ -130,11 +125,6 @@ noremap <M-y> Yp
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
 
-"NAVIGATE BETWEEN WINDOWS
-" nmap <silent> <A-Up> :wincmd k<CR>
-" nmap <silent> <A-Down> :wincmd j<CR>
-" nmap <silent> <A-Left> :wincmd h<CR>
-" nmap <silent> <A-Right> :wincmd l<CR>
 
 "RESIZE
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
@@ -162,7 +152,8 @@ inoremap <F7> :q!<CR>
 noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
 nnoremap <C-x> :Bclose!<CR>
-nnoremap <M-k> :Bclose!<CR>
+nnoremap <M-k> <c-w>q
+
 nnoremap <M-q> :Bclose!<CR>
 nnoremap <C-q> :Bclose!<CR>
 nnoremap <C-s> :w!<CR>
@@ -228,8 +219,12 @@ nmap <silent> <S-l> :wincmd l<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-r> :edit!<CR>
-" nmap <silent> <A-Left> :wincmd h<CR>
-" nmap <silent> <A-Right> :wincmd l<CR>
+
+  "USING ALT KEY
+nnoremap <M-Up> :wincmd k<CR>
+nnoremap <M-Left> :wincmd h<CR>
+nnoremap <M-Right> :wincmd l<CR>
+nnoremap <M-Down> :wincmd j<CR>
 
 "BASHING - EXECUTE FILE OR CURRENT LINE
 nnoremap <F5> ::! bash %<CR>
@@ -258,12 +253,17 @@ nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
 nnoremap 8 :s/\n/\r\r/g<CR>
 
-"FUNCTION KEYS MAPPING
+"WELCOME SCREEN
 nnoremap <F1> :Startify<CR>
 nnoremap <M-m> :Startify<CR>
-map <C-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
 
+" Feel free to map the shortcut you want
+nnoremap S :SwitchBuffer <cr>
+nnoremap <C-Tab> :SwitchBuffer <cr>
+set switchbuf=usetab
+
+nnoremap <c-m> :Startify<cr>

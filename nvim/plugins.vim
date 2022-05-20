@@ -8,13 +8,12 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'Yohannfra/Nvim-Switch-Buffer'
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   Plug 'mbbill/undotree'
   Plug 'sheerun/vim-polyglot'
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
-  " Plug 'vim-airline/vim-airline'
-  " Plug 'vim-airline/vim-airline-themes'
   Plug 'sbdchd/neoformat'
   Plug 'ptzz/lf.vim'
   Plug 'rbgrouleff/bclose.vim'
@@ -25,7 +24,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'jeetsukumaran/vim-buffergator'
   Plug 'airblade/vim-rooter'
-  " Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'frazrepo/vim-rainbow'
@@ -34,8 +32,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'akinsho/toggleterm.nvim'
   Plug 'LoricAndre/OneTerm.nvim'
   Plug 'unblevable/quick-scope'
-  " Plug 'lilydjwg/colorizer'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim' 
+  Plug 'nvim-telescope/telescope-fzy-native.nvim' 
   Plug 'pechorin/any-jump.vim'
 call plug#end()
+"
+  " Plug 'lilydjwg/colorizer'
+  " Plug 'vim-airline/vim-airline'
+  " Plug 'vim-airline/vim-airline-themes'
+  " Plug 'kien/ctrlp.vim'
