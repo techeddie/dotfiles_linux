@@ -8,7 +8,7 @@ nnoremap <C-r> :source $HOME/.config/nvim/init.vim <CR>
 let mapleader=" "
 
 "SPACE COMMANDS
-nnoremap <Leader>r :source $HOME/.config/nvim/init.vim <CR>
+nnoremap <Leader>r :source $HOME/.config/nvim/init.vim<CR>
 
 "EXPLORER
 nnoremap <Leader>e :Explore<CR>
@@ -44,8 +44,8 @@ map <leader>hs :set hlsearch<CR>
 
 " Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
 " Note that you must use nmap/xmap instead of their non-recursive versions (nnoremap/xnoremap).
-nmap <leader>q <plug>(QuickScopeToggle)
-xmap <leader>q <plug>(QuickScopeToggle)
+" nmap <leader>q <plug>(QuickScopeToggle)
+" xmap <leader>q <plug>(QuickScopeToggle)
 
 "COMMAND MODE ALTERNATIVES
 " noremap ; :
@@ -55,9 +55,10 @@ noremap - :
 "HISTORY TREE
 nnoremap <Leader>h :UndotreeShow<CR> :UndotreeFocus<CR>
 nnoremap <M-u> :UndotreeToggle<CR> :vertical:resize -8<CR> :UndotreeFocus<CR>
+nnoremap <S-u> :UndotreeToggle<CR> :vertical:resize -8<CR> :UndotreeFocus<CR>
 
 "RESIIZE PANELS
-noremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
+noremap <silent> <Leader>+ :exe "vertical resize +36"<CR>
 nmap <silent> <Leader>- :exe "vertical resize -35"<CR>
 
 "PLUGIN MANAGER
@@ -105,27 +106,26 @@ nnoremap <C-a><C-e> :set nowrap<CR>
 " nnoremap <C-a><C-n> :bn<CR>
 " nnoremap <C-a><C-p> :bp<CR>
 nnoremap <C-n> :tabnew<CR>
-nnoremap <M-n> :tabnew<CR>
+" nnoremap <M-n> :tabnew<CR>
 nnoremap <A-Right> :bn<CR>
 nnoremap <A-Left> :bp<CR>
-nnoremap <Ca-p> :bprevious<CR>
+" nnoremap <Ca-p> :bprevious<CR>
 " nnoremap <C-Tab> :bnext<CR>
-nnoremap <CS-Tab> b:prev<CR>
+" nnoremap <CS-Tab> b:prev<CR>
 " nnoremap <C-Tab> :bn<CR>
 " nnoremap <C-t> :tabnew<CR> <C-m>
 
 "SHOW BUFFERS VIA FZF
 nnoremap <C-b> ::BuffergatorOpen<CR>
-nnoremap <C-l> ::Buffers<CR>
-nnoremap <M-b> ::Buffers<CR>
-"CHECK TAB
-nnoremap <C-Tab> ::Buffers<CR>  
+" nnoremap <C-l> ::Buffers<CR>
+" nnoremap <M-b> ::Buffers<CR>
+
+"SPLIT VERTICAL (V) HORIZONTAL (H)
 nnoremap <M-v> ::vsplit<CR>
 nnoremap <M-h> ::split<CR>
 
 "COPY AND PASTE CURRENT LINE
 noremap <M-y> Yp 
-
 
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
@@ -141,15 +141,15 @@ nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
 
 "FUNCTION KEYS MAPPING
-nnoremap <F1> :Startify<CR>
+" nnoremap <F1> :Startify<CR>
 nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 
 "FUZZY FIND THROUGH LINES
-nnoremap <C-f> :BLines<CR>
+" nnoremap <C-f> :BLines<CR>
 nnoremap // :BLines<CR>
-nnoremap <M-f> :BLines<CR>
-nnoremap <M-i> :BLines<CR>
+" nnoremap <M-f> :BLines<CR>
+" nnoremap <M-i> :BLines<CR>
 nnoremap <C-h> :History!<CR>
 
 "Repgrip
@@ -200,15 +200,15 @@ inoremap ä <C-O>:w<CR><Esc>
 xnoremap <C-Up> :move '<-2<CR>gv-gv
 xnoremap <C-Down> :move '>+1<CR>gv-gv
 
-"DD DOT YANK TO CLIPBOARD
+"DD NOT YANK TO CLIPBOARD
 nnoremap d "xd
 vnoremap d "xd
 
 "BUFFER
-nnoremap <silent>be :BufferLineSortByExtension<CR>
-nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-nnoremap <silent> gb :BufferLinePick<CR>
-nnoremap <silent> gD :BufferLinePickClose<CR>
+" nnoremap <silent>be :BufferLineSortByExtension<CR>
+" nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+" nnoremap <silent> gb :BufferLinePick<CR>
+" nnoremap <silent> gD :BufferLinePickClose<CR>
 
   nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
   nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
@@ -253,7 +253,7 @@ noremap - '
 nnoremap <M-e> <C-e>
 
 "INSERT A NEWLINE WITHOUT ENTERING IN INSERT MODE, VIM
-nmap <CR> :a<CR><CR>.<CR>
+" nmap <CR> :a<CR><CR>.<CR>
 nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
 nnoremap 8 :s/\n/\r\r/g<CR>
@@ -261,10 +261,9 @@ nnoremap 8 :s/\n/\r\r/g<CR>
 "FUNCTION KEYS MAPPING
 nnoremap <F1> :Startify<CR>
 nnoremap <M-m> :Startify<CR>
+map <C-m> :Startify<CR>
 nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
-
-
 

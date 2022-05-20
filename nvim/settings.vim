@@ -5,7 +5,7 @@
 	" colorscheme slate "alternative
 	colorscheme PaperColor
 	" let g:airline_theme='papercolor'
- """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SYNTAX
 	syntax on
 "SETS
@@ -152,8 +152,7 @@
 "CUSTOM COMMANDS
 	command! Config execute "e ~/.config/nvim/settings.vim"
 	command! Settings execute "e ~/.config/nvim/settings.vim"
-	command! Pc execute "e ~/.config/nvim/plugins.vim"
+	command! PlugConfig execute "e ~/.config/nvim/plugins.vim"
 	command! Init execute "e ~/.config/nvim/init.vim"
 	command! Keys execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"
-
