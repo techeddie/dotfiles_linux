@@ -35,10 +35,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim' 
   Plug 'nvim-telescope/telescope-fzy-native.nvim' 
-  Plug 'pechorin/any-jump.vim'
 call plug#end()
 "
   " Plug 'lilydjwg/colorizer'
+  " Plug 'pechorin/any-jump.vim'
   " Plug 'vim-airline/vim-airline'
   " Plug 'vim-airline/vim-airline-themes'
   " Plug 'kien/ctrlp.vim'

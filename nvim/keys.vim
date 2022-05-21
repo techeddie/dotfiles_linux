@@ -11,13 +11,13 @@ let mapleader=" "
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim<CR>
 
 "EXPLORER
-nnoremap <Leader>e :Explore<CR>
-nnoremap <Leader>l :Lf<CR>
-nnoremap <M-l> :Lf<CR>
+nnoremap <Leader>e :Lf<CR>
+" nnoremap <Leader>l :Lf<CR>
+" nnoremap <M-l> :Lf<CR>
 
 "WELCOME MANAGER
-nnoremap <Leader>s :Startify<CR>
-nnoremap <Leader>m :Startify<CR>
+" nnoremap <Leader>s :Startify<CR>
+" nnoremap <Leader>m :Startify<CR>
 
 "SAVE QUIT 
 nnoremap <Leader>w :w!<CR>
@@ -54,7 +54,7 @@ noremap - :
 
 "HISTORY TREE
 nnoremap <Leader>h :UndotreeShow<CR> :UndotreeFocus<CR>
-nnoremap <M-u> :UndotreeToggle<CR> :vertical:resize -8<CR> :UndotreeFocus<CR>
+" nnoremap <M-u> :UndotreeToggle<CR> :vertical:resize -8<CR> :UndotreeFocus<CR>
 nnoremap <S-u> :UndotreeToggle<CR> :vertical:resize -8<CR> :UndotreeFocus<CR>
 
 "RESIIZE PANELS
@@ -80,15 +80,6 @@ nnoremap <Leader>l :Lf<CR>
 "UPPERCASE
 nnoremap <Leader>u gUU
 
-"Normal mode: Jump to definition under cursor
-nnoremap <leader>f :AnyJump<CR>
-" Visual mode: jump to selected text in visual mode
-xnoremap <leader>f :AnyJumpVisual<CR>
-" Normal mode: open previous opened file (after jump)
-nnoremap <leader>ab :AnyJumpBack<CR>
-" Normal mode: open last closed search window again
-nnoremap <leader>al :AnyJumpLastResults<CR>
-
 "Mappings
 nnoremap <Leader>? :Maps<CR>
 ""##########################################################""
@@ -107,8 +98,6 @@ nnoremap <C-a><C-e> :set nowrap<CR>
 " nnoremap <C-a><C-p> :bp<CR>
 nnoremap <C-n> :tabnew<CR>
 " nnoremap <M-n> :tabnew<CR>
-nnoremap <A-Right> :bn<CR>
-nnoremap <A-Left> :bp<CR>
 
 "SHOW BUFFERS VIA FZF
 nnoremap <C-b> ::BuffergatorOpen<CR>
@@ -140,9 +129,9 @@ nnoremap <F2> :Vifm<CR>
 nnoremap // :BLines<CR>
 nnoremap <C-h> :History!<CR>
 
-"REPGRIP
-nnoremap <M-g> :Rg!<CR>
-nnoremap ?? :Rg!<CR>
+"FUZZY REPGRIP
+" nnoremap <M-g> :Rg!<CR>
+" nnoremap ?? :Rg!<CR>
 
 "SAVE WRITE QUIT OPERATIONS
 noremap <F7> :q!<CR>
@@ -151,8 +140,8 @@ noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
 nnoremap <C-x> :Bclose!<CR>
 nnoremap <M-k> <c-w>q
-
-nnoremap <M-q> :Bclose!<CR>
+nnoremap <M-u> <c-w>q
+nnoremap <M-q> <c-w>q
 nnoremap <C-q> :Bclose!<CR>
 nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
@@ -258,3 +247,7 @@ nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
+
+"TABBING LEFT AND RIGHT
+nnoremap <S-Right> :bn<CR>
+nnoremap <S-Left> :bp<CR>

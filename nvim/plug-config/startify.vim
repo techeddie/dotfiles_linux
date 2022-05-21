@@ -19,15 +19,14 @@ let g:startify_session_autoload = 0  "restart session on startup"
 let g:startify_change_to_vcs_root = 1
 let g:startify_enable_special = 1
 let g:startify_session_dir = '~/.config/nvim/plug-config/sessions'
-" let g:startify_files_number = 5
+let g:startify_files_number = 8
 
 let g:ascii = []
 let g:startify_custom_header = g:ascii + startify#fortune#boxed()
 let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   Files']            },
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      }
           \ ]
 
 autocmd vimenter * if !argc() | Startify | endif
-
           " \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          " \ { 'type': 'files',     'header': ['   Files']            },

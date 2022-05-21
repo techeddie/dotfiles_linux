@@ -179,6 +179,3 @@ nmap <C-8> :CocCommand powershell.evaluateLine<cr>
 vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
 nmap <C-j> :CocCommand powershell.toggleTerminal<cr>
 imap <C-j> :CocCommand powershell.toggleTerminal<cr>
-
-
-
