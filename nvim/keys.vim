@@ -42,6 +42,8 @@ map <leader>nhls :set nohlsearch<CR>
 map <leader>hl :set hlsearch<CR>
 map <leader>hs :set hlsearch<CR>
 
+map <leader>gd :Git diff<CR>
+
 " Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
 " Note that you must use nmap/xmap instead of their non-recursive versions (nnoremap/xnoremap).
 " nmap <leader>q <plug>(QuickScopeToggle)

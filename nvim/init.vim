@@ -10,6 +10,7 @@ source $HOME/.config/nvim/plug-config/rg.vim
 source $HOME/.config/nvim/plug-config/quick-scope.vim
 source $HOME/.config/nvim/plug-config/vim-rainbow.vim
 source $HOME/.config/nvim/plug-config/switch-buffer.vim
+source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/keys.vim
