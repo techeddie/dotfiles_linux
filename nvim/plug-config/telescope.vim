@@ -68,5 +68,3 @@ require('telescope').setup{
 
 -- require('telescope').load_extension('fzy_native')
 EOF
-
-" nnoremap <leader>vrc :lua require('eddie.telescope').search_dotfiles({ hidden = true })<cr>
