@@ -174,8 +174,7 @@ inoremap ü <C-O>:w<CR><Esc>
 inoremap ä <C-O>:w<CR><Esc>
 
 "terminal window
-" let g:floaterm_keymap_toggle = '<F9>'
-
+nnoremap <F9> :FloatermToggle<CR>
 "MOVE MARKED LINE UP AND DOWN
 xnoremap <C-Up> :move '<-2<CR>gv-gv
 xnoremap <C-Down> :move '>+1<CR>gv-gv
