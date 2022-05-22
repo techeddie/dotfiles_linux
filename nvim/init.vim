@@ -7,6 +7,7 @@ source $HOME/.config/nvim/plug-config/buffertabs.vim
 source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/toggleterm.vim
 source $HOME/.config/nvim/plug-config/rg.vim
+source $HOME/.config/nvim/plug-config/buffergator.vim
 source $HOME/.config/nvim/plug-config/quick-scope.vim
 source $HOME/.config/nvim/plug-config/vim-rainbow.vim
 source $HOME/.config/nvim/plug-config/switch-buffer.vim

@@ -11,7 +11,7 @@ autocmd User TelescopePreviewerLoaded setlocal wrap
       "// > Fuzzy find in current buffer
       nnoremap //  <cmd>Telescope current_buffer_fuzzy_find<cr>
 "Ctrl+l > Fuzzy show current buffers
-      nnoremap <C-l> <cmd>Telescope buffers<cr>
+      " nnoremap <C-l> <cmd>Telescope buffers<cr>
 "Alt+g Fuzzy live grep
       nnoremap <M-g> <cmd>Telescope live_grep<cr>
 "Alt+g Fuzzy live grep

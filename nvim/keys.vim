@@ -103,7 +103,7 @@ nnoremap <C-n> :tabnew<CR>
 
 "SHOW BUFFERS VIA FZF
 nnoremap <C-b> ::BuffergatorOpen<CR>
-" nnoremap <C-l> ::Buffers<CR>
+nnoremap <C-l> ::BuffergatorOpen<CR>
 " nnoremap <M-b> ::Buffers<CR>
 
 "SPLIT VERTICAL (V) HORIZONTAL (H)
@@ -214,6 +214,12 @@ nnoremap <M-Left> :wincmd h<CR>
 nnoremap <M-Right> :wincmd l<CR>
 nnoremap <M-Down> :wincmd j<CR>
 
+  "USING SHIFT KEY
+nnoremap <S-k> :wincmd k<CR>
+nnoremap <S-h> :wincmd h<CR>
+nnoremap <S-l> :wincmd l<CR>
+nnoremap <S-j> :wincmd j<CR>
+
 "BASHING - EXECUTE FILE OR CURRENT LINE
 nnoremap <F5> ::! bash %<CR>
 nnoremap <F8> :.w !bash<CR>
@@ -252,3 +258,4 @@ nnoremap <M-6> :RainbowToggle<CR>
 "TABBING LEFT AND RIGHT
 nnoremap <S-Right> :bn<CR>
 nnoremap <S-Left> :bp<CR>
+nnoremap <M-l> :bn<CR>
