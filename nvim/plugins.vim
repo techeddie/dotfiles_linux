@@ -40,7 +40,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
    Plug 'tpope/vim-fugitive' 
    Plug 'tpope/vim-rhubarb'
    Plug 'junegunn/gv.vim'
-  call plug#end()
+call plug#end()
 
   " Plug 'lilydjwg/colorizer'
   " Plug 'pechorin/any-jump.vim'

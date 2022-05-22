@@ -10,6 +10,9 @@
 	syntax on
 "SETS
 	set cursorline
+	set foldenable
+	" set foldmethod=indent
+	set foldmethod=syntax
 	set nu
 	set nowrap
 	set number

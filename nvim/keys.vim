@@ -49,9 +49,9 @@ map <leader>gd :Git diff<CR>
 " nmap <leader>q <plug>(QuickScopeToggle)
 " xmap <leader>q <plug>(QuickScopeToggle)
 
-"COMMAND MODE ALTERNATIVES
+"COMMAND MODE REPLACEMENT
 " noremap ; :
-noremap + :w! <CR>
+noremap + :
 noremap - :
 
 "HISTORY TREE
