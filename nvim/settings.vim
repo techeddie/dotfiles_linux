@@ -11,7 +11,7 @@
 "SETS
 	set cursorline
 	set foldenable
-	set foldlevel=2
+	set foldlevel=3
 	" set foldmethod=indent
 	set foldmethod=syntax
 	set nu

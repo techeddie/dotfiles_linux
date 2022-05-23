@@ -271,3 +271,14 @@ nnoremap <M-l> :bn<CR>
 "CNEXT CPREV 
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-b> :cprevious<CR>
+
+"GIT INTEGRATIONS
+"SHOW LAST BUFFER CHANGES (GIT) - SIGNIFY
+nnoremap <leader>gdiff :SignifyDiff<cr>
+nnoremap <leader>sd :SignifyDiff<cr>
+nnoremap <leader>st :SignifyToggle<cr>
+nnoremap <leader>sh :SignifyToggleHighlight<cr>
+"FUGITIVE
+nnoremap <leader>gb :Git blame<cr>
+"GV git commit browse current file
+nnoremap <leader>gv :GV!<cr>

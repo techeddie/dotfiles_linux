@@ -30,7 +30,6 @@ require("telescope").setup{
     file_sorter = require('telescope.sorters').get_fzy_sorter,
     color_devicons = true,
     buffer_previewer_maker = new_maker,
-
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -41,6 +40,22 @@ require("telescope").setup{
       "--smart-case",
       "--trim" -- add this value
     },
+    file_ignore_patterns = {
+                "node_modules",
+                ".work/.*",
+                "^*.gz",
+                "^*.db",
+                "/*old*",
+                "*pre*",
+                ".cache/.*",
+                ".chromium/.*",
+                ".git/.*",
+                "ultra*",
+                "Mic*",
+                "Brave*",
+                "Code*",
+                "conky*",
+            },
 
     -- pickers = {
     --   find_files = {

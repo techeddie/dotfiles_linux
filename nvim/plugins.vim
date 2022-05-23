@@ -39,11 +39,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "GIT PLUGINS
   "show added, modified or removed lines
      Plug 'mhinz/vim-signify'
-  "git commands
+  "interacting with git
      Plug 'tpope/vim-fugitive' 
-  "description 
+  "jump to github via browser
      Plug 'tpope/vim-rhubarb'
-  "description 
+  "git commit browser
      Plug 'junegunn/gv.vim'
 call plug#end()
 
