@@ -18,6 +18,7 @@ nnoremap <Leader>e :Lf<CR>
 
 "WELCOME MANAGER
 nnoremap <Leader>m :Startify<CR>
+nnoremap m :Startify<CR>
 
 "SAVE QUIT 
 nnoremap <Leader>w :w!<CR>
@@ -114,9 +115,6 @@ nnoremap <C-l> ::BuffergatorOpen<CR>
 nnoremap <M-v> ::vsplit<CR>
 nnoremap <M-h> ::split<CR>
 
-"COPY AND PASTE CURRENT LINE
-noremap <M-y> Yp 
-
 nnoremap <silent> <Leader>+ :exe "vertical resize +35"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -35"<CR>
 
@@ -144,16 +142,16 @@ noremap <F7> :q!<CR>
 inoremap <F7> :q!<CR>
 noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
-nnoremap <C-x> :Bclose!<CR>
 nnoremap <M-k> <c-w>q
 nnoremap <M-u> <c-w>q
 nnoremap <M-q> <c-w>q
-nnoremap <C-q> :Bclose!<CR>
 nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
-noremap ä :w! <Cr>
 nnoremap <C-z> :redo<CR>
+nnoremap <C-q> :Bclose!<CR>
+nnoremap <C-x> :Bclose!<CR>
 nnoremap <C-k> :qall!<CR>
+noremap ä <c-w>q 
 nnoremap ß :qall!<CR>
 nnoremap <F4> :qall!<CR>
 " nnoremap <A-q> :Bclose!<CR>
@@ -249,6 +247,10 @@ nnoremap <M-e> <C-e>
 " nmap <CR> :a<CR><CR>.<CR>
 nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
+
+"ALWAY PASTE BELOW CURRENTLY LINE
+" nmap p nl p
+
 " nnoremap 8 :s/\n/\r\r/g<CR>
 
 "WELCOME SCREEN

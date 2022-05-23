@@ -84,14 +84,10 @@
 	" inoremap ü :w! <Cr>
 	inoremap ß <esc>
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""SYNTAX
-    "set statusline+=%#warningmsg#
-    "set statusline+=%{SyntasticStatuslineFlag()}
-    "set statusline+=%*
+""SYNTASTIC
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
-    " let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "FZF""
 	let g:fzf_tags_command = 'ctags -R'
@@ -108,7 +104,7 @@
 		\	 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
 		\	 fzf#vim#with_preview(), <bang>0)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ripgrep advanced
+" RIPGREP ADVANCED
 	function! RipgrepFzf(query, fullscreen)
 		let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
 		let initial_command = printf(command_fmt, shellescape(a:query))
@@ -125,8 +121,8 @@
 		\	 'git grep --line-number '.shellescape(<q-args>), 0,
 		\	 fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"color term
-" hi Normal ctermfg=Blue ctermbg=brown
+"COLOR TERM
+	" hi Normal ctermfg=Blue ctermbg=brown
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "LETS
 	let g:session_autosave = 'no'
@@ -160,3 +156,5 @@
 	command! I execute "e ~/.config/nvim/init.vim"
 	command! K execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"
+	command! GetCommands execute ":Telescope coc commands"
+	command! GetMaps execute "Maps"

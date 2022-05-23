@@ -67,11 +67,11 @@ nmap <silent> gk <Plug>(coc-diagnostic-prev)
 nmap <silent> gj <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gk <Plug>(coc-references-used)
+" nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gp <Plug>(coc-references-used)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -177,5 +177,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nmap <C-5> :CocCommand powershell.execute<cr>
 nmap <C-8> :CocCommand powershell.evaluateLine<cr>
 vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
-nmap <leader>j :CocCommand powershell.toggleTerminal<cr>
+nmap <leader>pt :CocCommand powershell.toggleTerminal<cr>
 " imap <F8> :CocCommand powershell.toggleTerminal<cr>

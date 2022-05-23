@@ -59,12 +59,14 @@ cmd zip ${{
     rm -rf $1
 }}
 
+#BACKUP SELECTION WITH DATE
 cmd bak ${{
   date=$(date +%Y-%m-%d_%H_%M)
   tar -zcvf "${1}.$date.tar.gz" "$1"
   # tar -zcvf "${1}.tar.gz" "$1"
 }}
 
+#WALLPAPER
 cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
 
 # Archive bindings
@@ -83,6 +85,7 @@ cmd execute ${{
 	wine "$f"
 }}
 
+#TESTING
 cmd fasd_dir ${{
    res="$(fasd -dl | grep -iv cache | fzf 2>/dev/tty | sed 's/\\/\\\\/g;s/"/\\"/g')"
    if [ -d "$res" ]; then
@@ -123,8 +126,9 @@ map bg setwallpaper
 map C clear
 map <Esc> quit
 
-# Bookmarks
+#FOLDER BOOKMARKS
 map gh cd ~/
+map g1 cd ~/
 map gD cd ~/documents
 map gd cd ~/Downloads
 map gN cd ~/Nextcloud
@@ -134,12 +138,11 @@ map gp cd ~/.config/polybar
 map ge cd /etc
 map gs cd ~/scripts
 map gl cd ~/.local
+map gL cd ~/Nextcloud/LINUX
 map gr cd ~/scripts/git
 map gn cd ~/scripts/git/dotfiles_linux/nvim
 map go cd ~/opt
 map gt cd ~/tmp
-map gh cd ~/
-map g1 cd ~/
 
 #COMMAND MAP CUSTOM MAPPING
 cmap <tab> cmd-menu-complete

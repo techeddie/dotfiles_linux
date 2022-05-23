@@ -15,4 +15,63 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
+
+"LOAD LUA CONFIG
+lua require('eddie')
+" lua require('testing')
+lua require('telescope').load_extension('fzy_native')
+
 " source $HOME/.config/nvim/plug-config/ctrlp.vim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

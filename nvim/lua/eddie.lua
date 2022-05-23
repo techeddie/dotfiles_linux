@@ -1,53 +1,73 @@
-local actions require('telescope.actions')
+-- IGNORE FILES BIGGER THAN A THRESHOLD
+local previewers = require("telescope.previewers")
+local new_maker = function(filepath, bufnr, opts)
+  opts = opts or {}
 
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > 100000 then
+      return
+    else
+      previewers.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
+
+-- COC
+require('telescope').load_extension('coc')
+
+-- FZF NATIVE
 require('telescope').load_extension('fzy_native')
 -- require('telescope').load_extension('git_worktree')
 
-local actions require('telescope.actions')
-require('telescope').setup{
+-- TELESCOPE MY SETTINGS
+local actions = require("telescope.actions")
+require("telescope").setup{
   defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
+
     prompt_prefix = '🔍',
     file_sorter = require('telescope.sorters').get_fzy_sorter,
     color_devicons = true,
+    buffer_previewer_maker = new_maker,
+
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--trim" -- add this value
+    },
+
+    -- pickers = {
+    --   find_files = {
+    --     theme = "ivy"
+    --   },
+    -- },
 
     mappings = {
+      n = {
+        -- ["<M-p>"] = action_layout.toggle_preview,
+      },
       i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-		["<C-x>"] = false,
-        ["<C-h>"] = "which_key"
-      }
-    }
-  },
-  pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
-  extensions = {
-
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
-		},
-  },
-
-  -- extensions = {
-  --       fzy_native = {
-  --             override_generic_sorter = false,
-  --             override_file_sorter = true,
-  --       }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+        ["<esc>"] = actions.close,
+        ["<C-h>"] = "which_key",
+        ["<C-u>"] = false
+      },
+    },
+  }
 }
 
+-- Falling back to find_files if git_files can't find a .git directory
+local M = {}
+
+M.project_files = function()
+  local opts = {} -- define here if you want to define something
+  local ok = pcall(require"telescope.builtin".git_files, opts)
+  if not ok then require"telescope.builtin".find_files(opts) end
+end
+
+return M

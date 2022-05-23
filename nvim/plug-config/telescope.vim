@@ -17,6 +17,14 @@ autocmd User TelescopePreviewerLoaded setlocal wrap
 "Alt+g Fuzzy live grep
       nnoremap ?? <cmd>Telescope live_grep<cr>
 
+nnoremap <leader>g :Telescope live_grep sorting_strategy=ascending<cr>
+nnoremap <leader>gs :Telescope git_status sorting_strategy=ascending<cr>
+nnoremap <leader>gc :Telescope git_bcommits sorting_strategy=ascending<cr> 
+nnoremap <leader>gf :Telescope git_files sorting_strategy=ascending<cr> 
+
+nnoremap <leader>gr :Telescope coc references_used<cr> 
+nnoremap <leader>gd :Telescope coc definitions<cr> 
+
 nnoremap <leader>fch :Telescope command_history sorting_strategy=ascending<cr>
 nnoremap <leader>f :Telescope find_files sorting_strategy=ascending<cr><cr>
 nnoremap <leader>ff :Telescope find_files sorting_strategy=ascending<cr>
@@ -27,14 +35,10 @@ nnoremap <leader>fn :Telescope find_files cwd=~/.config/nvim sorting_strategy=as
 nnoremap <leader>fi :Telescope find_files cwd=~/.config/i3 sorting_strategy=ascending<cr>
 nnoremap <leader>fp :Telescope find_files cwd=~/.config/polybar sorting_strategy=ascending<cr>
 nnoremap <leader>fs :Telescope find_files cwd=~/.ssh/ sorting_strategy=ascending<cr>
-nnoremap <leader>g :Telescope live_grep sorting_strategy=ascending<cr>
-nnoremap <leader>h :Telescope oldfiles sorting_strategy=ascending<cr>
-nnoremap <c-h> :Telescope oldfiles sorting_strategy=ascending<cr>
 nnoremap <leader>fb :Telescope buffers sorting_strategy=ascending<cr>
 nnoremap <leader>fh :Telescope help_tags sorting_strategy=ascending<cr>
-nnoremap <leader>gs :Telescope git_status sorting_strategy=ascending<cr>
-nnoremap <leader>gc :Telescope git_bcommits sorting_strategy=ascending<cr> 
+nnoremap <leader>fr :Telescope coc references sorting_strategy=ascending<cr>
 
-"LOAD LUA CONFIG
-lua require('eddie')
-lua require('telescope').load_extension('fzy_native')
+nnoremap <leader>h :Telescope command_history sorting_strategy=ascending<cr>
+nnoremap <c-h> :Telescope oldfiles sorting_strategy=ascending<cr>
+
