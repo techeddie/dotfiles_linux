@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim' 
   Plug 'nvim-telescope/telescope-fzy-native.nvim' 
+  Plug 'fannheyward/telescope-coc.nvim'
   "GIT PLUGINS
    Plug 'mhinz/vim-signify'
    Plug 'tpope/vim-fugitive' 

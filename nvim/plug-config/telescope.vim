@@ -17,14 +17,25 @@ autocmd User TelescopePreviewerLoaded setlocal wrap
 "Alt+g Fuzzy live grep
       nnoremap ?? <cmd>Telescope live_grep<cr>
 
-nnoremap <leader>fch <cmd>Telescope command_history <cr>
+nnoremap <leader>fch <cmd>Telescope command_history <CR>
+nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fd <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope find_files cwd=~/repoGIT/<cr>
+nnoremap <leader>fc <cmd>Telescope find_files cwd=~/.config/ <cr>
+nnoremap <leader>fn <cmd>Telescope find_files cwd=~/.config/nvim <cr>
+nnoremap <leader>fi <cmd>Telescope find_files cwd=~/.config/i3 <cr>
+nnoremap <leader>fp <cmd>Telescope find_files cwd=~/.config/polybar <cr>
+nnoremap <leader>fs <cmd>Telescope find_files cwd=~/.ssh/ <cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>h <cmd>Telescope oldfiles<cr>
+nnoremap <c-h> <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>gs <cmd>Telescope git_status<cr>
-nnoremap <leader>gc <cmd>Telescope git_commits<cr>
-nnoremap <leader>gbc <cmd>Telescope git_bcommits<cr>
+" nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <leader>gc <cmd>Telescope git_bcommits<cr>
+
 
 lua << EOF
 local actions require('telescope.actions')
@@ -66,5 +77,5 @@ require('telescope').setup{
   }
 }
 
--- require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzy_native')
 EOF

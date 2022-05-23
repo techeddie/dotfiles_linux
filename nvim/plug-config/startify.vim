@@ -5,6 +5,7 @@ let g:startify_bookmarks = [
       \ {'i': '~/.config/nvim/init.vim'},
       \ {'o': '~/.config/nvim/keys.vim'},
       \ {'s': '~/.config/nvim/settings.vim'},
+      \ {'t': '~/.config/nvim/plug-config/telescope.vim'},
       \ {'v' : '~/.config/vifm/vifmrc'}, 
       \ {'z' : '~/.zshrc'},
       \ {'3' : '~/.config/i3/config'},
@@ -29,4 +30,3 @@ let g:startify_lists = [
           \ ]
 
 autocmd vimenter * if !argc() | Startify | endif
-          " \ { 'type': 'sessions',  'header': ['   Sessions']       },

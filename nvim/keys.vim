@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "RELOAD SESSION
-nnoremap <C-r> :source $HOME/.config/nvim/init.vim <CR>
+nnoremap <C-r> :source % <CR> :source ~/.config/nvim/keys.vim <CR>
 
 ""##########################################################""
 "LEADER SECTION
@@ -16,8 +16,8 @@ nnoremap <Leader>e :Lf<CR>
 " nnoremap <M-l> :Lf<CR>
 
 "WELCOME MANAGER
-" nnoremap <Leader>s :Startify<CR>
-" nnoremap <Leader>m :Startify<CR>
+nnoremap <Leader>s :Startify<CR>
+nnoremap <Leader>m :Startify<CR>
 
 "SAVE QUIT 
 nnoremap <Leader>w :w!<CR>
@@ -102,7 +102,7 @@ nnoremap <C-n> :tabnew<CR>
 " nnoremap <M-n> :tabnew<CR>
 
 "SHOW BUFFERS VIA FZF
-nnoremap <C-b> ::BuffergatorOpen<CR>
+" nnoremap <C-b> ::BuffergatorOpen<CR>
 nnoremap <C-l> ::BuffergatorOpen<CR>
 " nnoremap <M-b> ::Buffers<CR>
 
@@ -129,7 +129,7 @@ nnoremap <F2> :Vifm<CR>
 "FUZZY FIND THROUGH LINES
 " nnoremap <C-f> :BLines<CR>
 " nnoremap // :BLines<CR>
-nnoremap <C-h> :History!<CR>
+" nnoremap <C-h> :History!<CR>
 
 "FUZZY REPGRIP
 " nnoremap <M-g> :Rg!<CR>
@@ -259,3 +259,7 @@ nnoremap <M-6> :RainbowToggle<CR>
 nnoremap <S-Right> :bn<CR>
 nnoremap <S-Left> :bp<CR>
 nnoremap <M-l> :bn<CR>
+
+"CNEXT CPREV 
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-b> :cprevious<CR>

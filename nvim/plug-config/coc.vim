@@ -137,8 +137,8 @@ endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -177,5 +177,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nmap <C-5> :CocCommand powershell.execute<cr>
 nmap <C-8> :CocCommand powershell.evaluateLine<cr>
 vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
-nmap <C-j> :CocCommand powershell.toggleTerminal<cr>
-imap <C-j> :CocCommand powershell.toggleTerminal<cr>
+nmap <leader>j :CocCommand powershell.toggleTerminal<cr>
+" imap <F8> :CocCommand powershell.toggleTerminal<cr>
