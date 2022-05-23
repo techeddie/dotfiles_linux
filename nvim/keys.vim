@@ -224,7 +224,9 @@ nnoremap <S-j> :wincmd j<CR>
 
 "BASHING - EXECUTE FILE OR CURRENT LINE
 nnoremap <F5> ::! bash %<CR>
+vnoremap <F5> ::! bash %<CR>
 nnoremap <F8> :.w !bash<CR>
+vnoremap <F8> :.w !bash<CR>
 
 
 "PATH COMMANDS
