@@ -37,10 +37,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-telescope/telescope-fzy-native.nvim' 
   Plug 'fannheyward/telescope-coc.nvim'
   "GIT PLUGINS
-   Plug 'mhinz/vim-signify'
-   Plug 'tpope/vim-fugitive' 
-   Plug 'tpope/vim-rhubarb'
-   Plug 'junegunn/gv.vim'
+  "show added, modified or removed lines
+     Plug 'mhinz/vim-signify'
+  "git commands
+     Plug 'tpope/vim-fugitive' 
+  "description 
+     Plug 'tpope/vim-rhubarb'
+  "description 
+     Plug 'junegunn/gv.vim'
 call plug#end()
 
   " Plug 'lilydjwg/colorizer'

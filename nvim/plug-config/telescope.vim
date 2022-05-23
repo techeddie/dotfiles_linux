@@ -42,3 +42,6 @@ nnoremap <leader>fr :Telescope coc references sorting_strategy=ascending<cr>
 nnoremap <leader>h :Telescope command_history sorting_strategy=ascending<cr>
 nnoremap <c-h> :Telescope oldfiles sorting_strategy=ascending<cr>
 
+" THEMES
+" nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+" nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ winblend = 10 }))<cr>
