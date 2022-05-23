@@ -11,6 +11,7 @@
 "SETS
 	set cursorline
 	set foldenable
+	set foldlevel=2
 	" set foldmethod=indent
 	set foldmethod=syntax
 	set nu
@@ -153,9 +154,9 @@
 	" hi Tab gui=underline guifg=blue ctermbg=blue
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
-	command! Config execute "e ~/.config/nvim/settings.vim"
-	command! Settings execute "e ~/.config/nvim/settings.vim"
-	command! PlugConfig execute "e ~/.config/nvim/plugins.vim"
-	command! Init execute "e ~/.config/nvim/init.vim"
-	command! Keys execute "e ~/.config/nvim/keys.vim"
+	command! C execute "e ~/.config/nvim/settings.vim"
+	command! S execute "e ~/.config/nvim/settings.vim"
+	command! P execute "e ~/.config/nvim/plugins.vim"
+	command! I execute "e ~/.config/nvim/init.vim"
+	command! K execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"

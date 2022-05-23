@@ -24,6 +24,7 @@ cmd touch ${{
   printf "File Name: "
   read ans
   $EDITOR $ans
+  # touch "$ans"
 }}
 
 # extract the current file with the right command
@@ -152,6 +153,7 @@ map <f-7> mkdir #rename current selection
 map <c-r> reload #reload configuration
 map <f-8> delete
 map <c-f> search
+map <c-n> touch
 map <c-s> shell
 map <c-k> quit
 map <esc> quit

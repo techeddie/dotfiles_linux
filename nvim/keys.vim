@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"RELOAD SESSION
+"RELOAD BUFFER AND SOURCE KEY BINDINGINS
 nnoremap <C-r> :source % <CR> :source ~/.config/nvim/keys.vim <CR>
 
 ""##########################################################""
@@ -9,14 +9,14 @@ let mapleader=" "
 
 "SPACE COMMANDS
 nnoremap <Leader>r :source $HOME/.config/nvim/init.vim<CR>
+nnoremap <Leader>s :source %<CR>
+nnoremap <Leader>kb :e $HOME/.config/nvim/keys.vim<CR>
+nnoremap <Leader>tb :e $HOME/.config/nvim/plug-config/telescope.vim<CR>
 
 "EXPLORER
 nnoremap <Leader>e :Lf<CR>
-" nnoremap <Leader>l :Lf<CR>
-" nnoremap <M-l> :Lf<CR>
 
 "WELCOME MANAGER
-nnoremap <Leader>s :Startify<CR>
 nnoremap <Leader>m :Startify<CR>
 
 "SAVE QUIT 
@@ -36,12 +36,15 @@ map <leader>ov :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ot :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>o :Of<CR>
 map <leader>ocp :Of<CR>
+
+"HIGHLIGHTING
 map <leader>nh :set nohlsearch<CR>
 map <leader>nhl :set nohlsearch<CR>
 map <leader>nhls :set nohlsearch<CR>
 map <leader>hl :set hlsearch<CR>
 map <leader>hs :set hlsearch<CR>
 
+"GIT BINDING
 map <leader>gd :Git diff<CR>
 
 " Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
@@ -89,6 +92,7 @@ nnoremap <Leader>? :Maps<CR>
 "ESC REPLACEMENT
 inoremap ö <esc>
 noremap ; <esc>
+inoremap ; <esc>
 " inoremap ß <esc>
 
 "WRAP UNWRAP
@@ -245,7 +249,7 @@ nnoremap <M-e> <C-e>
 " nmap <CR> :a<CR><CR>.<CR>
 nmap oo :a<CR><CR>.<CR>
 nmap nl :a<CR><CR>.<CR>
-nnoremap 8 :s/\n/\r\r/g<CR>
+" nnoremap 8 :s/\n/\r\r/g<CR>
 
 "WELCOME SCREEN
 nnoremap <F1> :Startify<CR>
