@@ -18,7 +18,8 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 
 
 "LOAD LUA CONFIG
-lua require('eddie')
+lua require('tele')
+lua require('zoxide')
 lua require('telescope').load_extension('fzy_native')
 
 " source $HOME/.config/nvim/plug-config/ctrlp.vim

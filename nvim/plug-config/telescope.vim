@@ -23,7 +23,9 @@ nnoremap <leader>gc :Telescope git_bcommits sorting_strategy=ascending<cr>
 nnoremap <leader>gf :Telescope git_files sorting_strategy=ascending<cr> 
 
 nnoremap <leader>gr :Telescope coc references_used<cr> 
+nnoremap gr :Telescope coc references_used<cr> 
 nnoremap <leader>gd :Telescope coc definitions<cr> 
+nnoremap gd :Telescope coc definitions<cr> 
 
 nnoremap <leader>fch :Telescope command_history sorting_strategy=ascending<cr>
 nnoremap <leader>f :Telescope find_files sorting_strategy=ascending<cr><cr>
@@ -40,7 +42,7 @@ nnoremap <leader>fh :Telescope help_tags sorting_strategy=ascending<cr>
 nnoremap <leader>fr :Telescope coc references sorting_strategy=ascending<cr>
 
 nnoremap <leader>h :Telescope command_history sorting_strategy=ascending<cr>
-nnoremap <c-h> :Telescope oldfiles sorting_strategy=ascending<cr>
+" nnoremap <c-h> :Telescope oldfiles sorting_strategy=ascending<cr>
 
 " THEMES
 " nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>

@@ -1,4 +1,4 @@
-" auto-install vim-plug
+" AUTO-INSTALL VIM-PLUG
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -32,19 +32,31 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'akinsho/toggleterm.nvim'
   Plug 'LoricAndre/OneTerm.nvim'
   Plug 'unblevable/quick-scope'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim' 
-  Plug 'nvim-telescope/telescope-fzy-native.nvim' 
-  Plug 'fannheyward/telescope-coc.nvim'
+
+  "TELESCOPE PLUGINS
+      "
+        Plug 'nvim-lua/plenary.nvim'
+      "
+        Plug 'nvim-telescope/telescope.nvim' 
+      "fuzzy finder
+        Plug 'nvim-telescope/telescope-fzy-native.nvim' 
+      "language server
+        Plug 'fannheyward/telescope-coc.nvim'
+      "smart cd command
+        Plug 'jvgrootveld/telescope-zoxide'
+      " clipboard manager
+        Plug 'AckslD/nvim-neoclip'
+
   "GIT PLUGINS
-  "show added, modified or removed lines
-     Plug 'mhinz/vim-signify'
+  "show added, modfied or removed lines
+       Plug 'mhinz/vim-signify'
   "interacting with git
-     Plug 'tpope/vim-fugitive' 
+       Plug 'tpope/vim-fugitive' 
   "jump to github via browser
-     Plug 'tpope/vim-rhubarb'
+       Plug 'tpope/vim-rhubarb'
   "git commit browser
-     Plug 'junegunn/gv.vim'
+       Plug 'junegunn/gv.vim'
+
 call plug#end()
 
   " Plug 'lilydjwg/colorizer'

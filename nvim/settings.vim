@@ -4,14 +4,13 @@
 	" set background=dark
 	" colorscheme slate "alternative
 	colorscheme PaperColor
-	" let g:airline_theme='papercolor'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SYNTAX
 	syntax on
 "SETS
 	set cursorline
 	set foldenable
-	set foldlevel=3
+	set foldlevelstart=4
 	" set foldmethod=indent
 	set foldmethod=syntax
 	set nu
@@ -25,7 +24,7 @@
 	set tabstop=4 
 	set softtabstop=4
 	set noswapfile
-	set undodir=~/.config/nvim/undodir
+	set undodir=~/.config/nvim.undodir
 	set undofile
 	set incsearch
 	set encoding=UTF-8
@@ -145,7 +144,7 @@
 	let g:floaterm_height=0.8
 	let g:floaterm_wintitle=0
 	let g:floaterm_autoclose=1
-
+let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,6 +154,13 @@
 	command! P execute "e ~/.config/nvim/plugins.vim"
 	command! I execute "e ~/.config/nvim/init.vim"
 	command! K execute "e ~/.config/nvim/keys.vim"
+
+	command! Config execute "e ~/.config/nvim/settings.vim"
+	command! Settings execute "e ~/.config/nvim/settings.vim"
+	command! PlugConfig execute "e ~/.config/nvim/plugins.vim"
+	command! Init execute "e ~/.config/nvim/init.vim"
+	command! Keys execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"
+	command! CommandHistory execute ":Telescope command_history sorting_strategy=ascending"
+	command! Mappings execute ":Maps"
 	command! GetCommands execute ":Telescope coc commands"
-	command! GetMaps execute "Maps"

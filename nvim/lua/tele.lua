@@ -1,3 +1,10 @@
+-- COC
+require('telescope').load_extension('coc')
+
+-- FZF NATIVE
+require('telescope').load_extension('fzy_native')
+-- require('telescope').load_extension('git_worktree')
+
 -- IGNORE FILES BIGGER THAN A THRESHOLD
 local previewers = require("telescope.previewers")
 local new_maker = function(filepath, bufnr, opts)
@@ -13,13 +20,6 @@ local new_maker = function(filepath, bufnr, opts)
     end
   end)
 end
-
--- COC
-require('telescope').load_extension('coc')
-
--- FZF NATIVE
-require('telescope').load_extension('fzy_native')
--- require('telescope').load_extension('git_worktree')
 
 -- TELESCOPE MY SETTINGS
 local actions = require("telescope.actions")
@@ -40,22 +40,22 @@ require("telescope").setup{
       "--smart-case",
       "--trim" -- add this value
     },
-    file_ignore_patterns = {
-                "node_modules",
-                ".work/.*",
-                "^*.gz",
-                "^*.db",
-                "/*old*",
-                "*pre*",
-                ".cache/.*",
-                ".chromium/.*",
-                ".git/.*",
-                "ultra*",
-                "Mic*",
-                "Brave*",
-                "Code*",
-                "conky*",
-            },
+    -- file_ignore_patterns = {
+    --             "node_modules",
+    --             ".work/.*",
+    --             "^*.gz",
+    --             "^*.db",
+    --             "/*old*",
+    --             "*pre*",
+    --             ".cache/.*",
+    --             ".chromium/.*",
+    --             ".git/.*",
+    --             "ultra*",
+    --             "Mic*",
+    --             "Brave*",
+    --             "Code*",
+    --             "conky*",
+    --         },
 
     -- pickers = {
     --   find_files = {
@@ -76,13 +76,13 @@ require("telescope").setup{
   }
 }
 
--- Falling back to find_files if git_files can't find a .git directory
-local M = {}
+-- -- Falling back to find_files if git_files can't find a .git directory
+-- local M = {}
 
-M.project_files = function()
-  local opts = {} -- define here if you want to define something
-  local ok = pcall(require"telescope.builtin".git_files, opts)
-  if not ok then require"telescope.builtin".find_files(opts) end
-end
+-- M.project_files = function()
+--   local opts = {} -- define here if you want to define something
+--   local ok = pcall(require"telescope.builtin".git_files, opts)
+--   if not ok then require"telescope.builtin".find_files(opts) end
+-- end
 
-return M
+-- return M

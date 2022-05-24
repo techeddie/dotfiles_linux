@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"RELOAD BUFFER AND SOURCE KEY BINDINGINS
-nnoremap <C-r> :source % <CR> :source ~/.config/nvim/keys.vim <CR>
+"RELOAD KEY BINDINGINS
+nnoremap <C-r> :source ~/.config/nvim/init.vim <CR> :source ~/.config/nvim/keys.vim <CR> :source ~/.config/nvim/plug-config/telescope.vim <CR>
+nnoremap <leader>s :source ~/.config/nvim/init.vim <CR> :source ~/.config/nvim/keys.vim <CR> :source ~/.config/nvim/plug-config/telescope.vim <CR>
 
 ""##########################################################""
 "LEADER SECTION
@@ -8,10 +9,10 @@ nnoremap <C-r> :source % <CR> :source ~/.config/nvim/keys.vim <CR>
 let mapleader=" "
 
 "SPACE COMMANDS
-nnoremap <Leader>r :source $HOME/.config/nvim/init.vim<CR>
-nnoremap <Leader>s :source %<CR>
-nnoremap <Leader>kb :e $HOME/.config/nvim/keys.vim<CR>
-nnoremap <Leader>tb :e $HOME/.config/nvim/plug-config/telescope.vim<CR>
+nnoremap <Leader>rb :source %<CR>
+nnoremap <Leader>kc :e $HOME/.config/nvim/keys.vim<CR>
+nnoremap <Leader>tc :e $HOME/.config/nvim/plug-config/telescope.vim<CR>
+nnoremap <Leader>z :Telescope zoxide list sorting_strategy=ascending<CR>
 
 "EXPLORER
 nnoremap <Leader>e :Lf<CR>
@@ -131,7 +132,7 @@ nnoremap <F2> :Vifm<CR>
 "FUZZY FIND THROUGH LINES
 " nnoremap <C-f> :BLines<CR>
 " nnoremap // :BLines<CR>
-" nnoremap <C-h> :History!<CR>
+nnoremap <C-h> :History!<CR>
 
 "FUZZY REPGRIP
 " nnoremap <M-g> :Rg!<CR>
@@ -149,7 +150,7 @@ nnoremap <C-s> :w!<CR>
 noremap ü :w! <Cr>
 nnoremap <C-z> :redo<CR>
 nnoremap <C-q> :Bclose!<CR>
-nnoremap <C-x> :Bclose!<CR>
+" nnoremap <C-x> :Bclose!<CR>
 nnoremap <C-k> :qall!<CR>
 noremap ä <c-w>q 
 nnoremap ß :qall!<CR>
