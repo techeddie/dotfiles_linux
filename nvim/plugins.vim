@@ -45,7 +45,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       "smart cd command
         Plug 'jvgrootveld/telescope-zoxide'
       " clipboard manager
-        Plug 'AckslD/nvim-neoclip'
+        " Plug 'AckslD/nvim-neoclip'
 
   "GIT PLUGINS
   "show added, modfied or removed lines
