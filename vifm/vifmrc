@@ -480,7 +480,7 @@ nnoremap <C-k> :q!<cr>
 "nnoremap gp :!gimp %f & <cr>
 
 "show history in list
-nnoremap h :history <cr>
+nnoremap <c-h> :history <cr>
 
 "split modi vertical and horizontal
 nnoremap <M-h> :split <cr>
@@ -551,9 +551,12 @@ nnoremap <f8> :delete<cr>
 nnoremap <space> t
 "nnoremap q ZZ
 
-nnoremap j '
+"leader jumpl key"
+nnoremap g '
 
-" ------------------------------------------------------------------------------
+"jump to first line"
+nnoremap gg :1<cr>
+"------------------------------------------------------------------------------
 
 "
 " Various customization examples

@@ -13,6 +13,7 @@ nnoremap <Leader>rb :source %<CR>
 nnoremap <Leader>kc :e $HOME/.config/nvim/keys.vim<CR>
 nnoremap <Leader>tc :e $HOME/.config/nvim/plug-config/telescope.vim<CR>
 nnoremap <Leader>z :Telescope zoxide list sorting_strategy=ascending<CR>
+nnoremap <Leader>cd :Telescope zoxide list sorting_strategy=ascending<CR>
 
 "EXPLORER
 nnoremap <Leader>e :Lf<CR>
