@@ -22,7 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       Plug 'tpope/vim-commentary'
   "lf file manger
       Plug 'ptzz/lf.vim'
-  "
+  "deleting a buffer in Vim without closing the window
       Plug 'rbgrouleff/bclose.vim'
   "floating terminal
       Plug 'voldikss/vim-floaterm'
