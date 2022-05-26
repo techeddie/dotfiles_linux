@@ -140,8 +140,6 @@ nnoremap <C-h> :History!<CR>
 " nnoremap ?? :Rg!<CR>
 
 "SAVE WRITE QUIT OPERATIONS
-noremap <F7> :q!<CR>
-inoremap <F7> :q!<CR>
 noremap <F10> :write!<CR>
 noremap <M-s> :write!<CR>
 nnoremap <M-k> <c-w>q
