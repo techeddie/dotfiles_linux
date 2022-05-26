@@ -19,7 +19,7 @@ nnoremap <Leader>e :Lf<CR>
 
 "WELCOME MANAGER
 nnoremap <Leader>m :Startify<CR>
-nnoremap m :Startify<CR>
+nnoremap <s-m> :Startify<CR>
 
 "SAVE QUIT 
 nnoremap <Leader>w :w!<CR>
@@ -109,7 +109,7 @@ nnoremap <C-n> :tabnew<CR>
 
 "SHOW BUFFERS VIA FZF
 " nnoremap <C-b> ::BuffergatorOpen<CR>
-nnoremap <C-l> ::BuffergatorOpen<CR>
+" nnoremap <C-l> ::BuffergatorOpen<CR>
 " nnoremap <M-b> ::Buffers<CR>
 
 "SPLIT VERTICAL (V) HORIZONTAL (H)
@@ -283,3 +283,18 @@ nnoremap <leader>sh :SignifyToggleHighlight<cr>
 nnoremap <leader>gb :Git blame<cr>
 "GV git commit browse current file
 nnoremap <leader>gv :GV!<cr>
+
+" POWERSHELL COC 
+nmap <C-5> :CocCommand powershell.execute<cr>
+nmap <C-8> :CocCommand powershell.evaluateLine<cr>
+vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
+nmap <leader>pt :CocCommand powershell.toggleTerminal<cr>
+nmap <leader>tp :CocCommand powershell.toggleTerminal<cr>
+
+" AUTOPAIRS
+" When the filetype is FILETYPE then make AutoPairs only match for parenthesis
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
+execute 'inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>'
+execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsSpace()<CR>'
+

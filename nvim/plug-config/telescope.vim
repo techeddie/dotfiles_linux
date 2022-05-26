@@ -37,6 +37,7 @@ nnoremap <leader>fn :Telescope find_files cwd=~/.config/nvim sorting_strategy=as
 nnoremap <leader>fi :Telescope find_files cwd=~/.config/i3 sorting_strategy=ascending<cr>
 nnoremap <leader>fp :Telescope find_files cwd=~/.config/polybar sorting_strategy=ascending<cr>
 nnoremap <leader>fs :Telescope find_files cwd=~/.ssh/ sorting_strategy=ascending<cr>
+nnoremap <leader>b :Telescope buffers sorting_strategy=ascending<cr>
 nnoremap <leader>fb :Telescope buffers sorting_strategy=ascending<cr>
 nnoremap <leader>fh :Telescope help_tags sorting_strategy=ascending<cr>
 nnoremap <leader>fr :Telescope coc references sorting_strategy=ascending<cr>

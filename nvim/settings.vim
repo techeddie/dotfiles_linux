@@ -23,6 +23,7 @@
 	set noerrorbells
 	set tabstop=4 
 	set softtabstop=4
+	set noexpandtab
 	set noswapfile
 	set undodir=~/.config/nvim.undodir
 	set undofile
@@ -37,9 +38,8 @@
 	set autoread
 	" There are certain files that we would never want to edit with Vim. Wildmenu will ignore files with these extensions.
 	set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-	" set cursorline
+	set cursorline
 	set ignorecase
-	" set spell
 	set smartcase
 	set history=200
 	set shortmess+=c	"don't give |ins-completion-menu| messages.
@@ -164,3 +164,5 @@ let g:zoxide_prefix = 'jump'
 	command! CommandHistory execute ":Telescope command_history sorting_strategy=ascending"
 	command! Mappings execute ":Maps"
 	command! GetCommands execute ":Telescope coc commands"
+	command! GDiff execute ":SignifyDiff"
+	command! HighlightChanges execute ":SignifyToggleHighlight"

@@ -40,22 +40,21 @@ require("telescope").setup{
       "--smart-case",
       "--trim" -- add this value
     },
-    -- file_ignore_patterns = {
-    --             "node_modules",
-    --             ".work/.*",
-    --             "^*.gz",
-    --             "^*.db",
-    --             "/*old*",
-    --             "*pre*",
-    --             ".cache/.*",
-    --             ".chromium/.*",
-    --             ".git/.*",
-    --             "ultra*",
-    --             "Mic*",
-    --             "Brave*",
-    --             "Code*",
-    --             "conky*",
-    --         },
+    file_ignore_patterns = {
+                ".work/.*",
+                ".cache/.*",
+                "/*.bak*",
+                "/*.old*",
+                "/*.pre*",
+                "/*.undodir*",
+                ".chromium/.*",
+                -- ".git/.*",
+                "ultra*",
+                "Mic*",
+                "Brave*",
+                "Code*",
+                "conky*",
+            },
 
     -- pickers = {
     --   find_files = {

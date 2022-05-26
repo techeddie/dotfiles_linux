@@ -172,11 +172,3 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-"" COC SETTINGS
-" Execute Powershell
-nmap <C-5> :CocCommand powershell.execute<cr>
-nmap <C-8> :CocCommand powershell.evaluateLine<cr>
-vmap <C-8> :CocCommand powershell.evaluateSelection<cr>
-nmap <leader>pt :CocCommand powershell.toggleTerminal<cr>
-nmap <leader>tp :CocCommand powershell.toggleTerminal<cr>
-" imap <F8> :CocCommand powershell.toggleTerminal<cr>

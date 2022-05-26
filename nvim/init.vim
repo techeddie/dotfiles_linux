@@ -11,15 +11,16 @@ source $HOME/.config/nvim/plug-config/quick-scope.vim
 source $HOME/.config/nvim/plug-config/vim-rainbow.vim
 source $HOME/.config/nvim/plug-config/switch-buffer.vim
 source $HOME/.config/nvim/plug-config/git.vim
+source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
-source $HOME/.config/nvim/plug-config/coc.vim
 
 
 "LOAD LUA CONFIG
 lua require('tele')
 lua require('zoxide')
 lua require('telescope').load_extension('fzy_native')
+" lua require('testing')
 
 " source $HOME/.config/nvim/plug-config/ctrlp.vim

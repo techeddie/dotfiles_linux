@@ -8,30 +8,53 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'Yohannfra/Nvim-Switch-Buffer'
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'mbbill/undotree'
-  Plug 'sheerun/vim-polyglot'
-  " Plug 'jiangmiao/auto-pairs'
-  Plug 'tpope/vim-commentary'
-  Plug 'sbdchd/neoformat'
-  Plug 'ptzz/lf.vim'
-  Plug 'rbgrouleff/bclose.vim'
-  Plug 'voldikss/vim-floaterm'
-  Plug 'mhinz/vim-startify'
-  Plug 'vifm/vifm.vim'
-  Plug 'junegunn/limelight.vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'jeetsukumaran/vim-buffergator'
-  Plug 'airblade/vim-rooter'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'frazrepo/vim-rainbow'
-  Plug 'NLKNguyen/papercolor-theme'
-  Plug 'akinsho/bufferline.nvim'
-  Plug 'akinsho/toggleterm.nvim'
-  Plug 'LoricAndre/OneTerm.nvim'
-  Plug 'unblevable/quick-scope'
+  "show buffer list and
+      Plug 'Yohannfra/Nvim-Switch-Buffer'
+  "language server
+      Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  "history tree
+      Plug 'mbbill/undotree'
+  "language pack
+      Plug 'sheerun/vim-polyglot'
+  "auto pair brackets and more 
+      Plug 'jiangmiao/auto-pairs'
+  "comment and uncomment 
+      Plug 'tpope/vim-commentary'
+  "lf file manger
+      Plug 'ptzz/lf.vim'
+  "
+      Plug 'rbgrouleff/bclose.vim'
+  "floating terminal
+      Plug 'voldikss/vim-floaterm'
+  "welcome menu - last files, bookmark...
+      Plug 'mhinz/vim-startify'
+  "
+      Plug 'vifm/vifm.vim'
+  "
+      Plug 'junegunn/limelight.vim'
+  "
+      Plug 'itchyny/lightline.vim'
+  "
+      Plug 'jeetsukumaran/vim-buffergator'
+  "
+      Plug 'airblade/vim-rooter'
+  "
+      Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  "
+      Plug 'junegunn/fzf.vim'
+  "
+      Plug 'frazrepo/vim-rainbow'
+  "
+      Plug 'NLKNguyen/papercolor-theme'
+  "
+      Plug 'akinsho/bufferline.nvim'
+  "
+      Plug 'akinsho/toggleterm.nvim'
+  "
+      Plug 'LoricAndre/OneTerm.nvim'
+  "
+      Plug 'unblevable/quick-scope'
+
 
   "TELESCOPE PLUGINS
       "
@@ -64,3 +87,5 @@ call plug#end()
   " Plug 'vim-airline/vim-airline'
   " Plug 'vim-airline/vim-airline-themes'
   " Plug 'kien/ctrlp.vim'
+  " Plug 'windwp/nvim-autopairs'
+  " Plug 'sbdchd/neoformat'
