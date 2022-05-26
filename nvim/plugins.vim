@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   Plug 'mbbill/undotree'
   Plug 'sheerun/vim-polyglot'
-  Plug 'jiangmiao/auto-pairs'
+  " Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
   Plug 'sbdchd/neoformat'
   Plug 'ptzz/lf.vim'
