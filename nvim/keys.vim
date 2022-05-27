@@ -299,4 +299,5 @@ execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsSpace()<CR>'
 
 "FORMAT SELECTED CODE OR WHOLE BUFFER
 vmap <leader>ft  <Plug>(coc-format-selected)
+vmap <leader>fl  <Plug>(coc-format-selected)
 nmap <leader>fa  :Format<cr>

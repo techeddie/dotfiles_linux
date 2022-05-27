@@ -1,0 +1,25 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json"
+  ],
+  "suggest.noselect": false,
+  "diagnostic.enableMessage": "jump",
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": true,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.integratedConsole.focusConsoleOnExecute": false,
+  "codeLens.enable": true,
+
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ]
+}
+
+
