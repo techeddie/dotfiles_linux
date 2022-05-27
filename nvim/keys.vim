@@ -297,3 +297,6 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 execute 'inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>'
 execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsSpace()<CR>'
 
+"FORMAT SELECTED CODE OR WHOLE BUFFER
+vmap <leader>ft  <Plug>(coc-format-selected)
+nmap <leader>fa  :Format<cr>

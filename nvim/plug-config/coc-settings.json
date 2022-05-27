@@ -1,9 +1,9 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json"],
-
+  "suggest.noselect": false,
   // python config
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
+  // "python.linting.enabled": true,
+  // "python.linting.pylintEnabled": true,
 
   "snippets.ultisnips.directories":
   [
