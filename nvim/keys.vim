@@ -217,8 +217,8 @@ nnoremap <M-Right> :wincmd l<CR>
 nnoremap <M-Down> :wincmd j<CR>
 
   "USING SHIFT KEY
-nnoremap <S-k> :wincmd k<CR>
-nnoremap <S-h> :wincmd h<CR>
+" nnoremap <S-k> :wincmd k<CR>
+" nnoremap <S-h> :wincmd h<CR>
 nnoremap <S-l> :wincmd l<CR>
 nnoremap <S-j> :wincmd j<CR>
 
