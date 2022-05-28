@@ -1,7 +1,6 @@
 "COPY FROM CLIPBOARD
 	set clipboard=unnamedplus
 "COLOR_THEME
-	" set background=dark
 	" colorscheme slate "alternative
 	colorscheme PaperColor
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
