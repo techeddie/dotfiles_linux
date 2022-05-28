@@ -48,7 +48,6 @@ require("telescope").setup{
                 "/*.pre*",
                 "/*.undodir*",
                 ".chromium/.*",
-                -- ".git/.*",
                 "ultra*",
                 "Mic*",
                 "Brave*",

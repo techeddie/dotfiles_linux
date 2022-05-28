@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/.config/polybar"
+dir="$HOME/.config/polybar/cuts"
 themes=(`ls --hide="launch.sh" $dir`)
 
 launch_bar() {
@@ -12,8 +12,9 @@ launch_bar() {
 
 	# Launch the bar
 	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-		polybar -q top -c "$dir/$style/config.ini" &
-		polybar -q bottom -c "$dir/$style/config.ini" &
+		polybar -q top -c "$dir"/config.ini &
+		polybar -q top -c "$dir"/config2.ini &
+		polybar -q bottom -c "$dir/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
