@@ -78,7 +78,7 @@ nnoremap <Leader>pg :PlugUpgrade<CR>
 "COMMENT CURRENT LINE
 nnoremap <Leader>c :Commentary<CR>
 
-"PASTE CURRENT LINE TO NEXT LINE
+"DUPLICATE CURRENT LINE
 nnoremap <Leader>y Yp
 
 "RUN FUZZY FINDER
@@ -294,8 +294,8 @@ nmap <leader>tp :CocCommand powershell.toggleTerminal<cr>
 " When the filetype is FILETYPE then make AutoPairs only match for parenthesis
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-execute 'inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>'
-execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsSpace()<CR>'
+" execute 'inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>'
+" execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsSpace()<CR>'
 
 "FORMAT SELECTED CODE OR WHOLE BUFFER
 vmap <leader>ft  <Plug>(coc-format-selected)
