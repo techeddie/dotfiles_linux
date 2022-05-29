@@ -150,6 +150,13 @@
 let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
+t
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ "set syntax on FILE
+augroup filetypedetect
+    autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
+    " autocmd BufNew,BufNewFile,BufRead *.txt,*.text,config :set syntax=bash
+augroup END
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
 	command! C execute "e ~/.config/nvim/settings.vim"
