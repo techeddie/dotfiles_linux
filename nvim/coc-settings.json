@@ -19,7 +19,8 @@
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/.config/nvim/utils/snips"
-  ]
+  ],
+  "git.enableGutters": false
 }
 
 
