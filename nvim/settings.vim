@@ -7,10 +7,13 @@
 "SYNTAX
 	syntax on
 "SETS
+	" set nobackup
+	" set nohlsearch
+	" set foldmethod=indent
+	" set signcolumn=yes "always show signcolumns
 	set cursorline
 	set foldenable
 	set foldlevelstart=4
-	" set foldmethod=indent
 	set foldmethod=syntax
 	set nu
 	set nowrap
@@ -18,7 +21,6 @@
 	set autoread
 	set splitbelow splitright
 	set fillchars+=vert:\
-	set nobackup
 	set noerrorbells
 	set tabstop=4 
 	set softtabstop=4
@@ -28,23 +30,32 @@
 	set undofile
 	set incsearch
 	set encoding=UTF-8
-	set exrc "testing"
+	set exrc 
 	set relativenumber
-	" set nohlsearch
-	set hidden "testing"
+	set hidden
 	set scrolloff=8
 	set splitright
 	set autoread
-	" There are certain files that we would never want to edit with Vim. Wildmenu will ignore files with these extensions.
 	set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 	set cursorline
 	set ignorecase
 	set smartcase
 	set history=200
 	set shortmess+=c	"don't give |ins-completion-menu| messages.
-	set signcolumn=yes "always show signcolumns
+	set signcolumn=yes:2
 	set wildmenu "Enable auto completion menu after pressing TAB.
+	
+	"testing
 	set wildmode=full "Enable auto completion menu after pressing TAB.
+	set list
+	set listchars=tab:▸\ ,trail:·
+	set scrolloff=8
+	set sidescrolloff=8
+	set nojoinspaces
+	set backup
+	set backupdir=~/.local/share/nvim/backup//
+	set updatetime=300 " Reduce time for highlighting other references
+	set redrawtime=10000 " Allow more time for loading syntax on large files
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SET WILDMODE=LIST:LONGEST "MAKE WILDMENU BEHAVE LIKE SIMILAR TO BASH COMPLETION.
@@ -150,12 +161,10 @@
 let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
-t
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  "set syntax on FILE
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
-    " autocmd BufNew,BufNewFile,BufRead *.txt,*.text,config :set syntax=bash
 augroup END
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS

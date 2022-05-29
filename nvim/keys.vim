@@ -15,6 +15,16 @@ nnoremap <Leader>tc :e $HOME/.config/nvim/plug-config/telescope.vim<CR>
 nnoremap <Leader>z :Telescope zoxide list sorting_strategy=ascending<CR>
 nnoremap <Leader>cd :Telescope zoxide list sorting_strategy=ascending<CR>
 
+"DISABLE ARROW KEYS
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+
 "EXPLORER
 nnoremap <Leader>e :Lf<CR>
 
@@ -23,7 +33,6 @@ nnoremap <Leader>m :Startify<CR>
 nnoremap <s-m> :Startify<CR>
 
 "SAVE QUIT 
-nnoremap <Leader>w :w!<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>q :Bclose!<CR>
 
@@ -42,6 +51,7 @@ map <leader>ocp :Of<CR>
 
 "HIGHLIGHTING
 map <leader>nh :set nohlsearch<CR>
+map <leader>k :nohlsearch<CR>
 map <leader>nhl :set nohlsearch<CR>
 map <leader>nhls :set nohlsearch<CR>
 map <leader>hl :set hlsearch<CR>
@@ -100,6 +110,8 @@ inoremap ; <esc>
 
 "WRAP UNWRAP
 nnoremap <C-a><C-w> :set wrap<CR>
+nnoremap <leader>w :set wrap<CR>
+nnoremap <leader>nw :set nowrap<CR>
 nnoremap <C-a><C-e> :set nowrap<CR>
 "
 "TABBING
@@ -301,3 +313,19 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 vmap <leader>ft  <Plug>(coc-format-selected)
 vmap <leader>fl  <Plug>(coc-format-selected)
 nmap <leader>fa  :Format<cr>
+
+"Allow gf to open non-existent files
+map gf :edit <cfile><cr>
+
+
+"Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+"Maintain the cursor position when yanking a visual selection
+"http://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap y myy`y
+vnoremap Y myY`y
+
+"MAKE Y BEHAVE LIKE THE OTHER CAPITALS
+nnoremap Y y$
