@@ -65,7 +65,7 @@ font:
     style: Regular Italic
 
   # Point size of the font
-  size: 14.0
+  size: 8.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -277,6 +277,14 @@ shell:
 #   `command` must be a map containing a `program` string, and `args` array of
 #     strings. For example:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
+
+#vimode
+key_bindings:
+  - { key: Escape,   mods: Control,       action: ToggleViMode            }
+  - { key: V,        mods: Control,       action: ToggleViMode            }
+  - { key: C,        mods: Control,       action: Copy                    }
+
+#my key bindings
 key_bindings:
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
