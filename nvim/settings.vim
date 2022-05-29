@@ -150,7 +150,6 @@
 let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
-t
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  "set syntax on FILE
 augroup filetypedetect
