@@ -41,11 +41,7 @@ require("telescope").setup{
       "--trim" -- add this value
     },
     file_ignore_patterns = {
-                ".work/.*",
                 ".cache/.*",
-                "/*.bak*",
-                "/*.old*",
-                "/*.pre*",
                 "/*.undodir*",
                 ".chromium/.*",
                 "ultra*",
