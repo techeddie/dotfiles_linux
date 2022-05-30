@@ -333,4 +333,3 @@ nnoremap Y y$
 "NERDTree
 nnoremap <expr> <leader>N g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-" nnoremap <expr> <leader>n :NERDTreeFind<CR>
