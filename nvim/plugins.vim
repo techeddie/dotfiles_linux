@@ -26,6 +26,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       Plug 'rbgrouleff/bclose.vim'
   "floating terminal
       Plug 'voldikss/vim-floaterm'
+  "nerdtree
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   "welcome menu - last files, bookmark...
       Plug 'mhinz/vim-startify'
   "
