@@ -1,5 +1,5 @@
-# My Linux dot files
-Feel free to check and download my Linux dot files
+# my linux dot files
+feel free to explore and pull my linux dot files
 
-BR
-Eddie
+br
+eddie
