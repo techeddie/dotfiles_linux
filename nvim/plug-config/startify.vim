@@ -10,8 +10,6 @@ let g:startify_bookmarks = [
       \ {'z' : '~/.zshrc'},
       \ {'3' : '~/.config/i3/config'},
       \ {'a' : '~/.config/alacritty/alacritty.yml'},
-      \ {'bc' : '~/.config/polybar/config'},
-      \ {'gl' : '~/.config/polybar/launch.sh'},
       \ {'rb' : '~/scripts/runBackup.sh'},
       \ {'rtb' : '~/scripts/runTimeshiftBackup.sh'},
       \ {'lc' : '~/Nextcloud/LINUX/LINUX_COMMANDS.sh'}      
