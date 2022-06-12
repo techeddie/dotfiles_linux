@@ -282,7 +282,9 @@ nnoremap <M-l> :bn<CR>
 
 "CNEXT CPREV 
 nnoremap <C-j> :cnext<CR>
+nnoremap ] :cnext<CR>
 nnoremap <C-b> :cprevious<CR>
+nnoremap [ :cprevious<CR>
 
 "GIT INTEGRATIONS
 "SHOW LAST BUFFER CHANGES (GIT) - SIGNIFY
