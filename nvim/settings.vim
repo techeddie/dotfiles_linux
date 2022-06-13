@@ -70,7 +70,7 @@
 	endfunction
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "MOVE BETWEEN SPLITS WITHOUT THE CTRL-W PREFIX
-	nnoremap <M-7> <C-W><C-H>:call Splitresize()<CR>
+	nnoremap <M-5> <C-W><C-H>:call Splitresize()<CR>
 	nnoremap <M-8> <C-W><C-L>:call Splitresize()<CR>
 	nnoremap <M-9> <C-W><C-J>:call Splitresize()<CR>
 	nnoremap <M-0> <C-W><C-K>:call Splitresize()<CR>
@@ -166,6 +166,9 @@ let g:zoxide_prefix = 'jump'
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
 augroup END
+
+
+
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
 	command! C execute "e ~/.config/nvim/settings.vim"

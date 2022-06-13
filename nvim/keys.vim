@@ -274,6 +274,7 @@ nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
+nnoremap <M-7> :SignifyToggleHighlight<CR>
 
 "TABBING LEFT AND RIGHT
 nnoremap <S-Right> :bn<CR>
