@@ -180,6 +180,7 @@ augroup END
 	command! Init execute "e ~/.config/nvim/init.vim"
 	command! Keys execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"
+	command! Gn execute ":echo expand('%:p')"
 	command! CommandHistory execute ":Telescope command_history sorting_strategy=ascending"
 	command! Mappings execute ":Maps"
 	command! GetCommands execute ":Telescope coc commands"

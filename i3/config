@@ -107,8 +107,8 @@
     exec --no-startup-id pasystray &
     #exec --no-startup-id compton -c
 
-    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --cuts   #polybar
-    # exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest   #polybar
+    # exec_always --no-startup-id sh ~/.config/polybar/launch.sh --cuts   #polybar
+    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest   #polybar
     exec_always --no-startup-id autotiling #auto tilling
     exec_always --no-startup-id picom --config ~/.config/i3/picom.conf #transparency on non-focused windows, ...
     exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager

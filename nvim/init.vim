@@ -15,13 +15,12 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
-" source $HOME/.config/nvim/plug-config/coc_fzf.vim
 
 
 "LOAD LUA CONFIG
 lua require('tele')
 lua require('zoxide')
 lua require('telescope').load_extension('fzy_native')
-" lua require('testing')
 
 " source $HOME/.config/nvim/plug-config/ctrlp.vim
+" source $HOME/.config/nvim/plug-config/coc_fzf.vim
