@@ -47,8 +47,8 @@
 	
 	"testing
 	set wildmode=full "Enable auto completion menu after pressing TAB.
-	set list
-	set listchars=tab:▸\ ,trail:·
+	" set list
+	" set listchars=tab:▸\ ,trail:·
 	set scrolloff=8
 	set sidescrolloff=8
 	set nojoinspaces
@@ -134,8 +134,8 @@
 	" hi Normal ctermfg=Blue ctermbg=brown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"GIT - SHOW CHANGES IN CURRENT FILE AFTER
-	autocmd VimEnter * SignifyToggleHighlight
+"GIT - SHOW CHANGES IN CURRENT FILE
+	" autocmd VimEnter * SignifyToggleHighlight
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "LETS
 	let g:session_autosave = 'no'
