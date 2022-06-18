@@ -122,8 +122,8 @@ nnoremap <C-n> :tabnew<CR>
 
 "SHOW BUFFERS VIA FZF
 " nnoremap <C-b> ::BuffergatorOpen<CR>
-" nnoremap <C-l> ::BuffergatorOpen<CR>
-" nnoremap <M-b> ::Buffers<CR>
+nnoremap <C-l> ::BuffergatorOpen<CR>
+nnoremap <M-b> ::Buffers<CR>
 
 "SPLIT VERTICAL (V) HORIZONTAL (H)
 nnoremap <M-v> ::vsplit<CR>
