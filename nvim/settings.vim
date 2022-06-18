@@ -15,6 +15,7 @@
 	set foldenable
 	set foldlevelstart=4
 	set foldmethod=syntax
+	set foldcolumn=3
 	set nu
 	set nowrap
 	set number
