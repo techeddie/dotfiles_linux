@@ -279,7 +279,8 @@ nnoremap <M-7> :SignifyToggleHighlight<CR>
 "TABBING LEFT AND RIGHT
 nnoremap <S-Right> :bn<CR>
 nnoremap <S-Left> :bp<CR>
-nnoremap <M-l> :bn<CR>
+nnoremap <S-l> :bn<CR>
+nnoremap <S-h> :bprevious<CR>
 
 "CNEXT CPREV 
 nnoremap <C-j> :cnext<CR>
@@ -336,3 +337,6 @@ nnoremap Y y$
 "NERDTree
 nnoremap <expr> <leader>N g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+nnoremap <expr> <m-f> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+nnoremap <expr> <m-o> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+
