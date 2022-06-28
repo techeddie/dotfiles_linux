@@ -164,10 +164,16 @@ let g:zoxide_prefix = 'jump'
 	" hi Tab gui=underline guifg=blue ctermbg=blue
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "SET SYNTAX ON FILE
-augroup filetypedetect
-    autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
-augroup END
+	augroup filetypedetect
+		autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
+	augroup END
 
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"AUTO OPEN NERDTREE
+	autocmd VimEnter * NERDTree | wincmd p
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+	autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
 	command! C execute "e ~/.config/nvim/settings.vim"
