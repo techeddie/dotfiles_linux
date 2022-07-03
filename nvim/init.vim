@@ -10,6 +10,7 @@ source $HOME/.config/nvim/plug-config/buffergator.vim
 source $HOME/.config/nvim/plug-config/quick-scope.vim
 source $HOME/.config/nvim/plug-config/vim-rainbow.vim
 source $HOME/.config/nvim/plug-config/switch-buffer.vim
+source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/coc.vim

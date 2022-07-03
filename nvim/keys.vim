@@ -117,13 +117,13 @@ nnoremap <C-a><C-e> :set nowrap<CR>
 "TABBING
 " nnoremap <C-a><C-n> :bn<CR>
 " nnoremap <C-a><C-p> :bp<CR>
-nnoremap <C-n> :tabnew<CR>
+nnoremap <S-t> :tabnew<CR>
 " nnoremap <M-n> :tabnew<CR>
 
 "SHOW BUFFERS VIA FZF
 " nnoremap <C-b> ::BuffergatorOpen<CR>
-" nnoremap <C-l> ::BuffergatorOpen<CR>
-" nnoremap <M-b> ::Buffers<CR>
+nnoremap <C-l> ::BuffergatorOpen<CR>
+nnoremap <M-b> ::Buffers<CR>
 
 "SPLIT VERTICAL (V) HORIZONTAL (H)
 nnoremap <M-v> ::vsplit<CR>
@@ -220,7 +220,6 @@ nmap <silent> <S-Right> :wincmd l<CR>
 nmap <silent> <S-l> :wincmd l<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-r> :edit!<CR>
 
   "USING ALT KEY
 nnoremap <M-Up> :wincmd k<CR>
@@ -229,8 +228,6 @@ nnoremap <M-Right> :wincmd l<CR>
 nnoremap <M-Down> :wincmd j<CR>
 
   "USING SHIFT KEY
-" nnoremap <S-k> :wincmd k<CR>
-" nnoremap <S-h> :wincmd h<CR>
 nnoremap <S-l> :wincmd l<CR>
 nnoremap <S-j> :wincmd j<CR>
 
@@ -274,11 +271,13 @@ nnoremap <C-m> :Startify<CR>
 
 "TOGGLE VIM RAINBOW HIGHLIGHTING
 nnoremap <M-6> :RainbowToggle<CR>
+nnoremap <M-7> :SignifyToggleHighlight<CR>
 
 "TABBING LEFT AND RIGHT
 nnoremap <S-Right> :bn<CR>
 nnoremap <S-Left> :bp<CR>
-nnoremap <M-l> :bn<CR>
+nnoremap <S-l> :bn<CR>
+nnoremap <S-h> :bprevious<CR>
 
 "CNEXT CPREV 
 nnoremap <C-j> :cnext<CR>
@@ -333,5 +332,10 @@ vnoremap Y myY`y
 nnoremap Y y$
 
 "NERDTree
-nnoremap <expr> <leader>N g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nnoremap <expr> <leader>N g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nnoremap <expr> <m-f> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nnoremap <expr> <m-o> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+nnoremap <expr> <C-n> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <m-o> :NERDTreeFocus<CR>

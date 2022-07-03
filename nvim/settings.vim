@@ -15,6 +15,7 @@
 	set foldenable
 	set foldlevelstart=4
 	set foldmethod=syntax
+	set foldcolumn=3
 	set nu
 	set nowrap
 	set number
@@ -47,8 +48,8 @@
 	
 	"testing
 	set wildmode=full "Enable auto completion menu after pressing TAB.
-	set list
-	set listchars=tab:▸\ ,trail:·
+	" set list
+	" set listchars=tab:▸\ ,trail:·
 	set scrolloff=8
 	set sidescrolloff=8
 	set nojoinspaces
@@ -70,7 +71,7 @@
 	endfunction
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "MOVE BETWEEN SPLITS WITHOUT THE CTRL-W PREFIX
-	nnoremap <M-7> <C-W><C-H>:call Splitresize()<CR>
+	nnoremap <M-5> <C-W><C-H>:call Splitresize()<CR>
 	nnoremap <M-8> <C-W><C-L>:call Splitresize()<CR>
 	nnoremap <M-9> <C-W><C-J>:call Splitresize()<CR>
 	nnoremap <M-0> <C-W><C-K>:call Splitresize()<CR>
@@ -119,7 +120,11 @@
 	" hi Normal ctermfg=Blue ctermbg=brown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<<<<<<< HEAD
 "GIT - SHOW CHANGES IN CURRENT FILE AFTER
+=======
+"GIT - SHOW CHANGES IN CURRENT FILE
+>>>>>>> 6163c92fc0e1973a35e63ebc54493eaff19781fa
 	" autocmd VimEnter * SignifyToggleHighlight
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "LETS
@@ -147,10 +152,17 @@ let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- "set syntax on FILE
-augroup filetypedetect
-    autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
-augroup END
+"SET SYNTAX ON FILE
+	augroup filetypedetect
+		autocmd BufNew,BufNewFile,BufRead config :set syntax=bash
+	augroup END
+
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"AUTO OPEN NERDTREE
+	autocmd VimEnter * NERDTree | wincmd p
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+	autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
 	command! C execute "e ~/.config/nvim/settings.vim"
@@ -161,7 +173,7 @@ augroup END
 
 	command! Config execute "e ~/.config/nvim/settings.vim"
 	command! Settings execute "e ~/.config/nvim/settings.vim"
-	command! PlugConfig execute "e ~/.config/nvim/plugins.vim"
+	command! Pc execute "e ~/.config/nvim/plugins.vim"
 	command! Init execute "e ~/.config/nvim/init.vim"
 	command! Keys execute "e ~/.config/nvim/keys.vim"
 	command! Filename execute ":echo expand('%:p')"

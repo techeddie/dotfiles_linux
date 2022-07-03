@@ -13,8 +13,8 @@ set encoding=utf-8
 set hidden
 
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
+" set nobackup
+" set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -68,8 +68,8 @@ nmap <silent> gj <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 " nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gp <Plug>(coc-references-used)
-nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gp <Plug>(coc-references-used)
+" nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 " nmap <silent> gr <Plug>(coc-references)
 
@@ -173,7 +173,7 @@ nnoremap <silent><nowait> <space>d  :<C-u>CocList diagnostics<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>v  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>y  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>ci  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 " nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
