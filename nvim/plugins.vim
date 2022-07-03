@@ -47,7 +47,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       Plug 'itchyny/lightline.vim'
   "buffer list
       Plug 'jeetsukumaran/vim-buffergator'
-  " Plug 'airblade/vim-rooter'
+
+      Plug 'airblade/vim-rooter'
   "fuzzy finder
       Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   "fuzzy finder
