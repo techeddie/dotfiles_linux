@@ -145,7 +145,7 @@ nnoremap <F2> :Vifm<CR>
 "FUZZY FIND THROUGH LINES
 " nnoremap <C-f> :BLines<CR>
 " nnoremap // :BLines<CR>
-nnoremap <C-h> :History!<CR>
+nnoremap <C-h> :History -m<CR>
 
 "FUZZY REPGRIP
 " nnoremap <M-g> :Rg!<CR>

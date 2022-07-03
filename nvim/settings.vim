@@ -120,7 +120,7 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "GIT - SHOW CHANGES IN CURRENT FILE AFTER
-	autocmd VimEnter * SignifyToggleHighlight
+	" autocmd VimEnter * SignifyToggleHighlight
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "LETS
 	let g:session_autosave = 'no'
