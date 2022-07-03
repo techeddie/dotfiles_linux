@@ -28,7 +28,7 @@ let g:fzf_layout = { 'down':  '40%'}
 " let g:fzf_history_dir = '~/.local/share/fzf-history'
 " let g:fzf_buffers_jump = 1
 "
-" " map <C-f> :Files<CR>
+map <C-p> :Files<CR>
 " " map <leader>b :Buffers<CR>
 " " nnoremap <leader>g :Rg<CR>
 " " nnoremap <leader>t :Tags<CR>

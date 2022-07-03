@@ -38,7 +38,6 @@
 	set splitright
 	set autoread
 	set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-	set cursorline
 	set ignorecase
 	set smartcase
 	set history=200
@@ -118,13 +117,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "COLOR TERM
 	" hi Normal ctermfg=Blue ctermbg=brown
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-<<<<<<< HEAD
-"GIT - SHOW CHANGES IN CURRENT FILE AFTER
-=======
 "GIT - SHOW CHANGES IN CURRENT FILE
->>>>>>> 6163c92fc0e1973a35e63ebc54493eaff19781fa
 	" autocmd VimEnter * SignifyToggleHighlight
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "LETS
@@ -148,7 +142,9 @@
 	let g:floaterm_height=0.8
 	let g:floaterm_wintitle=0
 	let g:floaterm_autoclose=1
-let g:zoxide_prefix = 'jump'
+
+	"zoxide
+	let g:zoxide_prefix = 'jump'
 	"syntax match Tab /\t/
 	" hi Tab gui=underline guifg=blue ctermbg=blue
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,11 +154,18 @@ let g:zoxide_prefix = 'jump'
 	augroup END
 
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"AUTO OPEN FERN EXPLORER
+	augroup my-fern-startup
+	  autocmd! *
+	  autocmd VimEnter * ++nested Fern . -drawer -width=30 -toggle | wincmd p
+	augroup END
+ 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "AUTO OPEN NERDTREE
-	autocmd VimEnter * NERDTree | wincmd p
+	" autocmd VimEnter * NERDTree | wincmd p
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-	autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+	" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    " \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CUSTOM COMMANDS
 	command! C execute "e ~/.config/nvim/settings.vim"
@@ -170,7 +173,6 @@ let g:zoxide_prefix = 'jump'
 	command! P execute "e ~/.config/nvim/plugins.vim"
 	command! I execute "e ~/.config/nvim/init.vim"
 	command! K execute "e ~/.config/nvim/keys.vim"
-
 	command! Config execute "e ~/.config/nvim/settings.vim"
 	command! Settings execute "e ~/.config/nvim/settings.vim"
 	command! Pc execute "e ~/.config/nvim/plugins.vim"

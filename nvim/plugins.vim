@@ -26,39 +26,44 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       Plug 'rbgrouleff/bclose.vim'
   "floating terminal
       Plug 'voldikss/vim-floaterm'
-  "nerdtree
-    Plug 'preservim/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  "fenr.vim <nerdtree but faster>
+      Plug 'lambdalisue/fern.vim'
+      Plug 'lambdalisue/fern-git-status.vim'
+      Plug 'lambdalisue/nerdfont.vim'
+      Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+      Plug 'lambdalisue/fern-hijack.vim'
+    "nerdtree
+      " Plug 'preservim/nerdtree'
+      " Plug 'Xuyuanp/nerdtree-git-plugin'
+      " Plug 'ryanoasis/vim-devicons'
+      " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   "welcome menu - last files, bookmark...
       Plug 'mhinz/vim-startify'
-  "
+  "vifm file explorer
       Plug 'vifm/vifm.vim'
   "
-      Plug 'junegunn/limelight.vim'
+      " Plug 'junegunn/limelight.vim'
   "
       Plug 'itchyny/lightline.vim'
-  "
+  "buffer list
       Plug 'jeetsukumaran/vim-buffergator'
-  "
-      Plug 'airblade/vim-rooter'
-  "
+  " Plug 'airblade/vim-rooter'
+  "fuzzy finder
       Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  "
+  "fuzzy finder
       Plug 'junegunn/fzf.vim'
-  "
+  "syntax highlight and more
       Plug 'frazrepo/vim-rainbow'
-  "
+  "beautiful theme
       Plug 'NLKNguyen/papercolor-theme'
-  "
+  "beautiful buffer tabs 
       Plug 'akinsho/bufferline.nvim'
-  "
+  "beautiful terminal inside neovim
       Plug 'akinsho/toggleterm.nvim'
   "
-      Plug 'LoricAndre/OneTerm.nvim'
-  "
-      Plug 'unblevable/quick-scope'
+      " Plug 'LoricAndre/OneTerm.nvim'
+  "?
+      " Plug 'unblevable/quick-scope'
 
 
   "TELESCOPE PLUGINS

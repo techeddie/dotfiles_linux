@@ -1,13 +1,13 @@
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
 "Ctrl+p > Fuzzy find in all files 
-      nnoremap <C-p> <cmd>Telescope find_files hidden=false sorting_strategy=ascending<cr>
+      " nnoremap <C-p> <cmd>Telescope find_files hidden=false sorting_strategy=ascending<cr>
 "Shift+f > Fuzzy find in all files
       nnoremap <S-f> <cmd>Telescope find_files sorting_strategy=ascending<cr>
 "Ctrl a+h > Fuzzy Command History 
       nnoremap <C-a><C-h> <cmd>Telescope command_history sorting_strategy=ascending<cr>
 "Ctrl+f > Fuzzy find in current buffer
-      nnoremap <C-f>  <cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>
+      " nnoremap <C-f>  <cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>
       "// > Fuzzy find in current buffer
       nnoremap //  <cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>
 "Ctrl+l > Fuzzy show current buffers
