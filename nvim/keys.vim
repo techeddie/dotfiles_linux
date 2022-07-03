@@ -143,8 +143,8 @@ nnoremap <F3> :OneTerm<CR>
 nnoremap <F2> :Vifm<CR>
 
 "FUZZY FIND THROUGH LINES
-" nnoremap <C-f> :BLines<CR>
-" nnoremap // :BLines<CR>
+nnoremap <C-f> :BLines<CR>
+nnoremap // :BLines<CR>
 nnoremap <C-h> :History -m<CR>
 
 "FUZZY REPGRIP
@@ -336,6 +336,6 @@ nnoremap Y y$
 " nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 " nnoremap <expr> <m-f> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 " nnoremap <expr> <m-o> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-nnoremap <expr> <C-n> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <m-o> :NERDTreeFocus<CR>
+" nnoremap <expr> <C-n> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <m-o> :NERDTreeFocus<CR>
