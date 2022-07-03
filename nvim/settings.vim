@@ -98,21 +98,6 @@
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"FZF""
-	let g:fzf_tags_command = 'ctags -R'
-	" Border color
-	" let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-	let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-	let $FZF_DEFAULT_COMMAND="rg --files --hidden"
-	" Get Files
-	command! -bang -nargs=? -complete=dir Files
-			\ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-	" Get text in files with Rg
-	command! -bang -nargs=* Rg
-		\ call fzf#vim#grep(
-		\	 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-		\	 fzf#vim#with_preview(), <bang>0)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RIPGREP ADVANCED
 	function! RipgrepFzf(query, fullscreen)
 		let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
