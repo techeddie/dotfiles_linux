@@ -155,10 +155,10 @@
 
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "AUTO OPEN FERN EXPLORER
-	augroup my-fern-startup
-	  autocmd! *
-	  autocmd VimEnter * ++nested Fern . -drawer -width=30 -toggle | wincmd p
-	augroup END
+	" augroup my-fern-startup
+	"   autocmd! *
+	"   autocmd VimEnter * ++nested Fern . -drawer -width=30 -toggle | wincmd p
+	" augroup END
  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "AUTO OPEN NERDTREE
