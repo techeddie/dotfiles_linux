@@ -16,14 +16,14 @@ nnoremap <Leader>z :Telescope zoxide list sorting_strategy=ascending<CR>
 nnoremap <Leader>cd :Telescope zoxide list sorting_strategy=ascending<CR>
 
 "DISABLE ARROW KEYS
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-vnoremap <Up> <Nop>
-vnoremap <Down> <Nop>
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
+" vnoremap <Up> <Nop>
+" vnoremap <Down> <Nop>
+" vnoremap <Left> <Nop>
+" vnoremap <Right> <Nop>
 
 "EXPLORER
 nnoremap <Leader>e :Lf<CR>
