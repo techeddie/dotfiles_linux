@@ -345,3 +345,6 @@ nnoremap <leader>ga :Git add %<cr>
 nnoremap <leader>gd :Git diff %<cr> 
 nnoremap <leader>gc :Git commit -m ""
 nnoremap <leader>gs :Git status<cr> 
+nnoremap <leader>gst :Git status<cr> 
+nnoremap <leader>gpl :Git pull<cr> 
+nnoremap <leader>gph :Git push<cr> 
