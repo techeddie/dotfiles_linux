@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "RELOAD KEY BINDINGINS
 nnoremap <C-r> :source ~/.config/nvim/init.vim <CR> :source ~/.config/nvim/keys.vim <CR> :source ~/.config/nvim/plug-config/telescope.vim <CR>
+nnoremap R :source % <CR>
 nnoremap <leader>s :source ~/.config/nvim/init.vim <CR> :source ~/.config/nvim/keys.vim <CR> :source ~/.config/nvim/plug-config/telescope.vim <CR>
 
 ""##########################################################""
@@ -339,3 +340,8 @@ nnoremap Y y$
 " nnoremap <expr> <C-n> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
 " nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <m-o> :NERDTreeFocus<CR>
+
+nnoremap <leader>ga :Git add %<cr> 
+nnoremap <leader>gd :Git diff %<cr> 
+nnoremap <leader>gc :Git commit -m "" 
+nnoremap <leader>gs :Git status<cr> 

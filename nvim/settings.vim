@@ -184,4 +184,5 @@
 	command! Mappings execute ":Maps"
 	command! GetCommands execute ":Telescope coc commands"
 	command! GDiff execute ":SignifyDiff"
+	command! Ga execute ":Git add %"
 	command! HighlightChanges execute ":SignifyToggleHighlight"
