@@ -343,5 +343,5 @@ nnoremap Y y$
 
 nnoremap <leader>ga :Git add %<cr> 
 nnoremap <leader>gd :Git diff %<cr> 
-nnoremap <leader>gc :Git commit -m "" 
+nnoremap <leader>gc :Git commit -m ""
 nnoremap <leader>gs :Git status<cr> 
