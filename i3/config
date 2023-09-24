@@ -68,7 +68,8 @@
     # bindsym $mod+Shift+r          exec remmina
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     bindsym $mod+Shift+a            exec lxappearance
-    bindsym Shift+Print             bar mode toggle
+#toggle bottom bar - i3status i3bar
+    bindsym Shift+Print             bar mode toggle 
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
@@ -85,7 +86,8 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+b            [class=Brave] focus
-    bindsym $mod+Shift+f            exec firefox
+    bindsym $mod+Shift+f            [class=firefox] focus
+    # bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec fsearch
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
