@@ -1,0 +1,12 @@
+lazygit/state.yml
+nvim/plugin/packer_compiled.lua
+vifm/vifminfo.json
+nvim/.gitignore
+nvim/packer
+lf/bookmarks
+autokey/data/SHELL/hz.json
+autokey/data/SHELL/hz.txt
+autokey/autokey.json~
+autokey/autokey.json
+folder.json
+*.tar.gz

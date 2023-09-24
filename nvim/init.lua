@@ -1,0 +1,25 @@
+--base setup
+require('plugconfig.impatient')
+require "eddie.settings"
+require "eddie.colorscheme"
+require "eddie.keymaps"
+require "eddie.plugins"
+require "eddie.autocmds"
+require "eddie.alias"
+
+--additional plugin configs
+require "plugconfig.alpha"
+require "plugconfig.buffergator"
+require "plugconfig.bufferline"
+require "plugconfig.cmp"
+require "plugconfig.comment"
+require "plugconfig.fzf"
+require "plugconfig.gitsigns"
+-- require "plugconfig.indentline"
+-- require "plugconfig.lsp"
+require "plugconfig.nvim-tree"
+require "plugconfig.telescope"
+require "plugconfig.treesitter"
+require "plugconfig.sidebar"
+require "plugconfig.lualine"
+require "plugconfig.transparent"

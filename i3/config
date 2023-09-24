@@ -1,0 +1,590 @@
+#---------------I3 CONFIG EDDIE---------------------
+
+#windows key
+    set $mod Mod4
+#alt key
+    set $alt Mod1
+#font
+    font pango:System San Francisco Display 15
+#vars
+    set $term alacritty
+    set $up l
+    set $down k
+    set $left j
+    set $right h
+
+    set $workspace1 "1"
+    set $workspace2 "2"
+    set $workspace3 "3"
+    set $workspace4 "4"
+    set $workspace5 "5"
+    set $workspace6 "6"
+    set $workspace7 "7"
+    set $workspace8 "8"
+    set $workspace9 "9"
+    set $workspace10 "10"
+
+    set $firstMonitor HDMI-1
+    set $secondMonitor HDMI-2
+    # set $qt env QT_QPA_PLATFORM=xcb 
+
+#workspace
+    workspace 1 output $secondMonitor
+    workspace 2 output $secondMonitor
+    workspace 3 output $secondMonitor
+    workspace 4 output $firstMonitor
+    workspace 5 output $firstMonitor
+    workspace 6 output $secondMonitor
+    workspace 7 output $secondMonitor
+    workspace 8 output $secondMonitor
+    workspace 9 output $secondMonitor
+    workspace 10 output $secondMonitor    
+
+#-------------------------------------------------
+#gaps
+    #default gap size
+    gaps inner 5
+    gaps outer 1
+    #smart_gaps on
+    #smart_borders on
+
+    #keybindings toggle gaps - todo
+    bindsym $mod+F1 gaps inner current set 5; gaps outer current set 1
+    bindsym $mod+F2 gaps inner current set 20; gaps outer current set 1
+    bindsym $mod+F3 gaps inner current set 30; gaps outer current set 30
+    bindsym $mod+F4 gaps inner current set 60; gaps outer current set 30
+
+    #scratchpad
+    #move current window to background
+      bindsym $mod+z move scratchpad
+    #bring back to foreground
+      bindsym $mod+u scratchpad show; move position center
+
+#-------------------------------------------------
+#key bindings to launch applications
+    
+    # bindsym $mod+Shift+Return     exec pcmanfm
+    # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
+    # bindsym $mod+Shift+r          exec remmina
+    # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
+    bindsym $mod+Shift+a            exec lxappearance
+    bindsym Shift+Print             bar mode toggle
+    bindsym $mod+Shift+w            exec networkmanager_dmenu
+    bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
+    bindsym $mod+Return             exec $term;focus
+    bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
+    bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
+    bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
+    bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
+    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh ;workspace9
+    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01 ;workspace9
+    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh ;workspace9
+    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh ;workspace9
+    # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
+    bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
+    bindsym $mod+Shift+Return       [class=Alacritty] focus
+    bindsym $mod+Shift+b            [class=Brave] focus
+    bindsym $mod+Shift+f            exec firefox
+    # bindsym $mod+Shift+f            exec fsearch
+    bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
+    bindsym $mod+Shift+l            exec alacritty -e lf ~/
+    # bindsym $mod+Shift+m            exec xfce4-appfinder
+    bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
+    # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+    bindsym $mod+Shift+p            exec alacritty -e pacseek
+    bindsym $mod+a                  exec keepassxc
+    bindsym $mod+b                  exec brave
+    bindsym $mod+c                  exec code
+    bindsym $mod+d                  exec doublecmd
+    bindsym $mod+e                  exec --no-startup-id thunar
+    bindsym $mod+j                  exec copyq show
+    bindsym $mod+g                  exec geany
+    # bindsym $mod+Shift+j            exec guake-toggle
+    bindsym $mod+l                  exec betterlockscreen --lock blur
+    bindsym $mod+n                  exec --no-startup-id nixnote2
+    bindsym $mod+o                  exec thunderbird
+    bindsym $mod+Shift+o            exec obsidian
+    bindsym $mod+p                  exec gnome-disks
+    bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
+    bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
+    # bindsym F12                     exec guake-toggle
+    bindsym F12                     exec xfce4-terminal --drop-down
+    bindsym Print                   exec --no-startup-id flameshot gui 
+    bindsym control+$alt+m          exec --no-startup-id pavucontrol
+    bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
+    bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
+
+    #rofi  
+        bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
+        # bindsym $mod+m              exec rofi -show drun  -show-icons -theme solarized_alternate
+        bindsym $mod+m              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
+        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/rofi-process.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
+        # bindsym $mod+j              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
+
+        bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
+        # bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -config ~/.config/rofi/arc_dark_transparent_colors.rasi
+        # bindsym $mod+m              exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
+
+    #dmenu
+        bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
+
+    #vim like marks - go to specific program
+    #read 1 character and mark the current window with this character
+    # bindsym $mod+Shift+g exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+    #read 1 character and go to the window with the character
+    # bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+
+#-------------------------------------------------
+#execute on logon - auto startup
+
+    # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    # exec --no-startup-id conky -c ~/.config/i3/system-overview
+    # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
+    #exec --no-startup-id compton -c
+    exec --no-startup-id nitrogen --restore 
+    #exec --no-startup-id thunderbird
+    #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
+    exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
+    # exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
+    # exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
+    exec_always --no-startup-id /usr/bin/autokey-gtk
+    exec --no-startup-id copyq
+    # exec --no-startup-id telegram-desktop
+    exec --no-startup-id firewall-applet
+    exec --no-startup-id nextcloud
+    exec --no-startup-id $term
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
+    exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+    exec --no-startup-id brave 
+    exec --no-startup-id flameshot
+    # exec --no-startup-id guake 
+    exec --no-startup-id nm-applet
+    exec --no-startup-id pamac-tray
+    exec --no-startup-id pasystray &
+    # exec --no-startup-id remmina -i
+    # exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
+    exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
+    # exec --no-startup-id variety #wallpaper
+    # exec --no-startup-id volumeicon
+    exec --no-startup-id xfce4-power-manager &
+    exec_always --no-startup-id autotiling 
+    exec_always --no-startup-id numlockx on
+
+#-------------------------------------------------
+# WINDOWS settings and behaviour
+
+    #start workspace on monitor
+    workspace 1 output HDMI-2
+    workspace 2 output HDMI-2
+    
+    #Default Layout mode for new containers
+    # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
+    title_align right
+    popup_during_fullscreen smart
+    new_window normal 5 px
+    focus_follows_mouse yes
+    show_marks yes #drawing marks on window decoration
+
+    bindsym $mod+f  fullscreen toggle
+    bindsym $mod+$alt+b exec --no-startup-id i3-msg border toggle
+    bindsym $alt+Shift+b exec --no-startup-id i3-msg border toggle
+    # popup_during_fullscreen smart #popup_during_fullscreen smart|ignore|leave_fullscreen
+
+    # initiate a tiling drag on either titlebar click or held modifier:
+    tiling_drag modifier titlebar
+
+    # Border control
+    hide_edge_borders both
+    
+    #open new window mode
+    bindsym $mod+h split v 
+    bindsym $mod+v split h 
+
+    #kill current windows
+    bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    bindsym $mod+k			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    bindsym --release $mod+Escape   exec xkill
+
+    #lock screen after x minutes
+    exec_always --no-startup-id xautolock -detectsleep -time 15 -locker "betterlockscreen --lock blur"
+
+    #suspend
+    bindsym $mod+Shift+s  exec ~/.config/i3/suspend.sh  
+
+    #logoff shutdown reboot menu
+    bindsym $mod+x  exec --no-startup-id archlinux-logout
+    bindsym $mod+Shift+x  exec systemctl poweroff
+
+    # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+    #bindsym $mod+r restart
+    # reload the configuration file
+    bindsym $mod+Shift+r reload
+    bindsym $mod+r restart
+
+    # orientation for new workspaces
+    default_orientation horizontal
+    # default_orientation vertical
+
+    # focus windows
+    bindsym $alt+Shift+h focus left
+    bindsym $alt+Shift+j focus down
+    bindsym $alt+Shift+k focus up
+    bindsym $alt+Shift+l focus right
+
+    #force learn vim motion
+      bindsym $mod+Left focus left
+      bindsym $mod+Right focus right
+      bindsym $mod+Down focus down
+      bindsym $mod+Up focus up
+
+    # focus the parent container
+    bindsym $alt+Shift+f focus parent
+
+    #change container layout (stacked, tabbed, toggle split)
+    # bindsym $mod+Shift+t layout toggle splith splitv tabbed
+    bindsym $mod+s layout stacking
+    bindsym $mod+Shift+t layout tabbed
+
+    ################# resize  
+    #resize window
+    bindsym $mod+$alt+Left resize shrink width 12 px or 12 ppt
+    bindsym $mod+$alt+Up resize grow height 12 px or 12 ppt
+    bindsym $mod+$alt+Down resize shrink height 12 px or 12 ppt
+    bindsym $mod+$alt+Right resize grow width 12 px or 12 ppt
+
+        # window with Shift
+        bindsym $mod+Shift+Left move left
+        bindsym $mod+$alt+h move left
+        bindsym $mod+Shift+Down move down
+        bindsym $mod+$alt+j move down
+        # bindsym $mod+Down move down
+        bindsym $mod+Shift+Up move up
+        bindsym $mod+$alt+k move up
+        # bindsym $mod+Up move up
+        bindsym $mod+Shift+Right move right
+        bindsym $mod+$alt+l move right
+
+            #resize window with mod+space + key
+            mode "resize" {
+                # These bindings trigger as soon as you enter the resize mode
+
+                # Pressing left will shrink the window’s width.
+                # Pressing right will grow the window’s width.
+                # Pressing up will shrink the window’s height.
+                # Pressing down will grow the window’s height.
+                bindsym j resize shrink width 10 px or 10 ppt
+                bindsym h resize grow height 10 px or 10 ppt
+                bindsym l resize shrink height 10 px or 10 ppt
+                bindsym k resize grow width 10 px or 10 ppt
+
+                # same bindings, but for the arrow keys
+                bindsym Left resize shrink width 10 px or 10 ppt
+                bindsym Down resize grow height 10 px or 10 ppt
+                bindsym Up resize shrink height 10 px or 10 ppt
+                bindsym Right resize grow width 10 px or 10 ppt
+
+                # back to normal: Enter or Escape
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
+            }
+            bindsym $mod+Shift+space mode "resize"
+
+    #switch workspace
+    bindsym $mod+Next         workspace next
+    bindsym $mod+Prior        workspace prev
+    bindsym $alt+Ctrl+j       workspace prev
+    # bindsym $mod+$alt+j     workspace prev
+    bindsym $mod+Shift+Home   workspace prev
+    bindsym $mod+Shift+j      workspace prev
+    # bindsym $mod+$alt+k     workspace prev
+    bindsym $alt+Ctrl+Left    workspace prev
+    bindsym $alt+Ctrl+Right   workspace next
+    bindsym $mod+Tab          workspace back_and_forth
+    bindsym $mod+i            workspace back_and_forth
+    bindsym $alt+Ctrl+k       workspace next
+    bindsym $mod+Shift+End    workspace next
+    bindsym $mod+Shift+k      workspace next
+
+    #switch to workspace
+    bindsym $mod+1		workspace $workspace1
+    bindsym $mod+2		workspace $workspace2
+    bindsym $mod+3		workspace $workspace3
+    bindsym $mod+4		workspace $workspace4
+    bindsym $mod+5		workspace $workspace5
+    bindsym $mod+6		workspace $workspace6
+    bindsym $mod+7		workspace $workspace7
+    bindsym $mod+8		workspace $workspace8
+    bindsym $mod+9		workspace $workspace9
+    bindsym $mod+0		workspace $workspace10
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+
+    ################# for_window  
+
+    #custom apps border - settings - scratch pad
+    for_window [class="^.*"] border pixel 2
+    for_window [class="brave"] set $outer_gaps 20
+    for_window [class="Alacritty"] border normal
+    for_window [class="rdesktop"] border normal
+    for_window [class="xfreerdp"] border normal
+    for_window [class="Wfica"] border normal
+    for_window [class="Brave"] set $inner_gaps 20
+    for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
+    for_window [class=".*launcher.*"] border none
+    for_window [class="urxvt"] scratchpad show, move position center
+    for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
+    for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+    for_window [window_role="GtkFileChooserDialog"] move position center
+    #for_window [title="GIMP Startup"] move workspace $workspace6
+    #for_window [class="Gimp"] move workspace $workspace6
+
+    #scratchpad
+    bindsym $mod+Shift+minus move scratchpad # Make the currently focused window a scratchpad
+    bindsym $mod+minus scratchpad show # Show the first scratchpad window
+
+    # floating
+    floating_modifier $mod
+    bindsym $mod+t floating toggle; 
+    # floating_modifier $alt
+    # for_window [class="Fsearch"] floating enable 
+    # for_window [class="rdesktop"] floating enable
+    # for_window [class="obs"] floating enable
+    # for_window [class="pacseek" instance="pacseek"] move scratchpad
+    for_window [class="Alacritty"] layout tabbed, move position center
+    # for_window [class="Alacritty"] border normal
+    for_window [class="Alacritty"] border 1pixel
+    for_window [class="Brave-browser"] layout tabbed
+    for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="Navigator"] layout tabbed
+    for_window [class="firefox"] layout tabbed
+    for_window [class="xfreerdp"] layout tabbed
+    for_window [class="keepassxc"] layout tabbed
+    for_window [class="Wfica"] layout tabbed
+    for_window [class="Baobab"] floating enable, move position center
+    for_window [class="guake"] floating enable
+    # , move position center
+    for_window [class="gnome-calculator"] floating enable, move position center
+    for_window [class="Grub-customizer"] floating enable, move position center
+    for_window [class="Nitrogen"] floating enable, move position center
+    for_window [class="Nm-connection-editor"] floating enable, move position center
+    for_window [class="Pavucontrol"] floating enable, move position center
+    for_window [class="TeamViewer"] floating enable,  resize set 800 900, move position center
+    # for_window [class="Autokey-gtk"] no_focus
+    # no_focus [class="Autokey-gtk"]
+    # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
+    # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
+    for_window [class="TimeShift-gtk"] floating disable, move position center
+    for_window [class="Woeusbgui"] floating enable, move position center
+    for_window [class="Xfce4-appfinder"] floating enable, move position center
+    for_window [class="arandr"] floating enable, move position center
+    for_window [class="copyq"] floating enable, move position center
+    for_window [class="flameshot"] floating enable, move position center
+    for_window [class="nextcloud"] floating enable, move position center
+    for_window [class="nitrogen"] floating enable, move position center
+    for_window [class="shutter"] floating enable, move position center
+    for_window [class="urxvt"] floating enable, move position center
+    for_window [class="Xfce4-taskmanager"] floating enable,  resize set 800 900, move position center
+    for_window [instance="urxvt"] floating enable, move position center
+    for_window [title="Copying"] floating enable, move position center
+    for_window [title="Deleting"] floating enable, move position center
+    for_window [title="Moving"] floating enable, move position center
+    for_window [window_role="^Preferences$"] floating enable, move position center
+    for_window [window_role="pop-up"] floating enable, move position center
+    for_window [window_role="setup"] floating enable, move position center
+    #focus
+    for_window [urgent=latest] focus
+    for_window [class="Alacritty"] focus
+    for_window [class="rdesktop"] focus
+    # for_window [class="Brave"] focus
+    # for_window [class="pcmanfm"] focus
+
+    #always launch app in workspace x
+    assign [class="TelegramDesktop"] $workspace4
+    assign [class="Autokey-gtk"] $workspace5
+    assign [class="Autokey-qt"] $workspace5
+    assign [class="Microsoft Teams - Preview"] $workspace4
+    assign [class="Thunderbird"] $workspace10
+    assign [class="Brave"] $workspace2
+    assign [class="xfreerdp"] $workspace9
+    assign [class="Wfica"] $workspace9
+
+    #show windows icons
+    for_window [all] title_window_icon padding 3px
+
+#------------------------------------------------- 
+# Pulse Audio controls
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% #increase sound volume
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% #decrease sound volume
+    bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+    bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+    bindsym XF86AudioNext exec --no-startup-id playerctl next
+    bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+    bindsym XF86AudioStop exec --no-startup-id playerctl stop
+
+  # bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+  # bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+  # bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+  # bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+#------------------------------------------------- 
+# brightness control
+    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
+
+#------------------------------------------------- 
+# Variety keybindings $alt = ALT
+  # trash wallpaper
+  # bindsym $alt+t exec --no-startup-id variety -t
+  # next wallpaper
+  # bindsym $alt+Shift+n exec --no-startup-id variety -n
+  # bindsym $alt+Right exec --no-startup-id variety -n
+  # previous wallpaper
+  # bindsym $alt+Shift+p exec --no-startup-id variety -p
+  # bindsym $alt+Left exec --no-startup-id variety -p
+  # favorite wallpaper
+  # bindsym $alt+f exec --no-startup-id variety -f
+  # pause wallpaper
+  # bindsym $alt+Up exec --no-startup-id variety --pause
+  # resume wallpaper
+  # bindsym $alt+Down exec --no-startup-id variety --resume
+
+#------------------------------------------------- 
+################# i3 gaps change                   
+
+    set $mode_gaps Gaps: (o) outer, (i) inner
+    set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+    set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+
+    bindsym $mod+Shift+f9 mode "$mode_gaps"
+
+    mode "$mode_gaps" {
+            bindsym o      mode "$mode_gaps_outer"
+            bindsym i      mode "$mode_gaps_inner"
+            bindsym Return mode "default"
+            bindsym Escape mode "default"
+    }
+
+    mode "$mode_gaps_inner" {
+            bindsym plus  gaps inner current plus 5
+            bindsym minus gaps inner current minus 5
+            bindsym 0     gaps inner current set 0
+
+            bindsym Shift+plus  gaps inner all plus 5
+            bindsym Shift+minus gaps inner all minus 5
+            bindsym Shift+0     gaps inner all set 0
+
+            bindsym Return mode "default"
+            bindsym Escape mode "default"
+    }
+    mode "$mode_gaps_outer" {
+            bindsym plus  gaps outer current plus 5
+            bindsym minus gaps outer current minus 5
+            bindsym 0     gaps outer current set 0
+
+            bindsym Shift+plus  gaps outer all plus 5
+            bindsym Shift+minus gaps outer all minus 5
+            bindsym Shift+0     gaps outer all set 0
+
+            bindsym Return mode "default"
+            bindsym Escape mode "default"
+    }
+
+#------------------------------------------------- 
+# picom of i3wm                  
+
+    # if you want transparency on non-focused windows, ...
+    # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+    # bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+
+#------------------------------------------------- 
+# bar appearance                   
+
+  bar {
+      height 20
+      workspace_buttons yes
+      font pango:Noto Sans 12
+    # position top
+      position bottom
+
+    # system icons
+      # tray_output none
+      # tray_output $firstMonitor
+      tray_output $secondMonitor
+
+      # OPTION 1 : i3status
+
+      # type status_command i3status without the config file and
+      # you will get the standard i3status bar
+      # Second one is the standard statusbar with my personal settings
+
+        # status_command i3status
+      status_command i3status -c ~/.config/i3/i3status.conf
+
+      # OPTION 2 : i3blocks
+
+      # https://github.com/vivien/i3blocks
+      # another way to provide text in the statusbar
+      # put hastag in front if not installed
+
+      # status_command i3blocks
+      # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+
+      # i3 bar colors
+      # variable border background Text
+
+      colors {
+          background #2F2F2F
+          statusline #eeeeee
+          separator  #666666
+
+          # colorclass           border  backgr. text
+          focused_workspace     #a9a9a9 #5f676a #eeeeee
+          active_workspace      #a9a9a9 #5f676a #eeeeee
+          inactive_workspace    #a9a9a9 #222222 #a9a9a9
+          urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+          }
+
+      }
+      ##STOP THEMING BAR
+
+      ##START THEMING WM
+      # Theme name : ArcoLinux Default
+
+      # Window color settings
+      # class                 border  backgr. text    indicator
+      client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+      client.unfocused        #222222 #222222 #aaaaaa #222222
+      client.focused_inactive #222222 #222222 #a9a9a9 #222222
+      client.placeholder      #222222 #222222 #aaaaaa #222222
+      client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+      client.background       #242424
+
+
+        # # window colors red version
+        # client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
+        # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+        # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+        # client.urgent           #2f343a #900000 #ffffff #900000   #900000
+        # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+        # client.background       #ffffff
+
+      ##STOP THEMING WM
+     ######################################## THE END 
+
+#------------------------------------------------- 
+
