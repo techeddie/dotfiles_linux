@@ -149,8 +149,8 @@
     exec --no-startup-id nitrogen --restore 
     #exec --no-startup-id thunderbird
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
-    # exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
+    # exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
+    exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
     # exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec --no-startup-id copyq
@@ -211,7 +211,7 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
-    exec_always --no-startup-id xautolock -detectsleep -time 15 -locker "betterlockscreen --lock blur"
+    exec_always --no-startup-id xautolock -detectsleep -time 30 -locker "betterlockscreen --lock blur"
 
     #suspend
     bindsym $mod+Shift+s  exec ~/.config/i3/suspend.sh  

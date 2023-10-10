@@ -1,10 +1,8 @@
 {
     "type": "phrase",
     "description": "pipe symbol",
-    "modes": [
-        1
-    ],
-    "usageCount": 0,
+    "modes": [],
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
