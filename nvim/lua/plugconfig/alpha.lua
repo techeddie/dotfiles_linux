@@ -11,6 +11,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("g", "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("ic", "  i3 config", ":e ~/.config/i3/config <CR>"),
+	dashboard.button("lc", "  LINUX LINUX_COMMANDS", ":e ~/Nextcloud/LINUX/LINUX_COMMANDS.sh<CR>"),
 	dashboard.button("zc", "  zsh config", ":e ~/.zshrc <CR>"),
 	dashboard.button("ni", "  nvim init", ":e ~/.config/nvim/init.lua <CR>"),
 	dashboard.button("ns", "  nvim settings", ":e ~/.config/nvim/lua/eddie/settings.lua <CR>"),
