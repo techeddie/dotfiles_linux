@@ -86,7 +86,7 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+b            [class=Brave] focus
-    bindsym $mod+Shift+f            [class=firefox] focus
+    bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec fsearch
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
@@ -141,7 +141,7 @@
 #-------------------------------------------------
 #execute on logon - auto startup
 
-    # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
     # exec --no-startup-id conky -c ~/.config/i3/system-overview
     # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
