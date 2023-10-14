@@ -18,6 +18,7 @@ cmd [[
     command! Gp execute ":echo expand('%:p')"
     command! I execute "e ~/.config/nvim/init.lua"
     command! K execute "e ~/.config/nvim/lua/eddie/keymaps.lua"
+    command! LC execute "e ~/Nextcloud/LINUX/LINUX_COMMANDS.sh"
     command! KeymapReload execute "source ~/.config/nvim/lua/eddie/keymaps.lua" | echo "Keymaps reloaded"
     command! M execute ":Maps"
     command! Mappings execute ":Maps"
