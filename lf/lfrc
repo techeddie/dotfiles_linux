@@ -230,6 +230,20 @@ cmd set_wallpaper ${{
 #fuzzy finder
   cmd fzf_jump ${{
       # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      if [ -d "$res" ] ; then
+          cmd="cd"
+      elif [ -f "$res" ] ; then
+          cmd="select"
+      else
+          exit 0
+      fi
+      lf -remote "send $id $cmd \"$res\""
+  }}
+
+#fuzzy finder max depth
+  cmd fzf_jump_max ${{
+      # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
       res="$(fd | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
       if [ -d "$res" ] ; then
           cmd="cd"
@@ -240,6 +254,7 @@ cmd set_wallpaper ${{
       fi
       lf -remote "send $id $cmd \"$res\""
   }}
+
 
   cmd fzf_jump_history ${{
     res="$(cat /tmp/lf_dir_history | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
@@ -522,6 +537,7 @@ cmd copy_to_clipboard %{{
   map dd delete
   map e $$EDITOR "$f"
   map f :fzf_jump
+  map F :fzf_jump_max
   map g? $lf -doc | bat; clear
   map i %du -sh $f
   map o push :open-with-cli<space>
