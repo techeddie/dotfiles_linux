@@ -503,7 +503,7 @@ cmd copy_to_clipboard %{{
   map <c-r> :source ~/.config/lf/lfrc
   map <c-w> :set_wallpaper
   map <enter> open
-  map <esc> quit
+  # map <esc> quit
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map <f-7> push %mkdir<space>
