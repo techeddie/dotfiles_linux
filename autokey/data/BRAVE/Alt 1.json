@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "Alt I",
+    "description": "Alt 1",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 209,
+    "usageCount": 214,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,7 +21,7 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "i"
+        "hotKey": "1"
     },
     "filter": {
         "regex": "",
