@@ -2,7 +2,9 @@
     "type": "script",
     "description": "Alt J",
     "store": {},
-    "modes": [],
+    "modes": [
+        3
+    ],
     "usageCount": 97,
     "prompt": false,
     "omitTrigger": false,
@@ -16,8 +18,10 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<alt>"
+        ],
+        "hotKey": "j"
     },
     "filter": {
         "regex": null,
