@@ -1,11 +1,9 @@
 {
     "type": "script",
-    "description": "Alt C",
+    "description": "Alt Shift U",
     "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 4,
+    "modes": [],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -18,10 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>"
-        ],
-        "hotKey": "c"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": null,

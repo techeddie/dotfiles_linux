@@ -16,10 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>"
-        ],
-        "hotKey": "i"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": "",

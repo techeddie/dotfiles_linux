@@ -1,11 +1,9 @@
 {
     "type": "script",
-    "description": "Alt Shift I",
+    "description": "Alt J",
     "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 0,
+    "modes": [],
+    "usageCount": 97,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -18,11 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>",
-            "<shift>"
-        ],
-        "hotKey": "i"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": null,
