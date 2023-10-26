@@ -76,7 +76,7 @@ nvim_tree.setup {
         { key = "<M-h>", action = "split" },
         { key = "u", action = "dir_up" },
         { key = "p", action = "preview" },
-        { key = "<Tab>", action = "split" }, 
+        { key = "<Tab>", action = "close" }, 
         { key = "<Right>", action = "open" },
         { key = "<Left>", action = "close_node" },
         { key = "i", action = "toggle_file_info" },
