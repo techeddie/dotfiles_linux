@@ -79,10 +79,10 @@
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
-    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh ;workspace9
-    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01 ;workspace9
-    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh ;workspace9
-    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh ;workspace9
+    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
+    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01.sh
+    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
+    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
@@ -421,7 +421,7 @@
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="Thunderbird"] $workspace10
     assign [class="Brave"] $workspace2
-    assign [class="xfreerdp"] $workspace9
+    # assign [class="xfreerdp"] $workspace9
     assign [class="Wfica"] $workspace9
 
     #show windows icons
