@@ -57,6 +57,7 @@
     #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
+      bindsym $mod+y move scratchpad
     #bring back to foreground
       bindsym $mod+u scratchpad show; move position center
 
