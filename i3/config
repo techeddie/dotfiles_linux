@@ -419,7 +419,7 @@
     assign [class="Autokey-gtk"] $workspace5
     assign [class="Autokey-qt"] $workspace5
     assign [class="Microsoft Teams - Preview"] $workspace4
-    assign [class="Thunderbird"] $workspace10
+    assign [class="thunderbird"] $workspace10
     assign [class="Brave"] $workspace2
     # assign [class="xfreerdp"] $workspace9
     assign [class="Wfica"] $workspace9
