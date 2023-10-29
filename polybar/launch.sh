@@ -64,7 +64,7 @@ elif [[ "$1" == "--forest" ]]; then
 #launch my apps
 nitrogen --restore
 sh $HOME/scripts/runMouseGXTAccel.sh
-# sh $HOME/scripts/runHDMI_AND_NOTEBOOK.sh
+sh $HOME/scripts/runHDMI_AUTODETECT.sh
 
 #keyboard repeat
 xset r rate 250 40
