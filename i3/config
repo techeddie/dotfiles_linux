@@ -212,7 +212,7 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
-    exec_always --no-startup-id xautolock -detectsleep -time 30 -locker "betterlockscreen --lock blur"
+    # exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur"
 
     #suspend
     bindsym $mod+Shift+s  exec ~/.config/i3/suspend.sh  
@@ -420,8 +420,9 @@
     assign [class="Autokey-qt"] $workspace5
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="thunderbird"] $workspace10
-    assign [class="Alacritty"] $workspace1
+    # assign [class="Alacritty"] $workspace1
     assign [class="Brave"] $workspace2
+    assign [class="firefox"] $workspace5
     # assign [class="xfreerdp"] $workspace9
     assign [class="Wfica"] $workspace9
 
