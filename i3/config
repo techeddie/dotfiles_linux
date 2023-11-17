@@ -142,6 +142,8 @@
 #-------------------------------------------------
 #execute on logon - auto startup
 
+    exec --no-startup-id xset s blank
+    exec --no-startup-id xset r rate 250 40
     exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
     # exec --no-startup-id conky -c ~/.config/i3/system-overview
     # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
