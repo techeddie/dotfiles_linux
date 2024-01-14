@@ -1,11 +1,11 @@
 --base setup
 require('plugconfig.impatient')
-require "eddie.settings"
-require "eddie.colorscheme"
-require "eddie.keymaps"
-require "eddie.plugins"
-require "eddie.autocmds"
-require "eddie.alias"
+require "config.settings"
+require "config.colorscheme"
+require "config.keymaps"
+require "config.plugins"
+require "config.autocmds"
+require "config.alias"
 
 --additional plugin configs
 require "plugconfig.alpha"

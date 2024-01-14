@@ -16,11 +16,11 @@ local cmd = vim.cmd
 cmd [[
   "AUTOCOMMANDS"
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
-    autocmd BufWritePost keymaps.lua source ~/.config/nvim/lua/eddie/keymaps.lua"
-    autocmd BufWritePost autocmds.lua source ~/.config/nvim/lua/eddie/autocmds.lua"
-    autocmd BufWritePost colorscheme.lua source ~/.config/nvim/lua/eddie/colorscheme.lua"
+    autocmd BufWritePost keymaps.lua source ~/.config/nvim/lua/config/keymaps.lua"
+    autocmd BufWritePost autocmds.lua source ~/.config/nvim/lua/config/autocmds.lua"
+    autocmd BufWritePost colorscheme.lua source ~/.config/nvim/lua/config/colorscheme.lua"
     autocmd BufWritePost telescope.lua source ~/.config/nvim/lua/plugconfig/telescope.lua"
-    autocmd BufWritePost settings.lua source ~/.config/nvim/lua/eddie/settings.lua"
+    autocmd BufWritePost settings.lua source ~/.config/nvim/lua/config/settings.lua"
 
     autocmd FileType sh nmap <F5> <ESC>:w<CR>:ter zsh "%"<CR>
     autocmd FileType sh nmap <F8> <ESC>:.w !bash<cr>
