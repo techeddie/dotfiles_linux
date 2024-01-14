@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "Alt 2",
+    "description": "Alt 3 bookmark sidepane toggle",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 252,
+    "usageCount": 16,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,7 +21,7 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "2"
+        "hotKey": "3"
     },
     "filter": {
         "regex": "",
