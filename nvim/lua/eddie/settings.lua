@@ -50,7 +50,7 @@ local options = {
   undofile = true,
   updatetime = 200,
   wrap = false,
-  winbar = "%=%m %f",
+  winbar = "%=%m %F",
   writebackup = false,
 }
 vim.opt.shortmess:append "c"
