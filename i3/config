@@ -80,7 +80,7 @@
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
     bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
-    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01.sh
+    # bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01.sh
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
@@ -115,8 +115,8 @@
     bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
-    bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
+    # bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
+    # bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
 
     #rofi  
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
@@ -343,8 +343,10 @@
     for_window [class="^.*"] border pixel 2
     for_window [class="brave"] set $outer_gaps 20
     for_window [class="Alacritty"] border normal
-    for_window [class="rdesktop"] border normal
-    for_window [class="xfreerdp"] border normal
+    for_window [class="rdesktop"] border none
+    for_window [class="xfreerdp"] border none
+    # for_window [class="rdesktop"] border normal
+    # for_window [class="xfreerdp"] border normal
     for_window [class="Wfica"] border normal
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
