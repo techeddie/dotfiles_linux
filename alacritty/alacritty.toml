@@ -1,7 +1,5 @@
 import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/xterm.toml"]
 live_config_reload = true
-# title = "Alacritty"
-# windows_opacity = 0.8
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -17,7 +15,7 @@ render_timer = false
 TERM = "xterm-256color"
 
 [font]
-size = 16.0
+size = 9.0
 
 [font.bold]
 family = "Hack"
@@ -684,7 +682,11 @@ program = "/usr/bin/zsh"
 [window]
 decorations = "full"
 dynamic_padding = false
+title = "Alacritty"
+dynamic_title = false
 
+
+# windows_opacity = 0.8
 [window.dimensions]
 columns = 160
 lines = 48
