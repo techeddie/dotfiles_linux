@@ -6,13 +6,15 @@ end
 local opts = { noremap = true, silent = true }
 
 --BUFFER OPEN CLOSE 
+
+  -- keymap("n", "ä", ":qall! <CR>") --force quit all buffers
+  -- keymap("n", "ö", ":w! <CR>") --save from normal mode
+  -- keymap("n", "ü", ":w! <CR>") --save from normal mode
   keymap("n", "<C-k>", ":qall! <CR>") --force quit all buffers
   keymap("n", "<C-r>", ":source % <CR>") --source current buffer
   keymap("n", "<C-s>", ":w!<CR><ESC>") --save current buffer
-  keymap("n", "<C-x>", ":bd <CR>") --buffer delete
   keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
   keymap("n", "<F3>", ":e! <CR>") --reread current buffer
-  keymap("n", "<M-q>", ":bd <CR>") --buffer delete
   keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
   keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
@@ -21,10 +23,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>x", ":bd <CR>") --buffer delete
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
-  keymap("n", "ä", ":qall! <CR>") --force quit all buffers
-  keymap("n", "ö", ":w! <CR>") --save from normal mode
-  keymap("n", "ü", ":w! <CR>") --save from normal mode
-
 
 --NAVIGATION
   -- keymap("n", "*", "*zz.<CR>") --repeat with dot in visual mode
@@ -32,34 +30,32 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "-", ":Gitsigns prev_hunk <CR>") --git show prev hunk
   -- keymap("n", "<C-h>", ":History <CR>") --fuzzy history
   -- keymap("n", "<M-g>", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
+  -- keymap("n", "<M-p>", ":pu<CR>") --paste in next line
   -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
-  -- keymap("n", "=", ":Gitsigns next_hunk <CR>") --git show next hunk
+  -- keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
+  -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
+  keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
-  keymap("n", "<M-i>", "<C-w>x") --toggle panes
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
-  keymap("n", "<M-o>", "<C-o>")
-  keymap("n", "<M-p>", ":pu<CR>") --paste in next line
+  keymap("n", "<M-o>", "<C-o>") --jump to last location
+  keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
+  keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
   keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
   keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
-  keymap("n", "<leader>c", "gcc") --make uppercase
-  keymap("n", "<leader>c", "gcc") --vertical split
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
-  keymap("n", "<leader>gn", ":echo expand('%:p')<CR>") --get file path
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
+  keymap("n", "<leader>gr", ":Gitsigns reset_hunk <CR>") --git show next hunk
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>h", ":split <CR>") --horizontal split
-  keymap("n", "<leader>ind", ":normal I<TAB><CR>") --indent
-  keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
-  keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
   keymap("n", "<leader>n", "> <CR>") --indent current line to right
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
   keymap("n", "<leader>r", "<C-w>r") --switch to previous pane
@@ -71,8 +67,10 @@ local opts = { noremap = true, silent = true }
   keymap("n", "Y", "y$") --make y behave like the other capitals
   keymap("n", "Z", "y$") --make z behave like the other capitals
   keymap("n", "d", '"xd') --do not yank to clip on delete action
-  keymap("n", "gj", "<C-w>w") --switch to next pane
-  keymap("n", "gk", "<C-w>W") --switch to previous pane
+  keymap("n", "gh", "<C-w>h") --switch pane
+  keymap("n", "gj", "<C-w>w") --switch pane
+  keymap("n", "gk", "<C-w>k") --switch pane
+  keymap("n", "gl", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
   keymap("v", "+", ":") --open insert mode from visual mode
   keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
@@ -87,6 +85,8 @@ local opts = { noremap = true, silent = true }
 -- NAVIGATE BUFFERS
   -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
+  keymap("n", "<M-4>", ":BuffergatorOpen<CR>", opts)
+  keymap("n", "<M-b>", ":BuffergatorOpen<CR>", opts)
   keymap("n", "<S-Left>", ":bnext<CR>", opts)
   keymap("n", "<S-Left>", ":bprevious<CR>", opts)
   keymap("n", "<S-Right>", ":bnext<CR>", opts)
@@ -123,11 +123,9 @@ local opts = { noremap = true, silent = true }
 
 
 --FILE MANAGEMENT
-  keymap("n", "#", ":Alpha <CR>") --welcome screen
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
   keymap("n", "<F4>", ":Lf<CR>") --lf filemanager
-  keymap("n", "<F9>", ":Alpha <CR>") --welcome screen
   keymap("n", "<M-1>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
