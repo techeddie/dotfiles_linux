@@ -15,9 +15,9 @@ dashboard.section.buttons.val = {
 	dashboard.button("zc", "  zsh config", ":e ~/.zshrc <CR>"),
 	dashboard.button("yc", "  zsh config", ":e ~/.zshrc <CR>"),
 	dashboard.button("ni", "  nvim init", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("ns", "  nvim settings", ":e ~/.config/nvim/lua/eddie/settings.lua <CR>"),
-	dashboard.button("nk", "  nvim keymaps", ":e ~/.config/nvim/lua/eddie/keymaps.lua <CR>"),
-	dashboard.button("np", "  nvim plugins", ":e ~/.config/nvim/lua/eddie/plugins.lua <CR>"),
+	dashboard.button("ns", "  nvim settings", ":e ~/.config/nvim/lua/config/settings.lua <CR>"),
+	dashboard.button("nk", "  nvim keymaps", ":e ~/.config/nvim/lua/config/keymaps.lua <CR>"),
+	dashboard.button("np", "  nvim plugins", ":e ~/.config/nvim/lua/config/plugins.lua <CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
