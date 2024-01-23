@@ -68,16 +68,16 @@ gitsigns.setup {
     end, {expr=true})
 
     -- Actions
-    -- map('n', '<leader>[s', gs.stage_hunk)
-    -- map('n', '<leader>[r', gs.reset_hunk)
-    -- map('v', '<leader>[s', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    -- map('n', '<leader>gs', gs.stage_hunk)
+    map('n', '<leader>gr', gs.reset_hunk)
+    map('v', '<leader>[s', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
     -- map('v', '<leader>[r', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
     -- map('n', '<leader>[S', gs.stage_buffer)
     -- map('n', '<leader>[u', gs.undo_stage_hunk)
     -- map('n', '<leader>[R', gs.reset_buffer)
-    -- map('n', '<leader>[p', gs.preview_hunk)
+    -- map('n', '<leader>ph', gs.preview_hunk)
     -- map('n', '<leader>[b', function() gs.blame_line{full=true} end)
-    -- map('n', '<leader>[b', gs.toggle_current_line_blame)
+    -- map('n', '<leader>cl', gs.toggle_current_line_blame)
     -- map('n', '<leader>[d', gs.diffthis)
     -- map('n', '<leader>[D', function() gs.diffthis('~') end)
     -- map('n', '<leader>td', gs.toggle_deleted)
@@ -86,4 +86,3 @@ gitsigns.setup {
     -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
-
