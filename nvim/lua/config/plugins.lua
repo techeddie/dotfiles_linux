@@ -144,7 +144,7 @@ return require('packer').startup(function()
   use "nvim-telescope/telescope-fzy-native.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  -- use 'windwp/nvim-spectre' --find and replace
+  use 'windwp/nvim-spectre' --find and replace
   use "rbgrouleff/bclose.vim" --don't close buffer's windows
   use {
     'VonHeikemen/searchbox.nvim', --search and replace box
