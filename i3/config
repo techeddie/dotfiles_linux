@@ -72,6 +72,7 @@
 #toggle bottom bar - i3status i3bar
     bindsym Shift+Print             bar mode toggle 
     bindsym $mod+Shift+Print        bar mode invisible
+    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
