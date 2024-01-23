@@ -71,6 +71,7 @@
     bindsym $mod+Shift+a            exec lxappearance
 #toggle bottom bar - i3status i3bar
     bindsym Shift+Print             bar mode toggle 
+    bindsym $mod+Shift+Print        bar mode invisible
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
@@ -84,7 +85,7 @@
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
-    bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
+    # bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+b            [class=Brave] focus
     bindsym $mod+Shift+f            exec firefox
@@ -425,7 +426,7 @@
     assign [class="Autokey-qt"] $workspace5
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="thunderbird"] $workspace10
-    # assign [class="Alacritty"] $workspace1
+    assign [class="Doublecmd"] $workspace6
     assign [class="Brave"] $workspace2
     assign [class="firefox"] $workspace5
     # assign [class="xfreerdp"] $workspace9
@@ -527,7 +528,9 @@
       font pango:Noto Sans 12
     # position top
       position bottom
-
+      mode invisible
+      # mode hide
+      hidden_state hide
     # system icons
       # tray_output none
       # tray_output $firstMonitor
