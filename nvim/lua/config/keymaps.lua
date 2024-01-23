@@ -14,20 +14,20 @@ keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in i
 keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-q>", ":bd <CR>") --buffer delete
 keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
-keymap("n", "<M-u>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<S-r>", ":source % <CR>") --source current buffer
-keymap("n", "<leader>bd", ":bd <CR>") --buffer delete
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
 keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<leader>t", ":tabnew <CR>") --open new tab
 keymap("n", "<leader>x", ":bd <CR>") --buffer delete
 keymap("n", "q", ":Bclose <CR>") --quit current buffer
 keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
--- keymap("n", "zz", ":wq!<CR><ESC>") --save and quit from normal mode
 keymap("n", "ä", ":qall! <CR>") --force quit all buffers
 keymap("n", "ö", ":w! <CR>") --save from normal mode
 keymap("n", "ü", ":w! <CR>") --save from normal mode
 -- keymap("i", "ö,", "<C-O>:w<CR>") --save from insert mode
+-- keymap("n", "<leader>bd", ":bd <CR>") --buffer delete
+-- keymap("n", "zz", ":wq!<CR><ESC>") --save and quit from normal mode
+
 
 --NAVIGATION
 
@@ -38,9 +38,9 @@ keymap("i", "ö", "<ESC>") --exit insert mode
 -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
 keymap("i", "jk", "<ESC>", opts) --exit insert mode
 keymap("i", "kj", "<ESC>", opts) --exit insert mode
-keymap("n", "(", ":Gitsigns prev_hunk<CR>") --git toggle light highlight
-keymap("n", ")", ":Gitsigns next_hunk<CR>") --git toggle light highlight
-keymap("n", "+", ":") --open insert mode from normal mode
+-- keymap("n", "-", ":Gitsigns prev_hunk <CR>") --git show prev hunk
+-- keymap("n", "=", ":Gitsigns next_hunk <CR>") --git show next hunk
+-- keymap("n", "+", ":") --open insert mode from normal mode
 keymap("n", "<BS>", "<C-w>W") --switch to previous pane
 keymap("n", "<C-Down>", "<C-e>") --scroll down
 keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
@@ -191,5 +191,4 @@ end
 -- LOOK AND FEEL
 keymap("n", "<M-c>", ":Colors<CR>", {desc = "change theme"})
 keymap("n", "<leader>tp", ":TransparentToggle<CR>", {desc = "Toggle Transparent"})
-
 
