@@ -529,7 +529,7 @@
       font pango:Noto Sans 12
     # position top
       position bottom
-      mode invisible
+      # mode invisible
       # mode hide
       hidden_state hide
     # system icons
