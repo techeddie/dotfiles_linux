@@ -3,6 +3,10 @@
   set ignorecase
   set icons
   set info size
+  set shell zsh
+  # set shellopts '-euy'
+  # set ifs "\n"
+  # set filesep "\n" 
   # set reverse
   # set drawbox
   # set relativenumber
