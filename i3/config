@@ -523,57 +523,57 @@
 #------------------------------------------------- 
 # bar appearance                   
 
-  bar {
-      height 20
-      workspace_buttons yes
-      font pango:Noto Sans 12
-    # position top
-      position bottom
-      # mode invisible
-      # mode hide
-      hidden_state hide
-    # system icons
-      # tray_output none
-      # tray_output $firstMonitor
-      tray_output $secondMonitor
-
-      # OPTION 1 : i3status
-
-      # type status_command i3status without the config file and
-      # you will get the standard i3status bar
-      # Second one is the standard statusbar with my personal settings
-
-        # status_command i3status
-      status_command i3status -c ~/.config/i3/i3status.conf
-
-      # OPTION 2 : i3blocks
-
-      # https://github.com/vivien/i3blocks
-      # another way to provide text in the statusbar
-      # put hastag in front if not installed
-
-      # status_command i3blocks
-      # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-      # i3 bar colors
-      # variable border background Text
-
-      colors {
-          background #2F2F2F
-          statusline #eeeeee
-          separator  #666666
-
-          # colorclass           border  backgr. text
-          focused_workspace     #a9a9a9 #5f676a #eeeeee
-          active_workspace      #a9a9a9 #5f676a #eeeeee
-          inactive_workspace    #a9a9a9 #222222 #a9a9a9
-          urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-          }
-
-      }
+  # bar {
+  #     height 20
+  #     workspace_buttons yes
+  #     font pango:Noto Sans 12
+  #   # position top
+  #     position bottom
+  #     # mode invisible
+  #     # mode hide
+  #     hidden_state hide
+  #   # system icons
+  #     # tray_output none
+  #     # tray_output $firstMonitor
+  #     tray_output $secondMonitor
+  #
+  #     # OPTION 1 : i3status
+  #
+  #     # type status_command i3status without the config file and
+  #     # you will get the standard i3status bar
+  #     # Second one is the standard statusbar with my personal settings
+  #
+  #       # status_command i3status
+  #     status_command i3status -c ~/.config/i3/i3status.conf
+  #
+  #     # OPTION 2 : i3blocks
+  #
+  #     # https://github.com/vivien/i3blocks
+  #     # another way to provide text in the statusbar
+  #     # put hastag in front if not installed
+  #
+  #     # status_command i3blocks
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+  #
+  #     # i3 bar colors
+  #     # variable border background Text
+  #
+  #     colors {
+  #         background #2F2F2F
+  #         statusline #eeeeee
+  #         separator  #666666
+  #
+  #         # colorclass           border  backgr. text
+  #         focused_workspace     #a9a9a9 #5f676a #eeeeee
+  #         active_workspace      #a9a9a9 #5f676a #eeeeee
+  #         inactive_workspace    #a9a9a9 #222222 #a9a9a9
+  #         urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+  #         }
+  #
+  #     }
       ##STOP THEMING BAR
 
       ##START THEMING WM
