@@ -190,7 +190,9 @@
     workspace 2 output HDMI-2
     
     #Default Layout mode for new containers
-    # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
+    #workspace_layout default|stacking|tabbed
+
+    workspace_layout default
     title_align right
     popup_during_fullscreen smart
     new_window normal 5 px
@@ -375,7 +377,7 @@
     # for_window [class="rdesktop"] floating enable
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
-    for_window [class="Alacritty"] layout tabbed, move position center
+    # for_window [class="Alacritty"] layout tabbed, move position center
     # for_window [class="Alacritty"] border normal
     for_window [class="Alacritty"] border 1pixel
     for_window [class="Brave-browser"] layout tabbed
