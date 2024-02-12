@@ -101,9 +101,10 @@
     bindsym $mod+a                  exec keepassxc
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
-    bindsym $mod+d                  exec doublecmd
+    bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
+    bindsym $mod+Shift+g            exec gnome-disks
     bindsym $mod+g                  exec geany
     # bindsym $mod+Shift+j            exec guake-toggle
     bindsym $mod+l                  exec betterlockscreen --lock blur
@@ -146,7 +147,8 @@
 
     exec --no-startup-id xset s blank
     exec --no-startup-id xset r rate 250 40
-    exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    exec --no-startup-id "setxkbmap 'de(us)'" 
     # exec --no-startup-id conky -c ~/.config/i3/system-overview
     # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
