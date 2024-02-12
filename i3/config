@@ -89,6 +89,7 @@
     # bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+b            [class=Brave] focus
+    bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec fsearch
@@ -133,7 +134,7 @@
         # bindsym $mod+m              exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
 
     #dmenu
-        bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
+        # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
 
     #vim like marks - go to specific program
     #read 1 character and mark the current window with this character
@@ -349,8 +350,9 @@
     #custom apps border - settings - scratch pad
     for_window [class="^.*"] border pixel 2
     for_window [class="brave"] set $outer_gaps 20
-    for_window [class="Alacritty"] border normal
+    for_window [class="Alacritty"] border pixel 5
     for_window [class="rdesktop"] border none
+    for_window [class="Brave"] border none
     for_window [class="xfreerdp"] border none
     # for_window [class="rdesktop"] border normal
     # for_window [class="xfreerdp"] border normal
@@ -586,6 +588,7 @@
       # Window color settings
       # class                 border  backgr. text    indicator
       client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+      # client.focused          #6790EB #66ff33 #e5e5e5 #6790EB
       client.unfocused        #222222 #222222 #aaaaaa #222222
       client.focused_inactive #222222 #222222 #a9a9a9 #222222
       client.placeholder      #222222 #222222 #aaaaaa #222222
