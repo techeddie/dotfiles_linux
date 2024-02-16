@@ -221,7 +221,7 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
-    # exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur"
+    exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur"
 
     #suspend
     # bindsym $mod+Shift+s  exec i3lock && systemctl suspend
