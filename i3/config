@@ -68,8 +68,8 @@
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
     # bindsym $mod+Shift+r          exec remmina
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    bindsym $mod+Shift+a            exec lxappearance
-#toggle bottom bar - i3status i3bar
+    bindsym $mod+Shift+a            exec autokey-gtk
+    #toggle bottom bar - i3status i3bar
     bindsym Shift+Print             bar mode toggle 
     bindsym $mod+Shift+Print        bar mode invisible
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
@@ -95,7 +95,6 @@
     # bindsym $mod+Shift+f            exec fsearch
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
-    # bindsym $mod+Shift+m            exec xfce4-appfinder
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     bindsym $mod+Shift+p            exec alacritty -e pacseek
