@@ -1,4 +1,4 @@
-local function keymap(mode, lhs, rhs, opts)
+  local function keymap(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
@@ -147,7 +147,6 @@ local opts = { noremap = true, silent = true }
 
 --LAZYGIT
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
-  keymap("n", "<M-p>", ":LazyGitCurrentFile<CR>") --lazygit
 
 --SEARCH AND REPLACE
   -- keymap("n", "<C-f>", ":SearchBoxSimple<CR>")
