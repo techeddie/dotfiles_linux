@@ -22,6 +22,19 @@ cmd [[
     command! KeymapReload execute "source ~/.config/nvim/lua/config/keymaps.lua" | echo "Keymaps reloaded"
     command! M execute ":Maps"
     command! Mappings execute ":Maps"
+
+    function ObsidianBash()
+         :let a = ['', 'bash']
+         :%s/```\zs/\=reverse(a)[0]/g
+    endfunction
+    command! Obash execute ObsidianBash()
+
+    function ObsidianPowerShell()
+         :let a = ['', 'powershell']
+         :%s/```\zs/\=reverse(a)[0]/g
+    endfunction
+    command! Ops execute ObsidianPowerShell()
+
     command! P execute "e ~/.config/nvim/lua/config/plugins.lua"
     command! PluginsReload execute "source ~/.config/nvim/lua/config/plugins.lua"  | echo "Plugins reloaded"
     command! S execute "e ~/.config/nvim/lua/config/settings.lua"
