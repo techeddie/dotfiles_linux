@@ -504,6 +504,7 @@ cmd copy_to_clipboard %{{
   map <c-f> :fzf_search
   map <c-h> :fzf_jump_history
   map <c-k> quit
+  map <c-l> :fzf_jump_history
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
   map <c-w> :set_wallpaper
@@ -513,7 +514,7 @@ cmd copy_to_clipboard %{{
   map <f-6> unarchive
   map <f-7> push %mkdir<space>
   map <space> :toggle 
-  map b mark-load
+  map <tab> :fzf_jump_history
   map = filter
   map E &thunar
   map F :fzf_jump_max
@@ -532,8 +533,7 @@ cmd copy_to_clipboard %{{
   map af push %touch<space>
   map au unarchive
   map b :fzf_jump_history
-  map <tab> :fzf_jump_history
-  map <c-l> :fzf_jump_history
+  map b mark-load
   map c
   map cd push %mkdir<space>
   map cf push %touch<space>
