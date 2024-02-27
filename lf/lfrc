@@ -468,25 +468,29 @@ cmd copy_to_clipboard %{{
 #MAPPINGS
   # map - z
   # map <a-l> push :z<space>
+  # map <c-b> :bookmark_create
+  # map <c-f> :fzf_search
+  # map <esc> quit
   # map <space> :toggle
+  # map <tab> bookmark_jump
+  # map J push :z<space>
+  # map P file_preview
   # map a touch # a = add
+  # map b mark-load
   # map c touch # c = create
   # map f search - replaced with fzf
+  # map g? $lf -doc | $PAGER; clear
   # map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
   # map gp ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
   # map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
   # map p paste
-  # map P file_preview
+  # map dd delete
 
-  # map <c-f> :fzf_search
   cmap <backtab> cmd-menu-complete-back
   cmap <down> cmd-history-next
   cmap <tab> cmd-menu-complete
   cmap <up> cmd-history-prev
-  # map J push :z<space>
-  # map g? $lf -doc | $PAGER; clear
-  # map <tab> bookmark_jump
-  # map b mark-load
+  map dd $rm -fr "$fx"
   map - z
   map . set hidden!
   map <Esc> quit
@@ -499,49 +503,45 @@ cmd copy_to_clipboard %{{
   map <a-r> :edit_config
   map <a-t> :tag-toggle
   map <backspace2> updir
-  # map <c-b> :bookmark_create
+  map <backspace> :fzf_jump_history
   map <c-c> :copy_to_clipboard
   map <c-f> :fzf_search
+  map <c-h> :fzf_jump_history
   map <c-k> quit
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
   map <c-w> :set_wallpaper
   map <enter> open
-  # map <esc> quit
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map <f-7> push %mkdir<space>
-  map <f-8> delete
   map <space> :toggle 
   map <tab> mark-load
   map = filter
   map E &thunar
+  map F :fzf_jump_max
   map I push :zi<space>
   map J :updir; down; open
   map K :updir; up; open
   map L :link
   map O push :open-with-gui<space>
-  map P :link
   map R push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map R reload
   map S :!zsh
   map Z push :zi<space>
-  map Z toggle_preview
+  map P toggle_preview
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
   map au unarchive
   map b :fzf_jump_history
-  map <c-h> :fzf_jump_history
-  map <backspace> :fzf_jump_history
   map c
   map cd push %mkdir<space>
   map cf push %touch<space>
   map d
-  map dd delete
+  map dd $rm -fr "$fx"
   map e $$EDITOR "$f"
   map f :fzf_jump
-  map F :fzf_jump_max
   map g? $lf -doc | bat; clear
   map i %du -sh $f
   map o push :open-with-cli<space>
