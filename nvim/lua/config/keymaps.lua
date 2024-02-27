@@ -181,4 +181,3 @@ local opts = { noremap = true, silent = true }
 -- LOOK AND FEEL
   keymap("n", "<M-c>", ":Colors<CR>", {desc = "change theme"})
   keymap("n", "<leader>tp", ":TransparentToggle<CR>", {desc = "Toggle Transparent"})
-
