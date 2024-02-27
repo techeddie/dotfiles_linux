@@ -125,7 +125,7 @@
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         # bindsym $mod+m              exec rofi -show drun  -show-icons -theme solarized_alternate
         bindsym $mod+m              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
-        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/rofi-process.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
+        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/rofi-process.rasi | cut -b 10-17 | xargs kill > /dev/null 2>&1 &
         # bindsym $mod+j              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
 
         bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
