@@ -166,10 +166,7 @@ cmd link %{{
 #compress current file or selected files with tar and gunzip
   cmd tar ${{
       set -f
-      mkdir $1
-      cp -r $fx $1
       tar czf $1.tar.gz $1
-      rm -rf $1
   }}
 
 #####################
@@ -490,7 +487,6 @@ cmd copy_to_clipboard %{{
   cmap <down> cmd-history-next
   cmap <tab> cmd-menu-complete
   cmap <up> cmd-history-prev
-  map dd $rm -fr "$fx"
   map - z
   map . set hidden!
   map <Esc> quit
@@ -514,9 +510,10 @@ cmd copy_to_clipboard %{{
   map <enter> open
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
+  map <f-6> unarchive
   map <f-7> push %mkdir<space>
   map <space> :toggle 
-  map <tab> mark-load
+  map b mark-load
   map = filter
   map E &thunar
   map F :fzf_jump_max
@@ -525,16 +522,18 @@ cmd copy_to_clipboard %{{
   map K :updir; up; open
   map L :link
   map O push :open-with-gui<space>
+  map P toggle_preview
   map R push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map R reload
   map S :!zsh
   map Z push :zi<space>
-  map P toggle_preview
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
   map au unarchive
   map b :fzf_jump_history
+  map <tab> :fzf_jump_history
+  map <c-l> :fzf_jump_history
   map c
   map cd push %mkdir<space>
   map cf push %touch<space>
