@@ -18,6 +18,7 @@
   bindkey -M vicmd '^H' fzf-history-widget
   bindkey -M viins '^H' fzf-history-widget
 
+  # ALT-R - history
   bindkey -M emacs '\er' fzf-history-widget
   bindkey -M vicmd '\er' fzf-history-widget
   bindkey -M viins '\er' fzf-history-widget
