@@ -145,6 +145,7 @@
 #-------------------------------------------------
 #execute on logon - auto startup
 
+    exec --no-startup-id bauh-tray
     exec --no-startup-id xset s blank
     exec --no-startup-id xset r rate 250 40
     # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
