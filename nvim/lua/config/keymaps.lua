@@ -19,7 +19,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
   keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
-  keymap("n", "<leader>t", ":tabnew <CR>") --open new tab
+  keymap("n", "<leader>t", ":terminal <CR>") --open new tab
   keymap("n", "<leader>x", ":bd <CR>") --buffer delete
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
