@@ -165,16 +165,17 @@ cmd link %{{
 #####################
 #compress current file or selected files with tar and gunzip
   cmd tar ${{
-      set -f
-      tar czf $1.tar.gz $1
+    date=$(date +%Y-%m-%d_%H_%M)
+    tar -zcvf "${1}.$date.tar.gz" $1
   }}
 
 #####################
 #compress current file or selected files with zip
   cmd zip ${{
       set -f
-      mkdir $1
-      cp -r $fx $1
+      # mkdir $1
+      # cp -r $fx $1
+      date=$(date +%Y-%m-%d_%H_%M)
       zip -r "${1}.$date.zip" $1
       # zip -r $1.zip $1
       # rm -rf $1
