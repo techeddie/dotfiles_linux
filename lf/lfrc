@@ -498,6 +498,7 @@ cmd copy_to_clipboard %{{
   map <a-p> :file_preview 
   map <a-r> :edit_config
   map <a-t> :tag-toggle
+  map <a-v> toggle_preview
   map <backspace2> updir
   map <backspace> :fzf_jump_history
   map <c-c> :copy_to_clipboard
@@ -527,6 +528,7 @@ cmd copy_to_clipboard %{{
   map R push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map R reload
   map S :!zsh
+  map V toggle_preview
   map Z push :zi<space>
   map ad push %mkdir<space>
   map ae execute
