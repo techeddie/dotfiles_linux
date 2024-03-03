@@ -3,7 +3,7 @@
   set ignorecase
   set icons
   set info size
-  set shell zsh
+  # set shell zsh
   # set shellopts '-euy'
   # set ifs "\n"
   # set filesep "\n" 
@@ -175,7 +175,8 @@ cmd link %{{
       set -f
       mkdir $1
       cp -r $fx $1
-      zip -r $1.zip $1
+      zip -r "${1}.$date.zip" $1
+      # zip -r $1.zip $1
       # rm -rf $1
   }}
 
