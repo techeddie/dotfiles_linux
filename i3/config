@@ -118,7 +118,7 @@
     bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    # bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
+    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
     # bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
 
     #rofi  
@@ -391,6 +391,7 @@
     for_window [class="Wfica"] layout tabbed
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="guake"] floating enable
+    for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     # , move position center
     for_window [class="gnome-calculator"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
