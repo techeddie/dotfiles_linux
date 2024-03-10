@@ -457,7 +457,7 @@ cmd copy_to_clipboard %{{
   map gr cd /
   map gR cd ~/opt/RESTORE
   map gs cd ~/scripts
-  map gt cd ~/Nextcloud/MEDIA/OBSIDIAN/techeddie
+  map gt cd ~/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/
   map gu cd /usr/
   map gw cd ~/Nextcloud/MEDIA/PICTURES/WALLPAPER
 #FOLDER BOOKMARKS END
