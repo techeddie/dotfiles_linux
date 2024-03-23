@@ -532,6 +532,8 @@ cmd copy_to_clipboard %{{
   map S :!zsh
   map V toggle_preview
   map Z push :zi<space>
+  map z push :zi<space>
+  map Y push :zi<space>
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
