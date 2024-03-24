@@ -379,10 +379,6 @@
         <Param>index=9</Param>
       </Hotkey>
       <Hotkey>
-        <Shortcut>G</Shortcut>
-        <Command>cm_DirHotList</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+Space</Shortcut>
         <Command>cm_CalculateSpace</Command>
       </Hotkey>
@@ -488,6 +484,21 @@
       <Hotkey>
         <Shortcut>Ctrl+L</Shortcut>
         <Command>cm_EditPath</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+H</Shortcut>
+        <Command>cm_ChangeDirToHome</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+1</Shortcut>
+        <Command>cm_DirHotList</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>G</Shortcut>
+        <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>
