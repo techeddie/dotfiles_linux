@@ -200,10 +200,6 @@
         <Command>cm_ChangeDirToRoot</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+.</Shortcut>
-        <Command>cm_ShowSysFiles</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Shift+F2</Shortcut>
         <Command>cm_FocusCmdLine</Command>
       </Hotkey>
@@ -266,14 +262,6 @@
       <Hotkey>
         <Shortcut>Alt+Enter</Shortcut>
         <Command>cm_FileProperties</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Alt+Left</Shortcut>
-        <Command>cm_ViewHistoryPrev</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Alt+Right</Shortcut>
-        <Command>cm_ViewHistoryNext</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Shift+Alt+Enter</Shortcut>
@@ -396,6 +384,26 @@
         <Param>cm_EditPath</Param>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Alt+Right</Shortcut>
+        <Command>cm_NextTab</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+Left</Shortcut>
+        <Command>cm_PrevTab</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+W</Shortcut>
+        <Command>cm_CloseTab</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+PgUp</Shortcut>
+        <Command>cm_PrevTab</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+PgDn</Shortcut>
+        <Command>cm_NextTab</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Del</Shortcut>
         <Command>cm_Delete</Command>
         <Control>Files Panel</Control>
@@ -504,6 +512,11 @@
       <Hotkey>
         <Shortcut>Ctrl+S</Shortcut>
         <Command>cm_TargetEqualSource</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+.</Shortcut>
+        <Command>cm_ShowSysFiles</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>
