@@ -152,14 +152,16 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "<C-f>", ":SearchBoxSimple<CR>")
   -- keymap("n", "<leader>s", "viw:lua require('spectre').open_file_search()<cr>")
   -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+
+  -- keymap("n", "<M-r>", "viw:lua require('spectre').open_file_search()<cr>") --replace only in current file
+  -- keymap("n", "<leader-vs>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+  -- keymap("n", "<leader>s", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+  -- keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
+  -- keymap("v", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>")
+  -- keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
+
   keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
-  keymap("n", "<M-r>", "viw:lua require('spectre').open_file_search()<cr>") --replace only in current file
-  keymap("n", "<leader-vs>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  keymap("n", "<leader>s", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
-  keymap("v", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>")
-  keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
 
 --JUMP TO BUFFER
   for i = 1, 6 do 

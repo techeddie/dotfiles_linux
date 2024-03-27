@@ -57,7 +57,6 @@
     #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
-      bindsym $mod+y move scratchpad
     #bring back to foreground
       bindsym $mod+u scratchpad show; move position center
 
@@ -68,11 +67,8 @@
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
     # bindsym $mod+Shift+r          exec remmina
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    bindsym $mod+Shift+a            exec autokey-gtk
-    #toggle bottom bar - i3status i3bar
-    bindsym Shift+Print             bar mode toggle 
-    bindsym $mod+Shift+Print        bar mode invisible
-    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
+    bindsym $mod+Shift+a            exec lxappearance
+    bindsym Shift+Print             bar mode toggle
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
@@ -81,30 +77,28 @@
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
-    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
-    # bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01.sh
-    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
-    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
+    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh ;workspace9
+    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01 ;workspace9
+    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh ;workspace9
+    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh ;workspace9
     # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
-    # bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
+    bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+b            [class=Brave] focus
-    bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
-    # bindsym $mod+Shift+f            exec firefox
     # bindsym $mod+Shift+f            exec fsearch
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
+    # bindsym $mod+Shift+m            exec xfce4-appfinder
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+a                  exec keepassxc
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
-    bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    bindsym $mod+d                  exec doublecmd
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
-    bindsym $mod+Shift+g            exec gnome-disks
     bindsym $mod+g                  exec geany
     # bindsym $mod+Shift+j            exec guake-toggle
     bindsym $mod+l                  exec betterlockscreen --lock blur
@@ -118,14 +112,14 @@
     bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-    # bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
+    bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
+    bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
 
     #rofi  
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         # bindsym $mod+m              exec rofi -show drun  -show-icons -theme solarized_alternate
         bindsym $mod+m              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
-        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/rofi-process.rasi | cut -b 10-17 | xargs kill > /dev/null 2>&1 &
+        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/rofi-process.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
         # bindsym $mod+j              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
 
         bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
@@ -133,7 +127,7 @@
         # bindsym $mod+m              exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
 
     #dmenu
-        # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
+        bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
 
     #vim like marks - go to specific program
     #read 1 character and mark the current window with this character
@@ -145,11 +139,7 @@
 #-------------------------------------------------
 #execute on logon - auto startup
 
-    exec --no-startup-id bauh-tray
-    exec --no-startup-id xset s blank
-    exec --no-startup-id xset r rate 250 40
     # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
-    exec --no-startup-id "setxkbmap 'de(us)'" 
     # exec --no-startup-id conky -c ~/.config/i3/system-overview
     # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
@@ -157,7 +147,7 @@
     exec --no-startup-id nitrogen --restore 
     #exec --no-startup-id thunderbird
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    # exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
+    exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
     # exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
     # exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
     exec_always --no-startup-id /usr/bin/autokey-gtk
@@ -191,9 +181,7 @@
     workspace 2 output HDMI-2
     
     #Default Layout mode for new containers
-    #workspace_layout default|stacking|tabbed
-
-    workspace_layout default
+    # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
     title_align right
     popup_during_fullscreen smart
     new_window normal 5 px
@@ -221,10 +209,10 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
+    exec_always --no-startup-id xautolock -detectsleep -time 15 -locker "betterlockscreen --lock blur"
 
     #suspend
-    # bindsym $mod+Shift+s  exec i3lock && systemctl suspend
-    bindsym $mod+Shift+s  exec i3lock -i ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/ARCH-LINUX/Arch-Linux-Black.jpg && systemctl suspend
+    bindsym $mod+Shift+s  exec ~/.config/i3/suspend.sh  
 
     #logoff shutdown reboot menu
     bindsym $mod+x  exec --no-startup-id archlinux-logout
@@ -349,13 +337,9 @@
     #custom apps border - settings - scratch pad
     for_window [class="^.*"] border pixel 2
     for_window [class="brave"] set $outer_gaps 20
-    for_window [class="Alacritty"] border pixel 5
-    for_window [class="rdesktop"] border none
-    for_window [class="Brave"] border none
-    for_window [class="xfreerdp"] border none
-    # for_window [class="rdesktop"] border normal
-    # for_window [class="xfreerdp"] border normal
+    for_window [class="rdesktop"] border normal
     for_window [class="Wfica"] border normal
+    for_window [class="xfreerdp"] border normal
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
@@ -363,8 +347,16 @@
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
     for_window [window_role="GtkFileChooserDialog"] move position center
-    #for_window [title="GIMP Startup"] move workspace $workspace6
-    #for_window [class="Gimp"] move workspace $workspace6
+
+    for_window [class="Alacritty"] border 1pixel
+    for_window [class="Brave-browser"] layout tabbed
+    for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="Navigator"] layout tabbed
+    for_window [class="firefox"] layout tabbed
+    for_window [class="keepassxc"] layout tabbed
+    for_window [class="Wfica"] layout tabbed
+    for_window [class="Alacritty"] layout normal, move position center
+    for_window [class="Alacritty"] border pixel 5
 
     #scratchpad
     bindsym $mod+Shift+minus move scratchpad # Make the currently focused window a scratchpad
@@ -378,28 +370,15 @@
     # for_window [class="rdesktop"] floating enable
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
-    # for_window [class="Alacritty"] layout tabbed, move position center
-    # for_window [class="Alacritty"] border normal
-    for_window [class="Alacritty"] border 1pixel
-    for_window [class="Brave-browser"] layout tabbed
-    for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="Navigator"] layout tabbed
-    for_window [class="firefox"] layout tabbed
-    for_window [class="xfreerdp"] layout tabbed
-    for_window [class="keepassxc"] layout tabbed
-    for_window [class="Wfica"] layout tabbed
+
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="guake"] floating enable
-    for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
-    # , move position center
     for_window [class="gnome-calculator"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Nitrogen"] floating enable, move position center
     for_window [class="Nm-connection-editor"] floating enable, move position center
     for_window [class="Pavucontrol"] floating enable, move position center
     for_window [class="TeamViewer"] floating enable,  resize set 800 900, move position center
-    # for_window [class="Autokey-gtk"] no_focus
-    # no_focus [class="Autokey-gtk"]
     # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
     # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
     for_window [class="TimeShift-gtk"] floating disable, move position center
@@ -432,11 +411,9 @@
     assign [class="Autokey-gtk"] $workspace5
     assign [class="Autokey-qt"] $workspace5
     assign [class="Microsoft Teams - Preview"] $workspace4
-    assign [class="thunderbird"] $workspace10
-    assign [class="Doublecmd"] $workspace6
+    assign [class="Thunderbird"] $workspace10
     assign [class="Brave"] $workspace2
-    assign [class="firefox"] $workspace5
-    # assign [class="xfreerdp"] $workspace9
+    assign [class="xfreerdp"] $workspace9
     assign [class="Wfica"] $workspace9
 
     #show windows icons
@@ -529,57 +506,55 @@
 #------------------------------------------------- 
 # bar appearance                   
 
-  # bar {
-  #     height 20
-  #     workspace_buttons yes
-  #     font pango:Noto Sans 12
-  #   # position top
-  #     position bottom
-  #     # mode invisible
-  #     # mode hide
-  #     hidden_state hide
-  #   # system icons
-  #     # tray_output none
-  #     # tray_output $firstMonitor
-  #     tray_output $secondMonitor
-  #
-  #     # OPTION 1 : i3status
-  #
-  #     # type status_command i3status without the config file and
-  #     # you will get the standard i3status bar
-  #     # Second one is the standard statusbar with my personal settings
-  #
-  #       # status_command i3status
-  #     status_command i3status -c ~/.config/i3/i3status.conf
-  #
-  #     # OPTION 2 : i3blocks
-  #
-  #     # https://github.com/vivien/i3blocks
-  #     # another way to provide text in the statusbar
-  #     # put hastag in front if not installed
-  #
-  #     # status_command i3blocks
-  #     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-  #     # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-  #     # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-  #     # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-  #
-  #     # i3 bar colors
-  #     # variable border background Text
-  #
-  #     colors {
-  #         background #2F2F2F
-  #         statusline #eeeeee
-  #         separator  #666666
-  #
-  #         # colorclass           border  backgr. text
-  #         focused_workspace     #a9a9a9 #5f676a #eeeeee
-  #         active_workspace      #a9a9a9 #5f676a #eeeeee
-  #         inactive_workspace    #a9a9a9 #222222 #a9a9a9
-  #         urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-  #         }
-  #
-  #     }
+  bar {
+      height 20
+      workspace_buttons yes
+      font pango:Noto Sans 12
+    # position top
+      position bottom
+
+    # system icons
+      # tray_output none
+      # tray_output $firstMonitor
+      tray_output $secondMonitor
+
+      # OPTION 1 : i3status
+
+      # type status_command i3status without the config file and
+      # you will get the standard i3status bar
+      # Second one is the standard statusbar with my personal settings
+
+        # status_command i3status
+      status_command i3status -c ~/.config/i3/i3status.conf
+
+      # OPTION 2 : i3blocks
+
+      # https://github.com/vivien/i3blocks
+      # another way to provide text in the statusbar
+      # put hastag in front if not installed
+
+      # status_command i3blocks
+      # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+      # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+
+      # i3 bar colors
+      # variable border background Text
+
+      colors {
+          background #2F2F2F
+          statusline #eeeeee
+          separator  #666666
+
+          # colorclass           border  backgr. text
+          focused_workspace     #a9a9a9 #5f676a #eeeeee
+          active_workspace      #a9a9a9 #5f676a #eeeeee
+          inactive_workspace    #a9a9a9 #222222 #a9a9a9
+          urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+          }
+
+      }
       ##STOP THEMING BAR
 
       ##START THEMING WM
@@ -588,7 +563,6 @@
       # Window color settings
       # class                 border  backgr. text    indicator
       client.focused          #6790EB #6790EB #e5e5e5 #6790EB
-      # client.focused          #6790EB #66ff33 #e5e5e5 #6790EB
       client.unfocused        #222222 #222222 #aaaaaa #222222
       client.focused_inactive #222222 #222222 #a9a9a9 #222222
       client.placeholder      #222222 #222222 #aaaaaa #222222

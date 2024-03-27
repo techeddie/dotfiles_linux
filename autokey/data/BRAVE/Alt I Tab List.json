@@ -1,11 +1,11 @@
 {
-    "type": "phrase",
-    "description": "First phrase",
+    "type": "script",
+    "description": "Alt I Tab List",
+    "store": {},
     "modes": [],
     "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -20,8 +20,7 @@
         "hotKey": null
     },
     "filter": {
-        "regex": ".* - gedit",
+        "regex": "",
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+v"
+    }
 }
