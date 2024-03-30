@@ -73,6 +73,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "gl", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
   keymap("v", "+", ":") --open insert mode from visual mode
+  keymap("n", "+", ":") --open insert mode from normal mode
   keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
   keymap("v", "<leader>n", "> <CR>") --indent visual selected lines to right
   keymap("v", "P", "}") --visual select paragraph

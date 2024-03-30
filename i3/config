@@ -64,6 +64,7 @@
 #-------------------------------------------------
 #key bindings to launch applications
     
+    # bindsym $mod+Shift+Print        bar mode invisible
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
     # bindsym $mod+Shift+f            exec fsearch
@@ -116,7 +117,7 @@
     bindsym Shift+Print             bar mode toggle
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-# bindsym $mod+Shift+Print        bar mode invisible
+    
     #rofi  
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         # bindsym $mod+m              exec rofi -show drun  -show-icons -theme solarized_alternate
