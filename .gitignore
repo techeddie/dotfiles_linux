@@ -12,3 +12,5 @@ folder.json
 *.tar.gz
 doublecmd/doublecmd.xml
 doublecmd/doublecmd-themes/
+i3/config.main
+i3/diff.txt

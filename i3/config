@@ -39,7 +39,7 @@
     workspace 8 output $secondMonitor
     workspace 9 output $secondMonitor
     workspace 10 output $secondMonitor    
-
+    workspace_layout default
 #-------------------------------------------------
 #gaps
     #default gap size
@@ -66,56 +66,57 @@
     
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
+    # bindsym $mod+Shift+f            exec fsearch
+    # bindsym $mod+Shift+j            exec guake-toggle
+    # bindsym $mod+Shift+m            exec xfce4-appfinder
+    # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     # bindsym $mod+Shift+r          exec remmina
+    # bindsym $mod+n                  exec --no-startup-id nixnote2
+    # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    bindsym $mod+Shift+a            exec lxappearance
-    bindsym Shift+Print             bar mode toggle
-    bindsym $mod+Shift+w            exec networkmanager_dmenu
-    bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
-    bindsym $mod+Return             exec $term;focus
-    bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsy $mod+Shift+a            exec autokey-gtk
+    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
+    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
+    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
+    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
-    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh ;workspace9
-    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01 ;workspace9
-    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh ;workspace9
-    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh ;workspace9
-    # bindsym $mod+F12                exec sh ~/opt/rdp/HZ-MG01.sh ;workspace9
+    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
+    bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
+    bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
+    bindsym $mod+Shift+a            exec lxappearance
     bindsym $mod+Shift+b            [class=Brave] focus
+    bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
-    # bindsym $mod+Shift+f            exec fsearch
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
-    # bindsym $mod+Shift+m            exec xfce4-appfinder
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
-    # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+    bindsym $mod+Shift+o            exec obsidian
     bindsym $mod+Shift+p            exec alacritty -e pacseek
-    bindsym $mod+a                  exec keepassxc
+    bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsym $mod+Shift+w            exec networkmanager_dmenu
+    bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
+    bindsym $mod+a                  exec keepassxc; scratchpad show
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
-    bindsym $mod+d                  exec doublecmd
+    bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
-    bindsym $mod+j                  exec copyq show
     bindsym $mod+g                  exec geany
-    # bindsym $mod+Shift+j            exec guake-toggle
+    bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
-    bindsym $mod+n                  exec --no-startup-id nixnote2
     bindsym $mod+o                  exec thunderbird
-    bindsym $mod+Shift+o            exec obsidian
     bindsym $mod+p                  exec gnome-disks
-    bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
-    # bindsym F12                     exec guake-toggle
     bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
+    bindsym Shift+Print             bar mode toggle
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    bindsym control+Shift+Escape    exec --no-startup-id xfce4-taskmanager;focus
-    bindsym $alt+Shift+T            exec --no-startup-id xfce4-taskmanager;focus
-
+    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
+# bindsym $mod+Shift+Print        bar mode invisible
     #rofi  
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         # bindsym $mod+m              exec rofi -show drun  -show-icons -theme solarized_alternate
@@ -128,7 +129,7 @@
         # bindsym $mod+m              exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
 
     #dmenu
-        bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
+        # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
 
     #vim like marks - go to specific program
     #read 1 character and mark the current window with this character
@@ -140,40 +141,44 @@
 #-------------------------------------------------
 #execute on logon - auto startup
 
-    # exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
-    # exec --no-startup-id conky -c ~/.config/i3/system-overview
-    # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
+
+    #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
+    #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    #exec --no-startup-id conky -c ~/.config/i3/system-overview
+    #exec --no-startup-id guake 
+    #exec --no-startup-id remmina -i
+    #exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
+    #exec --no-startup-id telegram-desktop
+    #exec --no-startup-id variety #wallpaper
+    #exec --no-startup-id volumeicon
+    #exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
+    #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     #exec --no-startup-id compton -c
-    exec --no-startup-id nitrogen --restore 
     #exec --no-startup-id thunderbird
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
     exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
-    # exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
-    # exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
-    exec_always --no-startup-id /usr/bin/autokey-gtk
-    exec --no-startup-id copyq
-    # exec --no-startup-id telegram-desktop
-    exec --no-startup-id firewall-applet
-    exec --no-startup-id nextcloud
     exec --no-startup-id $term
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
     exec --no-startup-id brave 
+    exec --no-startup-id copyq
+    exec --no-startup-id firewall-applet
     exec --no-startup-id flameshot
-    # exec --no-startup-id guake 
+    exec --no-startup-id nextcloud
+    exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id pamac-tray
     exec --no-startup-id pasystray &
-    # exec --no-startup-id remmina -i
-    # exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
-    # exec --no-startup-id variety #wallpaper
-    # exec --no-startup-id volumeicon
     exec --no-startup-id xfce4-power-manager &
+    exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
-
+    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
+    exec --no-startup-id "setxkbmap 'de(us)'" 
+    exec --no-startup-id bauh-tray
+    exec --no-startup-id xset r rate 250 40
+    exec --no-startup-id xset s blank
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
@@ -215,7 +220,7 @@
     #suspend
     # bindsym $mod+Shift+s  exec i3lock && systemctl suspend
     bindsym $mod+Shift+s  exec i3lock -i  ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/Beautiful-fog-wallpaper-hd.jpg && systemctl suspend
-
+    # bindsym $mod+Shift+s  exec i3lock -i ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/ARCH-LINUX/Arch-Linux-Black.jpg && systemctl suspend
     #logoff shutdown reboot menu
     bindsym $mod+x  exec --no-startup-id archlinux-logout
     bindsym $mod+Shift+x  exec systemctl poweroff
@@ -337,28 +342,33 @@
     ################# for_window  
 
     #custom apps border - settings - scratch pad
-    for_window [class="^.*"] border pixel 2
-    for_window [class="brave"] set $outer_gaps 20
-    for_window [class="rdesktop"] border normal
-    for_window [class="Wfica"] border normal
-    for_window [class="xfreerdp"] border normal
-    for_window [class="Brave"] set $inner_gaps 20
+    # ; move position center; move scratchpad 
+    # for_window [class="Alacritty"] border 1pixel
+    # for_window [class="keepassxc"] layout tabbed
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [class="urxvt"] scratchpad show, move position center
-    for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
-    for_window [window_role="GtkFileChooserDialog"] resize set 800 600
-    for_window [window_role="GtkFileChooserDialog"] move position center
-
-    for_window [class="Alacritty"] border 1pixel
-    for_window [class="Brave-browser"] layout tabbed
-    for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="Navigator"] layout tabbed
-    for_window [class="firefox"] layout tabbed
-    for_window [class="keepassxc"] layout tabbed
-    for_window [class="Wfica"] layout tabbed
-    for_window [class="Alacritty"] layout normal, move position center
     for_window [class="Alacritty"] border pixel 5
+    for_window [class="Alacritty"] border pixel 5
+    for_window [class="Alacritty"] layout normal, move position center
+    for_window [class="Brave"] set $inner_gaps 20
+    for_window [class="Brave-browser"] layout tabbed
+    for_window [class="Navigator"] layout tabbed
+    for_window [class="Wfica"] border normal
+    for_window [class="Wfica"] layout tabbed
+    for_window [class="^.*"] border pixel 2
+    for_window [class="brave"] set $outer_gaps 20
+    for_window [class="firefox"] layout tabbed
+    for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="rdesktop"] border normal
+    for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
+    for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
+    for_window [class="urxvt"] scratchpad show, move position center
+    for_window [instance="keepassxc"] move scratchpad; [instance="keepassxc"] scratchpad show
+    for_window [instance="keepassxc"] scratchpad show, move position center
+    for_window [instance="xfreerdp"] border normal
+    for_window [window_role="GtkFileChooserDialog"] move position center
+    for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
     #scratchpad
     bindsym $mod+Shift+minus move scratchpad # Make the currently focused window a scratchpad
@@ -373,27 +383,29 @@
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
 
+
+    # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
+    # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
     for_window [class="Baobab"] floating enable, move position center
-    for_window [class="guake"] floating enable
-    for_window [class="gnome-calculator"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Nitrogen"] floating enable, move position center
     for_window [class="Nm-connection-editor"] floating enable, move position center
     for_window [class="Pavucontrol"] floating enable, move position center
     for_window [class="TeamViewer"] floating enable,  resize set 800 900, move position center
-    # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
-    # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
     for_window [class="TimeShift-gtk"] floating disable, move position center
     for_window [class="Woeusbgui"] floating enable, move position center
     for_window [class="Xfce4-appfinder"] floating enable, move position center
+    for_window [class="Xfce4-taskmanager"] floating enable,  resize set 800 900, move position center
     for_window [class="arandr"] floating enable, move position center
     for_window [class="copyq"] floating enable, move position center
     for_window [class="flameshot"] floating enable, move position center
+    for_window [class="gnome-calculator"] floating enable, move position center
+    for_window [class="guake"] floating enable
     for_window [class="nextcloud"] floating enable, move position center
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
-    for_window [class="Xfce4-taskmanager"] floating enable,  resize set 800 900, move position center
+    for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
@@ -402,22 +414,23 @@
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
     #focus
-    for_window [urgent=latest] focus
     for_window [class="Alacritty"] focus
-    for_window [class="rdesktop"] focus
-    # for_window [class="Brave"] focus
+    for_window [class="Brave"] focus
+    for_window [class="xfreerdp"] focus
+    for_window [urgent=latest] focus
     # for_window [class="pcmanfm"] focus
 
     #always launch app in workspace x
-    assign [class="TelegramDesktop"] $workspace4
     assign [class="Autokey-gtk"] $workspace5
     assign [class="Autokey-qt"] $workspace5
-    assign [class="Microsoft Teams - Preview"] $workspace4
-    assign [class="Thunderbird"] $workspace10
     assign [class="Brave"] $workspace2
-    assign [class="xfreerdp"] $workspace9
+    assign [class="Doublecmd"] $workspace6
+    assign [class="Microsoft Teams - Preview"] $workspace4
+    assign [class="TelegramDesktop"] $workspace4
+    assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace9
-
+    assign [class="firefox"] $workspace5
+    assign [class="thunderbird"] $workspace10
     #show windows icons
     for_window [all] title_window_icon padding 3px
 
