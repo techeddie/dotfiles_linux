@@ -75,7 +75,6 @@
     # bindsym $mod+n                  exec --no-startup-id nixnote2
     # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    bindsy $mod+Shift+a            exec autokey-gtk
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
@@ -89,7 +88,8 @@
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
-    bindsym $mod+Shift+a            exec lxappearance
+    # bindsym $mod+Shift+a            exec lxappearance
+    bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+b            [class=Brave] focus
     bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
@@ -379,14 +379,12 @@
     floating_modifier $mod
     bindsym $mod+t floating toggle; 
     # floating_modifier $alt
-    # for_window [class="Fsearch"] floating enable 
-    # for_window [class="rdesktop"] floating enable
-    # for_window [class="obs"] floating enable
-    # for_window [class="pacseek" instance="pacseek"] move scratchpad
-
-
     # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
     # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
+    # for_window [class="Fsearch"] floating enable 
+    # for_window [class="obs"] floating enable
+    # for_window [class="pacseek" instance="pacseek"] move scratchpad
+    # for_window [class="rdesktop"] floating enable
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Nitrogen"] floating enable, move position center
@@ -408,8 +406,11 @@
     for_window [class="urxvt"] floating enable, move position center
     for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="urxvt"] floating enable, move position center
+    for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
+    for_window [title="Edit"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
