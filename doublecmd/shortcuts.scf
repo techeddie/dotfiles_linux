@@ -116,19 +116,15 @@
         <Command>cm_ColumnsView</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+F3</Shortcut>
+        <Shortcut>Ctrl+2</Shortcut>
         <Command>cm_SortByName</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+F4</Shortcut>
+        <Shortcut>Ctrl+4</Shortcut>
         <Command>cm_SortByExt</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+F5</Shortcut>
-        <Command>cm_SortByDate</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+F6</Shortcut>
+        <Shortcut>Ctrl+3</Shortcut>
         <Command>cm_SortBySize</Command>
       </Hotkey>
       <Hotkey>
@@ -322,51 +318,6 @@
         <Param>index=-1</Param>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+1</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=1</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+2</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=2</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+3</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=3</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+4</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=4</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+5</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=5</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+6</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=6</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+7</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=7</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+8</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=8</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+9</Shortcut>
-        <Command>cm_OpenDriveByIndex</Command>
-        <Param>index=9</Param>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+Space</Shortcut>
         <Command>cm_CalculateSpace</Command>
       </Hotkey>
@@ -402,6 +353,10 @@
       <Hotkey>
         <Shortcut>Alt+PgDn</Shortcut>
         <Command>cm_NextTab</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+1</Shortcut>
+        <Command>cm_SortByDate</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
