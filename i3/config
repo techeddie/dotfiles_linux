@@ -49,10 +49,11 @@
     #smart_borders on
 
     #keybindings toggle gaps - todo
-    bindsym $mod+F1 gaps inner current set 5; gaps outer current set 1
-    bindsym $mod+F2 gaps inner current set 20; gaps outer current set 1
-    bindsym $mod+F3 gaps inner current set 30; gaps outer current set 30
-    bindsym $mod+F4 gaps inner current set 60; gaps outer current set 30
+    bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
+    bindsym $mod+F2 gaps inner current set 5; gaps outer current set 1
+    bindsym $mod+F3 gaps inner current set 20; gaps outer current set 1
+    bindsym $mod+F4 gaps inner current set 30; gaps outer current set 30
+    # bindsym $mod+F5 gaps inner current set 61; gaps outer current set 30
 
     #scratchpad
     #move current window to background
@@ -420,7 +421,6 @@
     for_window [class="Brave"] focus
     for_window [class="xfreerdp"] focus
     for_window [urgent=latest] focus
-    # for_window [class="pcmanfm"] focus
 
     #always launch app in workspace x
     assign [class="Autokey-gtk"] $workspace5
@@ -523,80 +523,80 @@
 #------------------------------------------------- 
 # bar appearance                   
 
-  bar {
-      height 20
-      workspace_buttons yes
-      font pango:Noto Sans 12
-    # position top
-      position bottom
-
-    # system icons
-      # tray_output none
-      # tray_output $firstMonitor
-      tray_output $secondMonitor
-
-      # OPTION 1 : i3status
-
-      # type status_command i3status without the config file and
-      # you will get the standard i3status bar
-      # Second one is the standard statusbar with my personal settings
-
-        # status_command i3status
-      status_command i3status -c ~/.config/i3/i3status.conf
-
-      # OPTION 2 : i3blocks
-
-      # https://github.com/vivien/i3blocks
-      # another way to provide text in the statusbar
-      # put hastag in front if not installed
-
-      # status_command i3blocks
-      # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-      # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-      # i3 bar colors
-      # variable border background Text
-
-      colors {
-          background #2F2F2F
-          statusline #eeeeee
-          separator  #666666
-
-          # colorclass           border  backgr. text
-          focused_workspace     #a9a9a9 #5f676a #eeeeee
-          active_workspace      #a9a9a9 #5f676a #eeeeee
-          inactive_workspace    #a9a9a9 #222222 #a9a9a9
-          urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-          }
-
-      }
-      ##STOP THEMING BAR
-
-      ##START THEMING WM
-      # Theme name : ArcoLinux Default
-
-      # Window color settings
-      # class                 border  backgr. text    indicator
-      client.focused          #6790EB #6790EB #e5e5e5 #6790EB
-      client.unfocused        #222222 #222222 #aaaaaa #222222
-      client.focused_inactive #222222 #222222 #a9a9a9 #222222
-      client.placeholder      #222222 #222222 #aaaaaa #222222
-      client.urgent           #d42121 #d42121 #f7f7f7 #d42121
-      client.background       #242424
-
-
-        # # window colors red version
-        # client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
-        # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-        # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-        # client.urgent           #2f343a #900000 #ffffff #900000   #900000
-        # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-        # client.background       #ffffff
-
-      ##STOP THEMING WM
-     ######################################## THE END 
+  # bar {
+  #     height 20
+  #     workspace_buttons yes
+  #     font pango:Noto Sans 12
+  #   # position top
+  #     position bottom
+  #
+  #   # system icons
+  #     # tray_output none
+  #     # tray_output $firstMonitor
+  #     tray_output $secondMonitor
+  #
+  #     # OPTION 1 : i3status
+  #
+  #     # type status_command i3status without the config file and
+  #     # you will get the standard i3status bar
+  #     # Second one is the standard statusbar with my personal settings
+  #
+  #       # status_command i3status
+  #     status_command i3status -c ~/.config/i3/i3status.conf
+  #
+  #     # OPTION 2 : i3blocks
+  #
+  #     # https://github.com/vivien/i3blocks
+  #     # another way to provide text in the statusbar
+  #     # put hastag in front if not installed
+  #
+  #     # status_command i3blocks
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+  #     # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+  #
+  #     # i3 bar colors
+  #     # variable border background Text
+  #
+  #     colors {
+  #         background #2F2F2F
+  #         statusline #eeeeee
+  #         separator  #666666
+  #
+  #         # colorclass           border  backgr. text
+  #         focused_workspace     #a9a9a9 #5f676a #eeeeee
+  #         active_workspace      #a9a9a9 #5f676a #eeeeee
+  #         inactive_workspace    #a9a9a9 #222222 #a9a9a9
+  #         urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+  #         }
+  #
+  #     }
+  #     ##STOP THEMING BAR
+  #
+  #     ##START THEMING WM
+  #     # Theme name : ArcoLinux Default
+  #
+  #     # Window color settings
+  #     # class                 border  backgr. text    indicator
+  #     client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+  #     client.unfocused        #222222 #222222 #aaaaaa #222222
+  #     client.focused_inactive #222222 #222222 #a9a9a9 #222222
+  #     client.placeholder      #222222 #222222 #aaaaaa #222222
+  #     client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+  #     client.background       #242424
+  #
+  #
+  #       # # window colors red version
+  #       # client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
+  #       # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+  #       # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+  #       # client.urgent           #2f343a #900000 #ffffff #900000   #900000
+  #       # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+  #       # client.background       #ffffff
+  #
+  #     ##STOP THEMING WM
+  #    ######################################## THE END 
 
 #------------------------------------------------- 
 
