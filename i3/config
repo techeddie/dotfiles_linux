@@ -57,6 +57,7 @@
     #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
+      bindsym $mod+y move scratchpad
     #bring back to foreground
       bindsym $mod+u scratchpad show; move position center
 
@@ -212,7 +213,8 @@
     exec_always --no-startup-id xautolock -detectsleep -time 15 -locker "betterlockscreen --lock blur"
 
     #suspend
-    bindsym $mod+Shift+s  exec ~/.config/i3/suspend.sh  
+    # bindsym $mod+Shift+s  exec i3lock && systemctl suspend
+    bindsym $mod+Shift+s  exec i3lock -i  ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/Beautiful-fog-wallpaper-hd.jpg && systemctl suspend
 
     #logoff shutdown reboot menu
     bindsym $mod+x  exec --no-startup-id archlinux-logout
