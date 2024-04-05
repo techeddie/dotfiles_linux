@@ -91,8 +91,8 @@
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     # bindsym $mod+Shift+a            exec lxappearance
     bindsym $mod+Shift+a            exec autokey-gtk
-    bindsym $mod+Shift+b            [class=Brave] focus
-    bindsym $mod+Shift+d            [class=Doublecmd] focus
+    # bindsym $mod+Shift+b            [class=Brave] focus
+    # bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
@@ -102,7 +102,7 @@
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    bindsym $mod+a                  exec keepassxc; scratchpad show
+    bindsym $mod+a                  exec keepassxc
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
     bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
@@ -366,8 +366,8 @@
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
-    for_window [instance="keepassxc"] move scratchpad; [instance="keepassxc"] scratchpad show
-    for_window [instance="keepassxc"] scratchpad show, move position center
+    for_window [instance="keepassxc"] move scratchpad;
+    for_window [instance="keepassxc"] scratchpad show
     for_window [instance="xfreerdp"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
@@ -408,6 +408,7 @@
     for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Packing"] floating enable, move position center, border normal
     for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
@@ -417,10 +418,12 @@
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
     #focus
-    for_window [class="Alacritty"] focus
-    for_window [class="Brave"] focus
-    for_window [class="xfreerdp"] focus
+    focus_on_window_activation focus
     for_window [urgent=latest] focus
+    for_window [class="^Firefox$"] focus
+    for_window [class="Alacritty"] focus
+    for_window [class="Brave-browser"] focus
+    for_window [instance="xfreerdp"] focus
 
     #always launch app in workspace x
     assign [class="Autokey-gtk"] $workspace5
