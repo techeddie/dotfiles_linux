@@ -170,6 +170,7 @@
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id pamac-tray
+    # exec --no-startup-id thinkfan-ui --hide
     exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id xfce4-power-manager &
@@ -369,6 +370,8 @@
     for_window [instance="keepassxc"] move scratchpad;
     for_window [instance="keepassxc"] scratchpad show
     for_window [instance="xfreerdp"] border normal
+    for_window [class="firefox"] border normal
+    for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
