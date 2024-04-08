@@ -60,7 +60,8 @@
       bindsym $mod+z move scratchpad
       bindsym $mod+y move scratchpad
     #bring back to foreground
-      bindsym $mod+u scratchpad show; move position center
+      bindsym $mod+u     scratchpad show; move position center
+      bindsym $mod+grave scratchpad show; move position center
 
 #-------------------------------------------------
 #key bindings to launch applications
