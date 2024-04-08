@@ -359,6 +359,10 @@
         <Command>cm_SortByDate</Command>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Ctrl+Shift+V</Shortcut>
+        <Command>cm_HorizontalFilePanels</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Del</Shortcut>
         <Command>cm_Delete</Command>
         <Control>Files Panel</Control>
