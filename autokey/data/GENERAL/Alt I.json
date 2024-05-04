@@ -5,7 +5,7 @@
     "modes": [
         3
     ],
-    "usageCount": 8,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -24,7 +24,7 @@
         "hotKey": "i"
     },
     "filter": {
-        "regex": "",
+        "regex": null,
         "isRecursive": false
     }
 }
