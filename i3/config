@@ -93,7 +93,7 @@
     # bindsym $mod+Shift+a            exec lxappearance
     bindsym $mod+Shift+a            exec autokey-gtk
     # bindsym $mod+Shift+b            [class=Brave] focus
-    # bindsym $mod+Shift+d            [class=Doublecmd] focus
+    bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
