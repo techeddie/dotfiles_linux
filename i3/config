@@ -159,7 +159,7 @@
     #exec --no-startup-id compton -c
     #exec --no-startup-id thunderbird
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    exec --no-startup-id "setxkbmap -model pc104 -layout de -option grp:alt_Shift_toggle" 
+    exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
     exec --no-startup-id $term
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -182,7 +182,8 @@
     exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id bauh-tray
     exec --no-startup-id xset r rate 250 40
-    exec --no-startup-id xset s blank
+    # exec --no-startup-id xset s blank
+    exec --no-startup-id xset s off -dpms
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
@@ -219,7 +220,7 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
-    exec_always --no-startup-id xautolock -detectsleep -time 15 -locker "betterlockscreen --lock blur"
+    exec_always --no-startup-id xautolock -detectsleep -time 12000 -locker "betterlockscreen --lock blur"
 
     #suspend
     # bindsym $mod+Shift+s  exec i3lock && systemctl suspend
