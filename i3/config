@@ -96,6 +96,7 @@
     bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
+    bindsym $alt+Shift+n            exec nextcloud
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+o            exec obsidian
