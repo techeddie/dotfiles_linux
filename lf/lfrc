@@ -510,6 +510,7 @@ cmd copy_to_clipboard %{{
   map <c-l> :fzf_jump_history
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
+  map <c-n> :!ncdu $fx
   map <c-w> :set_wallpaper
   map <enter> open
   map <f-2> rename #rename current selection
