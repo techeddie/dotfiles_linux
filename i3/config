@@ -147,23 +147,27 @@
 
 
     #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
+    #exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
     #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+    #exec --no-startup-id compton -c
     #exec --no-startup-id conky -c ~/.config/i3/system-overview
     #exec --no-startup-id guake 
     #exec --no-startup-id remmina -i
     #exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
     #exec --no-startup-id telegram-desktop
+    #exec --no-startup-id thinkfan-ui --hide
+    #exec --no-startup-id thunderbird
     #exec --no-startup-id variety #wallpaper
     #exec --no-startup-id volumeicon
+    #exec --no-startup-id xset s blank
     #exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
     #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-    #exec --no-startup-id compton -c
-    #exec --no-startup-id thunderbird
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
+    exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id $term
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+    exec --no-startup-id bauh-tray
     exec --no-startup-id brave 
     exec --no-startup-id copyq
     exec --no-startup-id firewall-applet
@@ -172,19 +176,15 @@
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id pamac-tray
-    # exec --no-startup-id thinkfan-ui --hide
     exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id xfce4-power-manager &
+    exec --no-startup-id xset r rate 250 40
+    exec --no-startup-id xset s off -dpms
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
-    exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id bauh-tray
-    exec --no-startup-id xset r rate 250 40
-    # exec --no-startup-id xset s blank
-    exec --no-startup-id xset s off -dpms
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
