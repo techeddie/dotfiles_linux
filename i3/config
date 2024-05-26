@@ -77,6 +77,10 @@
     # bindsym $mod+n                  exec --no-startup-id nixnote2
     # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
+    # bindsym $mod+Shift+a            exec lxappearance
+    # bindsym $mod+Shift+b            [class=Brave] focus
+    # bindsym Shift+Print             bar mode toggle
+    bindsym $alt+Shift+n            exec nextcloud
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
@@ -90,13 +94,10 @@
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
-    # bindsym $mod+Shift+a            exec lxappearance
     bindsym $mod+Shift+a            exec autokey-gtk
-    # bindsym $mod+Shift+b            [class=Brave] focus
     bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
-    bindsym $alt+Shift+n            exec nextcloud
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+o            exec obsidian
@@ -117,7 +118,6 @@
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
-    bindsym Shift+Print             bar mode toggle
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
     
