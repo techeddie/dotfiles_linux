@@ -95,7 +95,7 @@ keybinding:
         quit-alt1: '<c-c>' # alternative/alias of quit
         return: '<esc>' # return to previous menu, will quit if there's nowhere to return
         # When set to a printable character, this will work for returning from non-prompt panels
-        return-alt1: null
+        return-alt1: <disabled>
         quitWithoutChangingDirectory: 'Q'
         togglePanel: '<tab>' # goto the next panel
         prevItem: '<up>' # go one line up
@@ -115,7 +115,7 @@ keybinding:
         jumpToBlock: ['1', '2', '3', '4', '5'] # goto the Nth block / panel
         nextMatch: 'n'
         prevMatch: 'N'
-        optionMenu: null # show help menu
+        optionMenu: <disabled> # show help menu
         optionMenu-alt1: '?' # show help menu
         select: '<space>'
         goInto: '<enter>'
