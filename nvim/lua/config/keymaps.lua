@@ -147,6 +147,7 @@ local opts = { noremap = true, silent = true }
 
 
 --LAZYGIT
+  keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>") --lazygit
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
 
 --SEARCH AND REPLACE
