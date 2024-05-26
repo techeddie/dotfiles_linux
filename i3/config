@@ -379,10 +379,6 @@
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
-    #scratchpad
-    bindsym $mod+Shift+minus move scratchpad # Make the currently focused window a scratchpad
-    bindsym $mod+minus scratchpad show # Show the first scratchpad window
-
     # floating
     floating_modifier $mod
     bindsym $mod+t floating toggle; 
@@ -462,8 +458,10 @@
   # bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 #------------------------------------------------- 
 # brightness control
-    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
-    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
+  # increase screen brightness
+    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+  # decrease screen brightness
+    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 #------------------------------------------------- 
 # Variety keybindings $alt = ALT
