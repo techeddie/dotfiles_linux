@@ -373,6 +373,7 @@
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
     for_window [class="firefox"] border normal
+    for_window [class="Wfica"] border normal
     for_window [class="Alacritty"] border normal
     for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
