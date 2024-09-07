@@ -443,7 +443,7 @@ cmd copy_to_clipboard %{{
   map gM cd ~/Nextcloud/MEDIA
   map gm cd /run/media/eddie/
   map gN cd ~/Nextcloud
-  map gO cd ~/Nextcloud/MEDIA/OBSIDIAN/
+  map gO cd ~/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/
   map gW cd ~/Nextcloud/MEDIA/PICTURES/WALLPAPER
   map gc cd ~/.config
   map gd cd ~/gitREPO/dotfiles_linux
