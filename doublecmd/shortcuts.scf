@@ -366,7 +366,7 @@
       <Hotkey>
         <Shortcut>Alt+O</Shortcut>
         <Command>cm_ChangeDir</Command>
-        <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/</Param>
+        <Param>/home/eddie/opt</Param>
       </Hotkey>
       <Hotkey>
         <Shortcut>Alt+M</Shortcut>
@@ -397,6 +397,11 @@
         <Shortcut>Alt+D</Shortcut>
         <Command>cm_ChangeDir</Command>
         <Param>/home/eddie/Downloads</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+T</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/</Param>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
