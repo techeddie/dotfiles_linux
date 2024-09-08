@@ -510,7 +510,7 @@
         <Control>Files Panel</Control>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+.</Shortcut>
+        <Shortcut>.</Shortcut>
         <Command>cm_ShowSysFiles</Command>
         <Control>Files Panel</Control>
       </Hotkey>
