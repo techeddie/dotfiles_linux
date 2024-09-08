@@ -56,10 +56,6 @@
         <Command>cm_FlatView</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+D</Shortcut>
-        <Command>cm_DirHotList</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+F</Shortcut>
         <Command>cm_QuickFilter</Command>
       </Hotkey>
@@ -363,6 +359,46 @@
         <Command>cm_HorizontalFilePanels</Command>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Alt+R</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/opt/RESTORE</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+O</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+M</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/Nextcloud/MEDIA/</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+N</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/Nextcloud/</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+L</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/.local</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+C</Shortcut>
+        <Command>cm_ChangeDirToHome</Command>
+        <Param>/home/eddie/.config</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+S</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/scripts</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+D</Shortcut>
+        <Command>cm_ChangeDir</Command>
+        <Param>/home/eddie/Downloads</Param>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Del</Shortcut>
         <Command>cm_Delete</Command>
         <Control>Files Panel</Control>
@@ -419,11 +455,6 @@
         <Control>Files Panel</Control>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+Shift+Home</Shortcut>
-        <Command>cm_ChangeDirToHome</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+Left</Shortcut>
         <Command>cm_TransferLeft</Command>
         <Control>Files Panel</Control>
@@ -476,6 +507,11 @@
       <Hotkey>
         <Shortcut>Ctrl+.</Shortcut>
         <Command>cm_ShowSysFiles</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+D</Shortcut>
+        <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>
