@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.0.11">
-  <Hotkeys Version="53">
+<doublecmd DCVersion="1.1.17 gamma">
+  <Hotkeys Version="63">
     <Form Name="Main">
       <Hotkey>
         <Shortcut>F2</Shortcut>
@@ -9,10 +9,6 @@
       <Hotkey>
         <Shortcut>Shift+F6</Shortcut>
         <Command>cm_RenameOnly</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>F3</Shortcut>
-        <Command>cm_View</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>F4</Shortcut>
@@ -264,16 +260,6 @@
         <Command>cm_TestArchive</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+1</Shortcut>
-        <Command>cm_ActivateTabByIndex</Command>
-        <Param>index=1</Param>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Alt+2</Shortcut>
-        <Command>cm_ActivateTabByIndex</Command>
-        <Param>index=2</Param>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Alt+3</Shortcut>
         <Command>cm_ActivateTabByIndex</Command>
         <Param>index=3</Param>
@@ -404,6 +390,62 @@
         <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/</Param>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Alt+2</Shortcut>
+        <Command>cm_RightOpenDrives</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+1</Shortcut>
+        <Command>cm_LeftOpenDrives</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>F3</Shortcut>
+        <Command>cm_View</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Shift+F3</Shortcut>
+        <Command>cm_View</Command>
+        <Param>cursor=1</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+D</Shortcut>
+        <Command>cm_DirHotList</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+.</Shortcut>
+        <Command>cm_ShowSysFiles</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+5</Shortcut>
+        <Command>cm_OpenDriveByIndex</Command>
+        <Param>index=5</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+6</Shortcut>
+        <Command>cm_OpenDriveByIndex</Command>
+        <Param>index=6</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+7</Shortcut>
+        <Command>cm_OpenDriveByIndex</Command>
+        <Param>index=7</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+8</Shortcut>
+        <Command>cm_OpenDriveByIndex</Command>
+        <Param>index=8</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+9</Shortcut>
+        <Command>cm_OpenDriveByIndex</Command>
+        <Param>index=9</Param>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Shift+Alt+S</Shortcut>
+        <Command>cm_ConfigHotKeys</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Del</Shortcut>
         <Command>cm_Delete</Command>
         <Control>Files Panel</Control>
@@ -495,11 +537,6 @@
         <Control>Files Panel</Control>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+1</Shortcut>
-        <Command>cm_DirHotList</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>G</Shortcut>
         <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
@@ -507,16 +544,6 @@
       <Hotkey>
         <Shortcut>Ctrl+S</Shortcut>
         <Command>cm_TargetEqualSource</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>.</Shortcut>
-        <Command>cm_ShowSysFiles</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+D</Shortcut>
-        <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>

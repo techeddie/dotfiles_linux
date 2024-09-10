@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doublecmd>
   <Highlighters Version="2">
-    <Highlighter Tag="0" Name="Einfacher Text">
+    <Highlighter Tag="0" Name="Plain text">
       <DefaultFilter/>
     </Highlighter>
     <Highlighter Tag="0" Name="Assembler (x86)">
@@ -21,6 +21,9 @@
     </Highlighter>
     <Highlighter Tag="1" Name="Diff File">
       <DefaultFilter>Difference Files (*.diff,*.patch)|*.diff;*.patch</DefaultFilter>
+    </Highlighter>
+    <Highlighter Tag="0" Name="Go">
+      <DefaultFilter>Go|*.GO</DefaultFilter>
     </Highlighter>
     <Highlighter Tag="1" Name="HTML document">
       <DefaultFilter>HTML Document (*.htm,*.html)|*.htm;*.html</DefaultFilter>
@@ -57,6 +60,9 @@
     </Highlighter>
     <Highlighter Tag="1" Name="Python">
       <DefaultFilter>Python Files (*.py)|*.py</DefaultFilter>
+    </Highlighter>
+    <Highlighter Tag="0" Name="Rust">
+      <DefaultFilter>Rust|*.RS</DefaultFilter>
     </Highlighter>
     <Highlighter Tag="1" Name="SQL">
       <DefaultFilter>SQL Files (*.sql)|*.sql</DefaultFilter>
