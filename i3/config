@@ -418,6 +418,7 @@
     for_window [title="Edit"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
     for_window [title="Options"] floating enable,resize set 800 600, move position center 
+    for_window [title="TbSync"] floating enable,resize set 800 600, move position center 
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
