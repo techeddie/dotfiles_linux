@@ -170,13 +170,14 @@
     exec --no-startup-id bauh-tray
     exec --no-startup-id brave 
     exec --no-startup-id copyq
-    exec --no-startup-id firewall-applet
+    # exec --no-startup-id firewall-applet
     exec --no-startup-id flameshot
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id pamac-tray
-    exec --no-startup-id pasystray &
+    exec --no-startup-id keepassxc
+    # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id xfce4-power-manager &
     exec --no-startup-id xset r rate 250 40
