@@ -185,7 +185,7 @@
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
-    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --forest
+    exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/polybar/forest/launch.sh
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
