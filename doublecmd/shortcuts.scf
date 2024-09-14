@@ -407,16 +407,6 @@
         <Param>cursor=1</Param>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+D</Shortcut>
-        <Command>cm_DirHotList</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+.</Shortcut>
-        <Command>cm_ShowSysFiles</Command>
-        <Control>Files Panel</Control>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+5</Shortcut>
         <Command>cm_OpenDriveByIndex</Command>
         <Param>index=5</Param>
@@ -444,6 +434,20 @@
       <Hotkey>
         <Shortcut>Shift+Alt+S</Shortcut>
         <Command>cm_ConfigHotKeys</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+F</Shortcut>
+        <Command>cm_QuickFilter</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+D</Shortcut>
+        <Command>cm_DirHotList</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+.</Shortcut>
+        <Command>cm_ShowSysFiles</Command>
+        <Control>Files Panel</Control>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
