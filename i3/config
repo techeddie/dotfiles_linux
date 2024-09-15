@@ -172,7 +172,7 @@
     exec --no-startup-id $term
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-    exec --no-startup-id bauh-tray
+    exec --no-startup-id octopi-notifier
     exec --no-startup-id brave 
     exec --no-startup-id copyq
     # exec --no-startup-id firewall-applet
@@ -440,7 +440,7 @@
     # assign [class="Doublecmd"] $workspace6
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
-    assign [class="KeePassXC"] $workspace5
+    # assign [class="KeePassXC"] $workspace5
     assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace9
     assign [class="firefox"] $workspace5
