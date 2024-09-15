@@ -18,6 +18,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("ns", "  nvim settings", ":e ~/.config/nvim/lua/config/settings.lua <CR>"),
 	dashboard.button("nk", "  nvim keymaps", ":e ~/.config/nvim/lua/config/keymaps.lua <CR>"),
 	dashboard.button("np", "  nvim plugins", ":e ~/.config/nvim/lua/config/plugins.lua <CR>"),
+	dashboard.button("tc", "  tmux config", ":e ~/.tmux.conf <CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
