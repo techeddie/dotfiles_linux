@@ -98,14 +98,14 @@ return require('packer').startup(function()
 
   -- FILE MANAGEMENT --
   -- use "vifm/vifm.vim"
-  -- use "mhinz/vim-startify"
+  use "mhinz/vim-startify"
 -- use greeter
-  use {
-      'goolord/alpha-nvim',
-      config = function ()
-          require'alpha'.setup(require'alpha.themes.dashboard'.config)
-      end
-  }
+  -- use {
+  --     'goolord/alpha-nvim',
+  --     config = function ()
+  --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  --     end
+  -- }
 
   use "mbbill/undotree"
   use "ptzz/lf.vim"

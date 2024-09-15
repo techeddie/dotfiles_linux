@@ -8,13 +8,13 @@ require "config.autocmds"
 require "config.alias"
 
 --additional plugin configs
-require "plugconfig.alpha"
+require "plugconfig.startify"
 require "plugconfig.buffergator"
 require "plugconfig.bufferline"
 require "plugconfig.cmp"
 require "plugconfig.comment"
 require "plugconfig.fzf"
-require "plugconfig.gitsigns"
+-- require "plugconfig.gitsigns"
 
 -- require "plugconfig.indentline"
 -- require "plugconfig.lsp"
