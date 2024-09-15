@@ -15,6 +15,7 @@ local cmd = vim.cmd
 
 cmd [[
   "AUTOCOMMANDS"
+    set statusline+=%{get(b:,'gitsigns_status','')}
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
     autocmd BufWritePost keymaps.lua source ~/.config/nvim/lua/config/keymaps.lua"
     autocmd BufWritePost autocmds.lua source ~/.config/nvim/lua/config/autocmds.lua"
