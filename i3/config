@@ -143,8 +143,13 @@
     # bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 #-------------------------------------------------
-#execute on logon - auto startup
+#execute on logon - autostartup
 
+    exec_always --no-startup-id /usr/bin/autokey-gtk
+    exec_always --no-startup-id autotiling 
+    exec_always --no-startup-id numlockx on
+    exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/polybar/forest/launch.sh
+    exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
 
     #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
     #exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
@@ -175,17 +180,13 @@
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
-    exec --no-startup-id pamac-tray
+    # exec --no-startup-id pamac-tray
     exec --no-startup-id keepassxc
     # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id xfce4-power-manager &
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
-    exec_always --no-startup-id /usr/bin/autokey-gtk
-    exec_always --no-startup-id autotiling 
-    exec_always --no-startup-id numlockx on
-    exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/polybar/forest/launch.sh
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
@@ -363,13 +364,14 @@
     for_window [class="brave"] set $outer_gaps 20
     for_window [class="firefox"] layout tabbed
     for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="keepassxc"] layout tabbed, move position center
     for_window [class="rdesktop"] border normal
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
+    for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
+    for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
-    for_window [instance="keepassxc"] move scratchpad;
-    for_window [instance="keepassxc"] scratchpad show
+    # for_window [instance="keepassxc"] move scratchpad;  #moved to scripts
+    # for_window [instance="keepassxc"] scratchpad show #moved to scripts
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
@@ -438,6 +440,7 @@
     # assign [class="Doublecmd"] $workspace6
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
+    assign [class="KeePassXC"] $workspace5
     assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace9
     assign [class="firefox"] $workspace5
