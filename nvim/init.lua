@@ -14,7 +14,7 @@ require "plugconfig.bufferline"
 require "plugconfig.cmp"
 require "plugconfig.comment"
 require "plugconfig.fzf"
--- require "plugconfig.gitsigns"
+require "plugconfig.gitsigns"
 
 -- require "plugconfig.indentline"
 -- require "plugconfig.lsp"
