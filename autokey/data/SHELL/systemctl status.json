@@ -11,8 +11,8 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jstat",
-            "jstatus"
+            "jstatus",
+            "jstat"
         ],
         "backspace": true,
         "ignoreCase": false,

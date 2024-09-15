@@ -212,10 +212,6 @@
         <Command>cm_FocusTreeView</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+V</Shortcut>
-        <Command>cm_OperationsViewer</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Alt+X</Shortcut>
         <Command>cm_Exit</Command>
       </Hotkey>
@@ -438,6 +434,10 @@
       <Hotkey>
         <Shortcut>Alt+F</Shortcut>
         <Command>cm_QuickFilter</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+V</Shortcut>
+        <Command>cm_HorizontalFilePanels</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Ctrl+D</Shortcut>
