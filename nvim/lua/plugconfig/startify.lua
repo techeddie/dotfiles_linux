@@ -13,16 +13,16 @@ g.startify_custom_header = {}
 -- }
 --
 g.startify_bookmarks = {
-       {ac  = '~/.config/alacritty/alacritty.yml'},     -- alacritty config 
-       {i   = '~/.config/nvim/init.lua'},               -- neovim init file
-       {ic  = '~/.config/i3/config'},                   -- i3 config file
-       {lc  = '~/Nextcloud/LINUX/LINUX_COMMANDS.sh'},   -- linux knowledge base
+       {ac  = '~/.config/alacritty/alacritty.yml'},      -- alacritty config 
+       {i   = '~/.config/nvim/init.lua'},                -- neovim init file
+       {ic  = '~/.config/i3/config'},                    -- i3 config file
+       {lc  = '~/Nextcloud/LINUX/LINUX_COMMANDS.sh'},    -- linux knowledge base
        {lf  = '~/.config/lf/lfrc'},                      -- lf file manager config
        {m   = '~/.config/nvim/lua/config/keymaps.lua'},  -- neovim keymap 
        {p   = '~/.config/nvim/lua/config/plugins.lua'},  -- neovim plugins 
        {ns  = '~/.config/nvim/lua/config/settings.lua'}, -- neovim default settings
-       {tc  = '~/.tmux.conf'},                          -- tmux config file
-       {zc  = '~/.zshrc'},                              -- zsh config 
+       {tc  = '~/.tmux.conf'},                           -- tmux config file
+       {zc  = '~/.zshrc'},                               -- zsh config 
 }
 
 local user_bookmarks = vim.g.startup_bookmarks
