@@ -45,5 +45,5 @@ cmd [[
              "autocmd BufEnter * if &buftype =="toggleterm" | lcd %:p:h 
 
             "CHANGE PWD WHEN OPENING A FILE - TESTING
-             " -- autocmd BufEnter * silent! lcd %:p:h
+               autocmd BufEnter * silent! lcd %:p:h
 ]]
