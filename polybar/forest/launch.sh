@@ -12,3 +12,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
 polybar -q main -c "$DIR"/config.ini &
+
+#launch my apps
+nitrogen --restore
+sh $HOME/scripts/runMouseGXTAccel.sh
+sh $HOME/scripts/runHDMI_AUTODETECT.sh
