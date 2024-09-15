@@ -33,7 +33,7 @@ cmd [[
                 ""\   if !argc()
                 ""\ |   Startify
                 ""\ | endif
-""
+
             "autocmd FileType lua nmap <F5> :TermExec cmd="lua %:p" direction=horizontal<cr>
             "autocmd FileType lua nmap <F5> <ESC>:w<cr> :!lua5.4 %<cr>
             "autocmd BufReadPost,FileReadPost * normal zR
