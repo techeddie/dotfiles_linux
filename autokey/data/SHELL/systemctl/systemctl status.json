@@ -1,17 +1,18 @@
 {
     "type": "phrase",
-    "description": "restic snapshots",
+    "description": "systemctl status",
     "modes": [
         1
     ],
-    "usageCount": 6,
+    "usageCount": 4,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrs"
+            "jstatus",
+            "jstat"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -1,1 +1,1 @@
-restic snapshots
+sudo bash

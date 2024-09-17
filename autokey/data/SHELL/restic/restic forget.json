@@ -1,18 +1,17 @@
 {
     "type": "phrase",
-    "description": "systemctl status",
+    "description": "restic forget",
     "modes": [
         1
     ],
-    "usageCount": 3,
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jstatus",
-            "jstat"
+            "jrf"
         ],
         "backspace": true,
         "ignoreCase": false,

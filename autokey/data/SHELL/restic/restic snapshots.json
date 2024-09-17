@@ -1,6 +1,6 @@
 {
     "type": "phrase",
-    "description": "restic forget",
+    "description": "restic snapshots",
     "modes": [
         1
     ],
@@ -11,7 +11,8 @@
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrf"
+            "jrstats",
+            "jrstat"
         ],
         "backspace": true,
         "ignoreCase": false,

@@ -1,18 +1,17 @@
 {
     "type": "phrase",
-    "description": "sudo bash",
+    "description": "restic snapshots",
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 12,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrb",
-            "jsb"
+            "jrs"
         ],
         "backspace": true,
         "ignoreCase": false,
