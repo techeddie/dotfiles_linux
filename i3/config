@@ -50,15 +50,15 @@
 
     #keybindings toggle gaps - todo
     bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
-    bindsym $mod+F2 gaps inner current set 5; gaps outer current set 1
-    bindsym $mod+F3 gaps inner current set 20; gaps outer current set 1
-    bindsym $mod+F4 gaps inner current set 30; gaps outer current set 30
+    bindsym $mod+F2 gaps inner current set 20; gaps outer current set 1
+    bindsym $mod+F3 gaps inner current set 35; gaps outer current set 1
+    bindsym $mod+F4 gaps inner current set 60; gaps outer current set 30
     # bindsym $mod+F5 gaps inner current set 61; gaps outer current set 30
 
     #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
-      bindsym $mod+y move scratchpad
+      # bindsym $mod+u move scratchpad
     #bring back to foreground
       bindsym $mod+u     scratchpad show; move position center
       bindsym $mod+grave scratchpad show; move position center
@@ -105,7 +105,7 @@
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    bindsym $mod+a                  exec keepassxc
+    # bindsym $mod+a                  exec keepassxc
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
     bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
@@ -223,11 +223,12 @@
     bindsym --release $mod+Escape   exec xkill
 
     #lock screen after x minutes
-    exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+    exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur" \
+      -notify 30 -notifier "notify-send -t 75000 --icon=dialog-information -- 'locking screen in 30 seconds'"
 
     #suspend
-    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/ARCH-LINUX/Arch-Linux-Black.jpg  && systemctl suspend
-    # bindsym $mod+Shift+s  exec i3lock -i  ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
+    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling \
+      -i ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/ARCH-LINUX/Arch-Linux-Black.jpg  && systemctl suspend
     # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
 
 

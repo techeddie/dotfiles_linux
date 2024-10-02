@@ -443,7 +443,7 @@ cmd copy_to_clipboard %{{
   map gM cd ~/Nextcloud/MEDIA
   map gm cd /run/media/eddie/
   map gN cd ~/Nextcloud
-  map gO cd ~/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/
+  map gO cd ~/Nextcloud/MEDIA/OBSIDIAN/t490/obsidian_sync/
   map gW cd ~/Nextcloud/MEDIA/PICTURES/WALLPAPER
   map gc cd ~/.config
   map gd cd ~/gitREPO/dotfiles_linux
@@ -457,7 +457,7 @@ cmd copy_to_clipboard %{{
   map gr cd /
   map gR cd ~/opt/RESTORE
   map gs cd ~/scripts
-  map gt cd ~/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/
+  map gt cd ~/Nextcloud/MEDIA/OBSIDIAN/t490/obsidian_sync/
   map gu cd /usr/
   map gw cd ~/Nextcloud/MEDIA/PICTURES/WALLPAPER
 #FOLDER BOOKMARKS END
@@ -495,7 +495,7 @@ cmd copy_to_clipboard %{{
   map <a-0> recol  
   map <a-b> :git_branch
   map <a-e> :!thunar .
-  map <a-f> :fzf_jump
+  map <a-f> :fzf_jump_max
   map <a-m> $vimv $fx   #renaming VI like
   map <a-p> :file_preview 
   map <a-r> :edit_config

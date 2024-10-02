@@ -30,6 +30,7 @@ local options = {
   listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂',
   -- listchars = 'tab:→ ',
   mouse = "a",
+  mouse = "",
   number = true,
   numberwidth = 2,
   pumheight = 10,

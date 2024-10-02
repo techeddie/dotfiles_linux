@@ -128,6 +128,73 @@
               InactiveMarkColor : 128
             }
           ]
+        },
+        {
+          Unique : "B5A3D35C-45AF-449B-97ED-9F6419574D29",
+          Name : "Default",
+          CursorBorderColor : -2147483635,
+          Columns : [
+            {
+              Unique : "9E086B36-D2A0-4081-8BA8-2D2B2A1B0AD0",
+              Title : "Name",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "B9A0BB88-D88B-4023-B788-6F277B42F9E1",
+              Title : "Ext",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "7F1C5CCD-DCEE-4311-875C-BF75E035D92B",
+              Title : "Size",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "EA84E3D9-03D6-4F99-8DC9-C24DD757DA27",
+              Title : "Date",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "FCD1A08D-35DA-4E16-8628-F5796318D6A4",
+              Title : "Attr",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            }
+          ]
         }
       ],
       Highlighters : [
@@ -1380,7 +1447,7 @@
               CursorColor : -2147483635,
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
-              InactiveMarkColor : 255
+              InactiveMarkColor : 128
             },
             {
               Unique : "B9A0BB88-D88B-4023-B788-6F277B42F9E1",
@@ -1392,7 +1459,7 @@
               CursorColor : -2147483635,
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
-              InactiveMarkColor : 255
+              InactiveMarkColor : 128
             },
             {
               Unique : "7F1C5CCD-DCEE-4311-875C-BF75E035D92B",
@@ -1404,7 +1471,7 @@
               CursorColor : -2147483635,
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
-              InactiveMarkColor : 255
+              InactiveMarkColor : 128
             },
             {
               Unique : "EA84E3D9-03D6-4F99-8DC9-C24DD757DA27",
@@ -1416,7 +1483,7 @@
               CursorColor : -2147483635,
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
-              InactiveMarkColor : 255
+              InactiveMarkColor : 128
             },
             {
               Unique : "FCD1A08D-35DA-4E16-8628-F5796318D6A4",
@@ -1428,7 +1495,7 @@
               CursorColor : -2147483635,
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
-              InactiveMarkColor : 255
+              InactiveMarkColor : 128
             }
           ]
         }
