@@ -58,7 +58,7 @@
     #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
-      # bindsym $mod+u move scratchpad
+      bindsym $mod+y move scratchpad
     #bring back to foreground
       bindsym $mod+u     scratchpad show; move position center
       bindsym $mod+grave scratchpad show; move position center
@@ -149,7 +149,7 @@
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/polybar/forest/launch.sh
-    exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
+    # exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
 
     #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
     #exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
@@ -181,9 +181,10 @@
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     # exec --no-startup-id pamac-tray
-    exec --no-startup-id keepassxc
+    exec --no-startup-id keepassxc 
     # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
+    exec --no-startup-id sh ~/scripts/runMountOnlineBackup.sh
     exec --no-startup-id xfce4-power-manager &
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
@@ -373,7 +374,8 @@
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
-    # for_window [instance="keepassxc"] move scratchpad;  #moved to scripts
+    for_window [instance="keepassxc"] move scratchpad;
+#moved to scripts
     # for_window [instance="keepassxc"] scratchpad show #moved to scripts
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
