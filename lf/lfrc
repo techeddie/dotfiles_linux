@@ -118,6 +118,18 @@ cmd on-select %{{
 #     lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
 # }}
 
+
+# dynamically set number of columns
+cmd on-redraw %{{
+    if [ "$lf_width" -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ "$lf_width" -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
+}}
+
 #####################
 #create a new file
   cmd touch ${{
@@ -345,6 +357,11 @@ cmd copy_to_clipboard %{{
 }}
 
 #####################
+# make executeable
+cmd make_executeable ${{
+    chmod +x $fx $1
+    lf -remote "send $id :reload"
+}}
 
 # show progress for file copying (copy-on-write)
 # https://github.com/gokcehan/lf/wiki/Tips#show-progress-for-file-copying
@@ -490,6 +507,7 @@ cmd copy_to_clipboard %{{
   cmap <tab> cmd-menu-complete
   cmap <up> cmd-history-prev
   map - z
+  map <a-l> z
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
@@ -500,6 +518,7 @@ cmd copy_to_clipboard %{{
   map <a-p> :file_preview 
   map <a-r> :edit_config
   map <a-t> :tag-toggle
+  map <a-x> :make_executeable 
   map <a-v> toggle_preview
   map <backspace2> updir
   map <backspace> :fzf_jump_history
