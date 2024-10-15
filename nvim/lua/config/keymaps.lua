@@ -21,6 +21,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<leader>t", ":terminal <CR>") --open new tab
   keymap("n", "<leader>x", ":bd <CR>") --buffer delete
+  keymap("n", "<c-q>", ":bd <CR>") --buffer delete
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 
@@ -43,6 +44,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
+  keymap("n", "<M-f>", ":Files <CR>") --horizontal split
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
   keymap("n", "<M-o>", "<C-o>") --jump to last location
@@ -126,15 +128,15 @@ local opts = { noremap = true, silent = true }
 --FILE MANAGEMENT
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
-  keymap("n", "<F4>", ":Lf<CR>") --lf filemanager
   keymap("n", "<M-1>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
-  keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
+  keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<leader>hs", ":set hlsearch <CR>") --no highlight
-  keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
+  keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
+  keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
   keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
