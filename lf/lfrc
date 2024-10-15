@@ -317,12 +317,13 @@ cmd set_wallpaper ${{
 
 #####################
 #GIT
-  cmd git_branch ${{
-      git branch | fzf | xargs git checkout
-      pwd_shell=$(pwd)
-      lf -remote "send $id updir"
-      lf -remote "send $id cd \"$pwd_shell\""
-  }}
+  # cmd git_branch ${{
+  #     git branch | fzf | xargs git checkout
+  #     pwd_shell=$(pwd)
+  #     lf -remote "send $id updir"
+  #     lf -remote "send $id cd \"$pwd_shell\""
+  # }}
+
 #####################
 #YANK TO CLIPBOARD
 cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
@@ -357,9 +358,20 @@ cmd copy_to_clipboard %{{
 }}
 
 #####################
-# make executeable
+# make and unmake executeable
 cmd make_executeable ${{
     chmod +x $fx $1
+    lf -remote "send $id :reload"
+}}
+
+cmd unmake_executeable ${{
+    chmod -x $fx $1
+    lf -remote "send $id :reload"
+}}
+
+
+# reload lf file manager
+cmd lf_reload ${{
     lf -remote "send $id :reload"
 }}
 
@@ -511,7 +523,7 @@ cmd make_executeable ${{
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
-  map <a-b> :git_branch
+  # map <a-b> :git_branch
   map <a-e> :!thunar .
   map <a-f> :fzf_jump_max
   map <a-m> $vimv $fx   #renaming VI like
@@ -519,6 +531,8 @@ cmd make_executeable ${{
   map <a-r> :edit_config
   map <a-t> :tag-toggle
   map <a-x> :make_executeable 
+  map <a-X> :unmake_executeable 
+  map <a-R> :lf_reload
   map <a-v> toggle_preview
   map <backspace2> updir
   map <backspace> :fzf_jump_history
