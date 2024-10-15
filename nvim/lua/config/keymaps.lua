@@ -38,13 +38,14 @@ local opts = { noremap = true, silent = true }
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
+  keymap("n", "+", ":") --open insert mode from normal mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
+  keymap("n", "<M-f>", ":Files <CR>") --show me files in current dir
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
-  keymap("n", "<M-f>", ":Files <CR>") --horizontal split
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
   keymap("n", "<M-o>", "<C-o>") --jump to last location
@@ -75,7 +76,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "gl", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
   keymap("v", "+", ":") --open insert mode from visual mode
-  keymap("n", "+", ":") --open insert mode from normal mode
   keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
   keymap("v", "<leader>n", "> <CR>") --indent visual selected lines to right
   keymap("v", "P", "}") --visual select paragraph
