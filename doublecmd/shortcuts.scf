@@ -440,6 +440,10 @@
         <Command>cm_HorizontalFilePanels</Command>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Ctrl+E</Shortcut>
+        <Command>cm_QuickFilter</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Ctrl+D</Shortcut>
         <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
