@@ -95,18 +95,12 @@ cmd on-cd &{{
     # but are not connected to stdout.
     # To make sure our escape sequence still reaches stdout we pipe it to /dev/tty
     # printf "\033]0; $PWD\007" > /dev/tty
-    list="$(tail -n 20 /tmp/lf_dir_history | sed "\|^$PWD$|d")"
-    echo "$list"$'\n'"$PWD" > /tmp/lf_dir_history
+    list="$(tail -n 35 ~/tmp/lf_dir_history | sed "\|^$PWD$|d")"
+    echo "$list"$'\n'"$PWD" > ~/tmp/lf_dir_history
     printf "\033]0; $(pwd | sed "s|$HOME|~|")\007" > /dev/tty
 }}
-# also run at startup
-on-cd
-
-# cmd on-cd &{{
-# 	list="$(tail -n 20 /tmp/lf_dir_history | sed "\|^$PWD$|d")"
-# 	echo "$list"$'\n'"$PWD" > /tmp/lf_dir_history
-# }}
-
+  # also run at startup
+  on-cd
 
 # exa can be used to provide the file information shown in the bottom left corner:
 # set statfmt ''
@@ -272,7 +266,7 @@ cmd set_wallpaper ${{
 
 
   cmd fzf_jump_history ${{
-    res="$(cat /tmp/lf_dir_history | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$(cat ~/tmp/lf_dir_history | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
       cmd="cd"
     elif [ -f "$res" ] ; then
