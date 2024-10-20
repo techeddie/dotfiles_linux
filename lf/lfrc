@@ -253,7 +253,22 @@ cmd set_wallpaper ${{
 #fuzzy finder max depth
   cmd fzf_jump_max ${{
       # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-      res="$(fd | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd -H  | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      if [ -d "$res" ] ; then
+          cmd="cd"
+      elif [ -f "$res" ] ; then
+          cmd="select"
+      else
+          exit 0
+      fi
+      lf -remote "send $id $cmd \"$res\""
+  }}
+
+
+#fuzzy finder max depth folders
+  cmd fzf_jump_max_folder ${{
+      # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd -H -t d | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
       if [ -d "$res" ] ; then
           cmd="cd"
       elif [ -f "$res" ] ; then
@@ -291,16 +306,16 @@ cmd set_wallpaper ${{
   }}
 
 #####################
-#ZOXIDE
-  cmd z %{{
-      result="$(zoxide query --exclude "${PWD}" -- "$@")"
-      lf -remote "send ${id} cd '${result}'"
-  }}
-
-  cmd zi ${{
-      result="$(zoxide query -i -- "$@")"
-      lf -remote "send ${id} cd '${result}'"
-  }}
+#ZOXIDE - not using anymore
+  # cmd z %{{
+  #     result="$(zoxide query --exclude "${PWD}" -- "$@")"
+  #     lf -remote "send ${id} cd '${result}'"
+  # }}
+  #
+  # cmd zi ${{
+  #     result="$(zoxide query -i -- "$@")"
+  #     lf -remote "send ${id} cd '${result}'"
+  # }}
 
 #####################
 #LAZYGIT
@@ -512,14 +527,12 @@ cmd lf_reload ${{
   cmap <down> cmd-history-next
   cmap <tab> cmd-menu-complete
   cmap <up> cmd-history-prev
-  map - z
-  map <a-l> z
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
   # map <a-b> :git_branch
   map <a-e> :!thunar .
-  map <a-f> :fzf_jump_max
+  map <a-f> :fzf_jump_max_folder
   map <a-m> $vimv $fx   #renaming VI like
   map <a-p> :file_preview 
   map <a-r> :edit_config
@@ -559,9 +572,6 @@ cmd lf_reload ${{
   map R reload
   map S :!zsh
   map V toggle_preview
-  map Z push :zi<space>
-  map z push :zi<space>
-  map Y push :zi<space>
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
@@ -584,3 +594,8 @@ cmd lf_reload ${{
   map v :invert
   map x cut
   map y copy
+
+  # map Z push :zi<space>
+  # map z push :zi<space>
+  # map Y push :zi<space>
+  # map - z
