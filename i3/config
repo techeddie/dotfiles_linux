@@ -69,7 +69,7 @@
     # bindsym $mod+Shift+Print        bar mode invisible
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
-    # bindsym $mod+Shift+f            exec fsearch
+    bindsym $alt+Shift+f            exec fsearch
     # bindsym $mod+Shift+j            exec guake-toggle
     # bindsym $mod+Shift+m            exec xfce4-appfinder
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
@@ -260,7 +260,7 @@
       bindsym $mod+Up focus up
 
     # focus the parent container
-    bindsym $alt+Shift+f focus parent
+    # bindsym $alt+Shift+f focus parent
 
     #change container layout (stacked, tabbed, toggle split)
     # bindsym $mod+Shift+t layout toggle splith splitv tabbed
@@ -393,7 +393,7 @@
     # floating_modifier $alt
     # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
     # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
-    # for_window [class="Fsearch"] floating enable 
+    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
     # for_window [class="rdesktop"] floating enable
