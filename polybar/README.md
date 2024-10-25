@@ -1482,3 +1482,14 @@ There are both `alsa` and `pulseaudio` modules available in each theme. Use acco
 - These themes are created on a 1080p display. So if you're using a 720p or 4k panel, Don't forget to adjust the fonts accordingly.
 - System Tray is disable by default, edit `config.ini` to enable it.
 - Have Fun, Share it with your friends.
+es`, `updates.sh` scripts only works for `pacman` (Arch Linux package manager)
+
+**`8. Volume module is not working`** : 
+
+There are both `alsa` and `pulseaudio` modules available in each theme. Use according to your system.
+
+### Quick FYI
+
+- These themes are created on a 1080p display. So if you're using a 720p or 4k panel, Don't forget to adjust the fonts accordingly.
+- System Tray is disable by default, edit `config.ini` to enable it.
+- Have Fun, Share it with your friends.
