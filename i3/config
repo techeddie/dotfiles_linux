@@ -181,10 +181,11 @@
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     # exec --no-startup-id pamac-tray
+    exec --no-startup-id ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     exec --no-startup-id keepassxc 
     # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
-    exec --no-startup-id sh ~/scripts/runMountOnlineBackup.sh
+    # exec --no-startup-id sh ~/scripts/runMountOnlineBackup.sh
     exec --no-startup-id xfce4-power-manager &
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
@@ -442,7 +443,7 @@
     assign [class="Autokey-gtk"] $workspace5
     assign [class="Autokey-qt"] $workspace5
     assign [class="Brave"] $workspace2
-    # assign [class="Doublecmd"] $workspace6
+    assign [class="Doublecmd"] $workspace6
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
     # assign [class="KeePassXC"] $workspace5
