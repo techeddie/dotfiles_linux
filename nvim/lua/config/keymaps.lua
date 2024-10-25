@@ -34,10 +34,7 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
   -- keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
   -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
-  keymap("n", "<M-p>", ":P<CR>") --open plugins config file
-  keymap("n", "<F5>", ":K<CR>") --open keymap config file
-  keymap("n", "<F6>", ":I<CR>") --open init config file
-  keymap("n", "<F7>", ":P<CR>") --open plugins config file
+
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -45,14 +42,19 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
+  keymap('n', '<s-f5>', [[<cmd>lua print('shift+f5')<cr>]], {noremap = true})
+
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
-  keymap("n", "<M-f>", ":SearchBoxSimple <CR>") --searchbox simple
-  keymap("n", "=", ":") --enter column mode
+  keymap("n", "<F6>", ":K<CR>") --open keymap config file
+  keymap("n", "<F7>", ":I<CR>") --open init config file
+  keymap("n", "<F8>", ":P<CR>") --open plugins config file
+  keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
   keymap("n", "<M-o>", "<C-o>") --jump to last location
+  keymap("n", "<M-p>", ":P<CR>") --open plugins config file
   keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
   keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
   keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
@@ -71,6 +73,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
   keymap("n", "<leader>w", ":set wrap<CR>") --wrap
   keymap("n", "<leader>y", "Yp") --duplicate current line
+  keymap("n", "=", ":") --enter column mode
   keymap("n", "Y", "y$") --make y behave like the other capitals
   keymap("n", "Z", "y$") --make z behave like the other capitals
   keymap("n", "d", '"xd') --do not yank to clip on delete action
@@ -104,14 +107,15 @@ local opts = { noremap = true, silent = true }
   keymap("n", "]", ":cnext<CR>", opts) --next quickfix list item
 
 -- RESIZE PANES
+  -- keymap("n", "<M-)>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
+  -- keymap("n", "<M-/>", ":exec 'resize '. string(&columns * 0.75)<CR>")
+  -- keymap("n", "<M-[>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
   keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
   keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
   keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
   keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
-  keymap("n", "<M-(>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
-  keymap("n", "<M-)>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
-  keymap("n", "<M-/>", ":exec 'resize '. string(&columns * 0.75)<CR>")
   keymap("n", "<M-0>", ":wincmd =<CR>", opts) --make panes equal size
+  keymap("n", "<M-=>", ":wincmd =<CR>", opts) --make panes equal size
 
 -- VISUAL --
   keymap("v", "<", "<gv", opts) -- Stay in indent mode
