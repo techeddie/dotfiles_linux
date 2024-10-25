@@ -24,8 +24,8 @@ cmd [[
     autocmd BufWritePost settings.lua source ~/.config/nvim/lua/config/settings.lua"
 
     autocmd FileType sh nmap <F5> <ESC>:w<CR>:ter zsh "%"<CR>
-    autocmd FileType sh nmap <F8> <ESC>:.w !bash<cr>
-    autocmd FileType sh vmap <F8> <ESC>:.w !bash<cr>
+    "autocmd FileType sh nmap <F8> <ESC>:.w !bash<cr>
+    "autocmd FileType sh vmap <F8> <ESC>:.w !bash<cr>
     "autocmd FileType lua nmap <F5> <ESC>:w<CR>:ter lua "%"<CR>
 
     "AUTO OPEN STARTIFY START PAGE
