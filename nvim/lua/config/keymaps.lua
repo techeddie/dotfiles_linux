@@ -31,10 +31,13 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "-", ":Gitsigns prev_hunk <CR>") --git show prev hunk
   -- keymap("n", "<C-h>", ":History <CR>") --fuzzy history
   -- keymap("n", "<M-g>", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
-  -- keymap("n", "<M-p>", ":pu<CR>") --paste in next line
   -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
   -- keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
   -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
+  keymap("n", "<M-p>", ":P<CR>") --open plugins config file
+  keymap("n", "<F5>", ":K<CR>") --open keymap config file
+  keymap("n", "<F6>", ":I<CR>") --open init config file
+  keymap("n", "<F7>", ":P<CR>") --open plugins config file
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -44,7 +47,8 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
-  keymap("n", "<M-f>", ":SearchBoxSimple <CR>") --show me files in current dir
+  keymap("n", "<M-f>", ":SearchBoxSimple <CR>") --searchbox simple
+  keymap("n", "=", ":") --enter column mode
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
