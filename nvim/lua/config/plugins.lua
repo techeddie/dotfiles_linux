@@ -124,7 +124,7 @@ return require('packer').startup(function()
 
   -- TERMINAL
   use "voldikss/vim-floaterm"
-  -- use "akinsho/toggleterm.nvim"
+  use "akinsho/toggleterm.nvim"
   use "junegunn/fzf"
   use "junegunn/fzf.vim"
 
