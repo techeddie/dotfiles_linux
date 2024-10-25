@@ -44,7 +44,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
-  keymap("n", "<M-f>", ":Files <CR>") --show me files in current dir
+  keymap("n", "<M-f>", ":SearchBoxSimple <CR>") --show me files in current dir
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
   keymap("n", "<M-j>", "<C-d>") --scroll down
   keymap("n", "<M-k>", "<C-u>") --scroll up
