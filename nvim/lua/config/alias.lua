@@ -22,6 +22,7 @@ cmd [[
     command! KeymapReload execute "source ~/.config/nvim/lua/config/keymaps.lua" | echo "Keymaps reloaded"
     command! M execute ":Maps"
     command! Mappings execute ":Maps"
+    command! Run execute ":ter zsh "%"<CR>"
 
     function ObsidianBash()
          :let a = ['', 'bash']
