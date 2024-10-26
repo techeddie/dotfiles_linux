@@ -443,7 +443,7 @@
     assign [class="Autokey-gtk"] $workspace5
     assign [class="Autokey-qt"] $workspace5
     assign [class="Brave"] $workspace2
-    assign [class="Doublecmd"] $workspace6
+    assign [class="Doublecmd"] $workspace4
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
     # assign [class="KeePassXC"] $workspace5
