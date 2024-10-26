@@ -42,8 +42,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
-  keymap('n', '<s-f5>', [[<cmd>lua print('shift+f5')<cr>]], {noremap = true})
-
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
