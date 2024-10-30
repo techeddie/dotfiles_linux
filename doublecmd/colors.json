@@ -195,6 +195,49 @@
               InactiveMarkColor : 128
             }
           ]
+        },
+        {
+          Unique : "",
+          Name : "<Trash>",
+          CursorBorderColor : 0,
+          Columns : [
+            {
+              Unique : "D6169876-93B7-4C32-99C8-AA89A1817419",
+              Title : "Name",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "2373343A-71ED-4206-83BE-2815BED33341",
+              Title : "Ext",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            },
+            {
+              Unique : "4488E0EC-37F9-4BC3-902F-4C6ACD23573D",
+              Title : "Original path",
+              TextColor : -2147483640,
+              Background : -2147483643,
+              Background2 : -2147483643,
+              MarkColor : 255,
+              CursorColor : -2147483635,
+              CursorText : -2147483634,
+              InactiveCursorColor : -2147483645,
+              InactiveMarkColor : 128
+            }
+          ]
         }
       ],
       Highlighters : [
@@ -1496,6 +1539,49 @@
               CursorText : -2147483634,
               InactiveCursorColor : -2147483645,
               InactiveMarkColor : 128
+            }
+          ]
+        },
+        {
+          Unique : "D3494BD8-544F-4BB9-BC1F-769E6C4A09EC",
+          Name : "<Trash>",
+          CursorBorderColor : 0,
+          Columns : [
+            {
+              Unique : "D6169876-93B7-4C32-99C8-AA89A1817419",
+              Title : "Name",
+              TextColor : 0,
+              Background : 0,
+              Background2 : 0,
+              MarkColor : 0,
+              CursorColor : 0,
+              CursorText : 0,
+              InactiveCursorColor : 0,
+              InactiveMarkColor : 0
+            },
+            {
+              Unique : "2373343A-71ED-4206-83BE-2815BED33341",
+              Title : "Ext",
+              TextColor : 0,
+              Background : 0,
+              Background2 : 0,
+              MarkColor : 0,
+              CursorColor : 0,
+              CursorText : 0,
+              InactiveCursorColor : 0,
+              InactiveMarkColor : 0
+            },
+            {
+              Unique : "4488E0EC-37F9-4BC3-902F-4C6ACD23573D",
+              Title : "Original path",
+              TextColor : 0,
+              Background : 0,
+              Background2 : 0,
+              MarkColor : 0,
+              CursorColor : 0,
+              CursorText : 0,
+              InactiveCursorColor : 0,
+              InactiveMarkColor : 0
             }
           ]
         }

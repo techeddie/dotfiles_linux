@@ -444,6 +444,10 @@
         <Command>cm_QuickFilter</Command>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Ctrl+Shift+N</Shortcut>
+        <Command>cm_EditNew</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Ctrl+D</Shortcut>
         <Command>cm_DirHotList</Command>
         <Control>Files Panel</Control>
