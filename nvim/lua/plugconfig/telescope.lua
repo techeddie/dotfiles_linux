@@ -49,7 +49,7 @@ local actions = require "telescope.actions"
 
 --SEARCH COMMANDS
   -- vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-  vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+  vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
   vim.keymap.set('n', '<leader>wg', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
   vim.keymap.set('n', '<leader>ag', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -59,9 +59,10 @@ local actions = require "telescope.actions"
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 --FIND COMMANDS
-  vim.keymap.set("n", "<C-p>", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
-  vim.keymap.set("n", "<leader>p", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
-  vim.keymap.set("n", "<leader>fn", ":Telescope find_files hidden=false cwd=~/gitREPO/dotfiles_linux/nvim/ sorting_strategy=ascending<CR>")
+  -- vim.keymap.set("n", "<C-p>", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
+  vim.keymap.set("n", "<C-p>", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer=true }))<cr>")
+  vim.keymap.set("n", "<leader>p", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer=false }))<cr>")
+  vim.keymap.set("n", "<leader>fn", ":Telescope find_files hidden=false cwd=~/gitREPO/dotfiles_linux/nvim/ sorting_strategy=ascending previewer=true<CR>")
   vim.keymap.set("n", "<leader>fd", ":Telescope find_files hidden=false cwd=~/gitREPO/dotfiles_linux/ sorting_strategy=ascending<CR>")
   vim.keymap.set("n", "<leader>fs", ":Telescope find_files hidden=false cwd=~/scripts/ sorting_strategy=ascending<CR>")
   vim.keymap.set("n", "<leader>fc", ":Telescope find_files hidden=false cwd=~/.config/ sorting_strategy=ascending<CR>")
@@ -81,8 +82,8 @@ telescope.setup {
 
     mappings = {
       i = {
-        --[[ ["<C-n>"] = actions.cycle_history_next, ]]
-        --[[ ["<C-p>"] = actions.cycle_history_prev, ]]
+        ["<C-n>"] = actions.cycle_history_next, 
+        ["<C-p>"] = actions.cycle_history_prev,
         -- ["<S-Down>"] = actions.move_selection_next,
         -- ["<S-Up>"] = actions.move_selection_previous,
 
@@ -92,6 +93,8 @@ telescope.setup {
         ["<C-c>"] = actions.close,
 
         ["<Down>"] = actions.move_selection_next,
+        ["<j>"] = actions.move_selection_next,
+        ["<k>"] = actions.move_selection_previous,
         ["<Up>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
@@ -147,14 +150,31 @@ telescope.setup {
     },
   },
   pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
+  buffers = {
+      previewer = true,
+      theme = 'dropdown',
+      mappings = {
+          n = {
+              ['<C-e>'] = 'delete_buffer',
+              ['l'] = 'select_default',
+          },
+      },
+      initial_mode = 'normal',
   },
+  find_files = {
+                -- theme = 'ivy', -- 'ivy', 'dropdown', 'cursor'
+                -- layout_strategy = 'vertical',
+                -- layout_config = { height = 0.9 },
+                -- previewer = false,
+                path_display = { 'smart' },
+                layout_config = {
+                    prompt_position = 'top',
+                    preview_width = 0.5,
+                    -- width = 0.7,
+                },
+                sorting_strategy = 'ascending',
+            },
+          },
   extensions = {
     media_files = {
       -- filetypes whitelist
