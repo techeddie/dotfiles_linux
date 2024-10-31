@@ -30,7 +30,6 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "+", ":") --open insert mode from normal mode
   -- keymap("n", "-", ":Gitsigns prev_hunk <CR>") --git show prev hunk
   -- keymap("n", "<C-h>", ":History <CR>") --fuzzy history
-  -- keymap("n", "<M-g>", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
   -- keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
   -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
@@ -68,7 +67,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>r", "<C-w>r") --switch to previous pane
   keymap("n", "<leader>tl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>u", "gUU") --make uppercase
-  keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
+  -- keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
   keymap("n", "<leader>w", ":set wrap<CR>") --wrap
   keymap("n", "<leader>y", "Yp") --duplicate current line
   keymap("n", "=", ":") --enter column mode
