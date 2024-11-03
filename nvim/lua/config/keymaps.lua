@@ -25,13 +25,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 
---NAVIGATION
-  -- keymap("n", "*", "*zz.<CR>") --repeat with dot in visual mode
-  -- keymap("n", "+", ":") --open insert mode from normal mode
-  -- keymap("n", "-", ":Gitsigns prev_hunk <CR>") --git show prev hunk
-  -- keymap("n", "<C-h>", ":History <CR>") --fuzzy history
-  -- keymap("n", "<c-f>", ":BLines <CR>") --fuzzy line search
-  -- keymap("n", "<leader>mb", ":m0<CR>") --move current line to beginn of file
   -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
 
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
@@ -59,7 +52,9 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
-  keymap("n", "<leader>gr", ":Gitsigns reset_hunk <CR>") --git show next hunk
+  keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
+  keymap("n", "<leader>bb", ":lua require('gitsigns').prev_hunk({wrap=false}) <CR>") --git show next hunk
+  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>h", ":split <CR>") --horizontal split
   keymap("n", "<leader>n", "> <CR>") --indent current line to right
