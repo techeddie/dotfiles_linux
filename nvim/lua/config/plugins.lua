@@ -74,6 +74,7 @@ return require('packer').startup(function()
   use "jiangmiao/auto-pairs" --auto pair brackets and more
 
   -- use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- SNIPPETS
   -- use "L3MON4D3/LuaSnip" --snippet engine
@@ -135,7 +136,13 @@ return require('packer').startup(function()
   --BUFFER
   use { 'dracula/vim', as = 'dracula' } --vcscode colorscheme
   -- use "tpope/vim-commentary" --comment with gc
-  use 'numToStr/Comment.nvim'
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
   use "tpope/vim-surround" --surround text
   use "akinsho/bufferline.nvim" --buffer bar / tab and more
   use "moll/vim-bbye" --do not exit windows
