@@ -57,3 +57,4 @@
   bindkey -s '^l' 'lf ^M'
   bindkey -s '\et' 'tmux ^M'
   bindkey -s '\em' 'tmux ^M'
+  bindkey -s '\ea' 'tmux a^M'
