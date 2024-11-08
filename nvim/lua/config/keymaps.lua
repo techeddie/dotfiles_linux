@@ -41,10 +41,11 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<F8>", ":P<CR>") --open plugins config file
   keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
-  keymap("n", "<M-j>", "<C-d>") --scroll down
-  keymap("n", "<M-k>", "<C-u>") --scroll up
+  -- keymap("n", "<M-j>", "<C-d>") --scroll down
+  -- keymap("n", "<M-k>", "<C-u>") --scroll up
   keymap("n", "<M-o>", "<C-o>") --jump to last location
   keymap("n", "<M-p>", ":P<CR>") --open plugins config file
+  keymap("n", "<M-k>", ":K<CR>") --open plugins config file
   keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
   keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
   keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
