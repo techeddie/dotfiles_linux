@@ -496,6 +496,7 @@ cmd lf_reload ${{
   map gR cd ~/opt/RESTORE
   map gs cd ~/scripts
   map gt cd ~/Nextcloud/MEDIA/OBSIDIAN/t490/obsidian_sync/
+  map gT cd ~/tmp
   map gu cd /usr/
   map gw cd ~/Nextcloud/MEDIA/PICTURES/WALLPAPER
 #FOLDER BOOKMARKS END
