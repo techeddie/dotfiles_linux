@@ -584,6 +584,7 @@ cmd lf_reload ${{
   map d
   map dd $rm -fr "$fx"
   map D :delete
+  map <delete> :delete
   map e $$EDITOR "$f"
   map f :fzf_jump
   map g? $lf -doc | bat; clear
