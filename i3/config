@@ -44,7 +44,9 @@
 #gaps
     #default gap size
     gaps inner 5
+    # gaps inner 60
     gaps outer 1
+    # gaps outer 30
     #smart_gaps on
     #smart_borders on
 
