@@ -5,6 +5,7 @@
  */
 
 * {
+    font: "DejaVu Sans Mono 15";			//Font and size
     selected-normal-foreground:  rgba ( 2, 20, 63, 100 % );
     foreground:                  rgba ( 219, 223, 188, 100 % );
     normal-foreground:           @foreground;
