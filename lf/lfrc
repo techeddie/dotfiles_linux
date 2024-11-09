@@ -22,9 +22,10 @@
 
 # define a custom 'delete' command
 cmd delete ${{
+    clear
     set -f
     printf "$fx\n"
-    printf "sure?[y/n]"
+    printf "SURE you want to delete?[y/n]"
     read ans
     [ "$ans" = "y" ] && rm -rf $fx
     [ "$ans" = "" ] && rm -rf $fx
@@ -76,18 +77,6 @@ cmd delete ${{
 #preview a file
   # cmd file_preview $LESSOPEN='| ~/.config/lf/etc/preview %s' LESS='-cRiX' less $f
   cmd file_preview $LESSOPEN='| ~/.config/lf/etc/preview %s' LESS='-cRiX' cls; bat --wrap auto --paging always $f
-
-#####################
-#searchable bookmarks
-# cmd bookmark_jump ${{
-#     res="$(cat $LF_BOOKMARK_PATH/$(ls $LF_BOOKMARK_PATH | fzf))"
-#     lf -remote "send $id cd \"$res\""
-# }}
-
-# cmd bookmark_create ${{
-#     read ans 
-#     echo $PWD > $LF_BOOKMARK_PATH/$ans
-# }}
 
 #toggle preview
 cmd toggle_preview %{{
@@ -527,13 +516,13 @@ cmd lf_reload ${{
   # map a touch # a = add
   # map b mark-load
   # map c touch # c = create
+  # map dd delete
   # map f search - replaced with fzf
   # map g? $lf -doc | $PAGER; clear
   # map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
   # map gp ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
   # map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
   # map p paste
-  # map dd delete
 
   cmap <backtab> cmd-menu-complete-back
   cmap <down> cmd-history-next
@@ -542,17 +531,16 @@ cmd lf_reload ${{
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
-  # map <a-b> :git_branch
+  map <a-R> :lf_reload
+  map <a-X> :unmake_executeable 
   map <a-e> :!thunar .
   map <a-f> :fzf_jump_max_folder
   map <a-m> $vimv $fx   #renaming VI like
   map <a-p> :file_preview 
   map <a-r> :edit_config
   map <a-t> :tag-toggle
-  map <a-x> :make_executeable 
-  map <a-X> :unmake_executeable 
-  map <a-R> :lf_reload
   map <a-v> toggle_preview
+  map <a-x> :make_executeable 
   map <backspace2> updir
   map <backspace> :fzf_jump_history
   map <c-c> :copy_to_clipboard
@@ -560,9 +548,11 @@ cmd lf_reload ${{
   map <c-h> :fzf_jump_history
   map <c-k> quit
   map <c-l> :fzf_jump_history
+  map <c-n> push %touch<space>
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
   map <c-w> :set_wallpaper
+  map <delete> :delete
   map <enter> open
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
@@ -571,6 +561,7 @@ cmd lf_reload ${{
   map <space> :toggle 
   map <tab> :fzf_jump_history
   map = filter
+  map D :delete
   map E &thunar
   map F :fzf_jump_max
   map J :updir; down; open
@@ -585,7 +576,6 @@ cmd lf_reload ${{
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
-  map <c-n> push %touch<space>
   map au unarchive
   map b :fzf_jump_history
   map b mark-load
@@ -594,8 +584,6 @@ cmd lf_reload ${{
   map cf push %touch<space>
   map d
   map dd $rm -fr "$fx"
-  map D :delete
-  map <delete> :delete
   map e $$EDITOR "$f"
   map f :fzf_jump
   map g? $lf -doc | bat; clear
