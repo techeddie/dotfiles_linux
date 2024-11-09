@@ -20,6 +20,16 @@
 ##########################################################
 
 
+# define a custom 'delete' command
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "sure?[y/n]"
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+    [ "$ans" = "" ] && rm -rf $fx
+}}
+
 ##########################################################
 #COMMAND START
 
@@ -98,9 +108,10 @@ cmd on-cd &{{
     list="$(tail -n 120 ~/tmp/lf_dir_history | sed "\|^$PWD$|d")"
     echo "$list"$'\n'"$PWD" > ~/tmp/lf_dir_history
     printf "\033]0; $(pwd | sed "s|$HOME|~|")\007" > /dev/tty
+    zoxide add "$PWD"
 }}
-  # also run at startup
-  on-cd
+# also run at startup
+on-cd
 
 # exa can be used to provide the file information shown in the bottom left corner:
 # set statfmt ''
@@ -306,15 +317,15 @@ cmd set_wallpaper ${{
   }}
 
 #####################
-#ZOXIDE - not using anymore
+#ZOXIDE
   # cmd z %{{
-  #     result="$(zoxide query --exclude "${PWD}" -- "$@")"
-  #     lf -remote "send ${id} cd '${result}'"
+  #     result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  #     lf -remote "send $id cd \"$result\""
   # }}
   #
   # cmd zi ${{
-  #     result="$(zoxide query -i -- "$@")"
-  #     lf -remote "send ${id} cd '${result}'"
+  #     result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  #     lf -remote "send $id cd \"$result\""
   # }}
 
 #####################
@@ -551,7 +562,6 @@ cmd lf_reload ${{
   map <c-l> :fzf_jump_history
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
-  map <c-n> :!ncdu $fx
   map <c-w> :set_wallpaper
   map <enter> open
   map <f-2> rename #rename current selection
@@ -563,7 +573,6 @@ cmd lf_reload ${{
   map = filter
   map E &thunar
   map F :fzf_jump_max
-  map I push :zi<space>
   map J :updir; down; open
   map K :updir; up; open
   map L :link
@@ -576,6 +585,7 @@ cmd lf_reload ${{
   map ad push %mkdir<space>
   map ae execute
   map af push %touch<space>
+  map <c-n> push %touch<space>
   map au unarchive
   map b :fzf_jump_history
   map b mark-load
@@ -596,8 +606,3 @@ cmd lf_reload ${{
   map v :invert
   map x cut
   map y copy
-
-  # map Z push :zi<space>
-  # map z push :zi<space>
-  # map Y push :zi<space>
-  # map - z
