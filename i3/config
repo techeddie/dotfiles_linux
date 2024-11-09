@@ -231,8 +231,7 @@
       -notify 30 -notifier "notify-send -t 75000 --icon=dialog-information -- 'locking screen in 30 seconds'"
 
     #suspend
-    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling \
-      -i ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/ARCH-LINUX/Arch-Linux-Black.jpg  && systemctl suspend
+    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i ~/.lockscreen.jpg  && systemctl suspend
     # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
 
 
