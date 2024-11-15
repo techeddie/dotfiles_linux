@@ -43,9 +43,9 @@
 #-------------------------------------------------
 #gaps
     #default gap size
-    gaps inner 5
+    gaps inner 10
     # gaps inner 60
-    gaps outer 1
+    gaps outer 5
     # gaps outer 30
     #smart_gaps on
     #smart_borders on
@@ -377,7 +377,7 @@
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
     for_window [instance="keepassxc"] move scratchpad;
-    for_window [instance="Autokey-gtk"] move scratchpad;
+    for_window [instance="autokey-gtk"] move scratchpad;
 #moved to scripts
     # for_window [instance="keepassxc"] scratchpad show #moved to scripts
     for_window [instance="xfreerdp"] border normal
