@@ -48,6 +48,16 @@ key = "C"
 mods = "Command"
 
 [[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "]"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "/"
+mods = "Control"
+
+[[keyboard.bindings]]
 action = "Copy"
 key = "C"
 mods = "Control|Shift"
