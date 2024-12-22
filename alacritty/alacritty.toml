@@ -1,12 +1,12 @@
-import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/xterm.toml"]
+import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/iterm.yaml"]
 live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [cursor]
-style = "Underline"
-unfocused_hollow = false
+style = { shape = "Underline", blinking = "Always" }
+thickness = 0.5
 
 [debug]
 render_timer = false
