@@ -383,7 +383,7 @@
       <Hotkey>
         <Shortcut>Alt+T</Shortcut>
         <Command>cm_ChangeDir</Command>
-        <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/Lenovo/techeddie/</Param>
+        <Param>/home/eddie/Nextcloud/MEDIA/OBSIDIAN/t490/obsidian_sync/</Param>
       </Hotkey>
       <Hotkey>
         <Shortcut>Alt+2</Shortcut>
