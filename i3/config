@@ -82,15 +82,14 @@
     # bindsym $mod+Shift+a            exec lxappearance
     # bindsym $mod+Shift+b            [class=Brave] focus
     # bindsym Shift+Print             bar mode toggle
-    bindsym $alt+Shift+n            exec nextcloud
-    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --forest
+    bindsym $ctrl+Shift+p           exec sh ~/.config/polybar/launch.sh --forest
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
-    bindsym $mod+F8                 exec sh ~/scripts/runMouseGXTAccel.sh
+    bindsym $mod+F8                 exec sh ~/scripts/restic_runBackup.sh
     bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
@@ -167,7 +166,6 @@
     #exec --no-startup-id variety #wallpaper
     #exec --no-startup-id volumeicon
     #exec --no-startup-id xset s blank
-    #exec_always --no-startup-id /usr/bin/python /usr/bin/autokey-gtk -c
     #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
     exec --no-startup-id "setxkbmap 'de(us)'" 
@@ -182,6 +180,7 @@
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
+    exec --no-startup-id obsidian
     # exec --no-startup-id pamac-tray
     exec --no-startup-id ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     exec --no-startup-id keepassxc 
@@ -250,10 +249,10 @@
     # default_orientation vertical
 
     # focus windows
-    bindsym $alt+Shift+h focus left
-    bindsym $alt+Shift+j focus down
-    bindsym $alt+Shift+k focus up
-    bindsym $alt+Shift+l focus right
+    # bindsym $alt+Shift+h focus left
+    # bindsym $alt+Shift+j focus down
+    # bindsym $alt+Shift+k focus up
+    # bindsym $alt+Shift+l focus right
 
     #force learn vim motion
       bindsym $mod+Left focus left
@@ -377,13 +376,13 @@
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
     for_window [instance="keepassxc"] move scratchpad;
-    for_window [instance="autokey-gtk"] move scratchpad;
+    # for_window [instance="autokey-gtk"] move scratchpad;
 #moved to scripts
     # for_window [instance="keepassxc"] scratchpad show #moved to scripts
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
-    for_window [class="firefox"] border normal
+    # for_window [class="firefox"] border normal
     for_window [class="Wfica"] border normal
     for_window [class="Alacritty"] border normal
     for_window [class="TelegramDesktop"] border normal
@@ -394,8 +393,6 @@
     floating_modifier $mod
     bindsym $mod+t floating toggle; 
     # floating_modifier $alt
-    # for_window [class="Autokey-gtk"] floating enable,  resize set 1200 700, move position center, no_focus
-    # for_window [class="Autokey-qt"] floating enable,  resize set 1200 700, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
@@ -445,13 +442,15 @@
     #always launch app in workspace x
     # assign [class="Autokey-gtk"] $workspace5
     assign [class="Brave"] $workspace2
+    assign [class="autokey-gtk"] $workspace6
+    assign [class="obsidian"] $workspace3
     assign [class="Doublecmd"] $workspace9
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
     # assign [class="KeePassXC"] $workspace5
     assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace9
-    assign [class="firefox"] $workspace2
+    # assign [class="firefox"] $workspace5
     assign [class="thunderbird"] $workspace10
     #show windows icons
     for_window [all] title_window_icon padding 3px
