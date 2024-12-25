@@ -13,7 +13,7 @@ g.startify_custom_header = {}
 -- }
 --
 g.startify_bookmarks = {
-       {ac  = '~/.config/alacritty/alacritty.yml'},      -- alacritty config 
+       {ac  = '~/.config/alacritty/alacritty.toml'},      -- alacritty config 
        {i   = '~/.config/nvim/init.lua'},                -- neovim init file
        {ic  = '~/.config/i3/config'},                    -- i3 config file
        {lc  = '~/Nextcloud/LINUX/LINUX_COMMANDS.sh'},    -- linux knowledge base
