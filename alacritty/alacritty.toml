@@ -1,12 +1,12 @@
-import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/iterm.yaml"]
+import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/xterm.toml"]
 live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [cursor]
-style = { shape = "Underline", blinking = "Always" }
-thickness = 0.5
+style = "Underline"
+unfocused_hollow = false
 
 [debug]
 render_timer = false
@@ -46,16 +46,6 @@ mods = "Shift"
 action = "Copy"
 key = "C"
 mods = "Command"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "]"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "/"
-mods = "Control"
 
 [[keyboard.bindings]]
 action = "Copy"
@@ -692,7 +682,7 @@ program = "/usr/bin/zsh"
 [window]
 decorations = "full"
 dynamic_padding = false
-title = "Alacritty"
+title = "Alacritty.Alacritty"
 dynamic_title = false
 
 
