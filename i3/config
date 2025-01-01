@@ -90,7 +90,7 @@
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/restic_runBackup.sh
-    bindsym $mod+F9                 exec sh ~/opt/rdp/HZ-PC02.sh
+    bindsym $mod+F9                 exec sh ~/scripts/restic_runBackupObsidian.sh
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
