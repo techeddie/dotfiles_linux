@@ -391,14 +391,14 @@
 
     # floating
     floating_modifier $mod
-    bindsym $mod+t floating toggle; 
     # floating_modifier $alt
-    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
     # for_window [class="obs"] floating enable
     # for_window [class="pacseek" instance="pacseek"] move scratchpad
     # for_window [class="rdesktop"] floating enable
+    bindsym $mod+t floating toggle; 
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
+    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
     for_window [class="Nitrogen"] floating enable, move position center
     for_window [class="Nm-connection-editor"] floating enable, move position center
     for_window [class="Pavucontrol"] floating enable, move position center
@@ -409,6 +409,7 @@
     for_window [class="Xfce4-taskmanager"] floating enable,  resize set 800 900, move position center
     for_window [class="arandr"] floating enable, move position center
     for_window [class="copyq"] floating enable, move position center
+    for_window [class="doublecmd"] [title="Options"] floating enable,resize set 800 600, move position center 
     for_window [class="flameshot"] floating enable, move position center
     for_window [class="gnome-calculator"] floating enable, move position center
     for_window [class="guake"] floating enable
@@ -416,41 +417,39 @@
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
-    for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="Autokey-gtk"] floating enable,  resize set 1400 900, move position center
+    for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="urxvt"] floating enable, move position center
-    for_window [title="Receive Connector"] floating enable, move position center, border normal
-    for_window [title="Packing"] floating enable, move position center, border normal
-    for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
     for_window [title="Edit"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
-    for_window [class="doublecmd"] [title="Options"] floating enable,resize set 800 600, move position center 
+    for_window [title="Packing"] floating enable, move position center, border normal
+    for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [title="TbSync"] floating enable,resize set 800 600, move position center 
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
     #focus
     focus_on_window_activation focus
-    for_window [urgent=latest] focus
-    for_window [class="^Firefox$"] focus
     for_window [class="Alacritty"] focus
     for_window [class="Brave-browser"] focus
+    for_window [class="^Firefox$"] focus
     for_window [instance="xfreerdp"] focus
+    for_window [urgent=latest] focus
 
     #always launch app in workspace x
-    # assign [class="Autokey-gtk"] $workspace5
+    # assign [class="KeePassXC"] $workspace5
+    # assign [class="firefox"] $workspace5
+    assign [class="Autokey-gtk"] $workspace6
     assign [class="Brave"] $workspace2
-    assign [class="autokey-gtk"] $workspace6
-    assign [class="obsidian"] $workspace3
     assign [class="Doublecmd"] $workspace9
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
-    # assign [class="KeePassXC"] $workspace5
     assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace9
-    # assign [class="firefox"] $workspace5
+    assign [class="obsidian"] $workspace3
     assign [class="thunderbird"] $workspace10
     #show windows icons
     for_window [all] title_window_icon padding 3px
