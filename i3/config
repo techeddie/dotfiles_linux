@@ -70,18 +70,18 @@
     
     # bindsym $mod+Shift+Print        bar mode invisible
     # bindsym $mod+Shift+Return     exec pcmanfm
+    # bindsym $mod+Shift+a            exec lxappearance
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
-    bindsym $alt+Shift+f            exec fsearch
     # bindsym $mod+Shift+j            exec guake-toggle
     # bindsym $mod+Shift+m            exec xfce4-appfinder
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     # bindsym $mod+Shift+r          exec remmina
+    # bindsym $mod+a                  exec keepassxc
     # bindsym $mod+n                  exec --no-startup-id nixnote2
     # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    # bindsym $mod+Shift+a            exec lxappearance
-    # bindsym $mod+Shift+b            [class=Brave] focus
     # bindsym Shift+Print             bar mode toggle
+    bindsym $alt+Shift+f            exec fsearch
     bindsym $ctrl+Shift+p           exec sh ~/.config/polybar/launch.sh --forest
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
@@ -96,8 +96,10 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+a            exec autokey-gtk
+    bindsym $mod+Shift+b            [class=Brave] focus
     bindsym $mod+Shift+d            [class=Doublecmd] focus
     bindsym $mod+Shift+f            exec firefox
+    bindsym $mod+Shift+g            [class=Geany] focus
     bindsym $mod+Shift+i            exec alacritty -e nvim ~/.config/i3/config
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
@@ -106,7 +108,6 @@
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    # bindsym $mod+a                  exec keepassxc
     bindsym $mod+b                  exec brave
     bindsym $mod+c                  exec code
     bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
