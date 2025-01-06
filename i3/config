@@ -448,7 +448,7 @@
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
     assign [class="Thunderbird"] $workspace10
-    assign [class="Wfica"] $workspace9
+    assign [class="Wfica"] $workspace8
     assign [class="obsidian"] $workspace3
     assign [class="thunderbird"] $workspace10
     #show windows icons
