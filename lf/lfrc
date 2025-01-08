@@ -382,6 +382,7 @@ cmd unmake_executeable ${{
 # reload lf file manager
 cmd lf_reload ${{
     lf -remote "send $id :reload"
+    recol
 }}
 
 # show progress for file copying (copy-on-write)
@@ -569,7 +570,6 @@ cmd lf_reload ${{
   map L :link
   map O push :open-with-gui<space>
   map P toggle_preview
-  map R push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map R reload
   map S :!zsh
   map V toggle_preview
