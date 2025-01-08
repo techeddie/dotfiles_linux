@@ -574,8 +574,9 @@ cmd lf_reload ${{
   map S :!zsh
   map V toggle_preview
   map ad push %mkdir<space>
+  map af push %mkdir<space>
   map ae execute
-  map af push %touch<space>
+  map at push %touch<space>
   map au unarchive
   map b :fzf_jump_history
   map b mark-load
