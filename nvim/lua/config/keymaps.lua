@@ -131,17 +131,19 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
   keymap("n", "<M-1>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
-  keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<leader>hs", ":set hlsearch <CR>") --no highlight
   keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
-  keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
   keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
 
+  -- keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
+  -- keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
+  keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
+  keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
 
 --TERMINAL
   -- keymap("n", "<F5>", '<cmd>w | clear | :TermExec cmd="bash %:p"<CR>') --execute current buffer
