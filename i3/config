@@ -144,7 +144,7 @@
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
-    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --grayblocks
+    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
     # exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
 
     #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
