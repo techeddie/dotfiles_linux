@@ -82,6 +82,7 @@
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     # bindsym Shift+Print             bar mode toggle
     bindsym $alt+Shift+f            exec fsearch
+    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
