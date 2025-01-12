@@ -129,7 +129,7 @@ local opts = { noremap = true, silent = true }
 --FILE MANAGEMENT
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
-  keymap("n", "<M-1>", ":NvimTreeFindFileToggle<CR>") --nvimtree
+  keymap("n", "<M-1>", ":BuffergatorOpen<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree

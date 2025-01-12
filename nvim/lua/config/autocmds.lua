@@ -28,23 +28,17 @@ cmd [[
     "autocmd FileType sh vmap <F8> <ESC>:.w !bash<cr>
     "autocmd FileType lua nmap <F5> <ESC>:w<CR>:ter lua "%"<CR>
 
-    "AUTO OPEN STARTIFY START PAGE
-    ""autocmd VimEnter *
-                ""\   if !argc()
-                ""\ |   Startify
-                ""\ | endif
+    "autocmd FileType lua nmap <F5> :TermExec cmd="lua %:p" direction=horizontal<cr>
+    "autocmd FileType lua nmap <F5> <ESC>:w<cr> :!lua5.4 %<cr>
+    "autocmd BufReadPost,FileReadPost * normal zR
 
-            "autocmd FileType lua nmap <F5> :TermExec cmd="lua %:p" direction=horizontal<cr>
-            "autocmd FileType lua nmap <F5> <ESC>:w<cr> :!lua5.4 %<cr>
-            "autocmd BufReadPost,FileReadPost * normal zR
+    "FORMAT ON SAVE
+    " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+    ""-- autocmd BufWritePre * sh vim.lsp.buf.formatting_sync()
 
-            "FORMAT ON SAVE
-            " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
-            ""-- autocmd BufWritePre * sh vim.lsp.buf.formatting_sync()
+    "CHANGE PWD WHEN OPENING A FILE - causing issue with toggleterm and autopairs
+     "autocmd BufEnter * if &buftype =="toggleterm" | lcd %:p:h 
 
-            "CHANGE PWD WHEN OPENING A FILE - causing issue with toggleterm and autopairs
-             "autocmd BufEnter * if &buftype =="toggleterm" | lcd %:p:h 
-
-            "CHANGE PWD WHEN OPENING A FILE - TESTING
-               autocmd BufEnter * silent! lcd %:p:h
+    "CHANGE PWD WHEN OPENING A FILE - TESTING
+       autocmd BufEnter * silent! lcd %:p:h
 ]]
