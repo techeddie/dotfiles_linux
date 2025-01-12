@@ -79,3 +79,7 @@ else
 	--panels    --pwidgets       --shades    --shapes
 	EOF
 fi
+
+nitrogen --restore
+sh $HOME/scripts/runMouseGXTAccel.sh
+sh $HOME/scripts/runHDMI_AUTODETECT.sh
