@@ -15,56 +15,55 @@ local opts = { noremap = true, silent = true }
   -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
   -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
   -- keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
-  keymap("n", "<C-k>", ":qall! <CR>") --force quit all buffers
-  keymap("n", "<C-r>", ":source % <CR>") --source current buffer
-  keymap("n", "<C-s>", ":w!<CR><ESC>") --save current buffer
-  keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
-  keymap("n", "<F3>", ":e! <CR>") --reread current buffer
-  keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
-  keymap("n", "<S-r>", ":source % <CR>") --source current buffer
-  keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
-  keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
-  keymap("n", "<M-q>", ":<C-w>q<CR>") --quit current buffer
-  keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
-  keymap("n", "<leader>t", ":terminal <CR>") --open new tab
-  keymap("n", "<leader>x", ":bd <CR>") --buffer delete
-  keymap("n", "<c-q>", ":bd <CR>") --buffer delete
-  keymap("n", "q", ":Bclose <CR>") --quit current buffer
-  keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
+  -- keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
   keymap("n", "+", ":") --open insert mode from normal mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
+  keymap("n", "<C-f>", ":Lines <CR>") --searchbox simple
+  keymap("n", "<C-k>", ":qall! <CR>") --force quit all buffers
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
+  keymap("n", "<C-r>", ":source % <CR>") --source current buffer
+  keymap("n", "<C-s>", ":w!<CR><ESC>") --save current buffer
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
+  keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
+  keymap("n", "<F3>", ":e! <CR>") --reread current buffer
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
   keymap("n", "<F7>", ":I<CR>") --open init config file
   keymap("n", "<F8>", ":P<CR>") --open plugins config file
-  keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
+  keymap("n", "<M-k>", ":K<CR>") --open plugins config file
   keymap("n", "<M-o>", "<C-o>") --jump to last location
   keymap("n", "<M-p>", ":P<CR>") --open plugins config file
-  keymap("n", "<M-k>", ":K<CR>") --open plugins config file
+  keymap("n", "<M-q>", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
+  keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
+  keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
   keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
   keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
+  keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
+  keymap("n", "<c-q>", ":bd <CR>") --buffer delete
+  keymap("n", "<leader>bb", ":lua require('gitsigns').prev_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
-  keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
-  keymap("n", "<leader>bb", ":lua require('gitsigns').prev_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>h", ":split <CR>") --horizontal split
   keymap("n", "<leader>n", "> <CR>") --indent current line to right
+  keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
+  keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
+  keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<leader>r", "<C-w>r") --switch to previous pane
+  keymap("n", "<leader>t", ":terminal <CR>") --open new tab
   keymap("n", "<leader>tl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>u", "gUU") --make uppercase
   keymap("n", "<leader>w", ":set wrap<CR>") --wrap
+  keymap("n", "<leader>x", ":bd <CR>") --buffer delete
   keymap("n", "<leader>y", "Yp") --duplicate current line
   keymap("n", "=", ":") --enter column mode
   keymap("n", "Y", "y$") --make y behave like the other capitals
@@ -75,6 +74,8 @@ local opts = { noremap = true, silent = true }
   keymap("n", "gk", "<C-w>k") --switch pane
   keymap("n", "gl", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
+  keymap("n", "q", ":Bclose <CR>") --quit current buffer
+  keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
   keymap("v", "+", ":") --open insert mode from visual mode
   keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
   keymap("v", "<leader>n", "> <CR>") --indent visual selected lines to right
@@ -84,7 +85,6 @@ local opts = { noremap = true, silent = true }
   keymap('n', 'c', '"_c') --do not yank to system clipboard for c motions
   keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
   keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
-
 -- NAVIGATE BUFFERS
   -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
@@ -127,25 +127,24 @@ local opts = { noremap = true, silent = true }
 
 
 --FILE MANAGEMENT
+  -- keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
+  -- keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
+  keymap("n", "<C-h>", ":History<CR>") --nvimtree
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
   keymap("n", "<M-1>", ":BuffergatorOpen<CR>") --nvimtree
-  keymap("n", "<M-f>", ":Lines<CR>") --nvimtree
-  keymap("n", "<C-h>", ":History<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
+  keymap("n", "<M-f>", ":Lines<CR>") --nvimtree
+  keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<leader>hs", ":set hlsearch <CR>") --no highlight
-  keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
+  keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
   keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
-
-  -- keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
-  -- keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
-  keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
-  keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
+  keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
 
 --TERMINAL
   -- keymap("n", "<F5>", '<cmd>w | clear | :TermExec cmd="bash %:p"<CR>') --execute current buffer
