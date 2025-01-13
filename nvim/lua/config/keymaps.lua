@@ -23,7 +23,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "+", ":") --open insert mode from normal mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
-  keymap("n", "<C-f>", ":BLines <CR>") --searchbox simple
+  keymap("n", "<C-f>", ":BLines <CR>") --fuzzy find current file
   keymap("n", "<C-k>", ":qall! <CR>") --force quit all buffers
   keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
   keymap("n", "<C-r>", ":source % <CR>") --source current buffer
@@ -138,7 +138,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
   keymap("n", "<M-1>", ":BuffergatorOpen<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
-  keymap("n", "<M-f>", ":BLines<CR>") --nvimtree
+  keymap("n", "<M-f>", ":BLines<CR>") --fuzzy find current file
   keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
