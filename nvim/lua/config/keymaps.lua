@@ -164,6 +164,9 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>") --lazygit
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
 
+--GIT 
+  keymap("n", "<M-c>", ":BCommits<CR>")
+
 --SEARCH AND REPLACE
   -- keymap("n", "<C-f>", ":SearchBoxSimple<CR>")
   -- keymap("n", "<leader>s", "viw:lua require('spectre').open_file_search()<cr>")
@@ -185,5 +188,5 @@ local opts = { noremap = true, silent = true }
   end
 
 -- LOOK AND FEEL
-  keymap("n", "<M-c>", ":Colors<CR>", {desc = "change theme"})
+  keymap("n", "<M-C>", ":Colors<CR>", {desc = "change theme"})
   keymap("n", "<leader>tp", ":TransparentToggle<CR>", {desc = "Toggle Transparent"})
