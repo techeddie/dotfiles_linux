@@ -7,16 +7,6 @@ local opts = { noremap = true, silent = true }
 
 --BUFFER OPEN CLOSE 
 
-  -- keymap("n", "ä", ":qall! <CR>") --force quit all buffers
-  -- keymap("n", "ö", ":w! <CR>") --save from normal mode
-  -- keymap("n", "ü", ":w! <CR>") --save from normal mode
-  -- keymap("n", "<M-j>", "<C-d>") --scroll down
-  -- keymap("n", "<M-k>", "<C-u>") --scroll up
-  -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
-  -- keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
-  -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -104,9 +94,6 @@ local opts = { noremap = true, silent = true }
 
 -- NAVIGATE BUFFERS
 -- RESIZE PANES
-  -- keymap("n", "<M-)>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
-  -- keymap("n", "<M-/>", ":exec 'resize '. string(&columns * 0.75)<CR>")
-  -- keymap("n", "<M-[>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
   keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
   keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
   keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
@@ -131,8 +118,6 @@ local opts = { noremap = true, silent = true }
 
 
 --FILE MANAGEMENT
-  -- keymap("n", "<M-l>", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
-  -- keymap("n", "<leader>l", ":FloatermNew --height=1.0 --width=1.0 lf<CR>") --lf filemanager
   keymap("n", "<C-h>", ":History<CR>") --nvimtree
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
@@ -154,12 +139,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>fs", ":FZF ~/scripts/<CR>") --fzf find files in folder
   keymap("n", "<leader>fg", ":FZF ~/gitREPO/<CR>") --fzf find files in folder
 
---TERMINAL
-  -- keymap("n", "<F5>", '<cmd>w | clear | :TermExec cmd="bash %:p"<CR>') --execute current buffer
-  -- keymap("n", "<F8>", ':.w !bash<CR>')
-  -- keymap("n", "<F6>", '<cmd>w | clear | :TermExec cmd="lua %:p"<CR>') --execute current buffer
-
-
 --LAZYGIT
   keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>") --lazygit
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
@@ -169,15 +148,6 @@ local opts = { noremap = true, silent = true }
 
 --SEARCH AND REPLACE
   -- keymap("n", "<C-f>", ":SearchBoxSimple<CR>")
-  -- keymap("n", "<leader>s", "viw:lua require('spectre').open_file_search()<cr>")
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<M-r>", "viw:lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("n", "<leader-vs>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<leader>s", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("v", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>")
-  -- keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
   keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 
 --JUMP TO BUFFER WITH SPACEBAR
