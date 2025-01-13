@@ -16,6 +16,7 @@ local opts = { noremap = true, silent = true }
   -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
   -- keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
   -- keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
+  -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -34,6 +35,9 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
   keymap("n", "<F7>", ":I<CR>") --open init config file
   keymap("n", "<F8>", ":P<CR>") --open plugins config file
+  keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
+  keymap("n", "<M-4>", ":BuffergatorOpen<CR>", opts)
+  keymap("n", "<M-b>", ":BuffergatorOpen<CR>", opts)
   keymap("n", "<M-h>", ":split <CR>") --horizontal split
   keymap("n", "<M-k>", ":K<CR>") --open plugins config file
   keymap("n", "<M-o>", "<C-o>") --jump to last location
@@ -44,14 +48,25 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
   keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
   keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
+  keymap("n", "<S-Left>", ":bnext<CR>", opts)
+  keymap("n", "<S-Left>", ":bprevious<CR>", opts)
+  keymap("n", "<S-Right>", ":bnext<CR>", opts)
   keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
+  keymap("n", "<S-h>", ":bprevious<CR>", opts)
+  keymap("n", "<S-l>", ":bnext<CR>", opts)
   keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
   keymap("n", "<c-q>", ":bd <CR>") --buffer delete
+  keymap("n", "<leader><space>", ":Windows<CR>", opts)
+  keymap("n", "<leader>b", ":SidebarNvimToggle<CR>", opts)
   keymap("n", "<leader>bb", ":lua require('gitsigns').prev_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
+  keymap("n", "<leader>h", "<C-w>h") --switch pane
+  keymap("n", "<leader>j", "<C-w>j") --switch pane
+  keymap("n", "<leader>k", "<C-w>k") --switch pane
+  keymap("n", "<leader>l", "<C-w>l") --switch pane
   keymap("n", "<leader>n", "> <CR>") --indent current line to right
   keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
@@ -67,15 +82,13 @@ local opts = { noremap = true, silent = true }
   keymap("n", "=", ":") --enter column mode
   keymap("n", "Y", "y$") --make y behave like the other capitals
   keymap("n", "Z", "y$") --make z behave like the other capitals
+  keymap("n", "[", ":cprevious<CR>", opts) --prev quickfix list item
+  keymap("n", "]", ":cnext<CR>", opts) --next quickfix list item
   keymap("n", "d", '"xd') --do not yank to clip on delete action
   keymap("n", "gh", "<C-w>h") --switch pane
   keymap("n", "gj", "<C-w>j") --switch pane
   keymap("n", "gk", "<C-w>k") --switch pane
   keymap("n", "gl", "<C-w>l") --switch pane
-  keymap("n", "<leader>h", "<C-w>h") --switch pane
-  keymap("n", "<leader>j", "<C-w>j") --switch pane
-  keymap("n", "<leader>k", "<C-w>k") --switch pane
-  keymap("n", "<leader>l", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
@@ -88,21 +101,8 @@ local opts = { noremap = true, silent = true }
   keymap('n', 'c', '"_c') --do not yank to system clipboard for c motions
   keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
   keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
--- NAVIGATE BUFFERS
-  -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
-  keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
-  keymap("n", "<M-4>", ":BuffergatorOpen<CR>", opts)
-  keymap("n", "<M-b>", ":BuffergatorOpen<CR>", opts)
-  keymap("n", "<S-Left>", ":bnext<CR>", opts)
-  keymap("n", "<S-Left>", ":bprevious<CR>", opts)
-  keymap("n", "<S-Right>", ":bnext<CR>", opts)
-  keymap("n", "<S-h>", ":bprevious<CR>", opts)
-  keymap("n", "<S-l>", ":bnext<CR>", opts)
-  keymap("n", "<leader>b", ":SidebarNvimToggle<CR>", opts)
-  keymap("n", "<leader><space>", ":Windows<CR>", opts)
-  keymap("n", "[", ":cprevious<CR>", opts) --prev quickfix list item
-  keymap("n", "]", ":cnext<CR>", opts) --next quickfix list item
 
+-- NAVIGATE BUFFERS
 -- RESIZE PANES
   -- keymap("n", "<M-)>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
   -- keymap("n", "<M-/>", ":exec 'resize '. string(&columns * 0.75)<CR>")
