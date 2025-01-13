@@ -189,4 +189,7 @@ local opts = { noremap = true, silent = true }
 
 -- LOOK AND FEEL
   keymap("n", "<M-C>", ":Colors<CR>", {desc = "change theme"})
+  keymap("n", "<M-c>", ":History:<CR>", {desc = "command history"})
+  keymap("n", "<leader>c", ":Commands<CR>", {desc = "show me all commands"})
+  keymap("n", "<leader>/", ":History/:<CR>", {desc = "search history"})
   keymap("n", "<leader>tp", ":TransparentToggle<CR>", {desc = "Toggle Transparent"})
