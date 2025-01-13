@@ -239,7 +239,7 @@ cmd set_wallpaper ${{
 #fuzzy finder
   cmd fzf_jump ${{
       # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-      res="$(fd -d 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd --max-depth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
       if [ -d "$res" ] ; then
           cmd="cd"
       elif [ -f "$res" ] ; then
@@ -250,10 +250,25 @@ cmd set_wallpaper ${{
       lf -remote "send $id $cmd \"$res\""
   }}
 
+#fuzzy finder show hidden
+  cmd fzf_jump_hidden ${{
+      # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd --max-depth 1 --hidden | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      if [ -d "$res" ] ; then
+          cmd="cd"
+      elif [ -f "$res" ] ; then
+          cmd="select"
+      else
+          exit 0
+      fi
+      lf -remote "send $id $cmd \"$res\""
+  }}
+
+
 #fuzzy finder max depth
   cmd fzf_jump_max ${{
       # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-      res="$(fd -H  | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(fd --hidden --maxdepth 10  | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
       if [ -d "$res" ] ; then
           cmd="cd"
       elif [ -f "$res" ] ; then
@@ -281,7 +296,7 @@ cmd set_wallpaper ${{
 
 
   cmd fzf_jump_history ${{
-    res="$(cat ~/tmp/lf_dir_history | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$(cat ~/tmp/lf_dir_history | fzf --reverse --no-sort --tac --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
       cmd="cd"
     elif [ -f "$res" ] ; then
@@ -536,6 +551,8 @@ cmd lf_reload ${{
   map <a-X> :unmake_executeable 
   map <a-e> :!thunar .
   map <a-f> :fzf_jump_max_folder
+  map <a-H> :fzf_jump_hidden
+  map <c->> :fzf_jump_hidden
   map <a-m> $vimv $fx   #renaming VI like
   map <a-p> :file_preview 
   map <a-r> :edit_config
@@ -561,6 +578,7 @@ cmd lf_reload ${{
   map <f-7> push %mkdir<space>
   map <space> :toggle 
   map <tab> :fzf_jump_history
+  map <a-h> :fzf_jump_history
   map = filter
   map D :delete
   map E &thunar
