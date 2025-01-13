@@ -57,7 +57,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
   keymap("n", "<c-q>", ":bd <CR>") --buffer delete
-  keymap("n", "<leader><space>", ":Windows<CR>", opts)
+  keymap("n", "<leader><space>", ":Buffers<CR>", opts)
   keymap("n", "<leader>b", ":SidebarNvimToggle<CR>", opts)
   keymap("n", "<leader>bb", ":lua require('gitsigns').prev_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
