@@ -52,7 +52,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
-  keymap("n", "<leader>h", ":split <CR>") --horizontal split
   keymap("n", "<leader>n", "> <CR>") --indent current line to right
   keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
@@ -70,9 +69,13 @@ local opts = { noremap = true, silent = true }
   keymap("n", "Z", "y$") --make z behave like the other capitals
   keymap("n", "d", '"xd') --do not yank to clip on delete action
   keymap("n", "gh", "<C-w>h") --switch pane
-  keymap("n", "gj", "<C-w>w") --switch pane
+  keymap("n", "gj", "<C-w>j") --switch pane
   keymap("n", "gk", "<C-w>k") --switch pane
   keymap("n", "gl", "<C-w>l") --switch pane
+  keymap("n", "<leader>h", "<C-w>h") --switch pane
+  keymap("n", "<leader>j", "<C-w>j") --switch pane
+  keymap("n", "<leader>k", "<C-w>k") --switch pane
+  keymap("n", "<leader>l", "<C-w>l") --switch pane
   keymap("n", "nl", ':a<CR><CR>.<CR>') --insert a newline without entering in insert mode, vim
   keymap("n", "q", ":Bclose <CR>") --quit current buffer
   keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
@@ -96,6 +99,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<S-h>", ":bprevious<CR>", opts)
   keymap("n", "<S-l>", ":bnext<CR>", opts)
   keymap("n", "<leader>b", ":SidebarNvimToggle<CR>", opts)
+  keymap("n", "<leader><space>", ":Windows<CR>", opts)
   keymap("n", "[", ":cprevious<CR>", opts) --prev quickfix list item
   keymap("n", "]", ":cnext<CR>", opts) --next quickfix list item
 
@@ -140,11 +144,15 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<leader>hs", ":set hlsearch <CR>") --no highlight
-  keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
   keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
   keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
+  keymap("n", "<leader>fn", ":FZF ~/gitREPO/dotfiles_linux/nvim/<CR>") --fzf find files in folder
+  keymap("n", "<leader>fd", ":FZF ~/gitREPO/dotfiles_linux/nvim/<CR>") --fzf find files in folder
+  keymap("n", "<leader>fc", ":FZF ~/.config/<CR>") --fzf find files in folder
+  keymap("n", "<leader>fs", ":FZF ~/scripts/<CR>") --fzf find files in folder
+  keymap("n", "<leader>fg", ":FZF ~/gitREPO/<CR>") --fzf find files in folder
 
 --TERMINAL
   -- keymap("n", "<F5>", '<cmd>w | clear | :TermExec cmd="bash %:p"<CR>') --execute current buffer
