@@ -9,7 +9,6 @@ local opts = { noremap = true, silent = true }
 
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
-  keymap("i", "ö", "<ESC>") --exit insert mode
   keymap("n", "+", ":") --open insert mode from normal mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
   keymap("n", "<C-Down>", "<C-e>") --scroll down
@@ -87,10 +86,10 @@ local opts = { noremap = true, silent = true }
   keymap("v", "<leader>n", "> <CR>") --indent visual selected lines to right
   keymap("v", "P", "}") --visual select paragraph
   keymap("v", "d", '"xd') --do not yank to clip on delete action
-  keymap('n', 'C', '"_C') --do not yank to system clipboard for c motions
-  keymap('n', 'c', '"_c') --do not yank to system clipboard for c motions
-  keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
-  keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
+  keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
+  keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
+  keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
+  keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
 
 -- NAVIGATE BUFFERS
 -- RESIZE PANES
