@@ -101,7 +101,7 @@
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+g            [class=Geany] focus
     bindsym $mod+Shift+i            [class=obsidian] focus
-    bindsym ctrl+$alt+o             [class=obsidian] focus
+    bindsym $alt+Shift+o            [class=obsidian] focus
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+o            exec obsidian
