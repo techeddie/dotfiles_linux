@@ -101,6 +101,7 @@
     bindsym $mod+Shift+f            exec firefox
     bindsym $mod+Shift+g            [class=Geany] focus
     bindsym $mod+Shift+i            [class=obsidian] focus
+    bindsym ctrl+$alt+o             [class=obsidian] focus
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+o            exec obsidian
@@ -423,10 +424,11 @@
     for_window [title="Packing"] floating enable, move position center, border normal
     for_window [title="Receive Connector"] floating enable, move position center, border normal
     for_window [title="Send Connector"] floating enable, move position center, border normal
-    for_window [title="TbSync"] floating enable,resize set 800 600, move position center 
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
+    for_window [instance="Wfica"] resize set 1400 900, move position center
+    for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
     #focus
     focus_on_window_activation focus
     for_window [class="Alacritty"] focus
@@ -445,6 +447,7 @@
     assign [class="TelegramDesktop"] $workspace4
     assign [class="Thunderbird"] $workspace10
     assign [class="Wfica"] $workspace8
+    assign [class="Selfservice"] $workspace8
     assign [class="obsidian"] $workspace3
     assign [class="thunderbird"] $workspace10
     #show windows icons
