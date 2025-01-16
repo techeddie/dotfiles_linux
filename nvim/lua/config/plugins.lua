@@ -171,6 +171,10 @@ return require('packer').startup(function()
 --toggle transparent
 use 'xiyaowong/transparent.nvim'
 
+-- SURROUND SELECTIONS, STYLISHLY 😎
+-- use "echasnovski/mini.nvim"
+use "kylechui/nvim-surround"
+
 --TAGBAR
 -- use 'preservim/tagbar'
 
