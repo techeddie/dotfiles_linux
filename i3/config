@@ -314,10 +314,8 @@
     bindsym $mod+Next         workspace next
     bindsym $mod+Prior        workspace prev
     bindsym $alt+Ctrl+j       workspace prev
-    # bindsym $mod+$alt+j     workspace prev
     bindsym $mod+Shift+Home   workspace prev
     bindsym $mod+Shift+j      workspace prev
-    # bindsym $mod+$alt+k     workspace prev
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
     bindsym $mod+Tab          workspace back_and_forth
@@ -374,13 +372,9 @@
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
     for_window [instance="keepassxc"] move scratchpad;
-    # for_window [instance="autokey-gtk"] move scratchpad;
-#moved to scripts
-    # for_window [instance="keepassxc"] scratchpad show #moved to scripts
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
-    # for_window [class="firefox"] border normal
     for_window [class="Wfica"] border normal
     for_window [class="Alacritty"] border normal
     for_window [class="TelegramDesktop"] border normal
@@ -430,6 +424,7 @@
     for_window [window_role="setup"] floating enable, move position center
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
+
     #focus
     focus_on_window_activation focus
     for_window [class="Alacritty"] focus
@@ -619,4 +614,3 @@
   #    ######################################## THE END 
 
 #------------------------------------------------- 
-
