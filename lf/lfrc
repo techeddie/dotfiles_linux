@@ -237,9 +237,8 @@ cmd set_wallpaper ${{
 
 #####################
 #fuzzy finder
-  cmd fzf_jump ${{
-      # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-      res="$(fd --max-depth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  cmd fzf_select ${{
+      res="$(find -L . -maxdepth 1  \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- |  fzf --reverse --header='Jump to location' )"
       if [ -d "$res" ] ; then
           cmd="cd"
       elif [ -f "$res" ] ; then
@@ -280,10 +279,11 @@ cmd set_wallpaper ${{
   }}
 
 
-#fuzzy finder max depth folders
+#fuzzy finder max depth folders = 10
   cmd fzf_jump_max_folder ${{
       # res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-      res="$(fd -H -t d | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      # res="$(fd -H -t d | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+      res="$(find -L . -maxdepth 10  \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- |  fzf --reverse --header='Jump to location' )"
       if [ -d "$res" ] ; then
           cmd="cd"
       elif [ -f "$res" ] ; then
@@ -604,7 +604,7 @@ cmd lf_reload ${{
   map d
   map dd $rm -fr "$fx"
   map e $$EDITOR "$f"
-  map f :fzf_jump
+  map f :fzf_select
   map g? $lf -doc | bat; clear
   map i %du -sh $f
   map o push :open-with-cli<space>
