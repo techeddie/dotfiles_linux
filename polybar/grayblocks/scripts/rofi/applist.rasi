@@ -66,11 +66,12 @@ inputbar {
 }
 
 listview {
+    // fixed-height: 0;
     background-color:               @al;
     padding:                        0px;
     columns:                        1;
     lines:                          9;
-    spacing:                        4px;
+    spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -97,7 +98,7 @@ element {
 element-icon {
     background-color:               transparent;
     text-color:               		inherit;
-    size:                           34px;
+    size:                           45px;
     border:                         0px;
 }
 
