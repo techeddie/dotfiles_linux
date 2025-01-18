@@ -5,9 +5,9 @@ local options = { noremap = true }
   end
 local opts = { noremap = true, silent = true }
 
---BUFFER OPEN CLOSE 
-
+--BUFFER
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
+  keymap("n", "<space>", "a<space><esc>", opts) --insert space in normal mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("n", "+", ":") --open insert mode from normal mode
   keymap("n", "<BS>", "<C-w>W") --switch to previous pane
@@ -20,6 +20,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
   keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
+  keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
   keymap("n", "<F3>", ":e! <CR>") --reread current buffer
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
   keymap("n", "<F7>", ":I<CR>") --open init config file
