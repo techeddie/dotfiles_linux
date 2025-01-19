@@ -19,3 +19,7 @@ require "plugconfig.sidebar"
 require "plugconfig.startify"
 require "plugconfig.transparent"
 require "plugconfig.surround"
+-- require "plugconfig.tint"
+-- require("dimit").setup({
+--     bgcolor = "#FF0000",         -- change the dim color to red
+-- })
