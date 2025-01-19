@@ -573,6 +573,7 @@ cmd lf_reload ${{
   map <delete> :delete
   map <enter> open
   map <f-2> rename #rename current selection
+  map <f-4> touch #create new file
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
   map <f-6> unarchive
   map <f-7> push %mkdir<space>
