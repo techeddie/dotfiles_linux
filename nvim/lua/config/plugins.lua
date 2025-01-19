@@ -175,6 +175,14 @@ use 'xiyaowong/transparent.nvim'
 -- use "echasnovski/mini.nvim"
 use "kylechui/nvim-surround"
 
+-- use "levouh/tint.nvim"
+use {
+    "rosstang/dimit.nvim",
+    config = function()
+        require("dimit").setup()
+    end,
+}
+
 --TAGBAR
 -- use 'preservim/tagbar'
 
