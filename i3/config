@@ -318,6 +318,7 @@
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
     bindsym $mod+Tab          workspace back_and_forth
+    bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+i            workspace back_and_forth
     bindsym $alt+Ctrl+k       workspace next
     bindsym $mod+Shift+End    workspace next
