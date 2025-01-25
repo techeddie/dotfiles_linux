@@ -146,6 +146,7 @@
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
+    exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
     # exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
 
@@ -592,14 +593,14 @@
   #     ##START THEMING WM
   #     # Theme name : ArcoLinux Default
   #
-  #     # Window color settings
-  #     # class                 border  backgr. text    indicator
-  #     client.focused          #6790EB #6790EB #e5e5e5 #6790EB
-  #     client.unfocused        #222222 #222222 #aaaaaa #222222
-  #     client.focused_inactive #222222 #222222 #a9a9a9 #222222
-  #     client.placeholder      #222222 #222222 #aaaaaa #222222
-  #     client.urgent           #d42121 #d42121 #f7f7f7 #d42121
-  #     client.background       #242424
+      # Window color settings
+      # class                 border  backgr. text    indicator
+      client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+      client.unfocused        #222222 #222222 #aaaaaa #222222
+      client.focused_inactive #222222 #222222 #a9a9a9 #222222
+      client.placeholder      #222222 #222222 #aaaaaa #222222
+      client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+      client.background       #242424
   #
   #
   #       # # window colors red version
