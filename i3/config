@@ -353,7 +353,6 @@
 
     #custom apps border - settings - scratch pad
     # ; move position center; move scratchpad 
-    # for_window [class="Alacritty"] border 1pixel
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
     for_window [class="Alacritty"] layout normal, move position center
@@ -362,7 +361,7 @@
     for_window [class="Navigator"] layout tabbed
     for_window [class="Wfica"] border normal
     for_window [class="Wfica"] layout tabbed
-    for_window [class="^.*"] border pixel 2
+    for_window [class="^.*"] border pixel 3
     for_window [class="brave"] set $outer_gaps 20
     for_window [class="firefox"] layout tabbed
     for_window [class="keepassxc"] layout tabbed, move position center
@@ -378,6 +377,7 @@
     for_window [class="thunderbird"] border pixel 5
     for_window [class="Wfica"] border normal
     for_window [class="Alacritty"] border normal
+    # for_window [class="Alacritty"] border pixel 3
     for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
