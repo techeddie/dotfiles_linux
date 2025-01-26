@@ -1,0 +1,14 @@
+# hyper + {h,j,k,l}
+#     {Left,Down,Up,Right} 
+
+# Emulate home/end keys
+hyper + @{u,i}
+    xte 'keyup Control_L' 'keyup Alt_L' 'key {Home,End}'
+
+# Emulate delete key
+# hyper + y
+#     xte 'keyup Alt_L' 'key Delete' 'keydown Alt_L'
+
+# Reload sxhkdrc
+hyper + shift + r
+    pkill sxhkd; sxhkd -c $HOME/.config/sxhkd/sxhkdrc ; notify-send 'sxhkdrc config reloaded' -t 5000 --icon=dialog-information
