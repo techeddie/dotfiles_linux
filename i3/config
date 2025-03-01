@@ -126,6 +126,7 @@
     #rofi  
         # bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme ~/gitREPO/dotfiles_linux/polybar/grayblocks/scripts/rofi/applist.rasi
+        bindsym $alt+Tab              exec rofi -combi-modi window -show combi  -show-icons -theme ~/gitREPO/dotfiles_linux/polybar/grayblocks/scripts/rofi/applist.rasi
         bindsym $mod+m              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/grayblocks/scripts/rofi/launcher.rasi
         bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
         bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
@@ -319,7 +320,7 @@
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
     bindsym $mod+Tab          workspace back_and_forth
-    bindsym $alt+Tab          workspace back_and_forth
+    # bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+i            workspace back_and_forth
     bindsym $alt+Ctrl+k       workspace next
     bindsym $mod+Shift+End    workspace next
@@ -377,7 +378,7 @@
     for_window [class="thunderbird"] border pixel 5
     for_window [class="Wfica"] border normal
     for_window [class="Alacritty"] border normal
-    # for_window [class="Alacritty"] border pixel 3
+    for_window [class="Alacritty"] border pixel 3
     for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
