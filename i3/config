@@ -1,4 +1,4 @@
-#---------------I3 CONFIG EDDIE---------------------
+# ---------------I3 CONFIG EDDIE---------------------
 
 #windows key
     set $mod Mod4
@@ -81,6 +81,8 @@
     # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     # bindsym Shift+Print             bar mode toggle
+    # bindsym $mod+$alt+o           [class=obsidian] focus
+    # bindsym $mod+Shift+o            exec obsidian
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
@@ -96,26 +98,22 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+a            exec autokey-gtk
-    bindsym $mod+Shift+b            [class=Brave] focus
-    bindsym $mod+Shift+d            [class=Doublecmd] focus
-    bindsym $mod+Shift+f            exec firefox
-    bindsym $mod+Shift+g            [class=Geany] focus
-    bindsym $mod+Shift+i            [class=obsidian] focus
+    bindsym $mod+Shift+c            exec sh -c "pgrep -f Code >/dev/null && i3-msg -q '[class=code] focus' || i3-msg -q 'exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@'"
+    bindsym $mod+Shift+f            exec sh -c "pgrep -f firefox >/dev/null && i3-msg -q '[class=firefox] focus' || i3-msg -q 'exec firefox'"
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
-    bindsym $mod+Shift+o            exec obsidian
+    bindsym $mod+Shift+o            exec sh -c "pgrep -f obsidian >/dev/null && i3-msg -q '[class=obsidian] focus' || i3-msg -q 'exec obsidian'"
     bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    bindsym $mod+b                  exec brave
-    bindsym $mod+c                  exec code
-    bindsym $mod+d                  exec $HOME/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    bindsym $mod+b                  exec sh -c "pgrep -f brave >/dev/null && i3-msg -q '[class=Brave] focus' || i3-msg -q 'exec Brave'"
+    bindsym $mod+d                  exec sh -c "pgrep -f Doublecmd >/dev/null && i3-msg -q '[instance=doublecmd] focus' || i3-msg -q 'exec ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage'"
     bindsym $mod+e                  exec --no-startup-id thunar
-    bindsym $mod+g                  exec geany
+    bindsym $mod+g                  exec sh -c "pgrep -f geany >/dev/null && i3-msg -q '[class=Geany] focus' || i3-msg -q 'exec geany'"
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
-    bindsym $mod+o                  exec thunderbird
+    bindsym $mod+o                  exec sh -c "pgrep -f thunderbird >/dev/null && i3-msg -q '[class=Thunderbird] focus' || i3-msg -q 'exec thunderbird'"
     bindsym $mod+p                  exec gnome-disks
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym F12                     exec xfce4-terminal --drop-down
@@ -126,7 +124,6 @@
     #rofi  
         # bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
         bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme ~/gitREPO/dotfiles_linux/polybar/grayblocks/scripts/rofi/applist.rasi
-        bindsym $alt+Tab              exec rofi -combi-modi window -show combi  -show-icons -theme ~/gitREPO/dotfiles_linux/polybar/grayblocks/scripts/rofi/applist.rasi
         bindsym $mod+m              exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/grayblocks/scripts/rofi/launcher.rasi
         bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
         bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
@@ -320,7 +317,7 @@
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
     bindsym $mod+Tab          workspace back_and_forth
-    # bindsym $alt+Tab          workspace back_and_forth
+    bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+i            workspace back_and_forth
     bindsym $alt+Ctrl+k       workspace next
     bindsym $mod+Shift+End    workspace next
@@ -431,7 +428,7 @@
     focus_on_window_activation focus
     for_window [class="Alacritty"] focus
     for_window [class="Brave-browser"] focus
-    for_window [class="^Firefox$"] focus
+    for_window [class="firefox"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
 
@@ -443,11 +440,10 @@
     assign [class="Doublecmd"] $workspace9
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
-    assign [class="Thunderbird"] $workspace10
+    assign [class="thunderbird"] $workspace10
     assign [class="Wfica"] $workspace8
     assign [class="Selfservice"] $workspace8
     assign [class="obsidian"] $workspace3
-    assign [class="thunderbird"] $workspace10
     #show windows icons
     for_window [all] title_window_icon padding 3px
 
