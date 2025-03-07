@@ -98,22 +98,22 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Return       [class=Alacritty] focus
     bindsym $mod+Shift+a            exec autokey-gtk
-    bindsym $mod+Shift+c            exec sh -c "pgrep -f Code >/dev/null && i3-msg -q '[class=code] focus' || i3-msg -q 'exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@'"
-    bindsym $mod+Shift+f            exec sh -c "pgrep -f firefox >/dev/null && i3-msg -q '[class=firefox] focus' || i3-msg -q 'exec firefox'"
+    bindsym $mod+Shift+c            exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
+    bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
-    bindsym $mod+Shift+o            exec sh -c "pgrep -f obsidian >/dev/null && i3-msg -q '[class=obsidian] focus' || i3-msg -q 'exec obsidian'"
+    bindsym $mod+Shift+o            exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    bindsym $mod+b                  exec sh -c "pgrep -f brave >/dev/null && i3-msg -q '[class=Brave] focus' || i3-msg -q 'exec Brave'"
-    bindsym $mod+d                  exec sh -c "pgrep -f Doublecmd >/dev/null && i3-msg -q '[instance=doublecmd] focus' || i3-msg -q 'exec ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage'"
+    bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
+    bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
     bindsym $mod+e                  exec --no-startup-id thunar
-    bindsym $mod+g                  exec sh -c "pgrep -f geany >/dev/null && i3-msg -q '[class=Geany] focus' || i3-msg -q 'exec geany'"
+    bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
-    bindsym $mod+o                  exec sh -c "pgrep -f thunderbird >/dev/null && i3-msg -q '[class=Thunderbird] focus' || i3-msg -q 'exec thunderbird'"
+    bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec gnome-disks
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym F12                     exec xfce4-terminal --drop-down
@@ -437,7 +437,7 @@
     # assign [class="firefox"] $workspace5
     assign [class="Autokey-gtk"] $workspace6
     assign [class="Brave"] $workspace2
-    assign [class="Doublecmd"] $workspace9
+    assign [class="Doublecmd"] $workspace7
     assign [class="Microsoft Teams - Preview"] $workspace4
     assign [class="TelegramDesktop"] $workspace4
     assign [class="thunderbird"] $workspace10
