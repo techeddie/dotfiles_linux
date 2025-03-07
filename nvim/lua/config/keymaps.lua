@@ -19,7 +19,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-s>", ":w!<CR><ESC>") --save current buffer
   keymap("n", "<C-y>", ":redo <CR>") --redo change
   keymap("n", "<C-z>", ":redo <CR>") --redo change
-  keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
+  -- keymap("n", "<CR>", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
   keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
   keymap("n", "<F3>", ":e! <CR>") --reread current buffer
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
@@ -53,6 +53,8 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
+  keymap("n", "<leader>ghl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
+  keymap("n", "<leader>hl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>h", "<C-w>h") --switch pane
   keymap("n", "<leader>j", "<C-w>j") --switch pane
   keymap("n", "<leader>k", "<C-w>k") --switch pane
