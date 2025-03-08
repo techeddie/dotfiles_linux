@@ -141,7 +141,7 @@
 #-------------------------------------------------
 #execute on logon - autostartup
 
-    exec_always --no-startup-id /usr/bin/autokey-gtk
+    exec_always --no-startup-id /usr/bin/autokey-gtk &
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
@@ -178,7 +178,7 @@
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
     # exec --no-startup-id pamac-tray
-    exec --no-startup-id ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    exec --no-startup-id sleep 3; && /opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     exec --no-startup-id keepassxc 
     # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
