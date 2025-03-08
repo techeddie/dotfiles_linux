@@ -3,17 +3,6 @@
   set ignorecase
   set icons
   set info size
-  # set shell zsh
-  # set shellopts '-euy'
-  # set ifs "\n"
-  # set filesep "\n" 
-  # set reverse
-  # set drawbox
-  # set relativenumber
-  # set hidden 
-  # set dircounts
-  #image previewer
-  #alias lf= 'sh ~/.config/lf/extensions/ueberzug/ueberzug.sh'
   set previewer ~/.config/lf/extensions/ueberzug/preview
   set cleaner ~/.config/lf/extensions/ueberzug/cleaner
 #SETTER END
@@ -41,7 +30,7 @@ cmd delete ${{
   }}
 
 #####################
-#open files via nvim
+#OPEN FILES VIA NVIM
   # cmd open ${{
   #     test -L $f && f=$(readlink -f $f)
   #     case $(file --mime-type $f -b) in
@@ -107,22 +96,19 @@ on-cd
 cmd on-select %{{
     exa -ld --color=always "$f"
 }}
-# not working
-# cmd on-select &{{
-#     lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
-# }}
 
 
+#TESTING
 # dynamically set number of columns
-cmd on-redraw %{{
-    if [ "$lf_width" -le 80 ]; then
-        lf -remote "send $id set ratios 1:2"
-    elif [ "$lf_width" -le 160 ]; then
-        lf -remote "send $id set ratios 1:2:3"
-    else
-        lf -remote "send $id set ratios 1:2:3:5"
-    fi
-}}
+#cmd on-redraw %{{
+#    if [ "$lf_width" -le 80 ]; then
+#        lf -remote "send $id set ratios 1:2"
+#    elif [ "$lf_width" -le 160 ]; then
+#        lf -remote "send $id set ratios 1:2:3"
+#    else
+#        lf -remote "send $id set ratios 1:2:3:5"
+#    fi
+#}}
 
 #####################
 #create a new file
@@ -188,7 +174,7 @@ cmd link %{{
   }}
 
 #####################
-#backup selection with date
+#make backup on selection with date
   cmd bak ${{
     date=$(date +%Y-%m-%d_%H_%M)
     tar -zcvf "${1}.$date.tar.gz" $1
@@ -540,19 +526,15 @@ cmd lf_reload ${{
   # map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
   # map p paste
 
-  cmap <backtab> cmd-menu-complete-back
-  cmap <down> cmd-history-next
-  cmap <tab> cmd-menu-complete
-  cmap <up> cmd-history-prev
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
   map <a-R> :lf_reload
   map <a-X> :unmake_executeable 
   map <a-e> :!thunar .
+  map <c-f> :fzf_search
   map <a-f> :fzf_jump_max_folder
-  map <a-H> :fzf_jump_hidden
-  map <c->> :fzf_jump_hidden
+  map <a-h> :fzf_jump_hidden
   map <a-m> $vimv $fx   #renaming VI like
   map <a-p> :file_preview 
   map <a-r> :edit_config
@@ -562,10 +544,7 @@ cmd lf_reload ${{
   map <backspace2> updir
   map <backspace> :fzf_jump_history
   map <c-c> :copy_to_clipboard
-  map <c-f> :fzf_search
-  map <c-h> :fzf_jump_history
   map <c-k> quit
-  map <c-l> :fzf_jump_history
   map <c-n> push %touch<space>
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
@@ -578,7 +557,6 @@ cmd lf_reload ${{
   map <f-7> push %mkdir<space>
   map <space> :toggle 
   map <tab> :fzf_jump_history
-  map <a-h> :fzf_jump_history
   map = filter
   map D :delete
   map E &thunar
