@@ -579,12 +579,13 @@ cmd lf_reload ${{
   map ac push %touch<space>
 
 #modes
-  map mu extract
-  map me extract
-  map mx extract
-  map mc push %touch<space>
-  map mr rename
-  map mv two_panes
+  map n
+  map nu extract
+  map ne extract
+  map nx extract
+  map nc push %touch<space>
+  map nr rename
+  map nv two_panes
 
   map b :fzf_jump_history
   map b mark-load
