@@ -576,14 +576,11 @@ cmd lf_reload ${{
   map V toggle_preview
   map ad push %mkdir<space>
   map af push %mkdir<space>
-  map ae execute
-  map at push %touch<space>
+  map ac push %touch<space>
   map au unarchive
   map b :fzf_jump_history
   map b mark-load
-  map c
-  map cd push %mkdir<space>
-  map cf push %touch<space>
+  map c push %touch<space>
   map d
   map dd $rm -fr "$fx"
   map e $$EDITOR "$f"
