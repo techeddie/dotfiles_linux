@@ -182,7 +182,7 @@ cmd link %{{
 
 #####################
 #archive bindings
-  cmd unarchive ${{
+  cmd extract ${{
     case "$f" in
       *.zip) unzip "$f" ;;
       *.tar.gz) tar -xzvf "$f" ;;
@@ -558,7 +558,7 @@ cmd lf_reload ${{
   map <enter> open
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
-  map <f-6> unarchive
+  map <f-6> extract
   map <f-7> push %mkdir<space>
   map <space> :toggle 
   map <tab> :fzf_jump_history
@@ -577,7 +577,15 @@ cmd lf_reload ${{
   map ad push %mkdir<space>
   map af push %mkdir<space>
   map ac push %touch<space>
-  map au unarchive
+
+#modes
+  map mu extract
+  map me extract
+  map mx extract
+  map mc push %touch<space>
+  map mr rename
+  map mv two_panes
+
   map b :fzf_jump_history
   map b mark-load
   map c push %touch<space>
