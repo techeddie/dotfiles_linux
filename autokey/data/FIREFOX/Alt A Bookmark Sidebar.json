@@ -2,10 +2,8 @@
     "type": "script",
     "description": "Alt A Bookmark Sidebar",
     "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 88,
+    "modes": [],
+    "usageCount": 97,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -18,10 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>"
-        ],
-        "hotKey": "a"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": "",
