@@ -8,7 +8,6 @@ return {
     require("lf").setup({
       escape_quit = false,
       default_action = "drop", -- default action when `Lf` opens a file
-      winblend = 50, -- psuedotransparency level
       dir = "", -- directory where `lf` starts ('gwd' is git-working-directory, ""/nil is CWD)
       direction = "float", -- window type: float horizontal vertical
       border = "rounded", -- border kind: single double shadow curved
@@ -17,6 +16,7 @@ return {
       tmux = false, -- tmux statusline can be disabled on opening of Lf
       default_file_manager = false, -- make lf default file manager
       disable_netrw_warning = true, -- don't display a message when opening a directory with `default_file_manager` as true
+      -- winblend = 50, -- psuedotransparency level
     })
 
     vim.keymap.set("n", "<M-l>", "<Cmd>Lf<CR>")

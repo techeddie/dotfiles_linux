@@ -30,6 +30,11 @@ keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
 keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
 keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
+keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
+keymap("n", "<S-Left>", ":bnext<CR>", opts)
+keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
+keymap("n", "<S-Left>", ":bprevious<CR>", opts)
+keymap("n", "<S-Right>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
 keymap("n", "<S-r>", ":source % <CR>") --source current buffer
 keymap("n", "<Tab>", "<C-w>w") --switch to next pane
@@ -46,3 +51,7 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) --
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
+keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
+keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
+keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
