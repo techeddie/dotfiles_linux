@@ -21,6 +21,8 @@ end
 -- KEYMAPS
 -- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('oldfiles') <CR>") --history
 keymap("i", "jk", "<ESC>", opts) --exit insert mode
+keymap("i", "<C-S-k>", ":qall! <CR>", opts) --exit insert mode
+keymap("i", "<c-q>", "<C-w>q<CR>", opts)
 keymap("i", "kj", "<ESC>", opts) --exit insert mode
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
