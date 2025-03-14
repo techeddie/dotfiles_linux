@@ -19,24 +19,29 @@ for i = 1, 6 do
 end
 
 -- KEYMAPS
+-- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('oldfiles') <CR>") --history
 keymap("i", "jk", "<ESC>", opts) --exit insert mode
 keymap("i", "kj", "<ESC>", opts) --exit insert mode
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
+keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
+keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
+keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
 keymap("n", "<C-r>", ":source % <CR>") --source current buffer
 keymap("n", "<C-y>", ":redo <CR>") --redo change
 keymap("n", "<C-z>", ":redo <CR>") --redo change
 keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-h>", ":split <CR>") --horizontal split
+keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
 keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
 keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
 keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
-keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 keymap("n", "<S-Left>", ":bnext<CR>", opts)
-keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
 keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<S-Right>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
 keymap("n", "<S-r>", ":source % <CR>") --source current buffer
+keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 keymap("n", "<Tab>", "<C-w>w") --switch to next pane
 keymap("n", "<c-q>", ":bd <CR>") --buffer delete
 keymap("n", "<leader>j", "<C-w>j") --switch pane
@@ -51,7 +56,13 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) --
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
-keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
-keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
-keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
-keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
+-- keys = {
+--   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+--   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+--   { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+--   { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+--   { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+--   { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+--   { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+--   { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+-- },

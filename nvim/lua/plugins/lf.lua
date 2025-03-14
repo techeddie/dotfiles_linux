@@ -16,7 +16,7 @@ return {
       tmux = false, -- tmux statusline can be disabled on opening of Lf
       default_file_manager = false, -- make lf default file manager
       disable_netrw_warning = true, -- don't display a message when opening a directory with `default_file_manager` as true
-      -- winblend = 50, -- psuedotransparency level
+      -- winblend = 10, -- psuedotransparency level
     })
 
     vim.keymap.set("n", "<M-l>", "<Cmd>Lf<CR>")
