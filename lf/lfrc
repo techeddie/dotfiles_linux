@@ -585,7 +585,7 @@ cmd lf_reload ${{
   map nx extract
   map nc push %touch<space>
   map nr rename
-  map nb bak
+  map nb push :bak
   map nv two_panes
 
   map b :fzf_jump_history
