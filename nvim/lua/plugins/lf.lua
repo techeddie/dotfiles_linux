@@ -18,7 +18,7 @@ return {
     winblend = 5,
   },
   keys = {
-    { "<leader>ff", "<cmd>Lf<cr>", desc = "NeoTree" },
-    { "<M-l>", "<cmd>Lf<cr>", desc = "NeoTree" },
+    { "<leader>lf", "<cmd>Lf<cr>", desc = "Lf File Manager" },
+    { "<M-l>", "<cmd>Lf<cr>", desc = "Lf File Manager" },
   },
 }
