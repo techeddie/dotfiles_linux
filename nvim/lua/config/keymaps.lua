@@ -20,11 +20,11 @@ end
 
 -- KEYMAPS
 -- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('oldfiles') <CR>") --history
-keymap("i", "jk", "<ESC>", opts) --exit insert mode
-keymap("i", "<C-S-k>", ":qall! <CR>", opts) --exit insert mode
-keymap("i", "<c-q>", "<C-w>q<CR>", opts)
-keymap("i", "kj", "<ESC>", opts) --exit insert mode
-keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
+keymap("i", "jk", "<ESC>", opts)
+-- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
+keymap("n", "<c-q>", "<C-w>q<CR>", opts)
+keymap("i", "kj", "<ESC>", opts)
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
@@ -58,6 +58,7 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) --
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
+keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
 -- keys = {
 --   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 --   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
