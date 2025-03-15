@@ -7,8 +7,7 @@ return {
   end,
   keys = function()
     return {
-      { "<C-S-k>", ":qall! <CR>" },
-      { "<C-S-q>", ":<C-w>q<CR>" },
+      { "<C-k>", ":qall! <CR>" },
     }
   end,
 }
