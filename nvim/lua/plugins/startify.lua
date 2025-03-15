@@ -10,8 +10,7 @@ return {
       { ic = "~/.config/i3/config" }, -- i3 config file
       { lc = "~/Nextcloud/LINUX/LINUX_COMMANDS.sh" }, -- linux knowledge base
       { lf = "~/config/lf/lfrc" }, -- lf file manager config
-      { m = "~/.config/nvim/lua/eddie/keymaps.lua" }, -- neovim keymap
-      { p = "~/.config/nvim/lua/eddie/plugins.lua" }, -- neovim plugins
+      { m = "~/.config/nvim/lua/config/keymaps.lua" }, -- neovim keymap
       { rb = "~/scripts/restic_runBackup.sh" }, -- run remote backup
       { rtb = "~/scripts/runTimeshiftBackup.sh" }, -- run local backup
       { ns = "~/.config/nvim/lua/eddie/settings.lua" }, -- neovim default settings
