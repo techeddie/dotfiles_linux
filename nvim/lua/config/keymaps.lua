@@ -66,6 +66,21 @@ keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertic
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
 
+-- VISUAL --
+keymap("v", "<", "<gv", opts) -- Stay in indent mode
+keymap("v", ">", ">gv", opts) -- Stay in indent mode
+-- Move text up and down
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dP', opts)
+-- Visual Block --   -- Move text up and down
+keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+
 -- keys = {
 --   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 --   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
