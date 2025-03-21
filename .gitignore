@@ -23,3 +23,5 @@ nvim/lazyvim.json
 tmux/.tmux/plugins
 ~/.cache/nvim.undodir
 nvim/.DS_Store
+nvim/lua/config/~/.cache/nvim.undodir
+nvim/lua/plugins/~/.cache/nvim.undodir
