@@ -58,6 +58,7 @@ keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering
 keymap("n", "<leader>u", "gUU") --make uppercase
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
+keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap

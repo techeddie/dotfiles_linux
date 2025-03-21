@@ -1,8 +1,8 @@
 return {
 	"mhinz/vim-startify",
-	keys = {
-		{ "<leader>m", "<cmd>Startify<cr>", desc = "Startify" },
-	},
+	-- keys = {
+	-- 	{ "<leader>m", "<cmd>Startify<cr>", desc = "Startify" },
+	-- },
 	config = function()
 		local g = vim.g
 		g.startify_custom_header = {}
