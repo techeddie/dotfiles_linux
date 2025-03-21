@@ -3,19 +3,19 @@
 -- Add any additional keymaps here
 
 local function keymap(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 local opts = { noremap = true, silent = true }
 
 --JUMP TO BUFFER WITH SPACEBAR
 for i = 1, 6 do
-  local lhs = "<leader>" .. i
-  local rhs = i .. "<C-W>w"
-  keymap("n", lhs, rhs, { desc = "Move to windows " .. i })
+	local lhs = "<leader>" .. i
+	local rhs = i .. "<C-W>w"
+	keymap("n", lhs, rhs, { desc = "Move to windows " .. i })
 end
 
 -- KEYMAPS
@@ -59,6 +59,13 @@ keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
+
+-- RESIZE PANES
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
+keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
+keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
+keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
+
 -- keys = {
 --   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 --   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
