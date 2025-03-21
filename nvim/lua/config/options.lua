@@ -4,6 +4,7 @@
 -- Editor options
 --
 local o = vim.opt
+local undodir_path = vim.fn.expand("$HOME/.cache/nvim.undodir/")
 
 o.autoindent = false
 o.backup = false
@@ -37,7 +38,7 @@ o.tabstop = 2
 o.termguicolors = true
 o.textwidth = 300
 o.timeoutlen = 300
-o.undodir = "~/.cache/nvim.undodir"
+o.undodir = undodir_path
 o.undofile = true
 o.updatetime = 200
 o.wrap = false
