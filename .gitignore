@@ -21,3 +21,4 @@ doublecmd/tabs~668212148.tmp
 nvim/lazy-lock.json
 nvim/lazyvim.json
 tmux/.tmux/plugins
+~/.cache/nvim.undodir
