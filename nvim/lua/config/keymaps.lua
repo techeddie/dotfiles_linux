@@ -20,7 +20,13 @@ end
 
 -- KEYMAPS
 -- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('oldfiles') <CR>") --history
+keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
+keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("i", "jk", "<ESC>", opts)
+keymap("n", "<leader>hs", ":split <CR>") --horizontal split
+keymap("n", "<leader>vs", ":vsplit <CR>") --horizontal split
+keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
+keymap("n", "<leader>qp", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
 -- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
 keymap("n", "<c-q>", "<C-w>q<CR>", opts)
 keymap("i", "kj", "<ESC>", opts)
