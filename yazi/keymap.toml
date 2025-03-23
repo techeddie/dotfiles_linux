@@ -144,7 +144,7 @@ keymap = [
 	{ on = [ "g", "n" ],       run = "cd ~/config/nvim/",   desc = "Goto nvim" },
 	{ on = [ "g", "k" ],       run = "cd ~/config/karabiner/",   desc = "Goto karabiner/" },
 	{ on = [ "g", "T" ],       run = "cd ~/tmp/",   desc = "Goto tmp" },
-	{ on = [ "g", "t" ],       run = "cd ~/Nextcloud/MEDIA/OBSIDIAN/MBPRO/obsidian_sync/",   desc = "Goto obsidian_sync" },
+	{ on = [ "g", "t" ],       run = "cd ~/Nextcloud/MEDIA/OBSIDIAN/obsidian_sync/",   desc = "Goto obsidian_sync" },
 	{ on = [ "g", "L" ],       run = "cd ~/Nextcloud/LINUX/",   desc = "Goto LINUX" },
 	{ on = [ "g", "M" ],       run = "cd ~/Nextcloud/MEDIA/",   desc = "Goto MEDIA" },
 	{ on = [ "g", "N" ],       run = "cd ~/Nextcloud/",   desc = "Goto Nextcloud" },
@@ -415,10 +415,10 @@ on   = "<Esc>"
 run  = "close"
 desc = "Cancel input"
 
-[[manager.prepend_keymap]]
-on   = "p"
-run  = "plugin smart-paste"
-desc = "Paste into the hovered directory or CWD"
+# [[manager.prepend_keymap]]
+# on   = "p"
+# run  = "plugin smart-paste"
+# desc = "Paste into the hovered directory or CWD"
 
 [[manager.prepend_keymap]]
 on   = "<C-t>"
