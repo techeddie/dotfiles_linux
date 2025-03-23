@@ -66,7 +66,8 @@ keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
-keymap("n", "<C-g>", ":LazyGitCurrentFile<CR>") --lazygit
+keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
+-- keymap("n", "<C-h>", ":lua Snacks.picker.recent() <CR>") --show me recent files
 
 -- RESIZE PANES
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
