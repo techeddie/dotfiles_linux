@@ -18,15 +18,8 @@ for i = 1, 6 do
 	keymap("n", lhs, rhs, { desc = "Move to windows " .. i })
 end
 
---QUIT BUFFER
-for i = 1, 6 do
-	local lhs = "q" .. i
-	local rhs = i .. "<C-W>q"
-	keymap("n", lhs, rhs, { desc = "quit buffer number ..." .. i })
-end
-
 -- KEYMAPS
--- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('') <CR>") --history
+-- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('oldfiles') <CR>") --history
 keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("i", "jk", "<ESC>", opts)
@@ -56,7 +49,7 @@ keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<S-Right>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
 keymap("n", "<S-r>", ":source % <CR>") --source current buffer
--- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
+keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 keymap("n", "<Tab>", "<C-w>w") --switch to next pane
 keymap("n", "<c-q>", ":bd <CR>") --buffer delete
 keymap("n", "<leader>j", "<C-w>j") --switch pane
@@ -65,19 +58,14 @@ keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering
 keymap("n", "<leader>u", "gUU") --make uppercase
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
-keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
-keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
-keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
-keymap("n", "<S-u>", ":lua Snacks.picker.undo() <CR>") --show me undo history
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
-keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
--- keymap("n", "<C-h>", ":lua Snacks.picker.recent() <CR>") --show me recent files
+keymap("n", "<C-g>", ":LazyGitCurrentFile<CR>") --lazygit
 
 -- RESIZE PANES
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal

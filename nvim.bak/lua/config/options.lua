@@ -3,9 +3,7 @@
 -- Add any additional options here
 -- Editor options
 --
-
 local o = vim.opt
-local undodir_path = os.getenv("HOME") .. "/.cache/nvim.undodir"
 
 o.autoindent = false
 o.backup = false
@@ -39,10 +37,9 @@ o.tabstop = 2
 o.termguicolors = true
 o.textwidth = 300
 o.timeoutlen = 300
-o.undodir = undodir_path
+o.undodir = "~/.cache/nvim.undodir"
 o.undofile = true
 o.updatetime = 200
 o.wrap = false
 o.winbar = "%=%m %F"
 o.writebackup = false
-vim.g.snacks_animate = false
