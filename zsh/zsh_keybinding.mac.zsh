@@ -21,3 +21,4 @@
 
   # YAZI
   bindkey -s '^y' 'yazi ^M'
+  bindkey -s '^e' 'yazi ^M'
