@@ -477,4 +477,3 @@ desc = "make backup via tar for selection"
 on   = ["<F7>"]
 run  = """ shell 'mkdir ' --cursor=6 --interactive """
 desc = "zip testing"
-
