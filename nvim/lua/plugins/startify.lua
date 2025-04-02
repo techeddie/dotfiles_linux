@@ -9,6 +9,7 @@ return {
 
 		g.startify_bookmarks = {
 			{ ac = "~/.config/alacritty/alacritty.toml" }, -- alacritty config
+			{ as = "~/.config/aerospace/aerospace.toml" }, -- aerospace config
 			{ ic = "~/.config/i3/config" }, -- i3 config file
 			{ lc = "~/Nextcloud/LINUX/LINUX_COMMANDS.sh" }, -- linux knowledge base
 			{ lf = "~/config/lf/lfrc" }, -- lf file manager config
