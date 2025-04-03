@@ -72,6 +72,12 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) --
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
+
+
+-- vim.keymap.set("n", "<C-f>", function()
+--   Snacks.picker.lines()
+-- end, { desc = "Buffer lines" })
+
 keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
 keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
 -- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
@@ -101,6 +107,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+vim.keymap.set("n", "<C-f>", function()
+  Snacks.picker.lines()
+end, { desc = "Buffer lines" })
 -- keys = {
 --   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 --   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
