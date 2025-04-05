@@ -1,8 +1,8 @@
-# font
+#font
 font-family = JetBrainsMono Nerd Font
 font-size = 18
 
-# theme
+#theme
 theme = xcodedarkhc
 # theme = zenwritten_dark
 # theme = light:catppuccin-latte,dark:catppuccin-mocha
@@ -10,7 +10,7 @@ theme = xcodedarkhc
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 
-# close
+#close
 keybind = cmd+q=close_surface
 
 #split
@@ -41,11 +41,11 @@ keybind = cmd+up=goto_split:up
 window-save-state = always
 macos-titlebar-style = transparent
 
-# tabs
+#tabs
 keybind = ctrl+a>left=move_tab:-1
 keybind = ctrl+a>right=move_tab:1
 
-# quick tab switch
+#quick tab switch
 keybind = ctrl+a>1=goto_tab:1
 keybind = ctrl+a>2=goto_tab:2
 keybind = ctrl+a>3=goto_tab:3
@@ -56,5 +56,3 @@ keybind = ctrl+a>7=goto_tab:7
 keybind = ctrl+a>8=goto_tab:8
 keybind = ctrl+a>9=goto_tab:9
 
-# other
-copy-on-select = clipboard
