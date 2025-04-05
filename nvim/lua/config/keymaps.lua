@@ -107,16 +107,21 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
-vim.keymap.set("n", "<C-f>", function()
-  Snacks.picker.lines()
-end, { desc = "Buffer lines" })
--- keys = {
---   { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
---   { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
---   { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
---   { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
---   { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
---   { icon = " ", key = "s", desc = "Restore Session", section = "session" },
---   { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
---   { icon = " ", key = "q", desc = "Quit", action = ":qa" },
--- },
+-- vim.keymap.set("n", "<C-f>", function()
+--   Snacks.picker.lines()
+-- end, { desc = "Buffer lines" })
+
+-- lazygit
+-- if vim.fn.executable("lazygit") == 1 then
+--   map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
+--   map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
+--   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
+--   map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = LazyVim.root.git() }) end, { desc = "Git Log" })
+--   map("n", "<leader>gL", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
+-- end
+-- map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
+-- map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
+-- map({"n", "x" }, "<leader>gY", function()
+--   Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
+-- end, { desc = "Git Browse (copy)" })
+--
