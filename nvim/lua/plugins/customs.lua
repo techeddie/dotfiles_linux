@@ -8,6 +8,8 @@ return {
 	keys = function()
 		return {
 			{ "<C-k>", ":qall! <CR>" },
+      { "<C-g>", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" }
+      }
 		}
 	end,
 }
