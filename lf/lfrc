@@ -329,6 +329,7 @@ cmd set_wallpaper ${{
       lazygit 
   }}
   map <a-g> :lazygit
+  map <c-g> :lazygit
 
 #####################
 #GIT
