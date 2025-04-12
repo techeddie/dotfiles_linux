@@ -63,6 +63,7 @@ keymap("n", "<leader>j", "<C-w>j") --switch pane
 keymap("n", "<leader>k", "<C-w>k") --switch pane
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
 keymap("n", "<leader>u", "gUU") --make uppercase
+keymap("n", "<leader>z", "za") --toggle fold
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
