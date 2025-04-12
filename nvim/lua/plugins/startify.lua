@@ -12,12 +12,15 @@ return {
 			{ as = "~/.config/aerospace/aerospace.toml" }, -- aerospace config
 			{ ic = "~/.config/i3/config" }, -- i3 config file
 			{ lc = "~/Nextcloud/LINUX/LINUX_COMMANDS.sh" }, -- linux knowledge base
+			{ yc = "~/config/yazi/yazi.toml" }, -- yazi config
+			{ yk = "~/config/yazi/keymap.toml" }, -- yazi keymaps
 			{ lf = "~/config/lf/lfrc" }, -- lf file manager config
 			{ ni = "~/.config/nvim/init.lua" }, -- neovim init file
+			{ sc = "~/.config/nvim/lua/plugins/startify.lua" }, -- startify config
 			{ nk = "~/.config/nvim/lua/config/keymaps.lua" }, -- neovim keymaps
 			{ no = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
 			{ ns = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
-			{ ns = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
+			{ nc = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
 			{ rb = "~/scripts/restic_runBackup.sh" }, -- run remote backup
 			{ tc = "~/.tmux.conf" }, -- tmux config file
 			{ zc = "~/.zshrc" }, -- zsh config
