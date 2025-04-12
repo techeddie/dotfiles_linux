@@ -5,6 +5,7 @@
 --
 
 local o = vim.opt
+local g = vim.g
 local undodir_path = os.getenv("HOME") .. "/.cache/nvim.undodir"
 
 o.autoindent = false
@@ -45,5 +46,8 @@ o.updatetime = 200
 o.wrap = false
 o.winbar = "%=%m %F"
 o.writebackup = false
-vim.g.snacks_animate = false
-vim.g.autoformat = false
+o.foldenable=true
+o.foldmethod = "indent"
+
+g.snacks_animate = false
+g.autoformat = false
