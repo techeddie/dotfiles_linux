@@ -13,6 +13,11 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "2730199"
 hash = "5c9dda1a587b8f5b6f63e3d5375bda88"
 
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "7a08a09"
+hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "68326b4"
