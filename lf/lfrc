@@ -570,6 +570,7 @@ cmd lf_reload ${{
   map J :updir; down; open
   map K :updir; up; open
   map L :link
+  map - :link
   map O push :open-with-gui<space>
   map P toggle_preview
   map R reload
