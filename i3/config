@@ -43,9 +43,10 @@
 #-------------------------------------------------
 #gaps
     #default gap size
-    gaps inner 10
-    # gaps inner 60
-    gaps outer 5
+    # gaps inner 10
+    gaps inner 20
+    # gaps outer 5
+    gaps outer 1
     # gaps outer 30
     #smart_gaps on
     #smart_borders on
@@ -68,7 +69,7 @@
 #-------------------------------------------------
 #key bindings to launch applications
     
-    # bindsym $mod+Shift+Print        bar mode invisible
+    # bindsym $mod+S<D-a>hift+Print        bar mode invisible
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+a            exec lxappearance
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
