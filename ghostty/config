@@ -4,14 +4,13 @@ font-size = 18
 font-size = 14
 
 #theme
-theme = xcodedarkhc
+# theme = xcodedarkhc
 # theme = zenwritten_dark
-# theme = light:catppuccin-latte,dark:catppuccin-mocha
+theme = Abernathy
 
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 window-decoration = false 
-
 
 #close
 keybind = cmd+q=close_surface
