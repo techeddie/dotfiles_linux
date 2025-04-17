@@ -11,6 +11,7 @@ theme = Abernathy
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 window-decoration = false 
+confirm-close-surface = false
 
 #close
 keybind = cmd+q=close_surface
