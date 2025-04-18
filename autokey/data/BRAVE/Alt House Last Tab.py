@@ -6,5 +6,7 @@ if "Doublecmd" in winClass:
     keyboard.send_keys("<alt>+l")
 if "Alacritty.Alacritty" in winClass:    
     keyboard.send_keys("<alt>+l")   
+if "com.mitchellh.ghostty" in winClass:    
+    keyboard.send_keys("<alt>+l")    
 else:
     keyboard.send_keys("<alt>+`")
