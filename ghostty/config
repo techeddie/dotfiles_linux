@@ -39,8 +39,13 @@ keybind = cmd+n=new_tab
 keybind = cmd+f=toggle_fullscreen
 keybind = cmd+]=toggle_split_zoom
 
-keybind = ctrl+a>n=new_window
-keybind = ctrl+a>r=reload_config
+#conflicting tmux
+# keybind = ctrl+a>n=new_window
+# keybind = ctrl+a>r=reload_config
+keybind = ctrl+m>n=new_window
+keybind = ctrl+m>r=reload_config
+keybind = ctrl+b>n=new_window
+keybind = ctrl+b>r=reload_config
 
 #focus pane
 keybind = cmd+right=goto_split:right
@@ -71,4 +76,3 @@ keybind = ctrl+a>6=goto_tab:6
 keybind = ctrl+a>7=goto_tab:7
 keybind = ctrl+a>8=goto_tab:8
 keybind = ctrl+a>9=goto_tab:9
-
