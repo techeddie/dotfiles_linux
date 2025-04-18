@@ -15,6 +15,7 @@ confirm-close-surface = false
 
 #close
 keybind = cmd+q=close_surface
+keybind = ctrl+shift+q=close_surface
 keybind = alt+q=close_surface
 
 #split
