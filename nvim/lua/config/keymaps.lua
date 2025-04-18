@@ -27,15 +27,10 @@ end
 
 -- KEYMAPS
 -- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('') <CR>") --history
-keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
-keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
-keymap("i", "jk", "<ESC>", opts)
-keymap("n", "<leader>hs", ":split <CR>") --horizontal split
-keymap("n", "<leader>vs", ":vsplit <CR>") --horizontal split
-keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
-keymap("n", "<leader>qp", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
+
 -- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
-keymap("n", "<c-q>", "<C-w>q<CR>", opts)
+-- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
+keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
@@ -44,6 +39,7 @@ keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
 keymap("n", "<C-r>", ":source % <CR>") --source current buffer
 keymap("n", "<C-y>", ":redo <CR>") --redo change
 keymap("n", "<C-z>", ":redo <CR>") --redo change
+keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-h>", ":split <CR>") --horizontal split
 keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
@@ -56,24 +52,30 @@ keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<S-Right>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
 keymap("n", "<S-r>", ":source % <CR>") --source current buffer
--- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 keymap("n", "<Tab>", "<C-w>w") --switch to next pane
 keymap("n", "<c-q>", ":bd <CR>") --buffer delete
+keymap("n", "<c-q>", "<C-w>q<CR>", opts)
+keymap("n", "<leader>hs", ":split <CR>") --horizontal split
 keymap("n", "<leader>j", "<C-w>j") --switch pane
 keymap("n", "<leader>k", "<C-w>k") --switch pane
+keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
+keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
+keymap("n", "<leader>qp", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
 keymap("n", "<leader>u", "gUU") --make uppercase
+keymap("n", "<leader>vs", ":vsplit <CR>") --horizontal split
 keymap("n", "<leader>z", "za") --toggle fold
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
-keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
+keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
+keymap("n", "p", ':pu<CR>') --paste below current line
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
-
+keymap("v", "d", '"xd') --do not yank to clip on delete action
 
 -- vim.keymap.set("n", "<C-f>", function()
 --   Snacks.picker.lines()
