@@ -61,7 +61,6 @@ keymap("n", "<leader>k", "<C-w>k") --switch pane
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
 keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
-keymap("n", "<leader>qp", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
 keymap("n", "<leader>u", "gUU") --make uppercase
 keymap("n", "<leader>vs", ":vsplit <CR>") --horizontal split
 keymap("n", "<leader>z", "za") --toggle fold
@@ -90,10 +89,10 @@ keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 -- keymap("n", "<C-h>", ":lua Snacks.picker.recent() <CR>") --show me recent files
 
 -- RESIZE PANES
-keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
-keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
-keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
-keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
+-- keymap("n", "<C-Down>", ":resize -4<CR>", opts) --pane smaller horizontal
+-- keymap("n", "<C-Left>", ":vertical resize +4<CR>", opts) --pane smaller vertical
+-- keymap("n", "<C-Right>", ":vertical resize -4<CR>", opts) --pane bigger vertical
+-- keymap("n", "<C-Up>", ":resize +4<CR>", opts) --pane bigger horizontal
 
 -- VISUAL --
 keymap("v", "<", "<gv", opts) -- Stay in indent mode
