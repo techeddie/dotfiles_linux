@@ -11,6 +11,7 @@ return {
 			{ ac = "~/.config/alacritty/alacritty.toml" }, -- alacritty config
 			{ as = "~/.config/aerospace/aerospace.toml" }, -- aerospace config
 			{ ic = "~/.config/i3/config" }, -- i3 config file
+			{ gc = "~/.config/ghostty/config" }, -- ghostty config file
 			{ lc = "~/Nextcloud/LINUX/LINUX_COMMANDS.sh" }, -- linux knowledge base
 			{ yc = "~/config/yazi/yazi.toml" }, -- yazi config
 			{ yk = "~/config/yazi/keymap.toml" }, -- yazi keymaps
