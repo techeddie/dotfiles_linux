@@ -25,10 +25,10 @@ keybind = alt+shift+8=new_split:down
 keybind = alt+shift+9=new_split:right
 
 #resize pane
-keybind = cmd+shift+right=resize_split:right,40
-keybind = cmd+shift+left=resize_split:left,40
-keybind = cmd+shift+up=resize_split:up,40
-keybind = cmd+shift+down=resize_split:down,40
+# keybind = cmd+shift+right=resize_split:right,40
+# keybind = cmd+shift+left=resize_split:left,40
+# keybind = cmd+shift+up=resize_split:up,40
+# keybind = cmd+shift+down=resize_split:down,40
 
 keybind = alt+shift+right=resize_split:right,40
 keybind = alt+shift+left=resize_split:left,40
@@ -39,6 +39,9 @@ keybind = ctrl+n=new_tab
 keybind = cmd+n=new_tab
 keybind = cmd+f=toggle_fullscreen
 keybind = cmd+]=toggle_split_zoom
+keybind = alt+]=toggle_split_zoom
+keybind = alt+f=toggle_split_zoom
+keybind = alt+z=toggle_split_zoom
 
 #conflicting tmux
 # keybind = ctrl+a>n=new_window
