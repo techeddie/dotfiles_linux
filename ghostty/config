@@ -38,7 +38,7 @@ keybind = alt+shift+down=resize_split:down,40
 keybind = ctrl+n=new_tab
 keybind = cmd+n=new_tab
 keybind = cmd+f=toggle_fullscreen
-keybind = alt+f=toggle_fullscreen
+# keybind = alt+f=toggle_fullscreen
 keybind = cmd+]=toggle_split_zoom
 keybind = alt+]=toggle_split_zoom
 keybind = alt+f=toggle_split_zoom
