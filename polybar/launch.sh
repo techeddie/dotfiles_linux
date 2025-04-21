@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sh $HOME/scripts/runMouseGXTAccel.sh
-sh $HOME/scripts/runHDMI_AUTODETECT.sh
+# sh $HOME/scripts/runHDMI_AUTODETECT.sh
 
 dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
