@@ -125,24 +125,14 @@
     
     #rofi  
         #running windows
-        # bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme glue_pro_blue 
-        bindsym $mod+w              exec rofi -combi-modi window -show combi  -show-icons -theme ~/gitREPO/dotfiles_linux/polybar/grayblocks/scripts/rofi/applist.rasi
-
+        bindsym $mod+w              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
         #app launcher
-        bindsym $mod+m exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
-
-        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
-        bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
+        bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+          # bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
+          # bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
 
     #dmenu
         # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
-
-    #vim like marks - go to specific program
-    #read 1 character and mark the current window with this character
-    # bindsym $mod+Shift+g exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
-
-    #read 1 character and go to the window with the character
-    # bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 #-------------------------------------------------
 #execute on logon - autostartup
