@@ -23,3 +23,4 @@ nvim/lazyvim.json
 tmux/.tmux/plugins
 ~/.cache/nvim.undodir
 .DS_Store
+rofi.old
