@@ -109,6 +109,21 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+-- toggle lline wrapping
+vim.keymap.set("n", "<leader>ww",
+  function ()
+    if vim.wo.wrap then
+      vim.wo.wrap = false
+      print("nowrap")
+    else
+      vim.wo.wrap = true
+      print("wrap")
+    end
+  end,
+  {desc = "Toggle line wrapping"})
+
+
+
 -- vim.keymap.set("n", "<C-f>", function()
 --   Snacks.picker.lines()
 -- end, { desc = "Buffer lines" })
