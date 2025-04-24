@@ -15,10 +15,15 @@
 
   #LAZYGIT
   bindkey -s '^g' 'lazygit^M'
+
   #LF
-  bindkey -s '\el' 'lf ^M'
+  # bindkey -s '\el' 'lf ^M'
   bindkey -s '^l' 'lf ^M'
 
   # YAZI
   bindkey -s '^y' 'yazi ^M'
   bindkey -s '^e' 'yazi ^M'
+  bindkey -s '\e1' 'yazi ^M'
+  bindkey -s '\e2' 'yazi ^M'
+  bindkey -s '\el' 'yazi ^M'
+  bindkey -s '\ee' 'yazi ^M'
