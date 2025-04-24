@@ -48,6 +48,7 @@ o.winbar = "%=%m %F"
 o.writebackup = false
 o.foldenable=true
 o.foldmethod = "indent"
+o.shell = "zsh"
 
 g.snacks_animate = false
 g.autoformat = false
