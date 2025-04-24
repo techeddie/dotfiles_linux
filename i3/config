@@ -104,8 +104,7 @@
     bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
     bindsym $mod+Shift+l            exec ghostty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id ghostty -e nvim
-    bindsym $mod+Shift+o            exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
-    bindsym $mod+n            exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
+    bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+Shift+p            exec ghostty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
