@@ -3,13 +3,13 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 1, 4, 3 ]
+ratio          = [ 1, 2, 3 ]
 sort_by        = "alphabetical"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_dir_first = true
 sort_translit  = false
-linemode       = "none"
+linemode       = "size"
 show_hidden    = false
 show_symlink   = false
 scrolloff      = 5
@@ -156,7 +156,8 @@ previewers = [
 ]
 
 [input]
-cursor_blink = false
+# cursor_blink = false
+cursor_blink = true
 
 # cd
 cd_title  = "Change directory:"
@@ -196,24 +197,26 @@ shell_offset = [ 0, 2, 50, 3 ]
 [confirm]
 # trash
 trash_title 	= "Trash {n} selected file{s}?"
-trash_origin	= "center"
+trash_origin	= "top-center"
 trash_offset	= [ 0, 0, 70, 20 ]
 
 # delete
 delete_title 	= "Permanently delete {n} selected file{s}?"
-delete_origin	= "center"
-delete_offset	= [ 0, 0, 70, 20 ]
+delete_origin   = "top-center"
+delete_offset   = [ 0, 2, 50, 3 ]
+# delete_origin	= "center"
+# delete_offset	= [ 0, 0, 70, 20 ]
 
 # overwrite
 overwrite_title   = "Overwrite file?"
 overwrite_content = "Will overwrite the following file:"
-overwrite_origin  = "center"
+overwrite_origin  = "top-center"
 overwrite_offset  = [ 0, 0, 50, 15 ]
 
 # quit
 quit_title   = "Quit?"
 quit_content = "The following tasks are still running, are you sure you want to quit?"
-quit_origin  = "center"
+quit_origin  = "top-center"
 quit_offset  = [ 0, 0, 50, 15 ]
 
 [pick]
