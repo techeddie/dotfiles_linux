@@ -85,3 +85,6 @@ keybind = ctrl+m>9=goto_tab:9
 # unmap keybindings
 # keybind = "ctrl+shift+right=ignore"
 # keybind = "ctrl+shift+left=ignore"
+# keybind = "ctrl+a=ignore"
+keybind = "alt+1=ignore"
+keybind = "alt+2=ignore"
