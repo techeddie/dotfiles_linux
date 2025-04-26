@@ -40,6 +40,9 @@
     workspace 9 output $secondMonitor
     workspace 10 output $secondMonitor    
     workspace_layout default
+
+# lockscreen
+    set $lockscreen ~/.locksreen.jpg
 #-------------------------------------------------
 #gaps
     #default gap size
@@ -222,7 +225,7 @@
       -notify 30 -notifier "notify-send -t 75000 --icon=dialog-information -- 'locking screen in 30 seconds'"
 
     #suspend
-    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i ~/.lockscreen.jpg  && systemctl suspend
+    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i $lockscreen  && systemctl suspend
     # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
 
 
