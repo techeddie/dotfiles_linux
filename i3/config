@@ -28,6 +28,9 @@
     set $secondMonitor HDMI-2
     # set $qt env QT_QPA_PLATFORM=xcb 
 
+# lockscreen
+    set $lockscreen ~/.locksreen.jpg
+
 #workspace
     workspace 1 output $secondMonitor
     workspace 2 output $secondMonitor
@@ -41,8 +44,6 @@
     workspace 10 output $secondMonitor    
     workspace_layout default
 
-# lockscreen
-    set $lockscreen ~/.locksreen.jpg
 #-------------------------------------------------
 #gaps
     #default gap size
