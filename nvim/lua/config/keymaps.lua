@@ -83,7 +83,8 @@ keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
 keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
 -- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
-keymap("n", "<S-u>", ":lua Snacks.picker.undo() <CR>") --show me undo history
+-- keymap("n", "<S-u>", ":lua Snacks.picker.undo() <CR>") --show me undo history
+keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
 keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 -- keymap("n", "<C-h>", ":lua Snacks.picker.recent() <CR>") --show me recent files
