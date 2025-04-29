@@ -1,7 +1,6 @@
 #font
 # font-family = Hack
 font-size = 18
-font-size = 14
 
 #theme
 # theme = xcodedarkhc
@@ -83,9 +82,15 @@ keybind = ctrl+m>7=goto_tab:7
 keybind = ctrl+m>8=goto_tab:8
 keybind = ctrl+m>9=goto_tab:9
 
+#alt alternative for mac
+keybind = cmd+e=text:\x05
+keybind = cmd+g=text:\x07  
+keybind = cmd+l=text:\x0C
+
 # unmap keybindings
 # keybind = "ctrl+shift+right=ignore"
 # keybind = "ctrl+shift+left=ignore"
 # keybind = "ctrl+a=ignore"
 keybind = "alt+1=ignore"
 keybind = "alt+2=ignore"
+
