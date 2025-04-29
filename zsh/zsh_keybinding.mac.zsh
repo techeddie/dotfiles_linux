@@ -17,11 +17,7 @@
   bindkey -s '^g' 'lazygit^M'
 
   #LF
-  # bindkey -s '\el' 'lf ^M'
-  # bindkey -s '^el' 'lf ^M'
-  # bindkey -s '\el' 'lf ^M'
   bindkey -s '^l' 'lf ^M'
 
   # YAZI
-  # bindkey -s '^y' 'yazi ^M'
   bindkey -s '^e' 'yazi ^M'
