@@ -2,6 +2,7 @@
 
 ## Author : Aditya Shakya (adi1090x)
 ## Github : @adi1090x
+# git clone --depth=1 https://github.com/adi1090x/rofi.git
 #
 ## Installer Script
 
