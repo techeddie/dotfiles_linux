@@ -25,10 +25,10 @@ keybind = alt+shift+8=new_split:down
 keybind = alt+shift+9=new_split:right
 
 #resize pane
-# keybind = cmd+shift+right=resize_split:right,40
-# keybind = cmd+shift+left=resize_split:left,40
-# keybind = cmd+shift+up=resize_split:up,40
-# keybind = cmd+shift+down=resize_split:down,40
+keybind = cmd+shift+right=resize_split:right,40
+keybind = cmd+shift+left=resize_split:left,40
+keybind = cmd+shift+up=resize_split:up,40
+keybind = cmd+shift+down=resize_split:down,40
 
 keybind = alt+shift+right=resize_split:right,40
 keybind = alt+shift+left=resize_split:left,40
