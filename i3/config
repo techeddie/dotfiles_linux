@@ -24,8 +24,8 @@
     set $workspace9 "9"
     set $workspace10 "10"
 
-    set $firstMonitor HDMI-1
-    set $secondMonitor HDMI-2
+    set $firstMonitor eDP-1
+    set $secondMonitor HDMI-2 
     # set $qt env QT_QPA_PLATFORM=xcb 
 
 # lockscreen
