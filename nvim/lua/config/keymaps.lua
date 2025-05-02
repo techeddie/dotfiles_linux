@@ -76,6 +76,9 @@ keymap("v", "P", "}") --visual select paragraph
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 
+keymap("n", "<leader>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
+keymap("n", "<leader>>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
+
 -- vim.keymap.set("n", "<C-f>", function()
 --   Snacks.picker.lines()
 -- end, { desc = "Buffer lines" })
