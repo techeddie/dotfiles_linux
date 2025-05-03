@@ -56,8 +56,8 @@ keymap("n", "<Tab>", "<C-w>w") --switch to next pane
 keymap("n", "<c-q>", ":bd <CR>") --buffer delete
 keymap("n", "<c-q>", "<C-w>q<CR>", opts)
 keymap("n", "<leader>hs", ":split <CR>") --horizontal split
-keymap("n", "<leader>j", "<C-w>j") --switch pane
-keymap("n", "<leader>k", "<C-w>k") --switch pane
+-- keymap("n", "<leader>j", "<C-w>j") --switch pane
+-- keymap("n", "<leader>k", "<C-w>k") --switch pane
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
 keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
