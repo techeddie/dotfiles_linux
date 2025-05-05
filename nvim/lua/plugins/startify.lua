@@ -30,7 +30,7 @@ return {
 		g.startify_session_autoload = 0 --restart session on startup
 		g.startify_change_to_vcs_root = 1
 		g.startify_enable_special = 1
-		g.startify_files_number = 15
+		g.startify_files_number = 8
 		g.startify_lists = {
 			{ type = "files", header = { "•   Files " } },
 			{ type = "bookmarks", header = { "•   Bookmarks" } },
