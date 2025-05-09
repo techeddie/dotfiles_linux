@@ -353,7 +353,7 @@
     # ; move position center; move scratchpad 
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [class="ghostty"] layout normal, move position center
+    for_window [instance="ghostty"] layout normal, move position center
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="Brave-browser"] layout tabbed
     for_window [class="Navigator"] layout tabbed
@@ -374,8 +374,9 @@
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
     for_window [class="Wfica"] border normal
-    for_window [class="ghostty"] border normal
-    for_window [class="ghostty"] border pixel 3
+    # for_window [instance="ghostty"] border normal
+    # for_window [class="ghostty"] border normal
+    # for_window [class="ghostty"] border pixel 3
     for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
@@ -426,7 +427,7 @@
 
     #focus
     focus_on_window_activation focus
-    for_window [class="ghostty"] focus
+    for_window [instance="ghostty"] focus
     for_window [class="Brave-browser"] focus
     for_window [class="firefox"] focus
     for_window [instance="xfreerdp"] focus
