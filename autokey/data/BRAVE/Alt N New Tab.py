@@ -5,8 +5,8 @@ if "Brave-browser" in winClass:
 if "Doublecmd" in winClass:    
     keyboard.send_keys("<alt>+t")
 if "Alacritty.Alacritty" in winClass:    
-    keyboard.send_keys("<alt>+n")   
+    keyboard.send_keys("<ctrl>+a+c")    
 if "com.mitchellh.ghostty" in winClass:    
-    keyboard.send_keys("<alt>+n")    
+    keyboard.send_keys("<ctrl>+a+c")    
 else:
     keyboard.send_keys("<alt>+n")
