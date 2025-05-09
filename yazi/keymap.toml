@@ -412,6 +412,11 @@ on   = [ "<C-g>" ]
 run  = "plugin lazygit"
 desc = "run lazygit"
 
+[[manager.prepend_keymap]]
+on   = [ "<A-g>" ]
+run  = "plugin lazygit"
+desc = "run lazygit"
+
 [[input.prepend_keymap]]
 on   = "<Esc>"
 run  = "close"
