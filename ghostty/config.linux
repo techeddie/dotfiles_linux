@@ -9,8 +9,9 @@ theme = Abernathy
 
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
-# window-decoration = false 
-window-decoration = true
+# show border
+window-decoration = false 
+# window-decoration = true
 confirm-close-surface = false
 
 #close
