@@ -86,11 +86,13 @@ keybind = ctrl+m>9=goto_tab:9
 keybind = cmd+e=text:\x05
 keybind = cmd+g=text:\x07  
 keybind = cmd+l=text:\x0C
+# keybind = cmd+n=text:\x0C
+keybind = cmd+n=text:\x1Bn
 
 # unmap keybindings
 # keybind = "ctrl+shift+right=ignore"
 # keybind = "ctrl+shift+left=ignore"
 # keybind = "ctrl+a=ignore"
-keybind = "alt+1=ignore"
-keybind = "alt+2=ignore"
+# keybind = "alt+1=ignore"
+# keybind = "alt+2=ignore"
 
