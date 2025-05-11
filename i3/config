@@ -101,15 +101,15 @@
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
-    # bindsym $mod+Shift+Return       [class=ghostty] focus
-    bindsym $mod+Shift+Return       [class=ghostty] focus
+    # bindsym $mod+Shift+Return       [class=alacritty] focus
+    bindsym $mod+Shift+Return       [class=alacritty] focus
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+c            exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
     bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
-    bindsym $mod+Shift+l            exec ghostty -e lf ~/
-    bindsym $mod+Shift+n            exec --no-startup-id ghostty -e nvim
+    bindsym $mod+Shift+l            exec alacritty -e lf ~/
+    bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
-    bindsym $mod+Shift+p            exec ghostty -e pacseek
+    bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
@@ -353,7 +353,7 @@
     # ; move position center; move scratchpad 
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [instance="ghostty"] layout normal, move position center
+    for_window [instance="alacritty"] layout normal, move position center
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="Brave-browser"] layout tabbed
     for_window [class="Navigator"] layout tabbed
@@ -374,9 +374,9 @@
     for_window [class="Geany"] border pixel 5
     for_window [class="thunderbird"] border pixel 5
     for_window [class="Wfica"] border normal
-    # for_window [instance="ghostty"] border normal
-    # for_window [class="ghostty"] border normal
-    # for_window [class="ghostty"] border pixel 3
+    # for_window [instance="alacritty"] border normal
+    # for_window [class="alacritty"] border normal
+    # for_window [class="alacritty"] border pixel 3
     for_window [class="TelegramDesktop"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
@@ -427,7 +427,7 @@
 
     #focus
     focus_on_window_activation focus
-    for_window [instance="ghostty"] focus
+    for_window [instance="alacritty"] focus
     for_window [class="Brave-browser"] focus
     for_window [class="firefox"] focus
     for_window [instance="xfreerdp"] focus
