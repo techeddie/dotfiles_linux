@@ -1,3 +1,0 @@
-
-My favourite terminal application
-
