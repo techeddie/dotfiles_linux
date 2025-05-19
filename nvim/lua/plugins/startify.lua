@@ -15,6 +15,7 @@ return {
 			{ lc = "~/Nextcloud/LINUX/LINUX_COMMANDS.sh" }, -- linux knowledge base
 			{ yc = "~/config/yazi/yazi.toml" }, -- yazi config
 			{ yk = "~/config/yazi/keymap.toml" }, -- yazi keymaps
+			{ kc = "~/config/karabiner/karabiner.json" }, -- karabiner keymaps
 			{ lf = "~/config/lf/lfrc" }, -- lf file manager config
 			{ ni = "~/.config/nvim/init.lua" }, -- neovim init file
 			{ sc = "~/.config/nvim/lua/plugins/startify.lua" }, -- startify config
