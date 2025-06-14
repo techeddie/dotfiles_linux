@@ -84,7 +84,7 @@ keymap("n", "<leader>>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines"
 -- end, { desc = "Buffer lines" })
 
 keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
-keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
+-- keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
 -- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
 -- keymap("n", "<S-u>", ":lua Snacks.picker.undo() <CR>") --show me undo history
 keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
