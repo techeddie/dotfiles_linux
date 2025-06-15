@@ -131,6 +131,7 @@
     #rofi  
         #running windows
         bindsym $mod+w              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+        # bindsym $alt+Tab              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
         #app launcher
         bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
           # bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
@@ -145,7 +146,7 @@
     exec_always --no-startup-id /usr/bin/autokey-gtk &
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
-    exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
+    # exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
     # exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
 
@@ -378,7 +379,7 @@
     # for_window [instance="alacritty"] border normal
     # for_window [class="alacritty"] border normal
     # for_window [class="alacritty"] border pixel 3
-    for_window [class="TelegramDesktop"] border normal
+    for_window [class="TelegramDesktop"] border none
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
