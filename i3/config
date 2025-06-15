@@ -7,7 +7,7 @@
 #font
     font pango:System San Francisco Display 15
 #vars
-    set $term wezterm
+    set $term ghostty
     set $up l
     set $down k
     set $left j
@@ -131,8 +131,8 @@
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-    bindsym $alt+Tab                exec $i3t_alt_tab
-    bindsym $alt+Shift+Tab          exec $i3t_alt_shift_tab
+    bindsym $mod+Tab                exec $i3t_alt_tab
+    bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     
     #rofi  
         #running windows
@@ -324,8 +324,7 @@
     bindsym $mod+Shift+j      workspace prev
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
-    bindsym $mod+Tab          workspace back_and_forth
-    # bindsym $alt+Tab          workspace back_and_forth
+    bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+i            workspace back_and_forth
     bindsym $alt+Ctrl+k       workspace next
     bindsym $mod+Shift+End    workspace next
