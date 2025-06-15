@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "Alt A Bookmark Sidebar",
+    "description": "Alt B Bookmark Sidebar",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 97,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,7 +21,7 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "a"
+        "hotKey": "b"
     },
     "filter": {
         "regex": "",
