@@ -24,3 +24,4 @@ tmux/.tmux/plugins
 ~/.cache/nvim.undodir
 .DS_Store
 rofi.old
+.\wezterm
