@@ -7,7 +7,7 @@
 #font
     font pango:System San Francisco Display 15
 #vars
-    set $term ghostty
+    set $term wezterm
     set $up l
     set $down k
     set $left j
