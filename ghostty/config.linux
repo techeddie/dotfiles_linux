@@ -49,6 +49,7 @@ keybind = alt+z=toggle_split_zoom
 # keybind = ctrl+m>n=new_window
 # keybind = ctrl+m>r=reload_config
 keybind = ctrl+m>n=new_window
+keybind = alt+x=close_window
 keybind = ctrl+m>r=reload_config
 
 #focus pane
