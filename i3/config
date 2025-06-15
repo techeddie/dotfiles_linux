@@ -28,6 +28,10 @@
     set $secondMonitor HDMI-2 
     # set $qt env QT_QPA_PLATFORM=xcb 
 
+    #alt tab
+    set $i3t_alt_tab        $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py n all
+    set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
+
 # lockscreen
     set $lockscreen ~/.locksreen.jpg
 
@@ -127,6 +131,8 @@
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
+    bindsym $alt+Tab                exec $i3t_alt_tab
+    bindsym $alt+Shift+Tab          exec $i3t_alt_shift_tab
     
     #rofi  
         #running windows
@@ -319,7 +325,7 @@
     bindsym $alt+Ctrl+Left    workspace prev
     bindsym $alt+Ctrl+Right   workspace next
     bindsym $mod+Tab          workspace back_and_forth
-    bindsym $alt+Tab          workspace back_and_forth
+    # bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+i            workspace back_and_forth
     bindsym $alt+Ctrl+k       workspace next
     bindsym $mod+Shift+End    workspace next
