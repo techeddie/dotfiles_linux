@@ -18,6 +18,16 @@ use = "Lil-Dank/lazygit"
 rev = "7a08a09"
 hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "86d28e4"
+hash = "684ef2121ac1e33611355f02b799bd67"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "d896656"
+hash = "62251f94eb67648d42cdfcfb8be0fad2"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "68326b4"
