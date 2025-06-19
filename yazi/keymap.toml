@@ -47,7 +47,8 @@ keymap = [
 	{ on = "L", run = "forward", desc = "Go forward to the next directory" },
 
 	# Toggle
-	{ on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
+	# { on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
+  { on = "<space>", run = "toggle", desc = "Toggle selection without jumping" },
 	{ on = "<C-a>", run = "toggle_all --state=on", desc = "Select all files" },
 	{ on = "<C-r>",   run = "toggle_all",            desc = "Invert selection of all files" },
 	{ on = "<V>",     run = "toggle_all",            desc = "Invert selection of all files" },
@@ -489,6 +490,11 @@ desc = "zip testing"
 on = [ "i" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd" 
+
+# [[mgr.prepend_keymap]]
+# on   = [ "c", "m" ]
+# run  = "plugin chmod"
+# desc = "Chmod on selected files"
 
 
 [[mgr.prepend_keymap]]
