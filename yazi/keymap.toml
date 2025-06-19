@@ -489,3 +489,9 @@ desc = "zip testing"
 on = [ "i" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd" 
+
+
+[[mgr.prepend_keymap]]
+on   = "f"
+run  = "plugin jump-to-char"
+desc = "Jump to char"
