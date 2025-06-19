@@ -1,16 +1,18 @@
 -- https://github.com/yazi-rs/plugins/tree/main/full-border.yazi
+-- show symlink in status bar
 require("full-border"):setup()
--- Show symlink in status bar
 
 require("zoxide"):setup({
 	update_db = true,
 })
 
--- Sync yank clipboard across instances
+-- sync yank clipboard across instances
 require("session"):setup {
 	sync_yanked = true,
 }
 
+-- git plugin
+require("git"):setup()
 
 
 Status:children_add(function(self)
