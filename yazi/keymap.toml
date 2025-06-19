@@ -483,3 +483,9 @@ desc = "make backup via tar for selection"
 on   = ["<F7>"]
 run  = """ shell 'mkdir ' --cursor=6 --interactive """
 desc = "zip testing"
+
+
+[[mgr.prepend_keymap]]
+on = [ "i" ]
+run  = "plugin what-size"
+desc = "Calc size of selection or cwd" 
