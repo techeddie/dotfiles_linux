@@ -17,6 +17,7 @@ mouse_events   = [ "click", "scroll" ]
 title_format   = "Yazi: {cwd}"
 
 
+# piper previewer
 [[plugin.prepend_previewers]]
 name = "*.md"
 run  = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
@@ -29,6 +30,7 @@ run  = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-fir
 name = "*.tar*"
 run  = 'piper --format=url -- tar tf "$1"'
 
+# git plugin
 [[plugin.prepend_fetchers]]
 id   = "git"
 name = "*"

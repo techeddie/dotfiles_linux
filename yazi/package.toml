@@ -33,6 +33,11 @@ use = "yazi-rs/plugins:git"
 rev = "86d28e4"
 hash = "e01006bfb38951ea89031bd918b20dbb"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "86d28e4"
+hash = "d2f04875bbd4ed3dd5696e8c4b094fde"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "68326b4"
