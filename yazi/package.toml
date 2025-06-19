@@ -38,6 +38,11 @@ use = "yazi-rs/plugins:jump-to-char"
 rev = "86d28e4"
 hash = "d2f04875bbd4ed3dd5696e8c4b094fde"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "86d28e4"
+hash = "a030fe48d91b04341ad2fba9be957df"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "68326b4"
