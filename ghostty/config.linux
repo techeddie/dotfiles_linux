@@ -98,3 +98,4 @@ keybind = cmd+n=text:\x1Bn
 # keybind = "alt+n=ignore"
 
 keybind = alt+i=unbind
+keybind = alt+q=unbind
