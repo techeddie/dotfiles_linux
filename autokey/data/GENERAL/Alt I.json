@@ -2,10 +2,8 @@
     "type": "script",
     "description": "Alt I",
     "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 0,
+    "modes": [],
+    "usageCount": 49,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -18,10 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>"
-        ],
-        "hotKey": "i"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": null,
