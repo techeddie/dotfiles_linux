@@ -94,7 +94,7 @@ keymap = [
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "<tab>",     run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
-	{ on = "f",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	{ on = "F",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
@@ -115,6 +115,7 @@ keymap = [
 
 	# Find
 	{ on = "/", run = "find --smart",            desc = "Find next file" },
+	{ on = "f", run = "find --smart",            desc = "Find next file" },
 	{ on = "?", run = "find --previous --smart", desc = "Find previous file" },
 	{ on = "n", run = "find_arrow",              desc = "Goto the next found" },
 	{ on = "N", run = "find_arrow --previous",   desc = "Goto the previous found" },
@@ -496,8 +497,7 @@ desc = "Calc size of selection or cwd"
 # run  = "plugin chmod"
 # desc = "Chmod on selected files"
 
-
-[[mgr.prepend_keymap]]
-on   = "f"
-run  = "plugin jump-to-char"
-desc = "Jump to char"
+# [[mgr.prepend_keymap]]
+# on   = "f"
+# run  = "plugin jump-to-char"
+# desc = "Jump to char"
