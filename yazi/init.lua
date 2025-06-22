@@ -23,7 +23,19 @@ Status:children_add(function(self)
 	end
 end, 3300, Status.LEFT)
 
+-- show symlink path in status bar
+function Status:name()
+	local h = self._tab.current.hovered
+	if not h then
+		return ui.Line {}
+	end
 
+  local linked = ""
+ 	if h.link_to ~= nil then
+ 		linked = " -> " .. tostring(h.link_to)
+ 	end
+ 	return ui.Line(" " .. h.name .. linked)
+end
 
 -- -- Show the path of the currently hovered file in the header
 -- function Header:cwd()
@@ -51,18 +63,3 @@ end, 3300, Status.LEFT)
 -- 	end
 -- 	return ui.Line { ui.Span(ya.user_name() .. "@" .. ya.host_name()):fg("lightgreen"):bold(true), ui.Span(":") }
 -- end, 500, Header.LEFT)
-
-
--- Show symlink path in status bar
-function Status:name()
-	local h = self._tab.current.hovered
-	if not h then
-		return ui.Line {}
-	end
-
-  local linked = ""
- 	if h.link_to ~= nil then
- 		linked = " -> " .. tostring(h.link_to)
- 	end
- 	return ui.Line(" " .. h.name .. linked)
-end
