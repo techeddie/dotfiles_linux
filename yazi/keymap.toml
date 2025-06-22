@@ -140,7 +140,7 @@ keymap = [
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Goto ~/.config" },
   { on = [ "g", "a" ],       run = "cd ~/.config/aerospace/",     desc = "Goto aerospace" },
 	{ on = [ "g", "d" ],       run = "cd ~/opt/git/dotfiles_linux/",   desc = "Goto dotfiles_linux " },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Goto ~/Downloads" },
+	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Goto ~/Downloads" },
 	{ on = [ "g", "o" ],       run = "cd ~/opt",   desc = "Goto opt" },
 	{ on = [ "g", "s" ],       run = "cd ~/scripts",   desc = "Goto scripts" },
 	{ on = [ "g", "l" ],       run = "cd ~/.local/share/",   desc = "Goto local share" },
@@ -459,7 +459,8 @@ desc = "Show or hide the preview pane"
 
 # Maximize/Restore preview:
 [[mgr.prepend_keymap]]
-on = [ "g", "P" ]
+# on = [ "g", "P" ]
+on = "P"
 run  = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
@@ -481,12 +482,13 @@ run  = """ shell 'date=$(date +%Y-%m-%d-%H-%M) ; tar -zcvf "${0}.$date.tar.gz" .
 # run  = """ shell 'tar -zcvf "${0}.tar.gz" . ' --orphan """
 desc = "make backup via tar for selection"
 
+#mkdir
 [[mgr.prepend_keymap]]
 on   = ["<F7>"]
 run  = """ shell 'mkdir ' --cursor=6 --interactive """
 desc = "zip testing"
 
-
+#show me folder or file size
 [[mgr.prepend_keymap]]
 on = [ "i" ]
 run  = "plugin what-size"
