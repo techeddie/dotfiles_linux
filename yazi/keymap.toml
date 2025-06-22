@@ -475,18 +475,40 @@ on   = ["d", "d"]
 run  = "remove --force"
 desc = "force delete"
 
-# make backup via tar
+
+# [[mgr.prepend_keymap]]
+# on   = ["e"]
+# run  = """ shell 'tar -xvf "${0}" . ' --orphan """
+# desc = "extract selection"
+# [[mgr.prepend_keymap]]
+# on   = ["Z"]
+# # run  = 'shell --orphan tar -xvf "$@"'
+# run  = 'shell --orphan unzip "$@"'
+
+# extract archive formats
+[[mgr.prepend_keymap]]
+on   = ["e","x"]
+run  = """ shell 'sh $HOME/scripts/runExtract.sh "${0}" . ' --orphan """
+desc = "Extract archive formats"
+
+# extract archive formats
 [[mgr.prepend_keymap]]
 on   = ["<F6>"]
+run  = """ shell 'sh $HOME/scripts/runExtract.sh "${0}" . ' --orphan """
+desc = "Extract archive formats"
+
+# make backup via tar
+[[mgr.prepend_keymap]]
+on   = ["<F8>"]
 run  = """ shell 'date=$(date +%Y-%m-%d-%H-%M) ; tar -zcvf "${0}.$date.tar.gz" . ' --orphan """
-# run  = """ shell 'tar -zcvf "${0}.tar.gz" . ' --orphan """
 desc = "make backup via tar for selection"
 
 #mkdir
 [[mgr.prepend_keymap]]
 on   = ["<F7>"]
 run  = """ shell 'mkdir ' --cursor=6 --interactive """
-desc = "zip testing"
+desc = "mkdir"
+
 
 #show me folder or file size
 [[mgr.prepend_keymap]]
