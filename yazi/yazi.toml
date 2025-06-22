@@ -17,7 +17,6 @@ scrolloff      = 5
 mouse_events   = [ "click", "scroll" ]
 title_format   = "Yazi: {cwd}"
 
-
 # piper previewer
 [[plugin.prepend_previewers]]
 name = "*.md"

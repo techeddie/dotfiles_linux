@@ -509,19 +509,15 @@ on   = ["<F7>"]
 run  = """ shell 'mkdir ' --cursor=6 --interactive """
 desc = "mkdir"
 
-
 #show me folder or file size
 [[mgr.prepend_keymap]]
 on = [ "i" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd" 
 
-# [[mgr.prepend_keymap]]
-# on   = [ "c", "m" ]
-# run  = "plugin chmod"
-# desc = "Chmod on selected files"
 
-# [[mgr.prepend_keymap]]
-# on   = "f"
-# run  = "plugin jump-to-char"
-# desc = "Jump to char"
+# https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
