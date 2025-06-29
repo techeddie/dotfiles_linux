@@ -140,7 +140,7 @@
         # bindsym $alt+Tab              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
         #app launcher
         bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
-          # bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
+        bindsym $mod+Shift+m        exec ps aux | rofi -dmenu -theme ~/gitREPO/dotfiles_linux/rofi/themes/DarkBlue.rasi | cut -b 12-17 | xargs kill > /dev/null 2>&1 &
           # bindsym $mod+Shift+F12      exec rofi -show drun -font "Hack 13" -theme docu -show-icons
 
     #dmenu
