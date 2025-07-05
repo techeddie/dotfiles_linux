@@ -21,7 +21,7 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "2"
+        "hotKey": "<down>"
     },
     "filter": {
         "regex": "",
