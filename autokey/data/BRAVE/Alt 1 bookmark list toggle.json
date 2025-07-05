@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "Alt 2 tab list toggle",
+    "description": "Alt 1 bookmark list toggle",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 266,
+    "usageCount": 36,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,7 +21,7 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "<down>"
+        "hotKey": "1"
     },
     "filter": {
         "regex": "",
