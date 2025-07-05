@@ -121,7 +121,8 @@
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
     bindsym $mod+e                  exec --no-startup-id thunar
-    bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
+    bindsym $mod+g                  exec i3-msg -q '[class=sublime_text] focus' 2>/dev/null || subl
+    # bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
