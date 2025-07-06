@@ -2,10 +2,8 @@
     "type": "script",
     "description": "Alt Down tab list toggle",
     "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 1,
+    "modes": [],
+    "usageCount": 91,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -18,10 +16,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<alt>"
-        ],
-        "hotKey": "<down>"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": "",
