@@ -37,6 +37,23 @@ function Status:name()
  	return ui.Line(" " .. h.name .. linked)
 end
 
+
+
+-- https://yazi-rs.github.io/docs/configuration/yazi/#manager.linemode
+function Linemode:size_and_mtime()
+	local time = math.floor(self._file.cha.mtime or 0)
+	if time == 0 then
+		time = ""
+	elseif os.date("%Y", time) == os.date("%Y") then
+		time = os.date("%d.%m.%Y", time)
+	else
+	time = os.date("%d.%m.%Y", time)
+	end
+
+	local size = self._file:size()
+	return string.format("%s %s", size and ya.readable_size(size) or "", time)
+end
+
 -- -- Show the path of the currently hovered file in the header
 -- function Header:cwd()
 -- 	local max = self._area.w - self._right_width
