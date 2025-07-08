@@ -173,7 +173,9 @@
     #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
     exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id $term
+    # exec --no-startup-id $term ; move to workspace 1; workspace 1
+    exec --no-startup-id sh -c '$term & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
     exec --no-startup-id /usr/bin/octopi-notifier
@@ -186,7 +188,7 @@
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
     # exec --no-startup-id pamac-tray
-    exec --no-startup-id sleep 3; && /opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    # exec --no-startup-id sleep 3; && /opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     exec --no-startup-id keepassxc 
     # exec --no-startup-id pasystray &
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
