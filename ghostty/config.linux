@@ -100,3 +100,4 @@ keybind = cmd+n=text:\x1Bn
 keybind = alt+i=unbind
 keybind = alt+q=unbind
 keybind = alt+f=unbind
+keybind = alt+.=unbind
