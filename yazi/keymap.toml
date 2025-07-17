@@ -49,12 +49,13 @@ keymap = [
 	# Toggle
 	# { on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
   { on = "<space>", run = "toggle", desc = "Toggle selection without jumping" },
-	{ on = "<C-a>", run = "toggle_all --state=on", desc = "Select all files" },
-	{ on = "<C-r>",   run = "toggle_all",            desc = "Invert selection of all files" },
+	# { on = "<C-a>", run = "toggle_all --state=on", desc = "Select all files" },
+	{ on = "<C-a>",   run = "toggle_all",            desc = "Invert selection of all files" },
+	{ on = "<v>",   run = "toggle_all",            desc = "Invert selection of all files" },
 	{ on = "<V>",     run = "toggle_all",            desc = "Invert selection of all files" },
 
 	# Visual mode
-	{ on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
+	# { on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
 	{ on = "V", run = "visual_mode --unset", desc = "Enter visual mode (unset mode)" },
 
 	# Seeking
@@ -82,7 +83,7 @@ keymap = [
 	# { on = "d",        run = "remove",                      desc = "Trash selected files" },
 	{ on = "dd",        run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
-	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
+	{ on = "n",         run = "create",                      desc = "Create a file (ends with / for directories)" },
 	{ on = "r",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = "<F2>",      run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
