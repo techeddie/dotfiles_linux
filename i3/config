@@ -174,7 +174,8 @@
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
     exec --no-startup-id "setxkbmap 'de(us)'" 
     # exec --no-startup-id $term ; move to workspace 1; workspace 1
-    exec --no-startup-id sh -c '$term & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+    # exec --no-startup-id sh -c '$term --command "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+    exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
 
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
