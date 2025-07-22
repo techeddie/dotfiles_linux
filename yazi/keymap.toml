@@ -83,7 +83,7 @@ keymap = [
 	# { on = "d",        run = "remove",                      desc = "Trash selected files" },
 	{ on = "dd",        run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
-	{ on = "n",         run = "create",                      desc = "Create a file (ends with / for directories)" },
+	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
 	{ on = "r",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = "<F2>",      run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
