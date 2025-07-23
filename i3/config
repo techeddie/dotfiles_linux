@@ -445,7 +445,8 @@
 
     #always launch app in workspace x
     # assign [class="KeePassXC"] $workspace5
-    # assign [class="firefox"] $workspace5
+    assign [class="firefox"] $workspace5
+    assign [class="Chromium"] $workspace5
     assign [class="Autokey-gtk"] $workspace6
     assign [class="Brave"] $workspace2
     assign [class="Doublecmd"] $workspace7
@@ -455,6 +456,7 @@
     assign [class="Wfica"] $workspace8
     assign [class="Selfservice"] $workspace8
     assign [class="obsidian"] $workspace3
+    assign [class="Ledger Live"] $workspace6
     #show windows icons
     for_window [all] title_window_icon padding 3px
 
