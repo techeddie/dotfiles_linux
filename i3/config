@@ -82,13 +82,11 @@
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+a            exec lxappearance
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
-    # bindsym $mod+Shift+j            exec guake-toggle
     # bindsym $mod+Shift+m            exec xfce4-appfinder
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     # bindsym $mod+Shift+r          exec remmina
     # bindsym $mod+a                  exec keepassxc
     # bindsym $mod+n                  exec --no-startup-id nixnote2
-    # bindsym F12                     exec guake-toggle
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     # bindsym Shift+Print             bar mode toggle
     # bindsym $mod+$alt+o           [class=obsidian] focus
@@ -128,7 +126,7 @@
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec gnome-disks
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
-    bindsym F12                     exec xfce4-terminal --drop-down
+    # bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
@@ -161,7 +159,6 @@
     #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
     #exec --no-startup-id compton -c
     #exec --no-startup-id conky -c ~/.config/i3/system-overview
-    #exec --no-startup-id guake 
     #exec --no-startup-id remmina -i
     #exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
     #exec --no-startup-id telegram-desktop
@@ -172,9 +169,10 @@
     #exec --no-startup-id xset s blank
     #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    exec --no-startup-id "setxkbmap 'de(us)'" 
     # exec --no-startup-id $term ; move to workspace 1; workspace 1
     # exec --no-startup-id sh -c '$term --command "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+    exec --no-startup-id "setxkbmap 'de(us)'" 
+    exec --no-startup-id guake 
     exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
 
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
@@ -382,6 +380,7 @@
     for_window [instance="keepassxc"] move scratchpad;
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
+    for_window [class="Guake"] border pixel 1
     for_window [class="thunderbird"] border pixel 5
     for_window [class="Wfica"] border normal
     # for_window [instance="alacritty"] border normal
@@ -414,7 +413,6 @@
     for_window [class="doublecmd"] [title="Options"] floating enable,resize set 800 600, move position center 
     for_window [class="flameshot"] floating enable, move position center
     for_window [class="gnome-calculator"] floating enable, move position center
-    for_window [class="guake"] floating enable
     for_window [class="nextcloud"] floating enable, move position center
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
@@ -423,6 +421,8 @@
     for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Copying"] floating enable, move position center
+    for_window [title="Guake Preferences"] floating enable, move position center
+    for_window [class="Guake"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
     for_window [title="Edit"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
