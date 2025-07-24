@@ -1,1 +1,0 @@
-/home/eddie/opt/git/dotfiles_linux/wezterm/.wezterm.lua
