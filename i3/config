@@ -373,7 +373,7 @@
     for_window [class="keepassxc"] layout tabbed, move position center
     for_window [class="rdesktop"] border normal
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
-    for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
+    # for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
@@ -457,6 +457,7 @@
     assign [class="Selfservice"] $workspace8
     assign [class="obsidian"] $workspace3
     assign [class="Ledger Live"] $workspace6
+    assign [class="bauh"] $workspace8
     #show windows icons
     for_window [all] title_window_icon padding 3px
 
