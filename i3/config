@@ -124,7 +124,8 @@
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
-    bindsym $mod+p                  exec gnome-disks
+    bindsym $mod+shift+g                  exec gnome-disks
+    bindsym $mod+p                  exec --no-startup-id ~/.config/polybar/toggle.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     # bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
