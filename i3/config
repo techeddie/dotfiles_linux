@@ -420,7 +420,7 @@
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
     for_window [instance="Autokey-gtk"] floating enable,  resize set 1400 900, move position center
-    for_window [instance="keepassxc"] floating enable,  resize set 1400 900, move position center
+    for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Guake Preferences"] floating enable, move position center
