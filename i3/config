@@ -379,7 +379,9 @@
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
-    for_window [instance="keepassxc"] move scratchpad;
+    # for_window [instance="keepassxc"] move scratchpad;
+    for_window [title="ekah"] move scratchpad;
+    # for_window [title="Copying"] floating enable, move position center
     for_window [instance="xfreerdp"] border normal
     for_window [class="Geany"] border pixel 5
     for_window [class="Guake"] border pixel 1
