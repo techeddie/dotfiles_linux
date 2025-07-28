@@ -438,7 +438,7 @@
     for_window [window_role="setup"] floating enable, move position center
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
-    for_window [title="Remmina Remote"] floating enable,resize set 800 600, move position center  
+    for_window [title="Remmina Remote"] floating enable,resize set 400 500, move position center  
     #focus
     focus_on_window_activation focus
     for_window [instance="alacritty"] focus
