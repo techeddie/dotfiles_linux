@@ -277,10 +277,10 @@
 
     ################# resize  
     #resize window
-    bindsym $mod+$alt+Left resize shrink width 12 px or 12 ppt
-    bindsym $mod+$alt+Up resize grow height 12 px or 12 ppt
-    bindsym $mod+$alt+Down resize shrink height 12 px or 12 ppt
-    bindsym $mod+$alt+Right resize grow width 12 px or 12 ppt
+    bindsym $mod+$alt+Left resize shrink width 6 px or 6 ppt
+    bindsym $mod+$alt+Up resize grow height 6 px or 6 ppt
+    bindsym $mod+$alt+Down resize shrink height 6 px or 6 ppt
+    bindsym $mod+$alt+Right resize grow width 6 px or 6 ppt
 
         # window with Shift
         bindsym $mod+Shift+Left move left
