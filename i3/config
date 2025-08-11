@@ -148,56 +148,56 @@
         # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
 
 #-------------------------------------------------
-#execute on logon - autostartup
+#execute on logon - autostartup - startup
 
-    exec_always --no-startup-id /usr/bin/autokey-gtk &
-    exec_always --no-startup-id autotiling 
-    exec_always --no-startup-id numlockx on
-    # exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
-    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
-    # exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
-
-    #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
-    #exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
-    #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
-    #exec --no-startup-id compton -c
-    #exec --no-startup-id conky -c ~/.config/i3/system-overview
-    #exec --no-startup-id remmina -i
-    #exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
-    #exec --no-startup-id telegram-desktop
-    #exec --no-startup-id thinkfan-ui --hide
-    #exec --no-startup-id thunderbird
-    #exec --no-startup-id variety #wallpaper
-    #exec --no-startup-id volumeicon
-    #exec --no-startup-id xset s blank
-    #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-    #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
-    # exec --no-startup-id $term ; move to workspace 1; workspace 1
-    # exec --no-startup-id sh -c '$term --command "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
     exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id guake 
-    exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
-
+    exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-    exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id brave 
     exec --no-startup-id copyq
-    # exec --no-startup-id firewall-applet
     exec --no-startup-id flameshot
+    exec --no-startup-id guake 
+    exec --no-startup-id keepassxc 
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
-    # exec --no-startup-id pamac-tray
-    # exec --no-startup-id sleep 3; && /opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
-    exec --no-startup-id keepassxc 
-    # exec --no-startup-id pasystray &
+    exec --no-startup-id seafile-applet
+    exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
-    # exec --no-startup-id sh ~/scripts/runMountOnlineBackup.sh
     exec --no-startup-id xfce4-power-manager &
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
+    exec_always --no-startup-id /usr/bin/autokey-gtk &
+    exec_always --no-startup-id autotiling 
+    exec_always --no-startup-id numlockx on
+    exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
+
+        #exec --no-startup-id "localectl --no-convert set-keymap de-latin1-nodeadkeys" 
+        #exec --no-startup-id "setxkbmap -model pc105 -layout de -variant us" 
+        #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant altgr-intl" #us layout
+        #exec --no-startup-id $term ; move to workspace 1; workspace 1
+        #exec --no-startup-id compton -c
+        #exec --no-startup-id conky -c ~/.config/i3/system-overview
+        #exec --no-startup-id firewall-applet
+        #exec --no-startup-id pamac-tray
+        #exec --no-startup-id pasystray &
+        #exec --no-startup-id remmina -i
+        #exec --no-startup-id sh -c '$term --command "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+        #exec --no-startup-id sh ~/scripts/runHDMI_and_Notebook.sh
+        #exec --no-startup-id sh ~/scripts/runMountOnlineBackup.sh
+        #exec --no-startup-id sleep 3; && /opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+        #exec --no-startup-id telegram-desktop
+        #exec --no-startup-id thinkfan-ui --hide
+        #exec --no-startup-id thunderbird
+        #exec --no-startup-id variety #wallpaper
+        #exec --no-startup-id volumeicon
+        #exec --no-startup-id xset s blank
+        #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+        #exec_always --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/scratchpad.sh
+        #exec_always --no-startup-id sxhkd -c ~/.config/sxhkd/sxhkdrc
+        #exec_always --no-startup-id ~/scripts/runxfceEnergyManager.sh #energy manager
 #-------------------------------------------------
 # WINDOWS settings and behaviour
 
