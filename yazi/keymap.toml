@@ -75,7 +75,7 @@ keymap = [
 	{ on = "x",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = "p",         run = "paste",                       desc = "Paste yanked files" },
 	# { on = "P",         run = "paste --force",               desc = "Paste yanked files (overwrite if the destination exists)" },
-	{ on = "P",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
+	# { on = "P",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
 	{ on = "-",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
 	{ on = "_",         run = "link --relative",             desc = "Symlink the relative path of yanked files" },
 	{ on = "<C-->",     run = "hardlink",                    desc = "Hardlink yanked files" },
@@ -464,6 +464,12 @@ desc = "Show or hide the preview pane"
 # maximize/restore preview:
 [[mgr.prepend_keymap]]
 on = [ "g", "]" ]
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
+
+
+[[mgr.prepend_keymap]]
+on =  "P"
 run  = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
