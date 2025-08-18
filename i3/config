@@ -48,6 +48,45 @@
     workspace 10 output $secondMonitor    
     workspace_layout default
 
+    #switch workspace
+    bindsym $mod+Next         workspace next
+    bindsym $mod+Prior        workspace prev
+    bindsym $alt+Ctrl+j       workspace prev
+    bindsym $mod+Shift+Home   workspace prev
+    bindsym $mod+Shift+j      workspace prev
+    bindsym $alt+Ctrl+Left    workspace prev
+    bindsym $alt+Ctrl+Right   workspace next
+    bindsym $alt+Tab          workspace back_and_forth
+    bindsym $mod+i            workspace back_and_forth
+    bindsym $alt+Ctrl+k       workspace next
+    bindsym $mod+Shift+End    workspace next
+    bindsym $mod+Shift+k      workspace next
+
+    #switch to workspace
+    bindsym $mod+1		workspace $workspace1
+    bindsym $mod+2		workspace $workspace2
+    bindsym $mod+3		workspace $workspace3
+    bindsym $mod+4		workspace $workspace4
+    bindsym $mod+5		workspace $workspace5
+    bindsym $mod+6		workspace $workspace6
+    bindsym $mod+7		workspace $workspace7
+    bindsym $mod+8		workspace $workspace8
+    bindsym $mod+9		workspace $workspace9
+    bindsym $mod+0		workspace $workspace10
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+
+
 #-------------------------------------------------
 #gaps
     #default gap size
@@ -78,24 +117,30 @@
     #keepassxc scratchpad
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
     #alacritty scratchpad, x y
-      bindsym F12 [instance="sp-term2"] scratchpad show, move position 500 900
+      bindsym F12 [instance="sp-term2"] scratchpad show, move position center
+      # bindsym F12 [instance="sp-term2"] scratchpad show, move position 500 900
 
 #-------------------------------------------------
 #key bindings to launch applications
     
+    # bindsym $mod+$alt+o           [class=obsidian] focus
     # bindsym $mod+S<D-a>hift+Print        bar mode invisible
+    # bindsym $mod+Shift+Return       [class=alacritty] focus
     # bindsym $mod+Shift+Return     exec pcmanfm
     # bindsym $mod+Shift+a            exec lxappearance
     # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
+    # bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
     # bindsym $mod+Shift+m            exec xfce4-appfinder
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+    # bindsym $mod+Shift+o            exec obsidian
     # bindsym $mod+Shift+r          exec remmina
+    # bindsym $mod+a                  exec keepassxc
+    # bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
     # bindsym $mod+n                  exec --no-startup-id nixnote2
+    # bindsym $mod+p                  exec --no-startup-id ~/.config/polybar/toggle.sh
+    # bindsym F12                     exec xfce4-terminal --drop-down
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     # bindsym Shift+Print             bar mode toggle
-    # bindsym $mod+$alt+o           [class=obsidian] focus
-    # bindsym $mod+Shift+o            exec obsidian
-    # bindsym $mod+a                  exec keepassxc
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
@@ -109,36 +154,31 @@
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
-    # bindsym $mod+Shift+Return       [class=alacritty] focus
+    bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+c            exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
-    # bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
     bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || firefox
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
-    bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
+    bindsym $mod+Tab                exec $i3t_alt_tab
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+g                  exec i3-msg -q '[class=sublime_text] focus' 2>/dev/null || subl
-    # bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
+    bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
-    bindsym $mod+shift+g                  exec gnome-disks
-    # bindsym $mod+p                  exec --no-startup-id ~/.config/polybar/toggle.sh
     bindsym $mod+p                  exec polybar-msg cmd toggle
+    bindsym $mod+shift+g                  exec gnome-disks
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
-    # bindsym F12                     exec xfce4-terminal --drop-down
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-    bindsym $mod+Tab                exec $i3t_alt_tab
-    bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     
     #rofi  
         #running windows
@@ -211,6 +251,9 @@
     workspace 1 output HDMI-2
     workspace 2 output HDMI-2
     
+    #show windows icons
+    for_window [all] title_window_icon padding 3px
+
     #Default Layout mode for new containers
     # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
     title_align right
@@ -245,8 +288,7 @@
 
     #suspend
     bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i $lockscreen  && systemctl suspend
-    # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
-
+      # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
 
     #logoff shutdown reboot menu
     bindsym $mod+x  exec --no-startup-id archlinux-logout
@@ -263,16 +305,10 @@
     # default_orientation vertical
 
     # focus windows
-    # bindsym $alt+Shift+h focus left
-    # bindsym $alt+Shift+j focus down
-    # bindsym $alt+Shift+k focus up
-    # bindsym $alt+Shift+l focus right
-
-    #force learn vim motion
-      bindsym $mod+Left focus left
-      bindsym $mod+Right focus right
-      bindsym $mod+Down focus down
-      bindsym $mod+Up focus up
+    bindsym $mod+Left focus left
+    bindsym $mod+Right focus right
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
 
     # focus the parent container
     # bindsym $alt+Shift+f focus parent
@@ -302,80 +338,53 @@
         bindsym $mod+$alt+l move right
 
             #resize window with mod+space + key
-            mode "resize" {
-                # These bindings trigger as soon as you enter the resize mode
+            # mode "resize" {
+            #     # These bindings trigger as soon as you enter the resize mode
+            #
+            #     # Pressing left will shrink the window’s width.
+            #     # Pressing right will grow the window’s width.
+            #     # Pressing up will shrink the window’s height.
+            #     # Pressing down will grow the window’s height.
+            #     bindsym j resize shrink width 10 px or 10 ppt
+            #     bindsym h resize grow height 10 px or 10 ppt
+            #     bindsym l resize shrink height 10 px or 10 ppt
+            #     bindsym k resize grow width 10 px or 10 ppt
+            #
+            #     # same bindings, but for the arrow keys
+            #     bindsym Left resize shrink width 10 px or 10 ppt
+            #     bindsym Down resize grow height 10 px or 10 ppt
+            #     bindsym Up resize shrink height 10 px or 10 ppt
+            #     bindsym Right resize grow width 10 px or 10 ppt
+            #
+            #     # back to normal: Enter or Escape
+            #     bindsym Return mode "default"
+            #     bindsym Escape mode "default"
+            # }
+            # bindsym $mod+Shift+space mode "resize"
 
-                # Pressing left will shrink the window’s width.
-                # Pressing right will grow the window’s width.
-                # Pressing up will shrink the window’s height.
-                # Pressing down will grow the window’s height.
-                bindsym j resize shrink width 10 px or 10 ppt
-                bindsym h resize grow height 10 px or 10 ppt
-                bindsym l resize shrink height 10 px or 10 ppt
-                bindsym k resize grow width 10 px or 10 ppt
+    ################# FOR_WINDOW  
 
-                # same bindings, but for the arrow keys
-                bindsym Left resize shrink width 10 px or 10 ppt
-                bindsym Down resize grow height 10 px or 10 ppt
-                bindsym Up resize shrink height 10 px or 10 ppt
-                bindsym Right resize grow width 10 px or 10 ppt
-
-                # back to normal: Enter or Escape
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
-            }
-            bindsym $mod+Shift+space mode "resize"
-
-    #switch workspace
-    bindsym $mod+Next         workspace next
-    bindsym $mod+Prior        workspace prev
-    bindsym $alt+Ctrl+j       workspace prev
-    bindsym $mod+Shift+Home   workspace prev
-    bindsym $mod+Shift+j      workspace prev
-    bindsym $alt+Ctrl+Left    workspace prev
-    bindsym $alt+Ctrl+Right   workspace next
-    bindsym $alt+Tab          workspace back_and_forth
-    bindsym $mod+i            workspace back_and_forth
-    bindsym $alt+Ctrl+k       workspace next
-    bindsym $mod+Shift+End    workspace next
-    bindsym $mod+Shift+k      workspace next
-
-    #switch to workspace
-    bindsym $mod+1		workspace $workspace1
-    bindsym $mod+2		workspace $workspace2
-    bindsym $mod+3		workspace $workspace3
-    bindsym $mod+4		workspace $workspace4
-    bindsym $mod+5		workspace $workspace5
-    bindsym $mod+6		workspace $workspace6
-    bindsym $mod+7		workspace $workspace7
-    bindsym $mod+8		workspace $workspace8
-    bindsym $mod+9		workspace $workspace9
-    bindsym $mod+0		workspace $workspace10
-
-    # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
-
-    ################# for_window  
-
-    #custom apps border - settings - scratch pad
+    #CUSTOM APPS BORDER - SETTINGS - SCRATCH PAD
     # ; move position center; move scratchpad 
+
+    # for_window [class="alacritty"] border normal
+    # for_window [class="alacritty"] border pixel 3
+    # for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
+    # for_window [instance="alacritty"] border normal
+    # for_window [instance="alacritty"] layout normal, move position center
+    # for_window [instance="keepassxc"] move scratchpad;
+    # for_window [title="Copying"] floating enable, move position center
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    # for_window [instance="alacritty"] layout normal, move position center
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
-    for_window [instance="sp-term2"] move scratchpad
+    for_window [class="Alacritty"] move scratchpad;
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="Brave-browser"] layout tabbed
+    for_window [class="Geany"] border pixel 5
+    for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
+    for_window [class="TelegramDesktop"] border none
+    for_window [class="Wfica"] border normal
     for_window [class="Wfica"] border normal
     for_window [class="Wfica"] layout tabbed
     for_window [class="^.*"] border pixel 3
@@ -383,37 +392,26 @@
     for_window [class="firefox"] layout tabbed
     for_window [class="floorp"] layout tabbed
     for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="rdesktop"] border normal
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
-    # for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
-    for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
+    for_window [class="thunderbird"] border pixel 5
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
-    # for_window [instance="keepassxc"] move scratchpad;
-    for_window [class="Alacritty"] move scratchpad;
-    for_window [title="ekah"] move scratchpad;
-    # for_window [title="Copying"] floating enable, move position center
+    for_window [instance="sp-term2"] move scratchpad
     for_window [instance="xfreerdp"] border normal
-    for_window [class="Geany"] border pixel 5
-    for_window [class="Guake"] border pixel 1
-    for_window [class="thunderbird"] border pixel 5
-    for_window [class="Wfica"] border normal
-    # for_window [instance="alacritty"] border normal
-    # for_window [class="alacritty"] border normal
-    # for_window [class="alacritty"] border pixel 3
-    for_window [class="TelegramDesktop"] border none
+    for_window [title="ekah"] move scratchpad;
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
-    # floating
+
+    # FLOATING
     floating_modifier $mod
-    # floating_modifier $alt
-    # for_window [class="obs"] floating enable
-    # for_window [class="pacseek" instance="pacseek"] move scratchpad
-    # for_window [class="rdesktop"] floating enable
     bindsym $mod+t floating toggle; 
+
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
+    for_window [class="Guake"] floating enable, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
     for_window [class="Nitrogen"] floating enable, move position center
     for_window [class="Nm-connection-editor"] floating enable, move position center
@@ -433,26 +431,27 @@
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
     for_window [instance="Autokey-gtk"] floating enable, resize set 1400 900, move position center
+    for_window [instance="Wfica"] resize set 1400 900, move position center
+    for_window [instance="blueman-manager"] floating enable,  resize set 900 600, move position center
     for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
-    # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 40 px 670 px
     for_window [instance="sp-term2"] floating enable, resize set 1536 400
     for_window [instance="urxvt"] floating enable, move position center
+    for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
     for_window [title="Copying"] floating enable, move position center
-    for_window [title="Guake Preferences"] floating enable, move position center
-    for_window [class="Guake"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
     for_window [title="Edit"] floating enable, move position center
+    for_window [title="Guake Preferences"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
     for_window [title="Packing"] floating enable, move position center, border normal
     for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Remmina Remote"] floating enable,resize set 400 500, move position center  
     for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
     for_window [window_role="setup"] floating enable, move position center
-    for_window [instance="Wfica"] resize set 1400 900, move position center
-    for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
-    for_window [title="Remmina Remote"] floating enable,resize set 400 500, move position center  
-    #focus
+
+
+    # FOCUS
     focus_on_window_activation focus
     for_window [instance="alacritty"] focus
     for_window [class="Brave-browser"] focus
@@ -461,8 +460,7 @@
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
 
-    #always launch app in workspace x
-    # assign [class="KeePassXC"] $workspace5
+    #ALWAYS LAUNCH APP ON WORKSPACE X
     assign [class="firefox"] $workspace5
     assign [class="floorp"] $workspace5
     assign [class="Chromium"] $workspace5
@@ -477,8 +475,6 @@
     assign [class="obsidian"] $workspace3
     assign [class="Ledger Live"] $workspace6
     assign [class="bauh"] $workspace8
-    #show windows icons
-    for_window [all] title_window_icon padding 3px
 
 #------------------------------------------------- 
 # Pulse Audio controls
@@ -517,13 +513,6 @@
   # bindsym $alt+Up exec --no-startup-id variety --pause
   # resume wallpaper
   # bindsym $alt+Down exec --no-startup-id variety --resume
-
-#------------------------------------------------- 
-# picom of i3wm                  
-
-    # if you want transparency on non-focused windows, ...
-    # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-    # bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 #------------------------------------------------- 
 # WINDOW COLOR SETTINGS
