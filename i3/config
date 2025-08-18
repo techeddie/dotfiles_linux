@@ -77,8 +77,8 @@
 
     #keepassxc scratchpad
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
-    #alacritty scratchpad
-      bindsym $mod+shift+Return [instance="sp-term2"] scratchpad show, move position 500 800
+    #alacritty scratchpad, x y
+      bindsym F12 [instance="sp-term2"] scratchpad show, move position 500 900
 
 #-------------------------------------------------
 #key bindings to launch applications
