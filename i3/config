@@ -32,7 +32,7 @@
     set $i3t_alt_tab        $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py n all
     set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
 
-# lockscreen
+#lockscreen
     set $lockscreen ~/.locksreen.jpg
 
 #workspace
@@ -123,24 +123,6 @@
 #-------------------------------------------------
 #key bindings to launch applications
     
-    # bindsym $mod+$alt+o           [class=obsidian] focus
-    # bindsym $mod+S<D-a>hift+Print        bar mode invisible
-    # bindsym $mod+Shift+Return       [class=alacritty] focus
-    # bindsym $mod+Shift+Return     exec pcmanfm
-    # bindsym $mod+Shift+a            exec lxappearance
-    # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
-    # bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
-    # bindsym $mod+Shift+m            exec xfce4-appfinder
-    # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
-    # bindsym $mod+Shift+o            exec obsidian
-    # bindsym $mod+Shift+r          exec remmina
-    # bindsym $mod+a                  exec keepassxc
-    # bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
-    # bindsym $mod+n                  exec --no-startup-id nixnote2
-    # bindsym $mod+p                  exec --no-startup-id ~/.config/polybar/toggle.sh
-    # bindsym F12                     exec xfce4-terminal --drop-down
-    # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
-    # bindsym Shift+Print             bar mode toggle
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
@@ -179,6 +161,24 @@
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
+          # bindsym $mod+$alt+o           [class=obsidian] focus
+          # bindsym $mod+S<D-a>hift+Print        bar mode invisible
+          # bindsym $mod+Shift+Return       [class=alacritty] focus
+          # bindsym $mod+Shift+Return     exec pcmanfm
+          # bindsym $mod+Shift+a            exec lxappearance
+          # bindsym $mod+Shift+e          exec remmina -c ~/opt/rdp/pc01.remmina
+          # bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
+          # bindsym $mod+Shift+m            exec xfce4-appfinder
+          # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+          # bindsym $mod+Shift+o            exec obsidian
+          # bindsym $mod+Shift+r          exec remmina
+          # bindsym $mod+a                  exec keepassxc
+          # bindsym $mod+g                  exec i3-msg -q '[class=Geany] focus' 2>/dev/null || geany
+          # bindsym $mod+n                  exec --no-startup-id nixnote2
+          # bindsym $mod+p                  exec --no-startup-id ~/.config/polybar/toggle.sh
+          # bindsym F12                     exec xfce4-terminal --drop-down
+          # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
+          # bindsym Shift+Print             bar mode toggle
     
     #rofi  
         #running windows
@@ -364,16 +364,6 @@
 
     ################# FOR_WINDOW  
 
-    #CUSTOM APPS BORDER - SETTINGS - SCRATCH PAD
-    # ; move position center; move scratchpad 
-
-    # for_window [class="alacritty"] border normal
-    # for_window [class="alacritty"] border pixel 3
-    # for_window [class="bauh"] floating enable,  resize set 1200 900, move position center 
-    # for_window [instance="alacritty"] border normal
-    # for_window [instance="alacritty"] layout normal, move position center
-    # for_window [instance="keepassxc"] move scratchpad;
-    # for_window [title="Copying"] floating enable, move position center
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
@@ -486,33 +476,12 @@
     bindsym XF86AudioPrev exec --no-startup-id playerctl previous
     bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
-  # bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-  # bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-  # bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-  # bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 #------------------------------------------------- 
 # brightness control
   # increase screen brightness
     bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
   # decrease screen brightness
     bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-
-#------------------------------------------------- 
-# Variety keybindings $alt = ALT
-  # trash wallpaper
-  # bindsym $alt+t exec --no-startup-id variety -t
-  # next wallpaper
-  # bindsym $alt+Shift+n exec --no-startup-id variety -n
-  # bindsym $alt+Right exec --no-startup-id variety -n
-  # previous wallpaper
-  # bindsym $alt+Shift+p exec --no-startup-id variety -p
-  # bindsym $alt+Left exec --no-startup-id variety -p
-  # favorite wallpaper
-  # bindsym $alt+f exec --no-startup-id variety -f
-  # pause wallpaper
-  # bindsym $alt+Up exec --no-startup-id variety --pause
-  # resume wallpaper
-  # bindsym $alt+Down exec --no-startup-id variety --resume
 
 #------------------------------------------------- 
 # WINDOW COLOR SETTINGS
