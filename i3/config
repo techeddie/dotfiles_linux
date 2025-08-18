@@ -73,7 +73,12 @@
       bindsym $mod+y move scratchpad
     #bring back to foreground
       bindsym $mod+u     scratchpad show; move position center
-      bindsym $mod+grave scratchpad show; move position center
+      # bindsym $mod+grave scratchpad show; move position center
+
+    #keepassxc scratchpad
+      bindsym $mod+grave [title="ekah"] scratchpad show, move position center
+    #alacritty scratchpad
+      bindsym $mod+shift+Return [instance="sp-term2"] scratchpad show, move position 500 800
 
 #-------------------------------------------------
 #key bindings to launch applications
@@ -85,12 +90,12 @@
     # bindsym $mod+Shift+m            exec xfce4-appfinder
     # bindsym $mod+Shift+o            exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
     # bindsym $mod+Shift+r          exec remmina
-    # bindsym $mod+a                  exec keepassxc
     # bindsym $mod+n                  exec --no-startup-id nixnote2
     # bindsym F12                   exec --no-startup-id xfce4-terminal --drop-down; focus
     # bindsym Shift+Print             bar mode toggle
     # bindsym $mod+$alt+o           [class=obsidian] focus
     # bindsym $mod+Shift+o            exec obsidian
+    # bindsym $mod+a                  exec keepassxc
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
@@ -105,7 +110,6 @@
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     # bindsym $mod+Shift+Return       [class=alacritty] focus
-    bindsym $mod+Shift+Return       [class=alacritty] focus
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+c            exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
     # bindsym $mod+Shift+f            exec i3-msg -q '[class=firefox] focus' 2>/dev/null || firefox
@@ -158,7 +162,8 @@
     exec --no-startup-id copyq
     exec --no-startup-id flameshot
     exec --no-startup-id guake 
-    exec --no-startup-id keepassxc 
+    exec --no-startup-id keepassxc
+    exec --no-startup-id alacritty --class sp-term2
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
@@ -364,7 +369,9 @@
     # ; move position center; move scratchpad 
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [instance="alacritty"] layout normal, move position center
+    # for_window [instance="alacritty"] layout normal, move position center
+    for_window [class="Alacritty" instance="sp-term2"] move scratchpad
+    for_window [instance="sp-term2"] move scratchpad
     for_window [class="Brave"] set $inner_gaps 20
     for_window [class="Brave-browser"] layout tabbed
     for_window [class="Navigator"] layout tabbed
@@ -382,6 +389,7 @@
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
     # for_window [instance="keepassxc"] move scratchpad;
+    for_window [class="Alacritty"] move scratchpad;
     for_window [title="ekah"] move scratchpad;
     # for_window [title="Copying"] floating enable, move position center
     for_window [instance="xfreerdp"] border normal
@@ -423,8 +431,10 @@
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
-    for_window [instance="Autokey-gtk"] floating enable,  resize set 1400 900, move position center
+    for_window [instance="Autokey-gtk"] floating enable, resize set 1400 900, move position center
     for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
+    # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 40 px 670 px
+    for_window [instance="sp-term2"] floating enable, resize set 1536 400
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Guake Preferences"] floating enable, move position center
