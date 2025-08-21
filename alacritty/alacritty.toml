@@ -1,4 +1,5 @@
 import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/tokyo-night.yaml"]
+
 live_config_reload = true
 
 [colors]
@@ -15,7 +16,7 @@ render_timer = false
 TERM = "xterm-256color"
 
 [font]
-size = 9.0
+size = 8.0
 
 [font.bold]
 family = "terminal-font"
