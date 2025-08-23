@@ -1,4 +1,5 @@
-import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/tokyo-night.yaml"]
+# import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/tokyo-night.yaml"]
+import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/Cobalt2.yaml"]
 
 live_config_reload = true
 
@@ -32,7 +33,8 @@ style = "Regular Italic"
 
 [font.normal]
 family = "terminal-font"
-terminal-font
+
+[terminal-font]
 style = "Regular"
 
 [font.offset]
