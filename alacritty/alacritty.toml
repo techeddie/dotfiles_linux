@@ -1,6 +1,4 @@
-# import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/tokyo-night.yaml"]
-import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/Cobalt2.yaml"]
-
+import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/xterm.toml"]
 live_config_reload = true
 
 [colors]
@@ -20,7 +18,7 @@ TERM = "xterm-256color"
 size = 8.0
 
 [font.bold]
-family = "terminal-font"
+family = "Hack"
 style = "Bold"
 
 [font.glyph_offset]
@@ -28,13 +26,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "terminal-font"
+family = "Hack"
 style = "Regular Italic"
 
 [font.normal]
-family = "terminal-font"
-
-[terminal-font]
+family = "Hack"
 style = "Regular"
 
 [font.offset]
