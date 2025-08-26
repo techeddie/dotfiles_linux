@@ -117,8 +117,12 @@
     #keepassxc scratchpad
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
     #alacritty scratchpad, x y
-      bindsym F12 [instance="sp-term2"] scratchpad show, move position center
+      bindsym F12 [instance="sp-term2"] scratchpad show
+      # , move position center
       # bindsym F12 [instance="sp-term2"] scratchpad show, move position 500 900
+
+    #toggle gnome-disks with mod+shift+g
+    bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
 
 #-------------------------------------------------
 #KEY BINDINGS TO LAUNCH APPLICATIONS
@@ -156,12 +160,12 @@
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec polybar-msg cmd toggle
-    bindsym $mod+shift+g                  exec gnome-disks
+    # bindsym $mod+shift+g                  exec gnome-disks
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-    
+
     #rofi  
         #running windows
         bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue 
@@ -178,6 +182,7 @@
 #execute on logon - autostartup - startup
 
     exec --no-startup-id "setxkbmap 'de(us)'" 
+    exec --no-startup-id gnome-disks
     exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -348,6 +353,7 @@
     ################# FOR_WINDOW  
 
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
+    for_window [class="Gnome-disks"] floating enable, resize set 800 600, move scratchpad
     for_window [class=".*launcher.*"] border none
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
     for_window [class="Brave"] set $inner_gaps 20
@@ -366,6 +372,7 @@
     for_window [class="floorp"] layout tabbed
     for_window [class="keepassxc"] layout tabbed, move position center
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
+    for_window [class="Gnome-disks"] floating enable,  resize set 900 600, move position center 
     for_window [class="rdesktop"] border normal
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="thunderbird"] border pixel 5
@@ -382,6 +389,7 @@
     bindsym $mod+t floating toggle; 
 
     for_window [class="Baobab"] floating enable, move position center
+    for_window [class= "Seafile Client"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Guake"] floating enable, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
@@ -406,7 +414,8 @@
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [instance="blueman-manager"] floating enable,  resize set 900 600, move position center
     for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
-    for_window [instance="sp-term2"] floating enable, resize set 1536 400
+  # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position center 900 px
+    for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
     for_window [title="Copying"] floating enable, move position center
