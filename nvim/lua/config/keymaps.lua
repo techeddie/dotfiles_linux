@@ -100,12 +100,8 @@ keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "p", '"_dp', { desc = "pase below current line" })
 keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" })
 keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
-keymap("x", "j", ":move '>+1<cr>gv-gv", { desc = "" })
-keymap("x", "k", ":move '<-2<cr>gv-gv", { desc = "" })
--- keymap("x", "<a-down>", ":move '>+1<cr>gv-gv", { desc = "" })
--- keymap("x", "<a-j>", ":move '>+1<cr>gv-gv", { desc = "" })
--- keymap("x", "<a-k>", ":move '<-2<cr>gv-gv", { desc = "" })
--- keymap("x", "<a-up>", ":move '<-2<cr>gv-gv", { desc = "" })
+keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
+keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
 
 -- toggle lline wrapping
