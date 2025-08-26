@@ -10,15 +10,22 @@
 
 
 # define a custom 'delete' command
-cmd delete ${{
-    clear
-    set -f
-    printf "$fx\n"
-    printf "SURE you want to delete?[y/n]"
-    read ans
-    [ "$ans" = "y" ] && rm -rf $fx
-    [ "$ans" = "" ] && rm -rf $fx
-}}
+# cmd delete ${{
+#     clear
+#     set -f
+#     printf "$fx\n"
+#     printf "SURE you want to delete?[y/n]"
+#     read ans
+#     [ "$ans" = "y" ] && rm -rf $fx
+#     [ "$ans" = "" ] && rm -rf $fx
+# }}
+
+
+  cmd delete ${{
+      set -f
+      rm -rf $fx
+      lf -remote "send $id reload"
+  }}
 
 ##########################################################
 #COMMAND START
@@ -535,13 +542,14 @@ cmd lf_reload ${{
   # map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
   # map p paste
 
+  # map <delete> :delete
+  map - :link
   map . set hidden!
   map <Esc> quit
   map <a-0> recol  
   map <a-R> :lf_reload
   map <a-X> :unmake_executeable 
   map <a-e> :!thunar .
-  map <c-f> :fzf_search
   map <a-f> :fzf_jump_max_folder
   map <a-h> :fzf_jump_hidden
   map <a-m> $vimv $fx   #renaming VI like
@@ -553,12 +561,12 @@ cmd lf_reload ${{
   map <backspace2> updir
   map <backspace> :fzf_jump_history
   map <c-c> :copy_to_clipboard
+  map <c-f> :fzf_search
   map <c-k> quit
   map <c-n> push %touch<space>
   map <c-q> quit
   map <c-r> :source ~/.config/lf/lfrc
   map <c-w> :set_wallpaper
-  map <delete> :delete
   map <enter> open
   map <f-2> rename #rename current selection
   map <f-5> push :source<space>~/gitREPO/dotfiles_linux/lf/lfrc<enter>
@@ -573,16 +581,15 @@ cmd lf_reload ${{
   map J :updir; down; open
   map K :updir; up; open
   map L :link
-  map - :link
   map O push :open-with-gui<space>
   map P toggle_preview
   map R reload
   map S :!zsh
   map V toggle_preview
+  map ac push %touch<space>
   map ad push %mkdir<space>
   map af push %mkdir<space>
-  map ac push %touch<space>
-
+  map dd delete
 #modes
   map n
   map nu extract
@@ -597,7 +604,7 @@ cmd lf_reload ${{
   map b mark-load
   map c push %touch<space>
   map d
-  map dd $rm -fr "$fx"
+
   map e $$EDITOR "$f"
   map f :fzf_select
   map g? $lf -doc | bat; clear
