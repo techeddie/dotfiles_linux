@@ -104,6 +104,46 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
 
+-- custom keymaps for indenting comment lines
+vim.keymap.set("v", "<leader>>", function()
+  vim.cmd("'<,'>s/^/  /")  -- Add 2 spaces to beginning
+  vim.cmd("nohlsearch")    -- Clear search highlighting
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Indent selected lines (including comments)" })
+
+vim.keymap.set("v", "<leader><", function()
+  vim.cmd("'<,'>s/^  //")  -- Remove 2 spaces from beginning  
+  vim.cmd("nohlsearch")    -- Clear search highlighting
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Unindent selected lines (including comments)" })
+
+-- alternative with 4 spaces
+vim.keymap.set("v", "<leader>4>", function()
+  vim.cmd("'<,'>s/^/    /")  -- Add 4 spaces
+  vim.cmd("nohlsearch")
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Indent selected lines by 4 spaces" })
+
+vim.keymap.set("v", "<leader>4<", function()
+  vim.cmd("'<,'>s/^    //")  -- Remove 4 spaces
+  vim.cmd("nohlsearch") 
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Unindent selected lines by 4 spaces" })
+
+-- tab-based indentation
+vim.keymap.set("v", "<leader>t>", function()
+  vim.cmd("'<,'>s/^/\t/")  -- Add tab
+  vim.cmd("nohlsearch")
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Indent selected lines with tab" })
+
+vim.keymap.set("v", "<leader>t<", function()
+  vim.cmd("'<,'>s/^\t//")  -- Remove tab
+  vim.cmd("nohlsearch")
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, { desc = "Unindent selected lines (remove tab)" })
+
+
 -- toggle lline wrapping
 vim.keymap.set("n", "<leader>ww",
   function ()
