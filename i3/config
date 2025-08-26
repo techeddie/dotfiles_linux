@@ -179,24 +179,24 @@
         # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
 
 #-------------------------------------------------
-#execute on logon - autostartup - startup
+#execute on logon - AUTOSTARTUP - STARTUP
 
     exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id gnome-disks
     exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+    exec --no-startup-id alacritty --class sp-term2
+    exec --no-startup-id blueman-applet
     exec --no-startup-id brave 
     exec --no-startup-id copyq
     exec --no-startup-id flameshot
+    exec --no-startup-id gnome-disks
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
-    exec --no-startup-id alacritty --class sp-term2
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
-    exec --no-startup-id blueman-applet
     exec --no-startup-id seafile-applet
     exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
