@@ -11,6 +11,11 @@ require("session"):setup {
 	sync_yanked = true,
 }
 
+-- fg.yazi
+require("fg"):setup({
+    default_action = "menu", -- nvim, jump
+})
+
 -- git plugin
 require("git"):setup()
 
