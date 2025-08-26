@@ -126,7 +126,7 @@
 
 #-------------------------------------------------
 #KEY BINDINGS TO LAUNCH APPLICATIONS
-    
+
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
@@ -160,12 +160,11 @@
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec polybar-msg cmd toggle
-    # bindsym $mod+shift+g                  exec gnome-disks
+    bindsym $mod+shift+i            exec sh $HOME/gitREPO/dotfiles_linux/i3/scripts/xprop.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-
     #rofi  
         #running windows
         bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue 
