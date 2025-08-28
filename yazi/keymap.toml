@@ -531,6 +531,11 @@ on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
 
+[[mgr.prepend_keymap]]
+on   = [ "c", "h" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
 #quit yazi
 [[mgr.prepend_keymap]]
 on = [ "<C-k>" ]
