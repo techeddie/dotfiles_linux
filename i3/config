@@ -139,6 +139,8 @@
     bindsym $mod+F9                 exec sh ~/scripts/restic_runBackupObsidian.sh
     bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
+    bindsym $mod+Shift+F11          exec alacritty --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/backup.home.sh
+    bindsym $mod+Shift+F12          exec alacritty --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/backup.root.sh
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
@@ -414,6 +416,8 @@
     for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
   # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position center 900 px
     for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [instance="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="urxvt"] floating enable, move position center
     for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
     for_window [title="Copying"] floating enable, move position center
