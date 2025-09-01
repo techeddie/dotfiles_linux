@@ -352,14 +352,10 @@
 
     ################# FOR_WINDOW  
 
-    for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
     for_window [class=".*launcher.*"] border none
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
-    for_window [class="Brave"] set $inner_gaps 20
-    for_window [class="Brave-browser"] layout tabbed
-    for_window [class="Brave-browser"] border none
     for_window [class="Geany"] border pixel 5
     for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
@@ -368,7 +364,6 @@
     for_window [class="Wfica"] border normal
     for_window [class="Wfica"] layout tabbed
     for_window [class="^.*"] border pixel 3
-    for_window [class="brave"] set $outer_gaps 20
     for_window [class="firefox"] layout tabbed
     for_window [class="floorp"] layout tabbed
     for_window [class="keepassxc"] layout tabbed, move position center
@@ -384,6 +379,10 @@
     for_window [title="ekah"] move scratchpad;
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+    for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
+    for_window [class="Brave-browser"] border none
+    for_window [class="firefox"] border none
+    for_window [class="floorp"] border none
 
     # FLOATING
     floating_modifier $mod
