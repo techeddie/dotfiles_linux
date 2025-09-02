@@ -381,6 +381,8 @@
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class="Brave-browser"] border none, gaps outer 0, gaps inner 0
+    for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
+    for_window [class="sp-term2"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
     for_window [class="obsidian"] border none, gaps outer 0, gaps inner 0
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0
