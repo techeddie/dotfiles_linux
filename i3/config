@@ -380,9 +380,11 @@
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
-    for_window [class="Brave-browser"] border none
-    for_window [class="firefox"] border none
-    for_window [class="floorp"] border none
+    for_window [class="Brave-browser"] border none, gaps outer 0, gaps inner 0
+    for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
+    for_window [class="obsidian"] border none, gaps outer 0, gaps inner 0
+    for_window [class="firefox"] border none, gaps outer 0, gaps inner 0
+    for_window [class="floorp"] border none, gaps outer 0, gaps inner 0
 
     # FLOATING
     floating_modifier $mod
