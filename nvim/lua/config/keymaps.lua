@@ -27,7 +27,7 @@ end
 
 -- KEYMAPS
 keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", {desc = "Search and Replace box"})
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
@@ -41,6 +41,7 @@ keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
 keymap("n", "<M-h>", ":split <CR>") --horizontal split
 keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
+keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
 keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
@@ -89,6 +90,9 @@ keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 -- keymap("n", "<C-Up>", ":resize +4<CR>", opts) --pane bigger horizontal
 
 -- VISUAL --
+
+keymap("v", "<M-r>", ":SearchBoxReplace<CR>",{desc = "Search and Replace box"})
+keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "<", "<gv", { desc = "decrease indent" })
 keymap("v", "<a-j>", ":m .+1<cr>==", { desc = "move up" })
@@ -102,7 +106,6 @@ keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" 
 keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
 keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
-
 
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()
