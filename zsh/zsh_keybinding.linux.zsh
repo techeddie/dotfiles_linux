@@ -1,72 +1,67 @@
-#NVIM OPEN FILES VIA FZF
-  bindkey -s '^o' 'nvim $(fzf)^M'
-  bindkey -s '\ef' 'nvim $(fzf)^M'
+# ALT-D - cd into the selected directory
+bindkey -M emacs '\ed' fzf-cd-widget
+bindkey -M vicmd '\ed' fzf-cd-widget
+bindkey -M viins '\ed' fzf-cd-widget
 
-#FZF - conflict with zsh jump forward
-  # ALT-F - cd into the selected directory
-  # bindkey -M emacs '\ef' fzf-cd-widget
-  # bindkey -M vicmd '\ef' fzf-cd-widget
-  # bindkey -M viins '\ef' fzf-cd-widget
+# CTRL-H - history
+bindkey -M emacs '^H' fzf-history-widget
+bindkey -M vicmd '^H' fzf-history-widget
+bindkey -M viins '^H' fzf-history-widget
 
-  # ALT-D - cd into the selected directory
-  bindkey -M emacs '\ed' fzf-cd-widget
-  bindkey -M vicmd '\ed' fzf-cd-widget
-  bindkey -M viins '\ed' fzf-cd-widget
+# ALT-R - history
+bindkey -M emacs '\er' fzf-history-widget
+bindkey -M vicmd '\er' fzf-history-widget
+bindkey -M viins '\er' fzf-history-widget
 
-  # CTRL-H - history
-  bindkey -M emacs '^H' fzf-history-widget
-  bindkey -M vicmd '^H' fzf-history-widget
-  bindkey -M viins '^H' fzf-history-widget
+# CTRL-F - show files
+bindkey -M emacs '^F' fzf-file-widget
+bindkey -M vicmd '^F' fzf-file-widget
+bindkey -M viins '^F' fzf-file-widget
 
-  # ALT-R - history
-  bindkey -M emacs '\er' fzf-history-widget
-  bindkey -M vicmd '\er' fzf-history-widget
-  bindkey -M viins '\er' fzf-history-widget
+# ALT-U - jump to beginning-of-line
+bindkey -M emacs '\eu' beginning-of-line
+bindkey -M vicmd '\eu' beginning-of-line
+bindkey -M viins '\eu' beginning-of-line
 
-  # CTRL-F - show files
-  bindkey -M emacs '^F' fzf-file-widget
-  bindkey -M vicmd '^F' fzf-file-widget
-  bindkey -M viins '^F' fzf-file-widget
+# ALT-I - jump to end-of-line
+bindkey -M emacs '\ei' end-of-line
+bindkey -M vicmd '\ei' end-of-line
+bindkey -M viins '\ei' end-of-line
 
-  # ALT-U - jump to beginning-of-line
-  bindkey -M emacs '\eu' beginning-of-line
-  bindkey -M vicmd '\eu' beginning-of-line
-  bindkey -M viins '\eu' beginning-of-line
+#CTRL-LEFT/RIGHT jump word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
-  # ALT-I - jump to end-of-line
-  bindkey -M emacs '\ei' end-of-line
-  bindkey -M vicmd '\ei' end-of-line
-  bindkey -M viins '\ei' end-of-line
+#CTRL-BS - delete word backword
+bindkey '^H' backward-kill-word
 
-  #CTRL-LEFT/RIGHT jump word
-  bindkey "^[[1;5C" forward-word
-  bindkey "^[[1;5D" backward-word
+#CLEAR SCREEN
+# bindkey -s '^l' 'clear^M'
 
-  #CTRL-BS - delete word backword
-  bindkey '^H' backward-kill-word
+#ALT-F QUIT SHELL
+# bindkey -s '\ek' '^d ^M'
 
-  #CLEAR SCREEN
-  # bindkey -s '^l' 'clear^M'
+# LAZYGIT
+bindkey -s '\ea' 'tmux a^M'
+bindkey -s '\eg' 'lazygit^M'
+bindkey -s '\em' 'tmux ^M'
+bindkey -s '\et' 'tmux ^M'
+bindkey -s '^g' 'lazygit^M'
+bindkey -s '^l' 'lf ^M'
 
-  #ALT-F QUIT SHELL
-  # bindkey -s '\ek' '^d ^M'
+# LF
+bindkey -s '^l' 'lf ^M'
 
-  #LAZYGIT
-  bindkey -s '\ea' 'tmux a^M'
-  bindkey -s '\eg' 'lazygit^M'
-  bindkey -s '\em' 'tmux ^M'
-  bindkey -s '\et' 'tmux ^M'
-  bindkey -s '^g' 'lazygit^M'
-  bindkey -s '^l' 'lf ^M'
+# YAZI
+bindkey -s '^y' 'yazi ^M'
+bindkey -s '^e' 'yazi ^M'
+bindkey -s '\e1' 'yazi ^M'
+bindkey -s '\e2' 'yazi ^M'
+bindkey -s '\el' 'yazi ^M'
+bindkey -s '\ee' 'yazi ^M'
 
-  #LF
-  # bindkey -s '\el' 'lf ^M'
-  bindkey -s '^l' 'lf ^M'
+# NVIM OPEN FILES VIA FZF
+bindkey -s '^o' 'nvim $(fzf)^M'
 
-  # YAZI
-  bindkey -s '^y' 'yazi ^M'
-  bindkey -s '^e' 'yazi ^M'
-  bindkey -s '\e1' 'yazi ^M'
-  bindkey -s '\e2' 'yazi ^M'
-  bindkey -s '\el' 'yazi ^M'
-  bindkey -s '\ee' 'yazi ^M'
+# NVIM
+bindkey -s '\ev' 'nvim ^M'
