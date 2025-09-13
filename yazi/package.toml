@@ -48,6 +48,11 @@ use = "KKV9/archive"
 rev = "c264639"
 hash = "e17c11b605d989568a1d1741ca17c584"
 
+[[plugin.deps]]
+use = "Ape/reflink"
+rev = "7ecd36b"
+hash = "555a412745356f7ce1fd4777917bbfbf"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "68326b4"

@@ -623,3 +623,9 @@ desc = "Archive selected files (compression level)"
 on   = [ "c", "a", "u" ]
 run  = "plugin compress -phl"
 desc = "Archive selected files (password+header+level)"
+
+# cow copy paste -  https://github.com/Ape/reflink.yazi
+[[mgr.prepend_keymap]]
+on = [ "c", "r" ]
+run = "plugin reflink"
+desc = "Reflink the yanked files"
