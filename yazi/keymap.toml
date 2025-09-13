@@ -496,22 +496,22 @@ desc = "force delete"
 # run  = 'shell --orphan unzip "$@"'
 
 # extract archive formats
-[[mgr.prepend_keymap]]
-on   = ["e","x"]
-run  = """ shell --orphan 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' """
-desc = "Extract archive formats"
+# [[mgr.prepend_keymap]]
+# on   = ["e","x"]
+# run  = """ shell --orphan 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' """
+# desc = "Extract archive formats"
 
 # make backup via tar
-[[mgr.prepend_keymap]]
-on   = ["<F5>"]
-run  = """ shell --orphan 'date=$(date +%Y-%m-%d-%H-%M) ; tar -zcvf "${0}.$date.tar.gz" "$@"'  """
-desc = "make backup via tar for selection"
+# [[mgr.prepend_keymap]]
+# on   = ["<F5>"]
+# run  = """ shell --orphan 'date=$(date +%Y-%m-%d-%H-%M) ; tar -zcvf "${0}.$date.tar.gz" "$@"'  """
+# desc = "make backup via tar for selection"
 
 # extract archive formats
-[[mgr.prepend_keymap]]
-on   = ["<F6>"]
-run  = """ shell 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' --orphan """
-desc = "Extract archive formats"
+# [[mgr.prepend_keymap]]
+# on   = ["<F6>"]
+# run  = """ shell 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' --orphan """
+# desc = "Extract archive formats"
 
 #mkdir
 [[mgr.prepend_keymap]]
@@ -592,3 +592,34 @@ desc = "find file by content (fuzzy match)"
 on   = [ "<C-f>" ]
 run  = "plugin fg -- rg"
 desc = "find file by content (ripgrep match)"
+
+# yazi compress - https://github.com/KKV9/compress.yazi
+[[mgr.prepend_keymap]]
+on   = [ "<F5>" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "p" ]
+run  = "plugin compress -p"
+desc = "Archive selected files (password)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "h" ]
+run  = "plugin compress -ph"
+desc = "Archive selected files (password+header)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "l" ]
+run  = "plugin compress -l"
+desc = "Archive selected files (compression level)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "u" ]
+run  = "plugin compress -phl"
+desc = "Archive selected files (password+header+level)"
