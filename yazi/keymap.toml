@@ -630,3 +630,10 @@ desc = "Archive selected files (password+header+level)"
 on = [ "c", "r" ]
 run = "plugin reflink"
 desc = "Reflink the yanked files"
+
+# a command palette plugin that allows you to search and execute yazi commands from your keymap configuration.
+# https://github.com/Mr-Ples/command-palette.yazi?tab=readme-ov-file
+[[mgr.prepend_keymap]]
+on = ["`"]
+desc = "Command palette (fzf)"
+run = "plugin command-palette"
