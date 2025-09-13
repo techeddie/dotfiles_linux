@@ -382,11 +382,11 @@
     for_window [window_role="GtkFileChooserDialog"] move position center
     for_window [window_role="GtkFileChooserDialog"] resize set 800 600
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
-    for_window [class="Brave-browser"] border none, gaps outer 0, gaps inner 0
+    for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="sp-term2"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
-    for_window [class="obsidian"] border none, gaps outer 0, gaps inner 0
+    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0
     for_window [class="floorp"] border none, gaps outer 0, gaps inner 0
 
@@ -428,7 +428,7 @@
     for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
-    for_window [title="Edit"] floating enable, move position center
+    for_window [class="doublecmd"] [title="Edit"] floating enable, move position center
     for_window [title="Guake Preferences"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
     for_window [title="Packing"] floating enable, move position center, border normal
