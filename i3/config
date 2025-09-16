@@ -145,7 +145,7 @@
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+c            exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
-    bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || firefox
+    bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || floorp
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+p            exec alacritty -e pacseek
