@@ -130,7 +130,7 @@
 
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
-    bindsym $mod+$alt+Shift+c       exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
+    bindsym $mod+$alt+Ctrl+c       exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
     bindsym $mod+$alt+c             exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
