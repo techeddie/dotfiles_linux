@@ -91,16 +91,16 @@ keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 
 -- VISUAL --
 
-keymap("v", "<M-r>", ":SearchBoxReplace<CR>",{desc = "Search and Replace box"})
-keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "<", "<gv", { desc = "decrease indent" })
+keymap("v", "<M-r>", ":SearchBoxReplace<CR>",{desc = "Search and Replace box"})
 keymap("v", "<a-j>", ":m .+1<cr>==", { desc = "move up" })
 keymap("v", "<a-k>", ":m .-2<cr>==", { desc = "move down"})
 keymap("v", ">", ">gv", { desc = "increase indent" })
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "p", '"_dp', { desc = "pase below current line" })
+keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
 keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" })
 keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
 keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
