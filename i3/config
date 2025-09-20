@@ -130,6 +130,9 @@
 
     bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
+    bindsym $mod+$alt+Shift+c       exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
+    bindsym $mod+$alt+c             exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
+    bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
@@ -145,9 +148,7 @@
     bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
-    bindsym $mod+$alt+c            exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
-    bindsym $mod+Shift+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+$alt+Shift+c       exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
+    bindsym $mod+Shift+c            exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || floorp
     bindsym $mod+Shift+l            exec alacritty -e lf ~/
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
