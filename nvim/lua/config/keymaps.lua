@@ -90,7 +90,6 @@ keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 -- keymap("n", "<C-Up>", ":resize +4<CR>", opts) --pane bigger horizontal
 
 -- VISUAL --
-
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "<", "<gv", { desc = "decrease indent" })
 keymap("v", "<M-r>", ":SearchBoxReplace<CR>",{desc = "Search and Replace box"})
@@ -105,7 +104,6 @@ keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" 
 keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
 keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
--- keymap("v", "P", "}") --visual select paragraph
 
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()

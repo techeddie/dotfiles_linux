@@ -134,8 +134,8 @@
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
-    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
+    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
