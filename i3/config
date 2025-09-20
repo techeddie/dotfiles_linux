@@ -128,11 +128,11 @@
 #-------------------------------------------------
 #KEY BINDINGS TO LAUNCH APPLICATIONS
 
-    bindsym $alt+Shift+f            exec fsearch
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
-    bindsym $mod+$alt+Ctrl+c       exec i3-msg -q '[class=code] focus' 2>/dev/null || /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=code --file-forwarding com.visualstudio.code --reuse-window @@ %F @@
     bindsym $mod+$alt+c             exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
+    bindsym $mod+$alt+ctrl+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
+    bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
     bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
@@ -158,6 +158,7 @@
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
     bindsym $mod+Tab                exec $i3t_alt_tab
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
+    bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+g                  exec i3-msg -q '[class=sublime_text] focus' 2>/dev/null || subl
@@ -168,6 +169,7 @@
     bindsym $mod+p                  exec polybar-msg cmd toggle
     bindsym $mod+shift+i            exec sh $HOME/gitREPO/dotfiles_linux/i3/scripts/xprop.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
+    bindsym $modt+$alt+Ctrl+f       exec fsearch
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
