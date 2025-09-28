@@ -393,6 +393,7 @@
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0
     for_window [class="floorp"] border none, gaps outer 0, gaps inner 0
     for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
+    for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
 
     # FLOATING
@@ -416,7 +417,7 @@
     for_window [class="copyq"] floating enable, move position center
     for_window [class="doublecmd"] [title="Options"] floating enable,resize set 800 600, move position center 
     for_window [class="flameshot"] floating enable, move position center
-    for_window [class="gnome-calculator"] floating enable, move position center
+    for_window [class="Gnome-calculator"] floating enable, move position center
     for_window [class="nextcloud"] floating enable, move position center
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
