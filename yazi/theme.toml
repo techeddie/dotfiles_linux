@@ -1,12 +1,4 @@
 [flavor]
-# dark = "nightfly"
-# light = "nightfly"
-
+dark = "eldritch"
+# dark = "bluloco-dark"
 # dark = "catppuccin-mocha"
-# light = "catppuccin-mocha"
-
-# dark = "tokyonight-night"
-# light = "tokyonight-night"
-#
-dark = "tokyonight-storm"
-light = "tokyonight-storm"
