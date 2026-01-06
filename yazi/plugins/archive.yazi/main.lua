@@ -243,7 +243,7 @@ return {
                             is_level = true
                         end
                     end
-                elseif arg:match("^%w[%w\\.]*$") then
+                elseif arg:match("^[%w%.]+$") then
                     -- Handle default extension (e.g., 7z, zip)
                     if archive_commands["%." .. arg .. "$"] then
                         default_extension = arg
@@ -265,7 +265,7 @@ return {
             ya.input(
             {
                 title = "Create archive:",
-                position = {"top-center", y = 3, w = 40}
+                pos = {"top-center", y = 3, w = 40}
             }
         )
         if event ~= 1 then
@@ -362,7 +362,7 @@ return {
                 {
                     title = "Enter password:",
                     obscure = true,
-                    position = {"top-center", y = 3, w = 40}
+                    pos = {"top-center", y = 3, w = 40}
                 }
             )
             if event ~= 1 then
@@ -388,7 +388,7 @@ return {
                 ya.input(
                 {
                     title = string.format("Enter compression level (%s - %s)", archive_level_min, archive_level_max),
-                    position = {"top-center", y = 3, w = 40}
+                    pos = {"top-center", y = 3, w = 40}
                 }
             )
             if event ~= 1 then
@@ -494,3 +494,4 @@ return {
         end
     end
 }
+
