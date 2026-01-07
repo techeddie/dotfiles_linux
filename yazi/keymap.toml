@@ -509,10 +509,10 @@ desc = "force delete"
 # desc = "make backup via tar for selection"
 
 # extract archive formats
-# [[mgr.prepend_keymap]]
-# on   = ["<F6>"]
-# run  = """ shell 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' --orphan """
-# desc = "Extract archive formats"
+[[mgr.prepend_keymap]]
+on   = ["<F6>"]
+run  = """ shell 'sh $HOME/config/yazi/scripts/extractArchives.sh "${0}" . ' --orphan """
+desc = "Extract archive formats"
 
 #mkdir
 [[mgr.prepend_keymap]]
