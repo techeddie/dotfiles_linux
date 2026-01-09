@@ -459,7 +459,7 @@
     assign [class="floorp"] $workspace5
     assign [class="Chromium"] $workspace5
     assign [class="Autokey-gtk"] $workspace6
-    assign [class="Brave" title="Outlook"] $workspace10
+    assign [class="Brave" title="Outlook (PWA)"] $workspace10
     assign [class="Brave" title="Files - Nextcloud"] $workspace10
     assign [class="Brave"] $workspace2
     assign [class="Doublecmd"] $workspace7
