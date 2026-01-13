@@ -68,6 +68,11 @@ use = "Shallow-Seek/fazif"
 rev = "6e10488"
 hash = "c549ff30fb1d1d97c734010fe82f6295"
 
+[[plugin.deps]]
+use = "MasouShizuka/projects"
+rev = "eed0657"
+hash = "ca79de2b3bb2247906e01b2261e5d2bb"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "4a1802a"

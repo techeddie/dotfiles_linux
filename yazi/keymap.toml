@@ -564,7 +564,7 @@ run = "plugin bookmarks save"
 desc = "Save current position as a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "b" ]
+on = [ "B" ]
 run = "plugin bookmarks jump"
 desc = "Jump to a bookmark"
 
@@ -628,3 +628,41 @@ run = "plugin yafg"
 on = [ "/" ]
 run = "plugin fazif faziffd"
 desc = "Find files/directories with fd and fzf"
+
+
+# projects
+# https://github.com/MasouShizuka/projects.yazi
+[[mgr.prepend_keymap]]
+on = [ "b", "s" ]
+run = "plugin projects save"
+desc = "Save current project"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "l" ]
+run = "plugin projects load"
+desc = "Load project"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "P" ]
+run = "plugin projects load_last"
+desc = "Load last project"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "d" ]
+run = "plugin projects delete"
+desc = "Delete project"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "D" ]
+run = "plugin projects delete_all"
+desc = "Delete all projects"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "m" ]
+run = "plugin projects 'merge current'"
+desc = "Merge current tab to other projects"
+
+[[mgr.prepend_keymap]]
+on = [ "b", "M" ]
+run = "plugin projects 'merge all'"
+desc = "Merge current project to other projects"
