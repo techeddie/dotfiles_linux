@@ -578,22 +578,6 @@ desc = "Jump to a bookmark"
 # run = "plugin bookmarks delete_all"
 # desc = "Delete all bookmarks"
 
-# fg.yazi
-[[mgr.prepend_keymap]]
-on   = [ "<C-p>" ]
-run  = "plugin fg -- fzf"
-desc = "find file by filename"
-
-[[mgr.prepend_keymap]]
-on   = [ "/","c" ]
-run  = "plugin fg"
-desc = "find file by content (fuzzy match)"
-
-# [[mgr.prepend_keymap]]
-# on   = [ "<C-f>" ]
-# run  = "plugin fg -- rg"
-# desc = "find file by content (ripgrep match)"
-
 # yazi compress - https://github.com/KKV9/compress.yazi
 [[mgr.prepend_keymap]]
 on   = [ "<F5>" ]
