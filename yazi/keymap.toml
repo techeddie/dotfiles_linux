@@ -621,8 +621,10 @@ run = "plugin command-palette"
 [[mgr.prepend_keymap]]
 on   = [ "<C-f>" ]
 run = "plugin yafg"
-# cow copy paste -  https://github.com/Ape/reflink.yazi
-# [[mgr.prepend_keymap]]
-# on = [ "c", "r" ]
-# run = "plugin reflink"
-# desc = "Reflink the yanked files"
+
+# directory finder using fd + fzf
+# https://github.com/Shallow-Seek/fazif.yazi
+[[mgr.prepend_keymap]]
+on = [ "/" ]
+run = "plugin fazif faziffd"
+desc = "Find files/directories with fd and fzf"

@@ -63,6 +63,11 @@ use = "XYenon/yafg"
 rev = "dd03b13"
 hash = "59a4d7d65f49d4b064d60e65fb1242c6"
 
+[[plugin.deps]]
+use = "Shallow-Seek/fazif"
+rev = "6e10488"
+hash = "c549ff30fb1d1d97c734010fe82f6295"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "4a1802a"
