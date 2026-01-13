@@ -58,6 +58,11 @@ use = "KKV9/compress"
 rev = "c9c16d8"
 hash = "a68bde26a61da040131aa95069f638c2"
 
+[[plugin.deps]]
+use = "XYenon/yafg"
+rev = "dd03b13"
+hash = "59a4d7d65f49d4b064d60e65fb1242c6"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "4a1802a"

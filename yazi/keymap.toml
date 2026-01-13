@@ -589,10 +589,10 @@ on   = [ "/","c" ]
 run  = "plugin fg"
 desc = "find file by content (fuzzy match)"
 
-[[mgr.prepend_keymap]]
-on   = [ "<C-f>" ]
-run  = "plugin fg -- rg"
-desc = "find file by content (ripgrep match)"
+# [[mgr.prepend_keymap]]
+# on   = [ "<C-f>" ]
+# run  = "plugin fg -- rg"
+# desc = "find file by content (ripgrep match)"
 
 # yazi compress - https://github.com/KKV9/compress.yazi
 [[mgr.prepend_keymap]]
@@ -632,6 +632,11 @@ on = ["`"]
 desc = "Command palette (fzf)"
 run = "plugin command-palette"
 
+# fuzzy find and grep in yazi using ripgrep and fzf. this plugin provides an interactive search interface that allows you to search file contents and open results directly in your configured editor.
+# https://github.com/XYenon/yafg.yazi
+[[mgr.prepend_keymap]]
+on   = [ "<C-f>" ]
+run = "plugin yafg"
 # cow copy paste -  https://github.com/Ape/reflink.yazi
 # [[mgr.prepend_keymap]]
 # on = [ "c", "r" ]

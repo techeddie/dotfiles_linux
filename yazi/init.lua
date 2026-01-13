@@ -19,6 +19,15 @@ require("fg"):setup({
 -- git plugin
 require("git"):setup()
 
+
+-- fuzzy find and grep in yazi using ripgrep and fzf. this plugin provides an interactive search interface that allows you to search file contents and open results directly in your configured editor.
+-- https://github.com/XYenon/yafg.yazi
+require("yafg"):setup({
+  editor = "nvim",                    -- Editor command (default: "hx")
+  args = {},            -- Additional editor arguments (default: {})
+  file_arg_format = "+{row} {file}",  -- File argument format (default: "{file}:{row}:{col}")
+})
+
 Status:children_add(function(self)
 	local h = self._current.hovered
 	if h and h.link_to then
@@ -41,7 +50,6 @@ function Status:name()
  	end
  	return ui.Line(" " .. h.name .. linked)
 end
-
 
 
 -- https://yazi-rs.github.io/docs/configuration/yazi/#manager.linemode
