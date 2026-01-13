@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
+#fuzzy directory find
 
-fd . --type d --hidden --exclude .git "$@" |fzf \
+# fd . --type d --hidden --exclude .git "$@" |fzf \
+fd . --type d --exclude .git "$@" |fzf \
 --info=inline \
 --multi \
 --layout=reverse \

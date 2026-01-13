@@ -96,7 +96,7 @@ keymap = [
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "<tab>",     run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
-	{ on = "F",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	# { on = "F",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
@@ -625,10 +625,19 @@ run = "plugin yafg"
 # directory finder using fd + fzf
 # https://github.com/Shallow-Seek/fazif.yazi
 [[mgr.prepend_keymap]]
-on = [ "/" ]
-run = "plugin fazif faziffd"
+on = [ "F" ]
+run = "plugin fazif fazifile"
 desc = "Find files/directories with fd and fzf"
 
+[[mgr.prepend_keymap]]
+on = [ "/" ]
+run = "plugin fazif fazidir"
+desc = "Find files/directories with fd and fzf"
+
+[[mgr.prepend_keymap]]
+on = [ ";" ]
+run = "plugin fazif fazidir"
+desc = "Find files/directories with fd and fzf"
 
 # projects
 # https://github.com/MasouShizuka/projects.yazi
