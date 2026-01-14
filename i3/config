@@ -400,8 +400,9 @@
     floating_modifier $mod
     bindsym $mod+t floating toggle; 
 
+    for_window [class="arandr"] floating enable, move position center
     for_window [class="Baobab"] floating enable, move position center
-    for_window [class= "Seafile Client"] floating enable, move position center
+    for_window [class="Seafile Client"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Guake"] floating enable, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
