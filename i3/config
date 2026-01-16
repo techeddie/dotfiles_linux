@@ -134,8 +134,8 @@
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
     bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
-    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
+    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
@@ -155,10 +155,10 @@
     bindsym $mod+Shift+n            exec --no-startup-id alacritty -e nvim
     bindsym $mod+Shift+p            exec alacritty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsym $mod+Shift+v            exec i3-msg -q '[class=vlc] focus' 2>/dev/null || vlc
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
     bindsym $mod+Tab                exec $i3t_alt_tab
-    bindsym $mod+Shift+v            exec i3-msg -q '[class=vlc] focus' 2>/dev/null || vlc
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
     bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
