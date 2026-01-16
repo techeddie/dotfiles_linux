@@ -174,7 +174,7 @@
     bindsym $modt+$alt+Ctrl+f       exec fsearch
     bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
+    bindsym control+Shift+Escape    exec --no-startup-id gnome-system-monitor
 
     #rofi  
         #running windows
@@ -368,6 +368,7 @@
     for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
+    for_window [class="gnome-system-monitor"] floating enable
     for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
     for_window [class="TelegramDesktop"] border none
