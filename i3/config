@@ -158,6 +158,7 @@
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
     bindsym $mod+Tab                exec $i3t_alt_tab
+    bindsym $mod+Shift+v            exec i3-msg -q '[class=vlc] focus' 2>/dev/null || vlc
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
     bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
