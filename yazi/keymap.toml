@@ -570,46 +570,52 @@ on = [ "B" ]
 run = "plugin bookmarks jump"
 desc = "Jump to a bookmark"
 
-# [[mgr.prepend_keymap]]
-# on = [ "b", "d" ]
-# run = "plugin bookmarks delete"
-# desc = "Delete a bookmark"
-#
-# [[mgr.prepend_keymap]]
-# on = [ "b", "D" ]
-# run = "plugin bookmarks delete_all"
-# desc = "Delete all bookmarks"
+     # [[mgr.prepend_keymap]]
+     # on = [ "b", "d" ]
+     # run = "plugin bookmarks delete"
+     # desc = "Delete a bookmark"
+     #
+     # [[mgr.prepend_keymap]]
+     # on = [ "b", "D" ]
+     # run = "plugin bookmarks delete_all"
+     # desc = "Delete all bookmarks"
 
-# yazi compress - https://github.com/KKV9/compress.yazi
+#ARCHIVE VIEWER AND COMPORESSOR (OUCH)
 [[mgr.prepend_keymap]]
-on   = [ "<F5>" ]
-run  = "plugin compress"
-desc = "Archive selected files"
+on = ["<F5>"]
+run = "plugin ouch tar.gz"
+desc = "Compress with ouch"
 
-[[mgr.prepend_keymap]]
-on   = [ "c", "a", "a" ]
-run  = "plugin compress"
-desc = "Archive selected files"
-
-[[mgr.prepend_keymap]]
-on   = [ "c", "a", "p" ]
-run  = "plugin compress -p"
-desc = "Archive selected files (password)"
-
-[[mgr.prepend_keymap]]
-on   = [ "c", "a", "h" ]
-run  = "plugin compress -ph"
-desc = "Archive selected files (password+header)"
-
-[[mgr.prepend_keymap]]
-on   = [ "c", "a", "l" ]
-run  = "plugin compress -l"
-desc = "Archive selected files (compression level)"
-
-[[mgr.prepend_keymap]]
-on   = [ "c", "a", "u" ]
-run  = "plugin compress -phl"
-desc = "Archive selected files (password+header+level)"
+     # yazi compress - https://github.com/KKV9/compress.yazi
+     # [[mgr.prepend_keymap]]
+     # on   = [ "<F5>" ]
+     # run  = "plugin compress"
+     # desc = "Archive selected files"
+     #
+     # [[mgr.prepend_keymap]]
+     # on   = [ "c", "a", "a" ]
+     # run  = "plugin compress"
+     # desc = "Archive selected files"
+     #
+     # [[mgr.prepend_keymap]]
+     # on   = [ "c", "a", "p" ]
+     # run  = "plugin compress -p"
+     # desc = "Archive selected files (password)"
+     #
+     # [[mgr.prepend_keymap]]
+     # on   = [ "c", "a", "h" ]
+     # run  = "plugin compress -ph"
+     # desc = "Archive selected files (password+header)"
+     #
+     # [[mgr.prepend_keymap]]
+     # on   = [ "c", "a", "l" ]
+     # run  = "plugin compress -l"
+     # desc = "Archive selected files (compression level)"
+     #
+     # [[mgr.prepend_keymap]]
+     # on   = [ "c", "a", "u" ]
+     # run  = "plugin compress -phl"
+     # desc = "Archive selected files (password+header+level)"
 
 # a command palette plugin that allows you to search and execute yazi commands from your keymap configuration.
 # https://github.com/Mr-Ples/command-palette.yazi?tab=readme-ov-file

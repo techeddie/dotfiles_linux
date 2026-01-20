@@ -73,6 +73,11 @@ use = "MasouShizuka/projects"
 rev = "eed0657"
 hash = "ca79de2b3bb2247906e01b2261e5d2bb"
 
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "594b8a2"
+hash = "c9e628fc0312d198db22ae2fa74883b"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "4a1802a"
