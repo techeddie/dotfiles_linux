@@ -39,11 +39,6 @@ rev = "9ef1254"
 hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
 [[plugin.deps]]
-use = "KKV9/archive"
-rev = "c9c16d8"
-hash = "a68bde26a61da040131aa95069f638c2"
-
-[[plugin.deps]]
 use = "GrzegorzKozub/mdcat"
 rev = "7b7380a"
 hash = "40c20e6c1085d1f45309b9f148bf4f6e"
