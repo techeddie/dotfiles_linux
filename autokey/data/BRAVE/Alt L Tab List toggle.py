@@ -6,4 +6,4 @@ if "com.mitchellh.ghostty" in winClass:
      import subprocess
      subprocess.run(["tmux", "selectp -D"])
 else:
-    keyboard.send_keys("<alt>+Down")
+    keyboard.send_keys("<alt>+l")

@@ -1,9 +1,11 @@
 {
     "type": "script",
-    "description": "Alt Down tab list toggle",
+    "description": "Alt L Tab List toggle",
     "store": {},
-    "modes": [],
-    "usageCount": 91,
+    "modes": [
+        3
+    ],
+    "usageCount": 97,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -16,8 +18,10 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<alt>"
+        ],
+        "hotKey": "l"
     },
     "filter": {
         "regex": "",
