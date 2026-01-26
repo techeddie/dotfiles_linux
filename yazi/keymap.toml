@@ -626,6 +626,11 @@ on = ["`"]
 desc = "Command palette (fzf)"
 run = "plugin command-palette"
 
+[[mgr.prepend_keymap]]
+on = ["s","k"]
+desc = "Command palette (fzf)"
+run = "plugin command-palette"
+
 # fuzzy find and grep in yazi using ripgrep and fzf. this plugin provides an interactive search interface that allows you to search file contents and open results directly in your configured editor.
 # https://github.com/XYenon/yafg.yazi
 [[mgr.prepend_keymap]]
