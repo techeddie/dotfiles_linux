@@ -448,6 +448,7 @@
     focus_on_window_activation focus
     # for_window [instance="alacritty"] focus
     for_window [class="Brave-browser"] focus
+    for_window [class="Gcr-prompter"] focus
     # for_window [class="firefox"] focus
     # for_window [class="floorp"] focus
     for_window [instance="xfreerdp"] focus
