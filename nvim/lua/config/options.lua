@@ -13,6 +13,7 @@ o.backup = false
 o.breakindent = true -- testing
 o.cindent = true
 o.clipboard = "unnamedplus"
+o.conceallevel = 0
 o.cmdheight = 0
 o.cursorline = true
 o.expandtab = true
