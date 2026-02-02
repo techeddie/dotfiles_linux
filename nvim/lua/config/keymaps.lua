@@ -60,9 +60,9 @@ keymap("n", "<leader>>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines"
 keymap("n", "<leader>hs", ":split <CR>") --horizontal split
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
-keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --quit current buffer
+keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --close current pane
 keymap("n", "<leader>u", "gUU") --make uppercase
-keymap("n", "<leader>vs", ":vsplit <CR>") --horizontal split
+keymap("n", "<leader>vs", ":vsplit <CR>") --vertical split
 keymap("n", "<leader>z", "za") --toggle fold
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
