@@ -377,7 +377,7 @@
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="obsidian"] border none
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="sp-term2"] border pixel, gaps outer 0, gaps inner 0
@@ -453,6 +453,10 @@
     # for_window [class="floorp"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
+
+    # FULL SCREEN
+    for_window [title="crx_nkbihfbeogaeaoehlefnkodbefgpgknn"] fullscreen enable
+    for_window [class="obsidian"] fullscreen enable
 
     #ALWAYS LAUNCH APP ON WORKSPACE X
     assign [class="firefox"] $workspace5
