@@ -105,6 +105,10 @@ keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
 keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
+
+Snacks.toggle.zoom():map("<leader>wm"):map("<leader>z")
+Snacks.toggle.zen():map("<leader>Z")
+
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()
   vim.cmd("'<,'>s/^/  /")  -- Add 2 spaces to beginning
