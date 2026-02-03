@@ -63,7 +63,7 @@ keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering
 keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --close current pane
 keymap("n", "<leader>u", "gUU") --make uppercase
 keymap("n", "<leader>vs", ":vsplit <CR>") --vertical split
-keymap("n", "<leader>z", "za") --toggle fold
+keymap("n", "<leader>tf", "za") --toggle fold
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
 keymap("n", "d", '"xd') --do not yank to clip on delete action
@@ -107,7 +107,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
 
 Snacks.toggle.zoom():map("<leader>wm"):map("<leader>z")
-Snacks.toggle.zen():map("<leader>Z")
+Snacks.toggle.zen():map("<leader>Z"):map("Z")
 
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()
