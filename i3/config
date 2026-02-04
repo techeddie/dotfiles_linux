@@ -191,7 +191,7 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP - STARTUP
 
-    # exec --no-startup-id seafile-applet
+    exec --no-startup-id seafile-applet
     exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
