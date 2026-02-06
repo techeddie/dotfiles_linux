@@ -530,17 +530,17 @@ on = [ "i" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd" 
 
-
-# https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
+# make file executable (chmod +x)
 [[mgr.prepend_keymap]]
-on   = [ "c", "m" ]
-run  = "plugin chmod"
-desc = "Chmod on selected files"
+on   = [ "c", "x" ]
+run = 'shell "chmod +x \"$@\"" --block'
+desc = "Make file executable (chmod +x)"
 
+# execute current file
 [[mgr.prepend_keymap]]
-on   = [ "c", "h" ]
-run  = "plugin chmod"
-desc = "Chmod on selected files"
+on   = [ "X" ]
+run  = """ shell 'sh "${0}" . ' --orphan """
+desc = "Execute current file"
 
 #quit yazi
 [[mgr.prepend_keymap]]
