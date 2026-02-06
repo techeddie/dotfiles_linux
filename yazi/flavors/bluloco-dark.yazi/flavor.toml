@@ -198,6 +198,9 @@ rules = [
 	# Documents
 	{ mime = "application/{pdf,doc,rtf}", fg = "#50ACAE" },
 
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#636D83" },
+
 	# Special files
 	{ url = "*", is = "orphan", fg = "#282C34", bg = "#FF2E3F" },
 	{ url = "*", is = "exec", fg = "#3FC56B" },
@@ -209,4 +212,23 @@ rules = [
 	# Fallback
 	{ url = "*", fg = "#ABB2BF" },
 	{ url = "*/", fg = "#10B1FE" },
+]
+
+[icon]
+prepend_conds = [{ if = "dir", text = "", fg = "#10B1FE" }]
+prepend_dirs = [
+	{ name = ".config", text = "", fg = "#10B1FE" },
+	{ name = ".git", text = "", fg = "#10B1FE" },
+	{ name = ".github", text = "", fg = "#10B1FE" },
+	{ name = ".npm", text = "", fg = "#10B1FE" },
+	{ name = "Desktop", text = "", fg = "#10B1FE" },
+	{ name = "Development", text = "", fg = "#10B1FE" },
+	{ name = "Documents", text = "", fg = "#10B1FE" },
+	{ name = "Downloads", text = "", fg = "#10B1FE" },
+	{ name = "Library", text = "", fg = "#10B1FE" },
+	{ name = "Movies", text = "", fg = "#10B1FE" },
+	{ name = "Music", text = "", fg = "#10B1FE" },
+	{ name = "Pictures", text = "", fg = "#10B1FE" },
+	{ name = "Public", text = "", fg = "#10B1FE" },
+	{ name = "Videos", text = "", fg = "#10B1FE" },
 ]
