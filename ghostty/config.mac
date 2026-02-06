@@ -20,8 +20,6 @@ keybind = ctrl+shift+q=close_surface
 keybind = ctrl+q=close_surface
 
 #split
-keybind = cmd+8=new_split:down
-keybind = cmd+9=new_split:right
 keybind = alt+shift+8=new_split:down
 keybind = alt+shift+9=new_split:right
 
