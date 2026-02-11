@@ -26,6 +26,11 @@ for i = 1, 6 do
 end
 
 -- KEYMAPS
+-- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
+-- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('') <CR>") --history
+-- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
+-- keymap("n", "<leader>j", "<C-w>j") --switch pane
+-- keymap("n", "<leader>k", "<C-w>k") --switch pane
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", {desc = "Search and Replace box"})
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
@@ -61,9 +66,9 @@ keymap("n", "<leader>hs", ":split <CR>") --horizontal split
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
 keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --close current pane
+keymap("n", "<leader>tf", "za") --toggle fold
 keymap("n", "<leader>u", "gUU") --make uppercase
 keymap("n", "<leader>vs", ":vsplit <CR>") --vertical split
-keymap("n", "<leader>tf", "za") --toggle fold
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
 keymap("n", "d", '"xd') --do not yank to clip on delete action
@@ -72,11 +77,7 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) --
 keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("n", "p", ':pu<CR>') --paste below current line
 keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
--- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('') <CR>") --history
--- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
--- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
--- keymap("n", "<leader>j", "<C-w>j") --switch pane
--- keymap("n", "<leader>k", "<C-w>k") --switch pane
+keymap('n', '<leader>ds', [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]], { desc = "squeeze multiple blank lines into one" })
 
 -- keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
 -- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
