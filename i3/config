@@ -40,10 +40,13 @@
     workspace 1 output $secondMonitor
     workspace 2 output $secondMonitor
     workspace 3 output $secondMonitor
-    workspace 4 output $firstMonitor
-    workspace 5 output $firstMonitor
+    workspace 4 output $secondMonitor
+    workspace 4 output $secondMonitor
+    # workspace 5 output $firstMonitor
+    # workspace 5 output $firstMonitor
     workspace 6 output $secondMonitor
-    workspace 7 output $secondMonitor
+    # workspace 7 output $secondMonitor
+    workspace 7 output $firstMonitor
     workspace 8 output $secondMonitor
     workspace 9 output $secondMonitor
     workspace 10 output $secondMonitor    
@@ -60,7 +63,6 @@
     bindsym $mod+Shift+Home   workspace prev
     bindsym $mod+Shift+j      workspace prev
     bindsym $mod+Shift+k      workspace next
-    bindsym $mod+i            workspace back_and_forth
 
     #switch to workspace
     bindsym $mod+0              workspace $workspace10
@@ -123,6 +125,7 @@
 
     #toggle gnome-disks with mod+shift+g
     bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
+    # bindsym $mod+g [class="sublime_text"] scratchpad show, move position center
 
 #-------------------------------------------------
 #KEY BINDINGS TO LAUNCH APPLICATIONS
@@ -132,9 +135,9 @@
     bindsym $mod+$alt+ctrl+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
-    bindsym $mod+F10                exec sh ~/opt/rdp/HZ-DC01
-    bindsym $mod+F11                exec sh ~/opt/rdp/HZ-EX01.sh
-    bindsym $mod+F12                exec sh ~/opt/rdp/HZ-APP01.sh
+    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
+    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX01.sh
+    bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
@@ -202,6 +205,7 @@
     exec --no-startup-id copyq
     exec --no-startup-id flameshot
     exec --no-startup-id gnome-disks
+    exec --no-startup-id sublime_text
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
     exec --no-startup-id nextcloud
@@ -285,7 +289,6 @@
 
     #suspend
     bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i $lockscreen  && systemctl suspend
-      # bindsym $mod+Shift+s  exec betterlockscreen --lock blue -r ~/Nextcloud/MEDIA/PICTURES/WALLPAPER/arch-linux-1655407955286-2321.jpg && systemctl suspend
 
     #logoff shutdown reboot menu
     bindsym $mod+x  exec --no-startup-id archlinux-logout
@@ -367,6 +370,7 @@
     for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
+    for_window [class="sublime_text"] floating enable, resize set 1200 900 move position center 
     for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
     for_window [class="Seafile Client"] layout split
