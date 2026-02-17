@@ -104,9 +104,9 @@
 
     #keybindings toggle gaps - todo
     bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
-    bindsym $mod+F2 gaps inner current set 20; gaps outer current set 1
-    bindsym $mod+F3 gaps inner current set 35; gaps outer current set 1
-    bindsym $mod+F4 gaps inner current set 60; gaps outer current set 30
+    bindsym $mod+F2 gaps inner current set 35; gaps outer current set 10
+    bindsym $mod+F3 gaps inner current set 65; gaps outer current set 10
+    bindsym $mod+F4 gaps inner current set 100; gaps outer current set 10
 
     #scratchpad
     #move current window to background
@@ -364,13 +364,13 @@
 
     ################# FOR_WINDOW  
 
+    # for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
     for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
-    for_window [class="sublime_text"] floating enable, resize set 1200 900 move position center 
     for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
     for_window [class="Seafile Client"] layout split
@@ -386,10 +386,11 @@
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="sp-term2"] border pixel, gaps outer 0, gaps inner 0
-    # for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
+    for_window [class="sublime_text"] floating enable, resize set 1200 900 move position center 
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [class="urxvt"] scratchpad show, move position center
+    for_window [class="virt-manager"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="sp-term2"] move scratchpad
     for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
