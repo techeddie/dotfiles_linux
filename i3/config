@@ -135,6 +135,7 @@
     bindsym $mod+$alt+ctrl+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
+    bindsym $mod+$alt+ctrl+m        exec i3-msg -q '[instance=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
     bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
@@ -397,8 +398,7 @@
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
     for_window [title="ekah"] move scratchpad;
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
-    for_window [window_role="GtkFileChooserDialog"] move position center
-    for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+    for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
     # FLOATING
     floating_modifier $mod
