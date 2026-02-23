@@ -150,7 +150,7 @@ vim.keymap.set("v", "<leader>t<", function()
 end, { desc = "Unindent selected lines (remove tab)" })
 
 
--- toggle lline wrapping
+-- toggle line wrapping
 vim.keymap.set("n", "<leader>ww",
   function ()
     if vim.wo.wrap then
@@ -162,3 +162,17 @@ vim.keymap.set("n", "<leader>ww",
     end
   end,
   {desc = "Toggle line wrapping"})
+
+-- execute script
+vim.keymap.set("n", "<F5>", function()
+  local file = vim.fn.expand("%:p")
+  local ft = vim.bo.filetype
+  local runners = {
+    sh = "bash",
+    bash = "bash",
+    python = "python3",
+    javascript = "node",
+  }
+  local runner = runners[ft] or "bash"
+  vim.cmd("split | terminal " .. runner .. " " .. file)
+end, { desc = "Run current file" })
