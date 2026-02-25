@@ -386,7 +386,8 @@
     for_window [class="urxvt"] scratchpad show, move position center
     for_window [class="virt-manager"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
-    for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
+    # for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
+    for_window [instance="xfreerdp"] border normal, gaps inner current set 65, gaps outer current set 10
     for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
@@ -454,7 +455,6 @@
     for_window [class="Brave-browser"] focus
     for_window [class="Sublime_text"] focus
     for_window [class="Doublecmd"] focus
-    for_window [class=""] focus
     for_window [class="Gcr-prompter"] focus
     for_window [class="floorp"] focus
     for_window [instance="xfreerdp"] focus
