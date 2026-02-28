@@ -37,6 +37,8 @@
 
 #workspace
     workspace_layout default
+
+    #define monitor output
     workspace 1 output $secondMonitor
     workspace 2 output $secondMonitor
     workspace 3 output $secondMonitor
@@ -93,14 +95,14 @@
 #-------------------------------------------------
 #gaps
     #default gap size
-    # gaps inner 10
-    # gaps inner 20
     gaps inner 3
-    # gaps outer 5
     gaps outer 0
-    # gaps outer 30
-    # smart_gaps on
+    #gaps inner 10
+    #gaps inner 20
+    #gaps outer 30
+    #gaps outer 5
     #smart_borders on
+    #smart_gaps on
 
     #keybindings toggle gaps - todo
     bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
@@ -108,7 +110,7 @@
     bindsym $mod+F3 gaps inner current set 65; gaps outer current set 10
     bindsym $mod+F4 gaps inner current set 100; gaps outer current set 10
 
-    #SCRATCHPAD
+    #scratchpad
     #move current window to background
       bindsym $mod+z move scratchpad
       bindsym $mod+y move scratchpad
@@ -173,26 +175,26 @@
 
 
     #screenshots
-        # bindsym Print            exec --no-startup-id flameshot gui -p ~/Pictures/ 
-        #ganzer bildschirm → datei
-        bindsym $mod+Print              exec --no-startup-id bash -c 'maim ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
-        #fenster/bereich auswählen → datei
-        bindsym Print                   exec --no-startup-id bash -c 'maim -s ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
-        #ganzer bildschirm → clipboard
-        bindsym $mod+Shift+Print        exec --no-startup-id bash -c 'maim | xclip -selection clipboard -t image/png'
-        #fenster/bereich auswählen → clipboard
-        bindsym Shift+Print             exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
-        #bindsym shift+print exec --no-startup-id bash -c 'sleep 0.2 && maim -s | xclip -selection clipboard -t image/png'
+    # bindsym Print            exec --no-startup-id flameshot gui -p ~/Pictures/ 
+    #ganzer bildschirm → datei
+      bindsym $mod+Print              exec --no-startup-id bash -c 'maim ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+    #fenster/bereich auswählen → datei
+      bindsym Print                   exec --no-startup-id bash -c 'maim -s ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+    #ganzer bildschirm → clipboard
+      bindsym $mod+Shift+Print        exec --no-startup-id bash -c 'maim | xclip -selection clipboard -t image/png'
+    #fenster/bereich auswählen → clipboard
+      bindsym Shift+Print             exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
+    #bindsym shift+print exec --no-startup-id bash -c 'sleep 0.2 && maim -s | xclip -selection clipboard -t image/png'
 
     #rofi  
-        #running windows
+      #running windows
         bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue 
-            # bindsym $mod+w              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
-            # bindsym $alt+Tab            exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
-        #app launcher
-            # bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+        #bindsym $mod+w              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+        #bindsym $alt+Tab            exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+      #app launcher
         bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme glue_pro_blue 
         bindsym $mod+Shift+m        exec --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
+        #bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
 
     #dmenu
         # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
@@ -486,20 +488,20 @@
 
 #------------------------------------------------- 
 # window color settings
-  ##window colors blue version
-  #class                 border  backgr. text    indicator
-  client.focused          #6790EB #6790EB #e5e5e5 #6790EB
-  client.unfocused        #222222 #222222 #aaaaaa #222222
-  client.focused_inactive #222222 #222222 #a9a9a9 #222222
-  client.placeholder      #222222 #222222 #aaaaaa #222222
-  client.urgent           #d42121 #d42121 #f7f7f7 #d42121
-  client.background       #242424
-
-  ##window colors red version
-  #client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
-  #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-  #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-  #client.urgent           #2f343a #900000 #ffffff #900000   #900000
-  #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-  #client.background       #ffffff
+    ##window colors blue version
+    #class                 border  backgr. text    indicator
+    client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+    client.unfocused        #222222 #222222 #aaaaaa #222222
+    client.focused_inactive #222222 #222222 #a9a9a9 #222222
+    client.placeholder      #222222 #222222 #aaaaaa #222222
+    client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+    client.background       #242424
+    
+      ##window colors red version
+      #client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
+      #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+      #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+      #client.urgent           #2f343a #900000 #ffffff #900000   #900000
+      #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+      #client.background       #ffffff
 #------------------------------------------------- 
