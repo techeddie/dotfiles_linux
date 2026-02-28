@@ -33,7 +33,7 @@
     set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
 
 #lockscreen
-    set $lockscreen ~/.locksreen.jpg
+    set $lockscreen ~/.lockscreen.jpg
 
 #workspace
     workspace_layout default
@@ -140,11 +140,9 @@
     bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
     bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
-    bindsym $mod+Print              exec --no-startup-id flameshot gui -p ~/Bilder
     bindsym $mod+Return             exec $term;focus
     bindsym $mod+Shift+F12          exec alacritty --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/backup.home.sh
     bindsym $mod+Shift+F11          exec alacritty --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/backup.root.sh
-    bindsym $mod+Shift+Print        exec --no-startup-id flameshot full -p ~/Bilder
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+b            exec --no-startup-id blueman-manager
@@ -162,7 +160,6 @@
     bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
     bindsym $mod+e                  exec --no-startup-id thunar
-    # bindsym $mod+g                  exec i3-msg -q '[class=sublime_text] focus' 2>/dev/null || subl
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
@@ -171,9 +168,21 @@
     bindsym $mod+shift+i            exec sh $HOME/gitREPO/dotfiles_linux/i3/scripts/xprop.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym $modt+$alt+Ctrl+f       exec fsearch
-    bindsym Print                   exec --no-startup-id flameshot gui 
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec --no-startup-id gnome-system-monitor
+
+
+    #screenshots
+        # bindsym Print            exec --no-startup-id flameshot gui -p ~/Pictures/ 
+        #ganzer bildschirm → datei
+        bindsym $mod+Print              exec --no-startup-id bash -c 'maim ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+        #fenster/bereich auswählen → datei
+        bindsym Print                   exec --no-startup-id bash -c 'maim -s ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+        #ganzer bildschirm → clipboard
+        bindsym $mod+Shift+Print        exec --no-startup-id bash -c 'maim | xclip -selection clipboard -t image/png'
+        #fenster/bereich auswählen → clipboard
+        bindsym Shift+Print             exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
+        #bindsym shift+print exec --no-startup-id bash -c 'sleep 0.2 && maim -s | xclip -selection clipboard -t image/png'
 
     #rofi  
         #running windows
@@ -384,7 +393,7 @@
     for_window [class="sp-term2"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [class="urxvt"] scratchpad show, move position center
-    for_window [class="virt-manager"] border normal, gaps inner current set 35, gaps outer current set 1
+    for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
     # for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="xfreerdp"] border normal, gaps inner current set 65, gaps outer current set 10
