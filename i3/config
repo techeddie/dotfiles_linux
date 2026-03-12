@@ -118,6 +118,7 @@
       bindsym $mod+u     scratchpad show; move position center
     #toggle keepassxc
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
+      bindsym $mod+a [title="ekah"] scratchpad show, move position center
     #toggle alacritty 
       bindsym F12 [instance="sp-term2"] scratchpad show
     #toggle gnome-disks
@@ -202,7 +203,7 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP - STARTUP
 
-    exec --no-startup-id seafile-applet
+
     exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id /usr/bin/octopi-notifier
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
@@ -213,22 +214,23 @@
     exec --no-startup-id copyq
     exec --no-startup-id flameshot
     exec --no-startup-id gnome-disks
-    exec --no-startup-id subl
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
+    exec --no-startup-id seafile-applet
     exec --no-startup-id sh -c 'ghostty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
     exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
+    exec --no-startup-id subl
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
+    exec xfconf-query -c xfce4-notifyd -p /expire-timeout -s 5
     exec_always --no-startup-id /usr/bin/autokey-gtk &
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
-
 #-------------------------------------------------
 # windows settings and behaviour
 
