@@ -696,4 +696,4 @@ desc = "Merge current project to other projects"
 [[mgr.prepend_keymap]]
 on   = ["N"]
 run  = "shell 'ncdu $PWD' --block --confirm"
-desc = "show size of current highlight"
+desc = "show size of current folder"
