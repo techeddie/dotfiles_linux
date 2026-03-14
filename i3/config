@@ -382,7 +382,8 @@
 
     # scratchpad move
     for_window [class="Alacritty" instance="sp-term2"] move scratchpad
-    for_window [class="Sublime_text"] floating enable, resize set 1400 900, move scratchpad, move po center
+    # for_window [class="Sublime_text"] floating enable, resize set 1400 900, move scratchpad, move po center
+    for_window [title="UNREGISTERED"] floating enable, resize set 1400 900, move scratchpad, move po center
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [instance="sp-term2"] move scratchpad
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
