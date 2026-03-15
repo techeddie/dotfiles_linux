@@ -203,15 +203,14 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP - STARTUP
 
-
-    exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id /usr/bin/octopi-notifier
+    # exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
     exec --no-startup-id alacritty --class sp-term2
     exec --no-startup-id blueman-applet
     exec --no-startup-id brave 
     exec --no-startup-id copyq
+    exec --no-startup-id dunst
     exec --no-startup-id flameshot
     exec --no-startup-id gnome-disks
     exec --no-startup-id guake 
@@ -226,7 +225,6 @@
     exec --no-startup-id subl
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
-    exec xfconf-query -c xfce4-notifyd -p /expire-timeout -s 5
     exec_always --no-startup-id /usr/bin/autokey-gtk &
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
