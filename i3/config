@@ -161,7 +161,7 @@
     bindsym $mod+Tab                exec $i3t_alt_tab
     bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
     bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/doublecmd/doublecmd-gtk-latest-x86_64.AppImage 
+    bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
