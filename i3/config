@@ -178,15 +178,10 @@
 
     #screenshots
     # bindsym Print            exec --no-startup-id flameshot gui -p ~/Pictures/ 
-    #ganzer bildschirm → datei
-      bindsym $mod+Print              exec --no-startup-id bash -c 'maim ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
-    #fenster/bereich auswählen → datei
-      bindsym Print                   exec --no-startup-id bash -c 'maim -s ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
-    #ganzer bildschirm → clipboard
-      bindsym $mod+Shift+Print        exec --no-startup-id bash -c 'maim | xclip -selection clipboard -t image/png'
-    #fenster/bereich auswählen → clipboard
-      bindsym Shift+Print             exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
-    #bindsym shift+print exec --no-startup-id bash -c 'sleep 0.2 && maim -s | xclip -selection clipboard -t image/png'
+    # auswahl → datei + clipboard
+    bindsym Print exec --no-startup-id bash -c 'maim -s | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
+    # ganzer bildschirm → datei + clipboard
+    bindsym $mod+Shift+Print exec --no-startup-id bash -c 'maim | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
 
     #rofi  
       #running windows
