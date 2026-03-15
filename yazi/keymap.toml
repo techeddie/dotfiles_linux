@@ -156,7 +156,7 @@ keymap = [
 	{ on = [ "g", "o" ],       run = "cd ~/opt",   desc = "Goto opt" },
 	{ on = [ "g", "p" ],       run = "cd ~/.config/polybar/",   desc = "Goto ~/.config/polybar" },
 	{ on = [ "g", "s" ],       run = "cd ~/scripts",   desc = "Goto scripts" },
-	{ on = [ "g", "t" ],       run = "cd ~/Nextcloud/MEDIA/OBSIDIAN/obsidian_sync/",   desc = "Goto obsidian_sync" },
+	{ on = [ "g", "t" ],       run = "cd ~/opt/OBSIDIAN_FS01/",   desc = "Goto obsidian_sync" },
 	{ on = [ "g", "0" ],       run = "cd ~/.local/share/Trash",   desc = "Goto Trash" },
 	{ on = [ "g", "y" ],       run = "cd ~/.config/yazi/",   desc = "Goto ~/.config/yazi/" },
   { on = [ "g", "a" ],       run = "cd ~/.config/aerospace/",     desc = "Goto aerospace" },
