@@ -177,9 +177,10 @@
 
 
     #screenshots
-    # bindsym Print            exec --no-startup-id flameshot gui -p ~/Pictures/ 
+    # auswahl → clipboard
+    bindsym Print exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
     # auswahl → datei + clipboard
-    bindsym Print exec --no-startup-id bash -c 'maim -s | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
+    bindsym $mod+Print exec --no-startup-id bash -c 'maim -s | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
     # ganzer bildschirm → datei + clipboard
     bindsym $mod+Shift+Print exec --no-startup-id bash -c 'maim | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
 
