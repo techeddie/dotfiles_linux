@@ -173,7 +173,8 @@
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym $modt+$alt+Ctrl+f       exec fsearch
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    bindsym control+Shift+Escape    exec --no-startup-id gnome-system-monitor
+    # bindsym control+Shift+Escape    exec --no-startup-id gnome-system-monitor
+    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
 
 
     #screenshots
