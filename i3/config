@@ -267,7 +267,7 @@
 
     #lock screen after x minutes
     exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur" \
-      -notify 30 -notifier "notify-send -t 75000 --icon=dialog-information -- 'locking screen in 30 seconds'"
+      -notify 30 -notifier "notify-send -t 15000 --icon=dialog-information -- 'locking screen in 30 seconds'"
 
     #suspend
     bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i $lockscreen  && systemctl suspend
