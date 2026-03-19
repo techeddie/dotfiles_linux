@@ -1,35 +1,58 @@
 gui:
   # stuff relating to the UI
   screenMode: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
+  commitHashLength: 0
   scrollHeight: 2 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
   sidePanelWidth: 0.3333 # number from 0 to 1
+  # sidePanelWidth: 0.5 # number from 0 to 1
   expandFocusedSidePanel: false
   mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
   language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
   timeFormat: '02 Jan 06 15:04 MST' # https://pkg.go.dev/time#Time.Format
+  # gruvbox theme
   theme:
-    activeBorderColor:
-      - red
-      - bold
-    inactiveBorderColor:
-      - green
-    optionsTextColor:
-      - blue
-    selectedLineBgColor:
-      - blue # set to `default` to have no background colour
-    selectedRangeBgColor:
-      - blue
-    cherryPickedCommitBgColor:
-      - cyan
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
-    defaultFgColor:
-      - default
-  commitLength:
-    show: true
+      activeBorderColor:
+        - "#d79921"
+        - bold
+      inactiveBorderColor:
+        - "#504945"
+      optionsTextColor:
+        - "#83a598"
+      selectedLineBgColor:
+        - "#3c3836"
+      selectedRangeBgColor:
+        - "#3c3836"
+      cherryPickedCommitBgColor:
+        - "#689d6a"
+      cherryPickedCommitFgColor:
+        - "#282828"
+      unstagedChangesColor:
+        - "#fb4934"
+      defaultFgColor:
+        - "#ebdbb2"
+  # theme:
+  #   activeBorderColor:
+  #     - red
+  #     - bold
+  #   inactiveBorderColor:
+  #     - green
+  #   optionsTextColor:
+  #     - blue
+  #   selectedLineBgColor:
+  #     - blue # set to `default` to have no background colour
+  #   selectedRangeBgColor:
+  #     - blue
+  #   cherryPickedCommitBgColor:
+  #     - cyan
+  #   cherryPickedCommitFgColor:
+  #     - blue
+  #   unstagedChangesColor:
+  #     - red
+  #   defaultFgColor:
+  #     - default
+  # commitLength:
+  #   show: true
   mouseEvents: true
   skipDiscardChangeWarning: false
   skipStashWarning: false
@@ -88,7 +111,8 @@ confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: false
 disableStartupPopups: false
-notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip' | 'quit'
+# notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip' | 'quit'
+notARepository: 'skip' # one of: 'prompt' | 'create' | 'skip' | 'quit'
 promptToReturnFromSubprocess: true # display confirmation when subprocess terminates
 keybinding:
   universal:
