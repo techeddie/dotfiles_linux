@@ -367,8 +367,8 @@
     for_window [class="obsidian"] border none
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
-    # for_window [class="sp-term2"] floating enable, focus, move position center
-    for_window [class="sp-term2"] floating enable, focus, move absolute position center
+    for_window [class="sp-term2"] floating enable, focus, move position center
+    # for_window [class="sp-term2"] floating enable, focus, move absolute position center
 
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [class="urxvt"] scratchpad show, move position center
@@ -419,7 +419,7 @@
     for_window [instance="Autokey-gtk"] floating enable, resize set 1400 900, move position center
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [instance="blueman-manager"] floating enable,  resize set 900 600, move position center
-    for_window [instance="keepassxc"] floating enable,  resize set 900 600, move position center
+    for_window [title="KeePassXC"] floating enable,  resize set 900 600, move position center
   # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position center 900 px
     for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
