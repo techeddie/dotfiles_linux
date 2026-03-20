@@ -39,7 +39,6 @@ keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertic
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
 keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
 keymap("n", "<C-r>", ":source % <CR>") --source current buffer
-keymap("n", "<C-y>", ":redo <CR>") --redo change
 keymap("n", "<C-z>", ":redo <CR>") --redo change
 keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("n", "<F3>", ":e! <CR>") --reread current buffer
