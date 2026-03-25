@@ -108,8 +108,8 @@
     #keybindings toggle gaps - todo
     bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
     bindsym $mod+F2 gaps inner current set 35; gaps outer current set 10
-    bindsym $mod+F3 gaps inner current set 65; gaps outer current set 10
-    bindsym $mod+F4 gaps inner current set 100; gaps outer current set 10
+    bindsym $mod+F3 gaps inner current set 100; gaps outer current set 10
+    bindsym $mod+F4 gaps inner current set 180; gaps outer current set 10
 
     #scratchpad
     #move current window to background
@@ -153,7 +153,6 @@
     bindsym $mod+Shift+c            exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || floorp
     bindsym $mod+Shift+l            exec kitty -e lf ~/
-    # bindsym $mod+Shift+n            exec --no-startup-id kitty -e nvim
     bindsym $mod+Shift+p            exec kitty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
     bindsym $mod+Shift+v            exec i3-msg -q '[class=vlc] focus' 2>/dev/null || vlc
@@ -174,9 +173,7 @@
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym $modt+$alt+Ctrl+f       exec fsearch
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
-    # bindsym control+Shift+Escape    exec --no-startup-id gnome-system-monitor
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
-
 
     #screenshots
     # auswahl → clipboard
@@ -452,7 +449,7 @@
 
     # full screen
     for_window [title="crx_nkbihfbeogaeaoehlefnkodbefgpgknn"] fullscreen enable
-    # for_window [class="obsidian"] fullscreen enable
+    for_window [class="mpv"] fullscreen enable
 
     #always launch app on workspace x
     # assign [class="Doublecmd"] $workspace7
