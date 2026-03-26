@@ -348,7 +348,7 @@
     for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [class="Brave-browser"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="Brave-browser"] border none,  gaps inner current set 20, gaps outer current set 20
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
     for_window [class="Guake"] border pixel 1
@@ -358,7 +358,7 @@
     for_window [class="Wfica"] border normal
     for_window [class="^.*"] border pixel 3
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0, layout tabbed
-    for_window [class="floorp"] border none, gaps outer 0, gaps inner, layout tabbed0
+    for_window [class="floorp"] border none, gaps outer 20, gaps inner, layout tabbed20
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
@@ -366,20 +366,15 @@
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="sp-term2"] floating enable, focus, move position center
-    # for_window [class="sp-term2"] floating enable, focus, move absolute position center
-
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [class="urxvt"] scratchpad show, move position center
     for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
-    # for_window [instance="xfreerdp"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="xfreerdp"] border normal, gaps inner current set 65, gaps outer current set 10
     for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
     # scratchpad move
-    # for_window [class="kitty" instance="sp-term2"] move scratchpad
-    # for_window [class="Sublime_text"] floating enable, resize set 1400 900, move scratchpad, move po center
     for_window [title="UNREGISTERED"] floating enable, resize set 1400 900, move scratchpad, move po center
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [instance="sp-term2"] move scratchpad
@@ -418,7 +413,6 @@
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [instance="blueman-manager"] floating enable,  resize set 900 600, move position center
     for_window [title="KeePassXC"] floating enable,  resize set 900 600, move position center
-  # for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position center 900 px
     for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
@@ -452,7 +446,6 @@
     for_window [class="mpv"] fullscreen enable
 
     #always launch app on workspace x
-    # assign [class="Doublecmd"] $workspace7
     assign [class="Autokey-gtk"] $workspace6
     assign [class="Brave" title="Files - Nextcloud"] $workspace10
     assign [class="Brave" title="Outlook"] $workspace10
