@@ -345,9 +345,9 @@
     ################# FOR_WINDOW  
 
     # for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
-    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
+    for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [class="Brave-browser"] border none,  gaps inner current set 20, gaps outer current set 20
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
@@ -355,6 +355,7 @@
     for_window [class="Navigator"] layout tabbed
     for_window [class="Seafile Client"] layout split
     for_window [class="TelegramDesktop"] border none
+    for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [class="Wfica"] border normal
     for_window [class="^.*"] border pixel 3
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0, layout tabbed
@@ -362,16 +363,17 @@
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
+    for_window [class="kitty"] border none, gaps inner current set 35, gaps outer current set 10
     for_window [class="obsidian"] border none
+    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="sp-term2"] floating enable, focus, move position center
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [class="urxvt"] scratchpad show, move position center
-    for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [instance="Ledger live"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [instance="xfreerdp"] border normal, gaps inner current set 65, gaps outer current set 10
-    for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
     # scratchpad move
