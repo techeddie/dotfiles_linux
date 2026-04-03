@@ -15,9 +15,11 @@ return {
       { "<leader>k", "<C-w>k" }, --switch to next pane
       { "<leader>l", "<C-w>l" }, --switch to next pane
 			{ "<leader><space>", "za" }, --fold under cursor
-			{ "<leader>hs", ":split <CR>" }, --horizontal split
-			{ "<leader>vs", ":vsplit <CR>" }, --vertial split
+			{ "<leader>hs", ":split<CR>" }, --horizontal split
+			{ "<leader>tn", ":tabnew<CR>" }, --create new tab
+			{ "<leader>vs", ":vsplit<CR>" }, --vertial split
 			{ "<leader>nn", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
+			{ "<leader>nl", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
       { "<C-g>", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" }}, --lazygit
       { "<C-f>", function() Snacks.picker.lines() end, { desc = "Buffer lines" }}, --find text in current file via bufferline
 		}
