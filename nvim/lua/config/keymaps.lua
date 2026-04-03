@@ -39,7 +39,6 @@ keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertic
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
 keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
 keymap("n", "<C-r>", ":source % <CR>") --source current buffer
-keymap("n", "<C-z>", ":redo <CR>") --redo change
 keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
 keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
@@ -49,7 +48,6 @@ keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
 keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
-keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
 keymap("n", "<S-Left>", ":bnext<CR>", opts)
 keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<S-Right>", ":bnext<CR>", opts)
@@ -61,13 +59,11 @@ keymap("n", "<c-q>", ":bd <CR>") --buffer delete
 keymap("n", "<c-q>", "<C-w>q<CR>", opts)
 keymap("n", "<leader>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
 keymap("n", "<leader>>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
-keymap("n", "<leader>hs", ":split <CR>") --horizontal split
 keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
 keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
 keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --close current pane
 keymap("n", "<leader>tf", "za") --toggle fold
-keymap("n", "<leader>u", "gUU") --make uppercase
-keymap("n", "<leader>vs", ":vsplit <CR>") --vertical split
+keymap("n", "<leader>r", ":redo <CR>") --redo change
 keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
 keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
 keymap("n", "d", '"xd') --do not yank to clip on delete action
