@@ -33,6 +33,9 @@
     set $i3t_alt_tab        $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py n all
     set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
 
+    #include
+    include ~/.config/i3/dropdown.conf
+
 #lockscreen
     set $lockscreen ~/.lockscreen.jpg
 
@@ -121,22 +124,27 @@
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
       bindsym $mod+a [title="ekah"] scratchpad show, move position center
     #toggle kitty 
-      bindsym F12 [instance="sp-term2"] scratchpad show
+      # bindsym F12 [instance="sp-term2"] scratchpad show
+      # for_window [class="dropdown"] floating enable, move scratchpad, scratchpad show
+      for_window [class="dropdown"] floating enable, resize set 80 ppt 40 ppt, move position center, move scratchpad, scratchpad show
+      bindsym F12 [class="dropdown"] scratchpad show
     #toggle gnome-disks
       bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
     #toggle sublime_text
       bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
+      bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
 
 #-------------------------------------------------
 #key bindings to launch applications
 
+    # bindsym F12                     exec tdrop -a -w 100% -h 40% -y 0 kitty
     bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
     bindsym $mod+$alt+c             exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
     bindsym $mod+$alt+ctrl+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
     bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
     bindsym $mod+$alt+ctrl+m        exec i3-msg -q '[instance=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
-    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
+    bindsym $mod+F10                exec sh ~/config/rdp/FUJI.sh
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
     bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
@@ -164,8 +172,7 @@
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
-    bindsym $mod+Delete             exec copyq show
-    bindsym $mod+l                  exec betterlockscreen --lock blur
+    bindsym $mod+l                  exec betterlockscreen --lock blur --span
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec polybar-msg cmd toggle
@@ -199,10 +206,8 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP - STARTUP
 
-    # exec --no-startup-id "setxkbmap 'de(us)'" 
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-    exec --no-startup-id kitty --class sp-term2
     exec --no-startup-id blueman-applet
     exec --no-startup-id brave 
     exec --no-startup-id copyq
@@ -211,13 +216,14 @@
     exec --no-startup-id gnome-disks
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
+    exec --no-startup-id kitty --class dropdown
+    # exec --no-startup-id kitty --class sp-term2
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
     exec --no-startup-id seafile-applet
     exec --no-startup-id sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
-    # exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id subl
     exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
@@ -345,6 +351,7 @@
     ################# FOR_WINDOW  
 
     # for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
+    for_window [class="^.*"] border pixel 3
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
     for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
@@ -357,15 +364,12 @@
     for_window [class="TelegramDesktop"] border none
     for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [class="Wfica"] border normal
-    for_window [class="^.*"] border pixel 3
+    for_window [class="dropdown"] border pixel
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0, layout tabbed
     for_window [class="floorp"] border none, gaps outer 20, gaps inner, layout tabbed20
-    for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="kitty"] border none, gaps inner current set 35, gaps outer current set 10
-    for_window [class="obsidian"] border none
-    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="kitty"] border pixel, gaps outer 20, gaps inner 10
     for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
