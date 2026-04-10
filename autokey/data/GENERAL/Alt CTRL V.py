@@ -12,3 +12,4 @@ for char in text:
     time.sleep(0.02)  # 20 ms between keystrokes
     
 # keyboard.send_keys("<enter>")
+
