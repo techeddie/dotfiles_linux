@@ -1,4 +1,4 @@
-import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/xterm.toml"]
+import = ["/home/eddie/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.yaml"]
 live_config_reload = true
 
 [colors]
