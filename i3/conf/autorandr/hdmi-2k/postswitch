@@ -1,0 +1,4 @@
+#!/bin/bash
+echo 'for_window [class="dropdown"] floating enable, resize set 80 ppt 40 ppt, move position center, move down 9999 px, move scratchpad, scratchpad show' \
+  > ~/.config/i3/dropdown.conf
+i3-msg reload
