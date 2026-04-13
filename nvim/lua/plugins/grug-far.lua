@@ -4,7 +4,13 @@ return {
     {
       "<leader>sr",
       function()
-        require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
+        local path = vim.fn.expand("%:p")
+        require("grug-far").open({
+          prefills = {
+            paths = path,
+            flags = "--fixed-strings",
+          },
+        })
       end,
       desc = "Find & Replace (current file)",
     },
@@ -16,5 +22,8 @@ return {
       desc = "Find & Replace (project)",
     },
   },
-  opts = {},
+  opts = {
+    rgPath = "rg",
+    extraArgs = "--smart-case",
+  },
 }
