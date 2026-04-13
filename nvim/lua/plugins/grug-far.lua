@@ -27,3 +27,4 @@ return {
     extraArgs = "--smart-case",
   },
 }
+
