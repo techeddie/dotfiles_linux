@@ -5,23 +5,43 @@ return {
 	config = function()
 		-- vim.cmd("colorscheme tokyonight")
 		vim.cmd("colorscheme tokyodark")
+
+    -- file types
+		vim.filetype.add({
+			filename = {
+				["lfrc"] = "sh",
+			},
+		})
 	end,
+  -- custom keymaps
 	keys = function()
 		return {
 			{ "<C-k>", ":qall! <CR>" }, --close nvim
 			{ "<C-k>", ":qall! <CR>" }, --close nvim
-      { "<leader>h", "<C-w>h" }, --switch to next pane
-      { "<leader>j", "<C-w>j" }, --switch to next pane
-      { "<leader>k", "<C-w>k" }, --switch to next pane
-      { "<leader>l", "<C-w>l" }, --switch to next pane
+			{ "<leader>h", "<C-w>h" }, --switch to next pane
+			{ "<leader>j", "<C-w>j" }, --switch to next pane
+			{ "<leader>k", "<C-w>k" }, --switch to next pane
+			{ "<leader>l", "<C-w>l" }, --switch to next pane
 			{ "<leader><space>", "za" }, --fold under cursor
 			{ "<leader>hs", ":split<CR>" }, --horizontal split
 			{ "<leader>tn", ":tabnew<CR>" }, --create new tab
 			{ "<leader>vs", ":vsplit<CR>" }, --vertial split
 			{ "<leader>nn", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
 			{ "<leader>nl", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
-      { "<C-g>", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" }}, --lazygit
-      { "<C-f>", function() Snacks.picker.lines() end, { desc = "Buffer lines" }}, --find text in current file via bufferline
+			{
+				"<C-g>",
+				function()
+					Snacks.lazygit({ cwd = LazyVim.root.git() })
+				end,
+				{ desc = "Lazygit (Root Dir)" },
+			}, --lazygit
+			{
+				"<C-f>",
+				function()
+					Snacks.picker.lines()
+				end,
+				{ desc = "Buffer lines" },
+			}, --find text in current file via bufferline
 		}
 	end,
 }
