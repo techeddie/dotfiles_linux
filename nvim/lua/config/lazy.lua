@@ -54,4 +54,5 @@ require("lazy").setup({
       },
     },
   },
+    { import = "lazyvim.plugins.extras.editor.aerial" },
 })

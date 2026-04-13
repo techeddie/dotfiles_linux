@@ -106,6 +106,8 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 -- Snacks.toggle.zen():map("<leader>Z"):map("Z")
 keymap("n", "<leader><space>", "za", { desc = "Toggle fold" })
 
+keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "Aerial Toggle" })
+
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()
   vim.cmd("'<,'>s/^/  /")  -- Add 2 spaces to beginning
