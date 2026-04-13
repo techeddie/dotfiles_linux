@@ -26,3 +26,4 @@ rofi.old
 tmux/.tmux/plugins
 vifm/vifminfo.json
 ~/.cache/nvim.undodir
+/nvim/lazyvim.json
