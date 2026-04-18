@@ -145,8 +145,8 @@
     bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
     bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
     bindsym $mod+Return             exec $term;focus
-    bindsym $mod+Shift+F12          exec kitty --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/backup.home.sh
-    bindsym $mod+Shift+F11          exec kitty --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/backup.root.sh
+    bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
+    bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root/backup.root.sh
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
     bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+b            exec --no-startup-id blueman-manager
