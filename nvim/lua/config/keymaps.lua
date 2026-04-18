@@ -147,20 +147,6 @@ vim.keymap.set("v", "<leader>t<", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 end, { desc = "Unindent selected lines (remove tab)" })
 
-
--- toggle line wrapping
-vim.keymap.set("n", "<leader>ww",
-  function ()
-    if vim.wo.wrap then
-      vim.wo.wrap = false
-      print("nowrap")
-    else
-      vim.wo.wrap = true
-      print("wrap")
-    end
-  end,
-  {desc = "Toggle line wrapping"})
-
 -- execute script
 vim.keymap.set("n", "<F5>", function()
   local file = vim.fn.expand("%:p")
