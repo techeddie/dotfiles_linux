@@ -7,19 +7,17 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 
 -- AUTO PWD
-vim.api.nvim_create_autocmd("VimEnter", {
+vim.api.nvim_create_autocmd("BufEnter", {
+  desc = "change cwd to current file's directory",
   callback = function()
-    -- nur wenn nvim ohne Datei geöffnet wurde
-    if vim.fn.argc() == 0 then
-      local cwd = vim.fn.getcwd()
-      vim.cmd("cd " .. cwd)
-      -- neo-tree oder snacks explorer im aktuellen Ordner öffnen
-      require("neo-tree.command").execute({ dir = cwd })
+    local file = vim.api.nvim_buf_get_name(0)
+    if file ~= "" and vim.fn.filereadable(file) == 1 then
+      vim.cmd("lcd " .. vim.fn.fnameescape(vim.fn.fnamemodify(file, ":h")))
     end
   end,
 })
 
---- Autoformat setting
+--- AUTOFORMAT SETTING
 -- local set_autoformat = function(pattern, bool_val)
 --   vim.api.nvim_create_autocmd({ "FileType" }, {
 --     pattern = pattern,
