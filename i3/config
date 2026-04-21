@@ -126,6 +126,7 @@
       bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
     #toggle sublime_text
       bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
+      bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
 
 #-------------------------------------------------
 #key bindings to launch applications
@@ -164,7 +165,6 @@
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
-    bindsym $mod+Delete             exec copyq show
     bindsym $mod+l                  exec betterlockscreen --lock blur
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
