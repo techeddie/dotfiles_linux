@@ -31,8 +31,8 @@ end
 -- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
 -- keymap("n", "<leader>j", "<C-w>j") --switch pane
 -- keymap("n", "<leader>k", "<C-w>k") --switch pane
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", {desc = "Search and Replace box"})
+keymap("i", "jk", "<ESC>", {desc = "exit insert mode"})
+keymap("i", "kj", "<ESC>", {desc = "exit insert mode"})
 keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
@@ -44,7 +44,6 @@ keymap("n", "<F3>", ":e! <CR>") --reread current buffer
 keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
 keymap("n", "<M-h>", ":split <CR>") --horizontal split
 keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
-keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
 keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
 keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
@@ -88,24 +87,29 @@ keymap('n', '<leader>ds', [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]], { desc = "squee
 -- VISUAL --
 keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
 keymap("v", "<", "<gv", { desc = "decrease indent" })
-keymap("v", "<M-r>", ":SearchBoxReplace<CR>",{desc = "Search and Replace box"})
 keymap("v", "<a-j>", ":m .+1<cr>==", { desc = "move up" })
 keymap("v", "<a-k>", ":m .-2<cr>==", { desc = "move down"})
 keymap("v", ">", ">gv", { desc = "increase indent" })
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "d", '"xd') --do not yank to clip on delete action
 keymap("v", "p", '"_dp', { desc = "pase below current line" })
-keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
 keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" })
 keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
 keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
 
+
+-- SEARCHBOX
+-- Search and replace in normal mode
+keymap("n", "<leader>r", ":SearchBoxReplace<CR>", { desc = "Search and Replace" })
+-- Search and replace in visual mode (selection only)
+keymap("x", "<leader>r", ":SearchBoxReplace visual_mode=true<CR>", { desc = "Search and Replace (selection)" })
+
+
 -- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>z")
 -- Snacks.toggle.zen():map("<leader>Z"):map("Z")
 keymap("n", "<leader><space>", "za", { desc = "Toggle fold" })
-
 keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "Aerial Toggle" })
 
 -- custom keymaps for indenting comment lines
