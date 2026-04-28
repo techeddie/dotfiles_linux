@@ -219,8 +219,8 @@
     exec --no-startup-id sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
     # exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id subl
-    exec --no-startup-id xset r rate 250 40
     exec --no-startup-id xset s off -dpms
+    exec_always --no-startup-id xset r rate 250 40
     exec_always --no-startup-id /usr/bin/autokey-gtk &
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
@@ -347,8 +347,10 @@
     # for_window [class="thunderbird"] border none, gaps outer 0, gaps inner 0
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
+    for_window [class="^.*"] border pixel 3
+
     for_window [class="Anydesk"] border normal, gaps inner current set 35, gaps outer current set 1
-    for_window [class="Brave-browser"] border none,  gaps inner current set 20, gaps outer current set 20
+    for_window [class="Brave-browser"] border pixel 3, gaps outer 50, gaps inner 50, layout tabbed
     for_window [class="Geany"] border pixel 5
     for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
     for_window [class="Guake"] border pixel 1
@@ -357,15 +359,12 @@
     for_window [class="TelegramDesktop"] border none
     for_window [class="Virt-manager"] border normal, layout tabbed, gaps inner current set 35, gaps outer current set 1
     for_window [class="Wfica"] border normal
-    for_window [class="^.*"] border pixel 3
     for_window [class="firefox"] border none, gaps outer 0, gaps inner 0, layout tabbed
-    for_window [class="floorp"] border none, gaps outer 20, gaps inner, layout tabbed20
+    for_window [class="floorp"] border none, gaps outer 20, gaps inner, layout tabbed
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="kitty"] border none, gaps inner current set 35, gaps outer current set 10
-    for_window [class="obsidian"] border none
-    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="kitty"] border pixel 1,  gaps inner current set 10, gaps outer current set 10
     for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
@@ -377,11 +376,11 @@
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
     # scratchpad move
-    for_window [title="UNREGISTERED"] floating enable, resize set 1400 900, move scratchpad, move po center
+    for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move po center
     for_window [class="urxvt"] move scratchpad; [class="urxvt"] scratchpad show; move position center; move scratchpad ; resize shrink width 10
     for_window [instance="sp-term2"] move scratchpad
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
-    for_window [title="ekah"] move scratchpad;
+    for_window [title="^(?!.*(Select|Open|Kee)).*ekah.*$"] move scratchpad
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
 
     # floating
