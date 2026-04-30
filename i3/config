@@ -175,6 +175,12 @@
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
 
+    # CPU performance profiles
+    bindsym $mod+Shift+F1 exec --no-startup-id "sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Powersave (800MHz)'"
+    bindsym $mod+Shift+F2 exec --no-startup-id "sudo auto-cpufreq --force=reset && sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Auto'"
+    bindsym $mod+Shift+F3 exec --no-startup-id "sudo cpupower frequency-set -u 2300MHz && notify-send 'CPU' 'Balanced (2300MHz)'"
+    bindsym $mod+Shift+F4 exec --no-startup-id "sudo cpupower frequency-set -u 4600MHz && notify-send 'CPU' 'Performance (4600MHz)'"
+
     #screenshots
     # auswahl → clipboard
     bindsym Print exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
@@ -364,8 +370,8 @@
     for_window [class="ghostty"] border pixel, gaps outer 0, gaps inner 0
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
     for_window [class="keepassxc"] layout tabbed, move position center
-    for_window [class="kitty"] border pixel 1,  gaps inner current set 10, gaps outer current set 10
-    for_window [class="obsidian"] border none,  gaps inner current set 0, gaps outer current set 0
+    for_window [class="kitty"] border pixel 1,  gaps inner current set 30, gaps outer current set 10
+    for_window [class="obsidian"] border none,  gaps inner current set 20, gaps outer current set 10
     for_window [class="octopi"] floating enable,  resize set 1200 900, move position center 
     for_window [class="resources"] floating enable,  resize set 1200 900, move position center 
     for_window [class="sp-term2"] floating enable, focus, move position center
