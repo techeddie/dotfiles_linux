@@ -102,9 +102,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 
 -- SEARCHBOX
 -- Search and replace in normal mode
-keymap("n", "<leader>r", ":SearchBoxReplace<CR>", { desc = "Search and Replace" })
+-- keymap("n", "<leader>r", ":SearchBoxReplace<CR>", { desc = "Search and Replace" })
 -- Search and replace in visual mode (selection only)
-keymap("x", "<leader>r", ":SearchBoxReplace visual_mode=true<CR>", { desc = "Search and Replace (selection)" })
+-- keymap("x", "<leader>r", ":SearchBoxReplace visual_mode=true<CR>", { desc = "Search and Replace (selection)" })
 
 
 -- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>z")
