@@ -2,7 +2,7 @@ return {
   "MagicDuck/grug-far.nvim",
   keys = {
     {
-      "<leader>sr",
+      "<leader>R",
       function()
         local path = vim.fn.expand("%:p")
         require("grug-far").open({
@@ -15,7 +15,7 @@ return {
       desc = "Find & Replace (current file)",
     },
     {
-      "<leader>sR",
+      "<leader>RP",
       function()
         require("grug-far").open()
       end,
@@ -25,6 +25,10 @@ return {
   opts = {
     rgPath = "rg",
     extraArgs = "--smart-case",
+    keymaps = {
+      replace = { n = "<C-r>" },
+      replace = { n = "<C-h>" },
+      -- syncAll = { n = "<C-h>" },
+    },
   },
 }
-
