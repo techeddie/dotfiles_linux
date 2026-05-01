@@ -97,6 +97,12 @@ if [[ -z $CHECKUPDATES_DB ]]; then
 	CHECKUPDATES_DB="${TMPDIR:-/tmp}/checkup-db-${USER}/"
 fi
 
+# invalidate temp db if it's older than the pacman local db
+if [[ ! -d "$CHECKUPDATES_DB" ]] || \
+   [[ "$CHECKUPDATES_DB" -ot "/var/lib/pacman/local" ]]; then
+    rm -rf "$CHECKUPDATES_DB"
+fi
+
 trap 'rm -f $CHECKUPDATES_DB/db.lck' INT TERM EXIT
 
 DBPath="$(pacman-conf DBPath)"
