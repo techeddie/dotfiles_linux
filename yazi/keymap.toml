@@ -695,16 +695,15 @@ desc = "Merge current project to other projects"
 
 [[mgr.prepend_keymap]]
 on   = ["N"]
-run  = "shell 'ncdu $PWD' --block --confirm"
-desc = "show size of current folder"
+run  = "shell 'ncdu .' --block --confirm"
+desc = "open file explorer"
 
-# open file explorer
 [[mgr.prepend_keymap]]
 on = [ "e" ]
-run  = "shell 'thunar $PWD' --block --confirm"
-desc = "show size of current folder"
+run = "shell 'thunar .' --block --confirm"
+desc = "open file explorer"
 
 [[mgr.prepend_keymap]]
 on = [ "<A-t>" ]
-run  = "shell 'thunar $PWD' --block --confirm"
-desc = "show size of current folder"
+run = "shell 'thunar .' --block --confirm"
+desc = "open file explorer"
