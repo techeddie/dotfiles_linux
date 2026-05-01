@@ -45,7 +45,7 @@ bindkey '^H' backward-kill-word
 bindkey -s '\ea' 'tmux a^M'
 bindkey -s '\eg' 'lazygit^M'
 bindkey -s '\em' 'tmux ^M'
-bindkey -s '\et' 'tmux ^M'
+bindkey -s '\et' 'thunar . ^M'
 bindkey -s '^g' 'lazygit^M'
 bindkey -s '^l' 'lf ^M'
 
