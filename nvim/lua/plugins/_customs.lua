@@ -6,14 +6,14 @@ return {
 		-- vim.cmd("colorscheme tokyonight")
 		vim.cmd("colorscheme tokyodark")
 
-    -- file types
+		-- file types
 		vim.filetype.add({
 			filename = {
 				["lfrc"] = "sh",
 			},
 		})
 	end,
-  -- custom keymaps
+	-- custom keymaps
 	keys = function()
 		return {
 			{ "<C-k>", ":qall! <CR>" }, --close nvim
@@ -35,6 +35,13 @@ return {
 				end,
 				{ desc = "Lazygit (Root Dir)" },
 			}, --lazygit
+			{
+				"<C-l>",
+				function()
+					Snacks.picker.buffers()
+				end,
+				{ desc = "Open Buffers" },
+			}, -- open buffers (overrides default go to right window)
 			{
 				"<C-f>",
 				function()

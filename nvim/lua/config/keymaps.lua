@@ -112,6 +112,11 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
 keymap("n", "<leader><space>", "za", { desc = "Toggle fold" })
 keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "Aerial Toggle" })
 
+-- open buffer picker with Ctrl+l
+vim.keymap.set("n", "<C-l>", function()
+  Snacks.picker.buffers()
+end, { desc = "Open Buffers" })
+
 -- custom keymaps for indenting comment lines
 vim.keymap.set("v", "<leader>>", function()
   vim.cmd("'<,'>s/^/  /")  -- Add 2 spaces to beginning
