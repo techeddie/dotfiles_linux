@@ -53,3 +53,7 @@ o.shell = "zsh"
 
 g.snacks_animate = false
 g.autoformat = false
+
+-- indent comments
+o.smartindent = false
+o.cindent = false
