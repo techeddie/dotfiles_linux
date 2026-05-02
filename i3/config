@@ -287,8 +287,7 @@
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
     #bindsym $mod+r restart
     # reload the configuration file
-    # bindsym $mod+Shift+r reload
-    bindsym $mod+Shift+r exec notify-send -t 2500 "i3" "config reloaded" && i3-msg reload
+    bindsym $mod+Shift+r exec notify-send -t 2500 -i "preferences-system" "i3" "config reloaded" && i3-msg reload
     bindsym $mod+r restart
 
     # orientation for new workspaces
