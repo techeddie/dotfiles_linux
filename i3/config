@@ -210,6 +210,7 @@
 #execute on logon - AUTOSTARTUP - STARTUP
 
     # exec --no-startup-id "setxkbmap 'de(us)'" 
+    exec --no-startup-id picom --daemon
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
     exec --no-startup-id kitty --class sp-term2
@@ -354,9 +355,9 @@
 
     ################# FOR_WINDOW  
 
+    for_window [class="^.*"] border pixel 3
     for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
     for_window [class=".*launcher.*"] border none
-    for_window [class="^.*"] border pixel 3
     for_window [class="Anydesk"] border normal
     for_window [class="Brave-browser"] border pixel 3, layout tabbed
     for_window [class="Geany"] border pixel 5
@@ -370,14 +371,16 @@
     for_window [class="floorp"] border none, layout tabbed
     for_window [class="ghostty"] border pixel 2
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
-    for_window [class="kitty"] border pixel 8
-    for_window [class="obsidian"] border none
+    for_window [class="kitty"] border pixel 1
+    for_window [class="obsidian"] border pixel 1
     for_window [class="octopi"] floating enable, resize set 1200 900, move position center 
     for_window [class="resources"] floating enable, resize set 1200 900, move position center 
     for_window [class="thunderbird"] border pixel 5, layout tabbed
     for_window [instance="Ledger live"] border normal
     for_window [instance="xfreerdp"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
+    for_window [class="Dunst"] border none
+    no_focus [class="Dunst"]
 
     # scratchpad move
     for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
