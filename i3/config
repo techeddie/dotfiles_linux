@@ -34,7 +34,7 @@
     set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
 
 #lockscreen
-    # set $lockscreen ~/.lockscreen.jpg
+    set $lockscreen ~/.config/i3/wallpaper.png
     # manual lock via super+l
     bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
     # auto-lock on suspend/lid close via xss-lock
@@ -48,15 +48,11 @@
     workspace 2 output $secondMonitor
     workspace 3 output $secondMonitor
     workspace 4 output $secondMonitor
-    workspace 4 output $secondMonitor
-    # workspace 5 output $firstMonitor
-    # workspace 5 output $firstMonitor
     workspace 6 output $secondMonitor
-    # workspace 7 output $secondMonitor
-    workspace 7 output $firstMonitor
+    workspace 7 output $secondMonitor
     workspace 8 output $secondMonitor
     workspace 9 output $secondMonitor
-    workspace 10 output $secondMonitor    
+    workspace 10 output $firstMonitor
 
     #switch workspace
     bindsym $alt+Ctrl+Left    workspace prev
@@ -179,7 +175,7 @@
     bindsym $mod+p                  exec polybar-msg cmd toggle
     bindsym $mod+shift+i            exec sh $HOME/gitREPO/dotfiles_linux/i3/scripts/xprop.sh
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
-    bindsym $modt+$alt+Ctrl+f       exec fsearch
+    bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym control+$alt+m          exec --no-startup-id pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
 
@@ -214,8 +210,8 @@
 #execute on logon - AUTOSTARTUP - STARTUP
 
     # exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
-    exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
     exec --no-startup-id kitty --class sp-term2
     exec --no-startup-id blueman-applet
     exec --no-startup-id brave 
@@ -235,7 +231,7 @@
     exec --no-startup-id subl
     exec --no-startup-id xset s off -dpms
     exec_always --no-startup-id xset r rate 250 40
-    exec_always --no-startup-id /usr/bin/autokey-gtk &
+    exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
@@ -243,8 +239,8 @@
 # windows settings and behaviour
 
     #start workspace on monitor
-    workspace 1 output HDMI-2
-    workspace 2 output HDMI-2
+    # workspace 1 output HDMI-2
+    # workspace 2 output HDMI-2
     
     #show windows icons
     for_window [all] title_window_icon padding 3px
@@ -253,7 +249,7 @@
     # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
     title_align right
     popup_during_fullscreen smart
-    new_window normal 5 px
+    default_border normal 5
     focus_follows_mouse yes
     show_marks yes #drawing marks on window decoration
 
@@ -291,7 +287,8 @@
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
     #bindsym $mod+r restart
     # reload the configuration file
-    bindsym $mod+Shift+r reload
+    # bindsym $mod+Shift+r reload
+    bindsym $mod+Shift+r exec notify-send -t 2500 "i3" "config reloaded" && i3-msg reload
     bindsym $mod+r restart
 
     # orientation for new workspaces
@@ -364,57 +361,53 @@
     for_window [class="Anydesk"] border normal
     for_window [class="Brave-browser"] border pixel 3, layout tabbed
     for_window [class="Geany"] border pixel 5
-    for_window [class="Gnome-disks"] floating enable, resize set 1200 900 move position center 
+    for_window [class="Gnome-disks"] floating enable, resize set 1300 900, move position center
     for_window [class="Guake"] border pixel 1
     for_window [class="Navigator"] layout tabbed
-    for_window [class="Seafile Client"] layout split
     for_window [class="TelegramDesktop"] border none
     for_window [class="Virt-manager"] border normal, layout tabbed
     for_window [class="Wfica"] border normal
     for_window [class="firefox"] border none, layout tabbed
     for_window [class="floorp"] border none, layout tabbed
-    for_window [class="ghostty"] border pixel
+    for_window [class="ghostty"] border pixel 2
     for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
-    for_window [class="keepassxc"] layout tabbed, move position center
     for_window [class="kitty"] border pixel 8
     for_window [class="obsidian"] border none
     for_window [class="octopi"] floating enable, resize set 1200 900, move position center 
     for_window [class="resources"] floating enable, resize set 1200 900, move position center 
-    for_window [class="sp-term2"] floating enable, focus, move position center
     for_window [class="thunderbird"] border pixel 5, layout tabbed
-    for_window [class="urxvt"] scratchpad show, move position center
     for_window [instance="Ledger live"] border normal
     for_window [instance="xfreerdp"] border normal
     for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
 
     # scratchpad move
     for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    for_window [instance="sp-term2"] move scratchpad
+    for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
     for_window [title="^(?!.*(Select|Open)).*Locked.*$"] move scratchpad
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
+    for_window [class="urxvt"] move scratchpad
 
     # floating
     floating_modifier $mod
-    bindsym $mod+t floating toggle; 
-
+    bindsym $mod+t floating toggle
     for_window [class="arandr"] floating enable, move position center
     for_window [class="Baobab"] floating enable, move position center
     for_window [class="Seafile Client"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
     for_window [class="Guake"] floating enable, move position center
-    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable 
+    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
     for_window [class="Nitrogen"] floating enable, move position center
     for_window [class="Nm-connection-editor"] floating enable, move position center
     for_window [class="Pavucontrol"] floating enable, move position center
-    for_window [class="TeamViewer"] floating enable,  resize set 800 900, move position center
-    for_window [class="TimeShift-gtk"] floating disable, move position center
+    for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
+    for_window [class="TimeShift-gtk"] floating enable, move position center
     for_window [class="Woeusbgui"] floating enable, move position center
     for_window [class="Xfce4-appfinder"] floating enable, move position center
-    for_window [class="Xfce4-taskmanager"] floating enable,  resize set 800 900, move position center
-    for_window [class="arandr"] floating enable, move position center
+    for_window [class="Xfce4-taskmanager"] floating enable, resize set 800 900, move position center
     for_window [class="copyq"] floating enable, move position center
-    for_window [class="doublecmd"] [title="Options"] floating enable,resize set 800 600, move position center 
+    for_window [class="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
+    for_window [class="doublecmd" title="Edit"] floating enable, move position center
     for_window [class="flameshot"] floating enable, move position center
     for_window [class="Gnome-calculator"] floating enable, move position center
     for_window [class="nextcloud"] floating enable, move position center
@@ -423,21 +416,20 @@
     for_window [class="urxvt"] floating enable, move position center
     for_window [instance="Autokey-gtk"] floating enable, resize set 1400 900, move position center
     for_window [instance="Wfica"] resize set 1400 900, move position center
-    for_window [instance="blueman-manager"] floating enable,  resize set 900 600, move position center
-    for_window [title="KeePassXC"] floating enable,  resize set 900 600, move position center
+    for_window [instance="blueman-manager"] floating enable, resize set 900 600, move position center
+    for_window [title="KeePassXC"] floating enable, resize set 900 600, move position center
     for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="urxvt"] floating enable, move position center
-    for_window [title="Citrix"] floating enable,resize set 800 600, move position center 
+    for_window [title="Citrix"] floating enable, resize set 800 600, move position center
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
-    for_window [class="doublecmd"] [title="Edit"] floating enable, move position center
     for_window [title="Guake Preferences"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
     for_window [title="Packing"] floating enable, move position center, border normal
     for_window [title="Receive Connector"] floating enable, move position center, border normal
-    for_window [title="Remmina Remote"] floating enable,resize set 400 500, move position center  
+    for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
     for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [window_role="^Preferences$"] floating enable, move position center
     for_window [window_role="pop-up"] floating enable, move position center
@@ -458,6 +450,7 @@
     for_window [class="mpv"] fullscreen enable
 
     #always launch app on workspace x
+    assign [class="Anydesk"] $workspace4
     assign [class="Autokey-gtk"] $workspace6
     assign [class="Brave" title="Files - Nextcloud"] $workspace10
     assign [class="Brave" title="Outlook"] $workspace10
@@ -468,12 +461,12 @@
     assign [class="Selfservice"] $workspace8
     assign [class="TelegramDesktop"] $workspace4
     assign [class="Wfica"] $workspace8
-    assign [class="Anydesk"] $workspace4
     assign [class="bauh"] $workspace8
     assign [class="firefox"] $workspace5
     assign [class="floorp"] $workspace5
     assign [class="obsidian"] $workspace3
     assign [class="thunderbird"] $workspace10
+
 #------------------------------------------------- 
 # pulse audio controls
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% #increase sound volume
