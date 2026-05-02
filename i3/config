@@ -34,7 +34,11 @@
     set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
 
 #lockscreen
-    set $lockscreen ~/.lockscreen.jpg
+    # set $lockscreen ~/.lockscreen.jpg
+    # manual lock via super+l
+    bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
+    # auto-lock on suspend/lid close via xss-lock
+    exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh
 
 #workspace
     workspace_layout default
@@ -165,7 +169,6 @@
     bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
     bindsym $mod+e                  exec --no-startup-id thunar
     bindsym $mod+j                  exec copyq show
-    bindsym $mod+l                  exec betterlockscreen --lock blur
     bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
     bindsym $mod+p                  exec polybar-msg cmd toggle

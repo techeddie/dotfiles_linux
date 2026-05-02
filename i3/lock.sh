@@ -13,8 +13,11 @@ STORED_HASH=$(cat "$LOCK_CACHE_HASH" 2>/dev/null)
 
 if [[ "$CURRENT_HASH" == "$STORED_HASH" && -f "$LOCK_IMG" ]]; then
     # cache hit: skip rendering
+    hsetroot -extend "$LOCK_IMG"
     i3lock \
         --image="$LOCK_IMG" \
+        --color=000000 \
+        --composite \
         --nofork \
         --ignore-empty-password \
         --show-failed-attempts
@@ -80,9 +83,14 @@ done
 # save hash for next run
 echo "$CURRENT_HASH" > "$LOCK_CACHE_HASH"
 
+# paint root window with lock image before i3lock starts (prevents white flash on second monitor)
+hsetroot -extend "$LOCK_IMG"
+
 # --- lock ---
 i3lock \
     --image="$LOCK_IMG" \
+    --color=000000 \
+    --composite \
     --nofork \
     --ignore-empty-password \
     --show-failed-attempts
