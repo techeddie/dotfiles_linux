@@ -83,4 +83,7 @@ else
 	EOF
 fi
 
+# autorun
 nitrogen --restore
+xinput set-prop "SINO WEALTH PERIPAD-506 Touchpad" "libinput Scrolling Pixel Distance" 50
+xset r rate 200 40
