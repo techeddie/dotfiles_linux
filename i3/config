@@ -233,7 +233,7 @@
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
-    exec_always --no-startup-id xset r rate 200 40
+    exec_always --no-startup-id xset r rate 250 40
 
 #-------------------------------------------------
 # windows settings and behaviour
