@@ -1,6 +1,7 @@
 return {
   "stevearc/aerial.nvim",
   opts = {
+    open_automatic = false,
     layout = {
       max_width = { 40, 0.2 },
       width = nil,
@@ -12,7 +13,6 @@ return {
   },
   config = function(_, opts)
     require("aerial").setup(opts)
-
     vim.api.nvim_create_autocmd("BufWinEnter", {
       callback = function()
         local filetype = vim.bo.filetype
@@ -23,11 +23,8 @@ return {
         for _, ft in ipairs(exclude) do
           if filetype == ft then return end
         end
-
         local ok, aerial = pcall(require, "aerial")
         if not ok then return end
-
-        -- Kurz warten bis LSP Symbole geliefert hat
         vim.defer_fn(function()
           local count = aerial.num_symbols()
           if count and count > 0 then
