@@ -94,3 +94,6 @@ i3lock \
     --nofork \
     --ignore-empty-password \
     --show-failed-attempts
+
+# restore nitrogen wallpaper after unlock (hsetroot overwrote the root window)
+nitrogen --restore
