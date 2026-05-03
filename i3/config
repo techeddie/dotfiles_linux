@@ -209,11 +209,8 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP - STARTUP
 
-    # exec --no-startup-id "setxkbmap 'de(us)'" 
-    exec --no-startup-id picom --daemon
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
-    exec --no-startup-id kitty --class sp-term2
     exec --no-startup-id blueman-applet
     exec --no-startup-id brave 
     exec --no-startup-id copyq
@@ -222,20 +219,22 @@
     exec --no-startup-id gnome-disks
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
+    exec --no-startup-id kitty --class sp-term2
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
+    exec --no-startup-id picom --daemon
     exec --no-startup-id seafile-applet
     exec --no-startup-id sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
-    # exec --no-startup-id sh ~/scripts/runMouseGXTAccel.sh
     exec --no-startup-id subl
     exec --no-startup-id xset s off -dpms
-    exec_always --no-startup-id xset r rate 250 40
     exec_always --no-startup-id /usr/bin/autokey-gtk
     exec_always --no-startup-id autotiling 
     exec_always --no-startup-id numlockx on
     exec_always --no-startup-id sh ~/.config/polybar/launch.sh --material
+    exec_always --no-startup-id xset r rate 200 40
+
 #-------------------------------------------------
 # windows settings and behaviour
 
@@ -386,7 +385,7 @@
     for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
     for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
-    for_window [title="^(?!.*(Select|Open)).*Locked.*$"] move scratchpad
+    for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
     for_window [class="urxvt"] move scratchpad
 
@@ -446,6 +445,10 @@
     for_window [class="floorp"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
+
+    # keep thunar copy progress below other floating windows
+    for_window [title="Copying files to"] floating enable
+    for_window [title="This folder already contains"] floating enable, focus
 
     # full screen
     for_window [title="crx_nkbihfbeogaeaoehlefnkodbefgpgknn"] fullscreen enable
