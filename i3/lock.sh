@@ -7,6 +7,9 @@ LOCK_CACHE_HASH="$HOME/.cache/lockscreen_composite.sha"
 
 mkdir -p "$HOME/.cache"
 
+# always restore nitrogen wallpaper on exit, regardless of code path
+trap 'nitrogen --restore' EXIT
+
 # --- cache invalidation: hash wallpaper + current monitor layout ---
 CURRENT_HASH=$(sha256sum "$WALLPAPER" <(xrandr --query) 2>/dev/null | sha256sum | cut -d' ' -f1)
 STORED_HASH=$(cat "$LOCK_CACHE_HASH" 2>/dev/null)
@@ -83,7 +86,7 @@ done
 # save hash for next run
 echo "$CURRENT_HASH" > "$LOCK_CACHE_HASH"
 
-# paint root window with lock image before i3lock starts (prevents white flash on second monitor)
+# paint root window before i3lock maps its window (prevents flash on second monitor)
 hsetroot -extend "$LOCK_IMG"
 
 # --- lock ---
@@ -94,6 +97,3 @@ i3lock \
     --nofork \
     --ignore-empty-password \
     --show-failed-attempts
-
-# restore nitrogen wallpaper after unlock (hsetroot overwrote the root window)
-nitrogen --restore
