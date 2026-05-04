@@ -23,6 +23,10 @@ return {
 			{ no = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
 			{ ns = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
 			{ nc = "~/.config/nvim/lua/config/options.lua" }, -- neovim options
+			{ sl = "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md" }, -- obsidian shortcut list
+			{ os = "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md" }, -- obsidian shortcut list
+			{ oh = "~/opt/OBSIDIAN-T490_FS01/Home.md" }, -- obsidian home note
+			{ ho = "~/opt/OBSIDIAN-T490_FS01/Home.md" }, -- obsidian home note
 			{ rb = "~/scripts/restic_runBackup.sh" }, -- run remote backup
 			{ tc = "~/.tmux.conf" }, -- tmux config file
 			{ zc = "~/.zshrc" }, -- zsh config
