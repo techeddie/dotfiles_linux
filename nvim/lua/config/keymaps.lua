@@ -72,6 +72,7 @@ keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in inse
 keymap("n", "p", ':pu<CR>') --paste below current line
 keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
 keymap('n', '<leader>ds', [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]], { desc = "squeeze multiple blank lines into one" })
+keymap("n", "<leader>xk", "<cmd>bd<CR>") -- delete current buffer
 
 -- keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
 -- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
