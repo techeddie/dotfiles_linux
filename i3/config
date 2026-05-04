@@ -55,8 +55,8 @@
     workspace 10 output $firstMonitor
 
     #switch workspace
-    bindsym $alt+Ctrl+Left    workspace prev
-    bindsym $alt+Ctrl+Right   workspace next
+    # bindsym $alt+Ctrl+Left    workspace prev
+    # bindsym $alt+Ctrl+Right   workspace next
     bindsym $alt+Ctrl+j       workspace prev
     bindsym $alt+Ctrl+k       workspace next
     bindsym $alt+Tab          workspace back_and_forth
