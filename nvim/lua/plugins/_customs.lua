@@ -35,7 +35,21 @@ return {
 					Snacks.bufdelete()
 				end,
 				{ desc = "Delete Buffer" },
-			}, --lazygit
+			}, --buffer
+			{
+				"<leader>db",
+				function()
+					Snacks.bufdelete()
+				end,
+				{ desc = "Delete Buffer" },
+			},
+			{
+				"Q",
+				function()
+					Snacks.bufdelete()
+				end,
+				{ desc = "Delete Buffer" },
+			},
 			{
 				"<C-g>",
 				function()
