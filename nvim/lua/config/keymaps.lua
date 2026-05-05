@@ -12,15 +12,10 @@ local function keymap(mode, lhs, rhs, opts)
 end
 
 -- ─── window navigation ────────────────────────────────────────────────────────
-
--- gt1..6: jump directly to window by number (gt alone = next tab after timeout)
 for i = 1, 6 do
-  keymap("n", "gt" .. i, i .. "<C-W>w", { desc = "move to window " .. i })
-end
-
--- q1..6: close window by number
-for i = 1, 6 do
-  keymap("n", "q" .. i, i .. "<C-W>q", { desc = "quit window " .. i })
+	local lhs = "<leader>" .. i
+	local rhs = i .. "<C-W>w"
+	keymap("n", lhs, rhs, { desc = "Move to windows " .. i })
 end
 
 keymap("n", "<Tab>",   "<C-w>w",  { desc = "next pane" })
