@@ -13,10 +13,9 @@ local opts = { noremap = true, silent = true }
 
 --JUMP TO BUFFER WITH SPACEBAR
 for i = 1, 6 do
-	local lhs = "<leader>" .. i
-	local rhs = i .. "<C-W>w"
-	keymap("n", lhs, rhs, { desc = "Move to windows " .. i })
+  keymap("n", "<leader>" .. i, i .. "<C-W>w", { desc = "Move to window " .. i })
 end
+
 
 --QUIT BUFFER
 for i = 1, 6 do
