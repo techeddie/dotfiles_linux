@@ -41,6 +41,8 @@ keymap("n", "<S-Right>", ":bnext<CR>",     { desc = "next buffer", silent = true
 keymap("n", "<S-Left>",  ":bprevious<CR>", { desc = "previous buffer", silent = true })
 keymap("n", "<leader>xk","<cmd>bd<CR>",    { desc = "delete current buffer" })
 keymap("n", "<leader>q", ":<C-w>q<CR>",   { desc = "quit current pane" })
+-- keymap("n", "<leader>nf", "<cmd>enew<cr>", { desc = "New File" })
+keymap("n", "<leader>nf", ":enew<cr>", { desc = "New File" })
 
 vim.keymap.set("n", "<C-l>", function()
   Snacks.picker.buffers()
@@ -105,6 +107,11 @@ keymap("v", "d", '"xd', { desc = "delete to register x" })
 
 -- paste in visual: use black hole so deleted selection is not yanked
 keymap("v", "p", '"_dp', { desc = "paste without overwriting clipboard" })
+
+
+-- Scroll view without moving cursor (arrow keys)
+keymap("n", "<Down>",   "<C-y>", { desc = "Scroll view up" })
+keymap("n", "<Up>", "<C-e>", { desc = "Scroll view down" })
 
 -- ─── visual mode ──────────────────────────────────────────────────────────────
 
