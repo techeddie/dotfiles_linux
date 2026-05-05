@@ -29,6 +29,8 @@ return {
 			{ "<leader>vs", ":vsplit<CR>" }, --vertial split
 			{ "<leader>nn", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
 			{ "<leader>nl", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
+			{ "<Up>", "<C-y>" }, --Scroll view up
+			{ "<Down>", "<C-e>" }, --Scroll view down
 			{
 				"<leader>db",
 				function()
