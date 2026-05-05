@@ -55,7 +55,7 @@ require("lazy").setup({
 		},
 	},
   --TODO
-	{ import = "lazyvim.plugins.extras.editor.aerial" },
+	--{ import = "lazyvim.plugins.extras.editor.aerial" },
 	{ import = "lazyvim.plugins.extras.editor.trouble-v3" },
   { import = "lazyvim.plugins.extras.editor.todo-comments" }
 })
