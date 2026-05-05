@@ -22,7 +22,7 @@ keymap("n", "<Tab>",   "<C-w>w",  { desc = "next pane" })
 keymap("n", "<S-Tab>", "<C-w>W",  { desc = "previous pane" })
 keymap("n", "<M-h>",   ":split<CR>",  { desc = "horizontal split" })
 keymap("n", "<M-s-t>", "<C-w>x",  { desc = "swap panes" })
-keymap("n", "q", "<C-w>c", { desc = "Close current pane" })
+keymap("n", "q", "<C-w>c", { desc = "close current pane" })
 
 -- ─── resize panes ─────────────────────────────────────────────────────────────
 
