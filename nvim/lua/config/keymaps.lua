@@ -1,171 +1,152 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- keymaps are automatically loaded on the VeryLazy event
+-- default keymaps that are always set:
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+-- helper wrapper around nvim_set_keymap with noremap as default
 local function keymap(mode, lhs, rhs, opts)
-	local options = { noremap = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-local opts = { noremap = true, silent = true }
 
---JUMP TO BUFFER WITH SPACEBAR
+-- ─── window navigation ────────────────────────────────────────────────────────
+
+-- gt1..6: jump directly to window by number (gt alone = next tab after timeout)
 for i = 1, 6 do
-  keymap("n", "<leader>" .. i, i .. "<C-W>w", { desc = "Move to window " .. i })
+  keymap("n", "gt" .. i, i .. "<C-W>w", { desc = "move to window " .. i })
 end
 
-
---QUIT BUFFER
+-- q1..6: close window by number
 for i = 1, 6 do
-	local lhs = "q" .. i
-	local rhs = i .. "<C-W>q"
-	keymap("n", lhs, rhs, { desc = "quit buffer number ..." .. i })
+  keymap("n", "q" .. i, i .. "<C-W>q", { desc = "quit window " .. i })
 end
 
--- KEYMAPS
--- keymap("n", "<C-S-k>", ":qall! <CR>", opts)
--- keymap("n", "<C-h>", ":lua Snacks.dashboard.pick('') <CR>") --history
--- keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
--- keymap("n", "<leader>j", "<C-w>j") --switch pane
--- keymap("n", "<leader>k", "<C-w>k") --switch pane
-keymap("i", "jk", "<ESC>", {desc = "exit insert mode"})
-keymap("i", "kj", "<ESC>", {desc = "exit insert mode"})
-keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
-keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
-keymap("n", "<C-S-Up>", ":resize +2<CR>", opts) --pane bigger horizontal
-keymap("n", "<C-l>", ":lua Snacks.picker.buffers() <CR>") --show me all bufers
-keymap("n", "<C-r>", ":source % <CR>") --source current buffer
-keymap("n", "<CR>", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
-keymap("n", "<F3>", ":e! <CR>") --reread current buffer
-keymap("n", "<M-g>", ":LazyGit<CR>") --lazygit
-keymap("n", "<M-h>", ":split <CR>") --horizontal split
-keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
-keymap("n", "<M-s-i>", "<C-w>x") --toggle panes
-keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
-keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
-keymap("n", "<S-Left>", ":bnext<CR>", opts)
-keymap("n", "<S-Left>", ":bprevious<CR>", opts)
-keymap("n", "<S-Right>", ":bnext<CR>", opts)
-keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
-keymap("n", "<S-r>", ":source % <CR>") --source current buffer
-keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
-keymap("n", "<Tab>", "<C-w>w") --switch to next pane
-keymap("n", "<c-q>", ":bd <CR>") --buffer delete
-keymap("n", "<c-q>", "<C-w>q<CR>", opts)
-keymap("n", "<leader>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
-keymap("n", "<leader>>#", [[:g/^#/normal >><CR>]], { desc = "Indent all # lines" })
-keymap("n", "<leader>m", "<cmd>Startify<cr>", { desc = "Startify" }) --open startpage
-keymap("n", "<leader>o", ":a<CR><CR>.<CR>") -- Insert a newline without entering in insert mode
-keymap("n", "<leader>q", ":<C-w>q<CR>", { desc = "Quit current pane" }) --close current pane
-keymap("n", "<leader>tf", "za") --toggle fold
-keymap("n", "<leader>r", ":redo <CR>") --redo change
-keymap("n", "C", '"_C') --do not yank to system clipboard for c motions
-keymap("n", "c", '"_c') --do not yank to system clipboard for c motions
-keymap("n", "d", '"xd') --do not yank to clip on delete action
-keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
-keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
-keymap("n", "nl", ":a<CR><CR>.<CR>") --insert a newline without entering in insert mode, vim
-keymap("n", "p", ':pu<CR>') --paste below current line
-keymap("n", "ss", ":w!<CR><ESC>") --save from normal mode
-keymap('n', '<leader>ds', [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]], { desc = "squeeze multiple blank lines into one" })
-keymap("n", "<leader>xk", "<cmd>bd<CR>") -- delete current buffer
+keymap("n", "<Tab>",   "<C-w>w",  { desc = "next pane" })
+keymap("n", "<S-Tab>", "<C-w>W",  { desc = "previous pane" })
+keymap("n", "<M-h>",   ":split<CR>",  { desc = "horizontal split" })
+keymap("n", "<M-s-t>", "<C-w>x",  { desc = "swap panes" })
 
--- keymap("n", "<C-e>", ":lua Snacks.explorer() <CR>") --show me snack explorer
--- keymap("n", "<C-f>", ":lua Snacks.picker.lines() <CR>") --show me snack explorer
--- keymap("n", "<S-u>", ":lua Snacks.picker.undo() <CR>") --show me undo history
--- keymap("n", "<C-h>", ":lua Snacks.picker.recent() <CR>") --show me recent files
+-- ─── resize panes ─────────────────────────────────────────────────────────────
 
--- RESIZE PANES
--- keymap("n", "<C-Down>", ":resize -4<CR>", opts) --pane smaller horizontal
--- keymap("n", "<C-Left>", ":vertical resize +4<CR>", opts) --pane smaller vertical
--- keymap("n", "<C-Right>", ":vertical resize -4<CR>", opts) --pane bigger vertical
--- keymap("n", "<C-Up>", ":resize +4<CR>", opts) --pane bigger horizontal
+keymap("n", "<C-S-Up>",    ":resize +2<CR>",          { desc = "pane taller", silent = true })
+keymap("n", "<C-S-Down>",  ":resize -2<CR>",           { desc = "pane shorter", silent = true })
+keymap("n", "<C-S-Right>", ":vertical resize +2<CR>",  { desc = "pane wider", silent = true })
+keymap("n", "<C-S-Left>",  ":vertical resize -2<CR>",  { desc = "pane narrower", silent = true })
 
--- VISUAL --
-keymap("v", ".", ":normal .<CR>") --repeat with dot in visual mode
-keymap("v", "<", "<gv", { desc = "decrease indent" })
-keymap("v", "<a-j>", ":m .+1<cr>==", { desc = "move up" })
-keymap("v", "<a-k>", ":m .-2<cr>==", { desc = "move down"})
-keymap("v", ">", ">gv", { desc = "increase indent" })
-keymap("v", "d", '"xd') --do not yank to clip on delete action
-keymap("v", "d", '"xd') --do not yank to clip on delete action
-keymap("v", "p", '"_dp', { desc = "pase below current line" })
-keymap("x", "<leader>S", ":sort!<CR>", { desc = "sort selected lines (reverse)" })
-keymap("x", "<leader>s", ":sort<cr>", { desc = "sort selected lines" })
-keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "move line down" })
-keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "move line up" })
+-- ─── buffer management ────────────────────────────────────────────────────────
 
+keymap("n", "<S-Right>", ":bnext<CR>",     { desc = "next buffer", silent = true })
+keymap("n", "<S-Left>",  ":bprevious<CR>", { desc = "previous buffer", silent = true })
+keymap("n", "<leader>xk","<cmd>bd<CR>",    { desc = "delete current buffer" })
+keymap("n", "<leader>q", ":<C-w>q<CR>",   { desc = "quit current pane" })
 
-
--- SEARCHBOX
--- Search and replace in normal mode
--- keymap("n", "<leader>r", ":SearchBoxReplace<CR>", { desc = "Search and Replace" })
--- Search and replace in visual mode (selection only)
--- keymap("x", "<leader>r", ":SearchBoxReplace visual_mode=true<CR>", { desc = "Search and Replace (selection)" })
-
-
--- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>z")
--- Snacks.toggle.zen():map("<leader>Z"):map("Z")
-keymap("n", "<leader><space>", "za", { desc = "Toggle fold" })
-keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "Aerial Toggle" })
-
--- open buffer picker with Ctrl+l
 vim.keymap.set("n", "<C-l>", function()
   Snacks.picker.buffers()
-end, { desc = "Open Buffers" })
+end, { desc = "buffer picker" })
 
--- custom keymaps for indenting comment lines
-vim.keymap.set("v", "<leader>>", function()
-  vim.cmd("'<,'>s/^/  /")  -- Add 2 spaces to beginning
-  vim.cmd("nohlsearch")    -- Clear search highlighting
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Indent selected lines (including comments)" })
+-- ─── file operations ──────────────────────────────────────────────────────────
 
-vim.keymap.set("v", "<leader><", function()
-  vim.cmd("'<,'>s/^  //")  -- Remove 2 spaces from beginning  
-  vim.cmd("nohlsearch")    -- Clear search highlighting
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Unindent selected lines (including comments)" })
+keymap("n", "ss",    ":w!<CR><ESC>",   { desc = "save from normal mode" })
+keymap("n", "<C-r>", ":source %<CR>",  { desc = "source current buffer" })
+keymap("n", "<S-r>", ":source %<CR>",  { desc = "source current buffer" })
+keymap("n", "<F3>",  ":e!<CR>",        { desc = "reload buffer from disk" })
 
--- alternative with 4 spaces
-vim.keymap.set("v", "<leader>4>", function()
-  vim.cmd("'<,'>s/^/    /")  -- Add 4 spaces
+-- ─── external tools ───────────────────────────────────────────────────────────
+
+keymap("n", "<M-g>", ":LazyGit<CR>",      { desc = "open lazygit" })
+keymap("n", "<C-g>", ":LazyGit<CR>",      { desc = "open lazygit" })
+keymap("n", "<M-l>", ":Lf<CR>",           { desc = "open lf filemanager" })
+keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus<CR>", { desc = "toggle undotree" })
+keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "aerial toggle" })
+keymap("n", "<leader>m", "<cmd>Startify<cr>",     { desc = "open startify" })
+
+-- ─── editing helpers ──────────────────────────────────────────────────────────
+
+-- insert blank line below without entering insert mode
+keymap("n", "<CR>",       ":a<CR><CR>.<CR>", { desc = "insert blank line below" })
+keymap("n", "<leader>o",  ":a<CR><CR>.<CR>", { desc = "insert blank line below" })
+keymap("n", "nl",         ":a<CR><CR>.<CR>", { desc = "insert blank line below" })
+
+keymap("n", "<leader>r",  ":redo<CR>",       { desc = "redo" })
+keymap("n", "<leader><space>", "za",         { desc = "toggle fold" })
+
+-- paste below current line (always on new line)
+keymap("n", "p", ":pu<CR>", { desc = "paste below current line" })
+
+-- squeeze multiple consecutive blank lines into one
+keymap("n", "<leader>ds", [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]],
+  { desc = "squeeze blank lines" })
+
+-- indent all markdown heading lines
+keymap("n", "<leader>#", [[:g/^#/normal >><CR>]], { desc = "indent all # lines" })
+
+-- ─── escape shortcuts ─────────────────────────────────────────────────────────
+
+keymap("i", "jk", "<ESC>", { desc = "exit insert mode" })
+keymap("i", "kj", "<ESC>", { desc = "exit insert mode" })
+
+-- ─── word wrap navigation ─────────────────────────────────────────────────────
+
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- ─── clipboard / register behaviour ──────────────────────────────────────────
+
+-- c motions: do not overwrite system clipboard
+keymap("n", "c",  '"_c', { desc = "change without yanking" })
+keymap("n", "C",  '"_C', { desc = "change to eol without yanking" })
+
+-- d/x motions: route deleted text to register x (not system clipboard)
+-- use "xp to paste deleted text if needed
+keymap("n", "d", '"xd', { desc = "delete to register x" })
+keymap("v", "d", '"xd', { desc = "delete to register x" })
+
+-- paste in visual: use black hole so deleted selection is not yanked
+keymap("v", "p", '"_dp', { desc = "paste without overwriting clipboard" })
+
+-- ─── visual mode ──────────────────────────────────────────────────────────────
+
+keymap("v", ".", ":normal .<CR>",          { desc = "repeat last action" })
+keymap("v", "<", "<gv",                    { desc = "decrease indent" })
+keymap("v", ">", ">gv",                    { desc = "increase indent" })
+keymap("v", "<a-j>", ":m .+1<cr>==",      { desc = "move selection down" })
+keymap("v", "<a-k>", ":m .-2<cr>==",      { desc = "move selection up" })
+
+keymap("x", "J", ":move '>+1<CR>gv-gv",   { desc = "move line down" })
+keymap("x", "K", ":move '<-2<CR>gv-gv",   { desc = "move line up" })
+keymap("x", "<leader>s",  ":sort<CR>",    { desc = "sort selected lines" })
+keymap("x", "<leader>S",  ":sort!<CR>",   { desc = "sort selected lines (reverse)" })
+
+-- ─── indentation helpers (visual) ────────────────────────────────────────────
+
+-- helper: apply substitution on visual selection then exit
+local function visual_sub(pattern, replacement)
+  vim.cmd("'<,'>s/" .. pattern .. "/" .. replacement .. "/")
   vim.cmd("nohlsearch")
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Indent selected lines by 4 spaces" })
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false
+  )
+end
 
-vim.keymap.set("v", "<leader>4<", function()
-  vim.cmd("'<,'>s/^    //")  -- Remove 4 spaces
-  vim.cmd("nohlsearch") 
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Unindent selected lines by 4 spaces" })
+vim.keymap.set("v", "<leader>>",  function() visual_sub("^", "  ")    end, { desc = "indent 2 spaces" })
+vim.keymap.set("v", "<leader><",  function() visual_sub("^  ", "")    end, { desc = "unindent 2 spaces" })
+vim.keymap.set("v", "<leader>4>", function() visual_sub("^", "    ")  end, { desc = "indent 4 spaces" })
+vim.keymap.set("v", "<leader>4<", function() visual_sub("^    ", "")  end, { desc = "unindent 4 spaces" })
+vim.keymap.set("v", "<leader>t>", function() visual_sub("^", "\\t")   end, { desc = "indent with tab" })
+vim.keymap.set("v", "<leader>t<", function() visual_sub("^\\t", "")   end, { desc = "unindent tab" })
 
--- tab-based indentation
-vim.keymap.set("v", "<leader>t>", function()
-  vim.cmd("'<,'>s/^/\t/")  -- Add tab
-  vim.cmd("nohlsearch")
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Indent selected lines with tab" })
+-- ─── script runner ────────────────────────────────────────────────────────────
 
-vim.keymap.set("v", "<leader>t<", function()
-  vim.cmd("'<,'>s/^\t//")  -- Remove tab
-  vim.cmd("nohlsearch")
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
-end, { desc = "Unindent selected lines (remove tab)" })
-
--- execute script
 vim.keymap.set("n", "<F5>", function()
   local file = vim.fn.expand("%:p")
-  local ft = vim.bo.filetype
   local runners = {
-    sh = "bash",
-    bash = "bash",
-    python = "python3",
+    sh         = "bash",
+    bash       = "bash",
+    python     = "python3",
     javascript = "node",
   }
-  local runner = runners[ft] or "bash"
+  local runner = runners[vim.bo.filetype] or "bash"
   vim.cmd("split | terminal " .. runner .. " " .. file)
-end, { desc = "Run current file" })
+end, { desc = "run current file" })
