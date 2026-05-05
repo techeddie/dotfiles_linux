@@ -24,10 +24,18 @@ return {
 			{ "<leader>l", "<C-w>l" }, --switch to next pane
 			{ "<leader><space>", "za" }, --fold under cursor
 			{ "<leader>hs", ":split<CR>" }, --horizontal split
+			{ "<leader>nf", ":enew<CR>" }, --new file
 			{ "<leader>tn", ":tabnew<CR>" }, --create new tab
 			{ "<leader>vs", ":vsplit<CR>" }, --vertial split
 			{ "<leader>nn", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
 			{ "<leader>nl", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
+			{
+				"<leader>db",
+				function()
+					Snacks.bufdelete()
+				end,
+				{ desc = "Delete Buffer" },
+			}, --lazygit
 			{
 				"<C-g>",
 				function()
