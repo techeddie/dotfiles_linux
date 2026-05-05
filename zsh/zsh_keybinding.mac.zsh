@@ -21,3 +21,8 @@
 
   # YAZI
   bindkey -s '^e' 'yazi ^M'
+
+  # TMUX home end
+  bindkey "\033[H" beginning-of-line
+  bindkey "\033[F" end-of-line
+
