@@ -130,6 +130,8 @@
       bindsym F12 exec --no-startup-id ~/.config/i3/scripts/floating-term.sh
     #toggle gnome-disks
       bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
+    #toggle autokey-gtk
+      bindsym $mod+Shift+a [instance="autokey-gtk"] scratchpad show, move position center
     #toggle sublime_text
       bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
       bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
@@ -155,7 +157,6 @@
     bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
     bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root/backup.root.sh
     bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
-    bindsym $mod+Shift+a            exec autokey-gtk
     bindsym $mod+Shift+b            exec --no-startup-id blueman-manager
     bindsym $mod+Shift+c            exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
     bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || floorp
@@ -218,6 +219,7 @@
     exec --no-startup-id dunst
     exec --no-startup-id flameshot
     exec --no-startup-id gnome-disks
+    exec --no-startup-id autokey-gtk
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
     exec --no-startup-id kitty --class floating-term -e tmux new-session -A -s scratchpad
@@ -416,7 +418,7 @@
     for_window [class="nitrogen"] floating enable, move position center
     for_window [class="shutter"] floating enable, move position center
     for_window [class="urxvt"] floating enable, move position center
-    for_window [instance="Autokey-gtk"] floating enable, resize set 1400 900, move position center
+    for_window [instance="autokey-gtk"] floating enable, resize set 1400 900, move position center
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [instance="blueman-manager"] floating enable, resize set 900 600, move position center
     for_window [title="KeePassXC"] floating enable, resize set 900 600, move position center
