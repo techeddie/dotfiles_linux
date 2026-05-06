@@ -1,15 +1,17 @@
-if "Alacritty" in window.get_active_class():
+active = window.get_active_class()
+
+if "Alacritty" in active:
     keyboard.send_keys("<alt>+q")
-if "kitty" in window.get_active_class():
-    keyboard.send_keys("<alt>+q")    
-if "sp-term2" in window.get_active_class():
+elif "kitty" in active:
     keyboard.send_keys("<alt>+q")
-if "guake" in window.get_active_class():
-    keyboard.send_keys("<alt>+q")    
-if "com.mitchellh.ghostty" in window.get_active_class():
-     import subprocess
-     subprocess.run(["tmux", "kill-pane"])     
-if "xfce4-terminal" in window.get_active_class():
+elif "floating-term" in active:
+    keyboard.send_keys("<alt>+q")
+elif "guake" in active:
+    keyboard.send_keys("<alt>+q")
+elif "com.mitchellh.ghostty" in active:
+    import subprocess
+    subprocess.run(["tmux", "kill-pane"])
+elif "xfce4-terminal" in active:
     keyboard.send_keys("<ctrl>+d")
 else:
     keyboard.send_keys("<ctrl>+w")
