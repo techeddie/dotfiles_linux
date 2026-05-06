@@ -126,7 +126,8 @@
       bindsym $mod+grave [title="ekah"] scratchpad show, move position center
       bindsym $mod+a [title="ekah"] scratchpad show, move position center
     #toggle kitty 
-      bindsym F12 [instance="sp-term2"] scratchpad show
+      # bindsym F12 [instance="floating-term"] scratchpad show
+      bindsym F12 exec --no-startup-id ~/.config/i3/scripts/floating-term.sh
     #toggle gnome-disks
       bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
     #toggle sublime_text
@@ -219,7 +220,7 @@
     exec --no-startup-id gnome-disks
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
-    exec --no-startup-id kitty --class sp-term2
+    exec --no-startup-id kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
@@ -383,7 +384,7 @@
 
     # scratchpad move
     for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
+    for_window [instance="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
     for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
     for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
@@ -419,7 +420,7 @@
     for_window [instance="Wfica"] resize set 1400 900, move position center
     for_window [instance="blueman-manager"] floating enable, resize set 900 600, move position center
     for_window [title="KeePassXC"] floating enable, resize set 900 600, move position center
-    for_window [instance="sp-term2"] floating enable, resize set 1536 400, move position 170 px 680 px
+    # for_window [instance="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [instance="urxvt"] floating enable, move position center
