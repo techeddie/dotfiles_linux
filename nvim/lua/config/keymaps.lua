@@ -52,7 +52,6 @@ keymap("n", "<F3>",  ":e!<CR>",        { desc = "reload buffer from disk" })
 -- ─── external tools ───────────────────────────────────────────────────────────
 
 keymap("n", "<M-g>", ":LazyGit<CR>",      { desc = "open lazygit" })
-keymap("n", "<C-g>", ":LazyGit<CR>",      { desc = "open lazygit" })
 keymap("n", "<M-l>", ":Lf<CR>",           { desc = "open lf filemanager" })
 keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus<CR>", { desc = "toggle undotree" })
 keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "aerial toggle" })
