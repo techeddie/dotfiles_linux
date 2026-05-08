@@ -45,7 +45,6 @@ end, { desc = "buffer picker" })
 -- ─── file operations ──────────────────────────────────────────────────────────
 
 keymap("n", "ss",    ":w!<CR><ESC>",   { desc = "save from normal mode" })
-keymap("n", "<C-r>", ":source %<CR>",  { desc = "source current buffer" })
 keymap("n", "<S-r>", ":source %<CR>",  { desc = "source current buffer" })
 keymap("n", "<F3>",  ":e!<CR>",        { desc = "reload buffer from disk" })
 
