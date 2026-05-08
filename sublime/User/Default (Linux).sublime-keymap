@@ -1,0 +1,5 @@
+[
+  { "keys": ["f5"], "command": "insert_date" },
+  { "keys": ["shift+f5"], "command": "insert_date_time" },
+  { "keys": ["f6"], "command": "insert_time" }
+]
