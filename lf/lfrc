@@ -615,3 +615,5 @@ cmd lf_reload ${{
   map v :invert
   map x cut
   map y copy
+┃ map X $chmod +x "$f"; lf -remote "send $id reload"
+┃ map <f-5> $$SHELL "$f"
