@@ -53,8 +53,8 @@ keymap("n", "<F3>",  ":e!<CR>",        { desc = "reload buffer from disk" })
 keymap("n", "<M-g>", ":LazyGit<CR>",      { desc = "open lazygit" })
 keymap("n", "<M-l>", ":Lf<CR>",           { desc = "open lf filemanager" })
 keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus<CR>", { desc = "toggle undotree" })
-keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "aerial toggle" })
 keymap("n", "<leader>m", "<cmd>Startify<cr>",     { desc = "open startify" })
+-- keymap("n", "<leader>a", "<cmd>AerialToggle<cr>", { desc = "aerial toggle" })
 
 -- ─── editing helpers ──────────────────────────────────────────────────────────
 
@@ -67,7 +67,7 @@ keymap("n", "<leader>r",  ":redo<CR>",       { desc = "redo" })
 keymap("n", "<leader><space>", "za",         { desc = "toggle fold" })
 
 -- paste below current line (always on new line)
-keymap("n", "p", ":pu<CR>", { desc = "paste below current line" })
+-- keymap("n", "p", ":pu<CR>", { desc = "paste below current line" })
 
 -- squeeze multiple consecutive blank lines into one
 keymap("n", "<leader>ds", [[:%s/^\s*$\n\(^\s*$\n\)\+/\r/e<cr>]],
