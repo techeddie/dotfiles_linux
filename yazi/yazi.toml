@@ -1,6 +1,5 @@
  # TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
 ratio          = [ 1, 4, 3 ]
@@ -99,10 +98,10 @@ suppress_preload = false
 
 [plugin]
 fetchers = [
-	# Mimetype
-	{ id = "mime", url = "*/",         run = "mime.dir", prio = "high" },
-	{ id = "mime", url = "local://*",  run = "mime.local", prio = "high" },
-	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
+  # mimetype
+  { id = "mime", group = "directory", url = "*/",         run = "mime.dir",    prio = "high" },
+  { id = "mime", group = "file",      url = "local://*",  run = "mime.local",  prio = "high" },
+  { id = "mime", group = "file",      url = "remote://*", run = "mime.remote", prio = "high" },
 ]
 spotters = [
 	{ url = "*/", run = "folder" },
