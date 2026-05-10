@@ -532,14 +532,13 @@ desc = "Calc size of selection or cwd"
 
 # make file executable (chmod +x)
 [[mgr.prepend_keymap]]
-on   = [ "c", "x" ]
+on   = [ "X" ]
 run = 'shell "chmod +x \"$@\"" --block'
 desc = "Make file executable (chmod +x)"
 
 # execute current file
 [[mgr.prepend_keymap]]
-on   = [ "X" ]
-# run  = """ shell 'sh "${0}" . ' --orphan """
+on   = [ "c","x" ]
 run  = "shell '${0}'"
 desc = "Execute current file"
 
