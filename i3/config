@@ -125,7 +125,7 @@
     #bring back to foreground
       bindsym $mod+u     scratchpad show; move position center
     #toggle keepassxc
-      bindsym $mod+grave [title="ekah"] scratchpad show, move position center
+      bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
       bindsym $mod+a [title="ekah"] scratchpad show, move position center
     #toggle kitty 
       # bindsym F12 [instance="floating-term"] scratchpad show
