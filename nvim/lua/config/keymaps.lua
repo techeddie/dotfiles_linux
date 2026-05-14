@@ -133,7 +133,7 @@ vim.keymap.set("v", "<leader>t<", function() visual_sub("^\\t", "")   end, { des
 
 -- ─── script runner ────────────────────────────────────────────────────────────
 --
-vim.keymap.set("n", "<F5>", function()
+vim.keymap.set("n", "<M-F5>", function()
   local file = vim.fn.expand("%:p")
   local runners = {
     sh         = "bash",
