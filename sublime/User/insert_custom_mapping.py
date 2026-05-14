@@ -17,4 +17,9 @@ class InsertTimeCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         time = datetime.now().strftime("%H:%M")
         for region in self.view.sel():
-            self.view.insert(edit, region.begin(), time)
+            self.view.insert(edit, region.begin(), time)  # <- fehlte
+
+class InsertSeparatorCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        for region in self.view.sel():
+            self.view.insert(edit, region.begin(), "-----------------------------")
