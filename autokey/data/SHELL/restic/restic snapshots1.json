@@ -1,13 +1,13 @@
 {
-    "type": "phrase",
+    "type": "script",
     "description": "restic snapshots",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 12,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
@@ -26,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }
