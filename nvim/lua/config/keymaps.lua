@@ -63,7 +63,7 @@ keymap("n", "<CR>",       ":a<CR><CR>.<CR>", { desc = "insert blank line below" 
 keymap("n", "<leader>o",  ":a<CR><CR>.<CR>", { desc = "insert blank line below" })
 keymap("n", "nl",         ":a<CR><CR>.<CR>", { desc = "insert blank line below" })
 
-keymap("n", "<leader>r",  ":redo<CR>",       { desc = "redo" })
+keymap("n", "<leader>rd",  ":redo<CR>",       { desc = "redo" })
 keymap("n", "<leader><space>", "za",         { desc = "toggle fold" })
 
 -- paste below current line (always on new line)
@@ -132,7 +132,7 @@ vim.keymap.set("v", "<leader>t>", function() visual_sub("^", "\\t")   end, { des
 vim.keymap.set("v", "<leader>t<", function() visual_sub("^\\t", "")   end, { desc = "unindent tab" })
 
 -- ─── script runner ────────────────────────────────────────────────────────────
-
+--
 vim.keymap.set("n", "<F5>", function()
   local file = vim.fn.expand("%:p")
   local runners = {
@@ -142,5 +142,16 @@ vim.keymap.set("n", "<F5>", function()
     javascript = "node",
   }
   local runner = runners[vim.bo.filetype] or "bash"
+
+  -- close existing terminal splits before opening new one
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].buftype == "terminal" then
+      vim.api.nvim_win_close(win, true)
+    end
+  end
+
   vim.cmd("split | terminal " .. runner .. " " .. file)
+  vim.cmd("wincmd p")
 end, { desc = "run current file" })
+
