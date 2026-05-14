@@ -1,18 +1,18 @@
 {
-    "type": "phrase",
-    "description": "sudo bash",
+    "type": "script",
+    "description": "docker-compose down",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrb",
-            "jsb"
+            "jdcd",
+            "compd"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,6 +27,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

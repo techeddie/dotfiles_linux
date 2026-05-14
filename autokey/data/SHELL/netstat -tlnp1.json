@@ -1,18 +1,17 @@
 {
-    "type": "phrase",
-    "description": "sudo screen dr",
+    "type": "script",
+    "description": "netstat -tlnp",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 1,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jdr",
-            "jsdr"
+            "jnet"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

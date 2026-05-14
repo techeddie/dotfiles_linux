@@ -1,17 +1,17 @@
 {
-    "type": "phrase",
-    "description": "ip brief",
+    "type": "script",
+    "description": "docker start $(docker ps -a -q)",
+    "store": {},
     "modes": [
         1
     ],
     "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jip"
+            "jdstart"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

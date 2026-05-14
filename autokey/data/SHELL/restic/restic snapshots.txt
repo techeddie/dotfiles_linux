@@ -1,1 +1,0 @@
-restic stats --mode files-by-contents

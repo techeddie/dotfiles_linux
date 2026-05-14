@@ -1,18 +1,15 @@
 {
-    "type": "phrase",
-    "description": "restic snapshots",
-    "modes": [
-        1
-    ],
-    "usageCount": 1,
+    "type": "script",
+    "description": "ip -4 -brief addr",
+    "store": {},
+    "modes": [],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrstats",
-            "jrstat"
+            "jipa"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,6 +24,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

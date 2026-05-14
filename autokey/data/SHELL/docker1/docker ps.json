@@ -1,17 +1,18 @@
 {
-    "type": "phrase",
-    "description": "docker start",
+    "type": "script",
+    "description": "docker ps",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 0,
+    "usageCount": 4,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jds"
+            "jps",
+            "jdps"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +27,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

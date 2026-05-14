@@ -1,17 +1,16 @@
 {
-    "type": "phrase",
-    "description": "netstat -tlnp",
-    "modes": [
-        1
-    ],
-    "usageCount": 3,
+    "type": "script",
+    "description": "restic stats --mode files-by-contents",
+    "store": {},
+    "modes": [],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jnet"
+            "jrstats",
+            "jrstat"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +25,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

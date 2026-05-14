@@ -1,17 +1,18 @@
 {
-    "type": "phrase",
-    "description": "restic forget",
+    "type": "script",
+    "description": "sudo bash",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 2,
+    "usageCount": 1,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jrf"
+            "jsb",
+            "jrb"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -26,6 +27,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }

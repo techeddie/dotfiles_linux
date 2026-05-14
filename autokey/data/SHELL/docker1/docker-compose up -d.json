@@ -1,18 +1,18 @@
 {
-    "type": "phrase",
-    "description": "apt update - upgrade",
+    "type": "script",
+    "description": "docker-compose up -d",
+    "store": {},
     "modes": [
         1
     ],
-    "usageCount": 9,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "jus",
-            "jau"
+            "jdcu",
+            "compu"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,6 +27,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+<shift>+v"
+    }
 }
