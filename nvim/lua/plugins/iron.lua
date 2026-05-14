@@ -9,10 +9,9 @@ return {
         repl_open_cmd = "vertical botright 60 split",
       },
       keymaps = {
-        send_file = "<leader>rf",   -- send entire file
-        send_line = "<leader>rl",   -- send current line
+        send_file = "<F5>",   -- send entire file
         send_line = "<F9>",   -- send current line
-        send_mark = "<leader>rm",   -- send visual selection
+        -- send_mark = "<leader>vm",   -- send visual selection
       },
     })
   end,
