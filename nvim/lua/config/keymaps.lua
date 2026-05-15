@@ -42,6 +42,10 @@ vim.keymap.set("n", "<C-l>", function()
   Snacks.picker.buffers()
 end, { desc = "buffer picker" })
 
+
+-- ─── lazy operations ──────────────────────────────────────────────────────────
+-- vim.keymap.set("n", "<leader>nh",  function() Snacks.notifier.show_history()   end, { desc = "notification history" })
+
 -- ─── file operations ──────────────────────────────────────────────────────────
 
 keymap("n", "ss",    ":w!<CR><ESC>",   { desc = "save from normal mode" })
