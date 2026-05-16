@@ -225,7 +225,6 @@
     exec --no-startup-id guake 
     exec --no-startup-id keepassxc
     exec --no-startup-id kitty --class floating-term -e tmux new-session -A -s scratchpad
-    exec --no-startup-id nextcloud
     exec --no-startup-id nitrogen --restore 
     exec --no-startup-id nm-applet
     exec --no-startup-id obsidian
