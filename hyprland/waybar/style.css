@@ -216,8 +216,14 @@ window#waybar {
 /* ── Keyboard state ────────────────────────────────────────────────────── */
 
 #keyboard-state {
-    color: #fe8019;
+    color: #504945;
     background-color: #3c3836;
+}
+
+#keyboard-state.locked {
+    color: #fb4934;
+    background-color: #3c3836;
+    font-weight: bold;
 }
 
 /* ── Tooltip ───────────────────────────────────────────────────────────── */
