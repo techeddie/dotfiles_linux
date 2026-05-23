@@ -139,14 +139,14 @@
         "tooltip-format": "{timeTo} — {capacity}%"
     },
 
-    "keyboard-state": {
-        "capslock": true,
-        "format": {
-            "capslock": "  CAPS"
-        },
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    }
+    // "keyboard-state": {
+    //     "capslock": true,
+    //     "format": {
+    //         "capslock": "  CAPS"
+    //     },
+    //     "format-icons": {
+    //         "locked": "",
+    //         "unlocked": ""
+    //     }
+    // }
 }
