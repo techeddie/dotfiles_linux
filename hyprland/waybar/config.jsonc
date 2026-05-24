@@ -8,20 +8,20 @@
     "spacing": 0,
     "modules-left": [
         "hyprland/workspaces",
+        "custom/ip",
         "hyprland/window"
     ],
     "modules-center": [
-        "custom/ip",
+        "network#wifi",
+        "network#lan",
+        "tray",
         "clock",
-        "tray"
     ],
     "modules-right": [
         "cpu",
         "memory",
         "disk",
         "temperature",
-        "network#wifi",
-        "network#lan",
         "backlight",
         "pulseaudio",
         "battery"
@@ -53,27 +53,27 @@
     },
 
     "tray": {
-        "icon-size": 18,
-        "spacing": 8
+        "icon-size": 16,
+        "spacing": 10
     },
 
     // ── Right ─────────────────────────────────────────────────────────────
 
     "cpu": {
         "interval": 1,
-        "format": "\uf4bc  {usage:3}%",
+        "format": "\uf4bc {usage:3}%",
         "tooltip": false
     },
 
     "memory": {
         "interval": 1,
-        "format": "\uf538  {used:0.1f}G",
+        "format": "\uf538 {used:0.1f}G",
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
     },
 
     "disk": {
         "interval": 30,
-        "format": "\udb80\udc98  {free}",
+        "format": "\udb80\udc98 {free}",
         "path": "/",
         "tooltip-format": "{used} / {total} used on {path}"
     },
@@ -90,7 +90,7 @@
     "network#wifi": {
         "interval": 1,
         "interface": "wlp0s20f3",
-        "format-wifi": "\uf1eb  {essid}",
+        "format-wifi": "\uf1eb {essid}",
         "format-ethernet": "",
         "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n\uf063  {bandwidthDownBytes}   \uf062  {bandwidthUpBytes}",
@@ -101,7 +101,8 @@
         "interval": 1,
         "interface": "enp0s31f6",
         "format-wifi": "",
-        "format-ethernet": "\uf6ff  {ifname} {ipaddr}",
+        "format-ethernet": "\uf6ff {ipaddr}",
+      //  "format-ethernet": "\uf6ff",
         "format-disconnected": "",
         "tooltip-format-ethernet": "{ifname}\n\uf063  {bandwidthDownBytes}   \uf062  {bandwidthUpBytes}",
         "on-click": "networkmanager_dmenu"
@@ -127,7 +128,7 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "\uf6a9  Muted",
+        "format-muted": "\uf6a9 Muted",
         "format-icons": {
             "headphone": "\uf025",
             "hands-free": "\uf590",
