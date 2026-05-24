@@ -1,0 +1,54 @@
+* {
+    font-family: "Noto Sans";
+    font-size: 13px;
+}
+
+window {
+    background-color: #282828;
+    border: 2px solid #458588;
+    border-radius: 8px;
+}
+
+#input {
+    background-color: #3c3836;
+    color: #ebdbb2;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 8px;
+}
+
+#input placeholder {
+    color: #928374;
+}
+
+#inner-box {
+    background-color: #282828;
+    padding: 4px;
+}
+
+#outer-box {
+    padding: 4px;
+}
+
+#scroll {
+    margin: 0px;
+}
+
+#text {
+    color: #ebdbb2;
+    padding: 4px 8px;
+}
+
+#entry {
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#entry:selected {
+    background-color: #458588;
+}
+
+#entry:selected #text {
+    color: #282828;
+}
