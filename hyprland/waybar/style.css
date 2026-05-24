@@ -109,13 +109,14 @@ window#waybar {
 
 #clock {
     color: #d3869b;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 #custom-ip {
     color: #83a598;   /* gruvbox blue */
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 /* ── Tray ──────────────────────────────────────────────────────────────── */
@@ -182,10 +183,12 @@ window#waybar {
 
 #network {
     color: #83a598;
+    font-weight: bold;
 }
 
 #network.disconnected {
     color: #928374;
+    font-weight: bold;
 }
 
 /* ── Backlight ─────────────────────────────────────────────────────────── */
