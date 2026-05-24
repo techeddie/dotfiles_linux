@@ -154,6 +154,7 @@
         },
         "format": "{icon} {capacity}%",
         "format-charging": "\uf0e7  {capacity}%",
+        "format-not-charging": "\uf240  {capacity}%",
         "format-full": "\uf240  Full",
         "format-icons": ["\uf244", "\uf243", "\uf243", "\uf242", "\uf242", "\uf241", "\uf241", "\uf240", "\uf240", "\uf240"],
         "tooltip-format": "{timeTo} — {capacity}%"
