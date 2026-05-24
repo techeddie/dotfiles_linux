@@ -12,6 +12,13 @@ return {
       function() require("rip-substitute").sub() end,
       mode = { "n", "x" },
       desc = "Rip Substitute",
+      nowait = true,
+    },
+    {
+      "<A-r>",
+      function() require("rip-substitute").sub() end,
+      mode = { "n", "x" },
+      desc = "Rip Substitute",
     },
   },
 }
