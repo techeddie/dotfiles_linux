@@ -1,0 +1,6 @@
+keymap:
+  - name: Alt backtick to Alt Shift L in Brave
+    application:
+      only: [brave-browser]
+    remap:
+      Alt-grave: Alt-Shift-l
