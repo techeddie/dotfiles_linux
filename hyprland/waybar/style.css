@@ -37,6 +37,7 @@ window#waybar {
 #workspaces,
 #window,
 #clock,
+#custom-ip,
 #tray,
 #cpu,
 #memory,
@@ -98,8 +99,10 @@ window#waybar {
 
 #window {
     color: #a89984;
+    /* font-size: 19px; */
     background-color: transparent;
     font-style: italic;
+    font-weight: bold;
 }
 
 /* ── Clock ─────────────────────────────────────────────────────────────── */
@@ -108,6 +111,11 @@ window#waybar {
     color: #d3869b;
     font-size: 15px;
     font-weight: bold;
+}
+
+#custom-ip {
+    color: #83a598;   /* gruvbox blue */
+    font-size: 15px;
 }
 
 /* ── Tray ──────────────────────────────────────────────────────────────── */

@@ -11,6 +11,7 @@
         "hyprland/window"
     ],
     "modules-center": [
+        "custom/ip",
         "clock",
         "tray"
     ],
@@ -148,7 +149,12 @@
         "format-icons": ["", "", "", "", "", "", "", "", "", ""],
         "tooltip-format": "{timeTo} — {capacity}%"
     },
-
+    "custom/ip": {
+        "interval": 10,
+        "exec": "curl -s https://api.ipify.org",
+        "format": "  {}",
+        "tooltip": false
+    }
     // "keyboard-state": {
     //     "capslock": true,
     //     "format": {
