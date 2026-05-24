@@ -16,21 +16,22 @@ return {
 	-- custom keymaps
 	keys = function()
 		return {
-			{ "<C-k>", ":qall! <CR>" }, --close nvim
-			{ "<C-k>", ":qall! <CR>" }, --close nvim
-			{ "<leader>h", "<C-w>h" }, --switch to next pane
-			{ "<leader>j", "<C-w>j" }, --switch to next pane
-			{ "<leader>k", "<C-w>k" }, --switch to next pane
-			{ "<leader>l", "<C-w>l" }, --switch to next pane
-			{ "<leader><space>", "za" }, --fold under cursor
-			{ "<leader>hs", ":split<CR>" }, --horizontal split
-			{ "<leader>nf", ":enew<CR>" }, --new file
-			{ "<leader>tn", ":tabnew<CR>" }, --create new tab
-			{ "<leader>vs", ":vsplit<CR>" }, --vertial split
-			{ "<leader>nn", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
-			{ "<leader>nl", ":a<CR><CR>.<CR>" }, --insert a newline without entering in insert mode
-			{ "<S-Up>", "<C-y>" }, --Scroll view up
-			{ "<S-Down>", "<C-e>" }, --Scroll view down
+      { "<C-k>",          ":qall!<CR>",        desc = "Close nvim"              },
+      { "<A-k>",          "<cmd>bnext<cr>",    desc = "Next buffer"             },
+      { "<A-j>",          "<cmd>bprevious<cr>",desc = "Previous buffer"         },
+      { "<leader>h",      "<C-w>h",            desc = "Switch pane left"        },
+      { "<leader>j",      "<C-w>j",            desc = "Switch pane down"        },
+      { "<leader>k",      "<C-w>k",            desc = "Switch pane up"          },
+      { "<leader>l",      "<C-w>l",            desc = "Switch pane right"       },
+      { "<leader><space>","za",                desc = "Toggle fold"             },
+      { "<leader>hs",     ":split<CR>",        desc = "Horizontal split"        },
+      { "<leader>vs",     ":vsplit<CR>",       desc = "Vertical split"          },
+      { "<leader>nf",     ":enew<CR>",         desc = "New file"                },
+      { "<leader>tn",     ":tabnew<CR>",       desc = "New tab"                 },
+      { "<leader>nn",     ":a<CR><CR>.<CR>",   desc = "Insert newline below"    },
+      { "<leader>nl",     ":a<CR><CR>.<CR>",   desc = "Insert newline below"    },
+      { "<S-Up>",         "<C-y>",             desc = "Scroll view up"          },
+      { "<S-Down>",       "<C-e>",             desc = "Scroll view down"        },
 			{
 				"<leader>db",
 				function()
