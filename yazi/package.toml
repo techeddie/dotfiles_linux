@@ -69,11 +69,11 @@ rev = "f82ad35"
 hash = "1c9bf1ba804af5ad60e8a49200a272ef"
 
 [[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "36c49ac"
-hash = "7dfe41c9c3d9be76da8a844263d0bbed"
+use = "bennyyip/gruvbox-dark"
+rev = "619fdc5"
+hash = "d4c7003ec6dc4efd5d3a050d5c2f2575"
 
 [[flavor.deps]]
-use = "6ruby1/eldritch"
-rev = "7b5bf34"
-hash = "d73a2192b13f0267461d5424a7f10cd1"
+use = "BennyOe/onedark"
+rev = "668d71d"
+hash = "1e647ba2d7c6e6f2bafe858ad9a4e50a"

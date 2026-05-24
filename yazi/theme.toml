@@ -1,4 +1,2 @@
 [flavor]
-dark = "eldritch"
-# dark = "bluloco-dark"
-# dark = "catppuccin-mocha"
+dark = "gruvbox-dark"
