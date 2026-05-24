@@ -24,6 +24,7 @@
         "backlight",
         "pulseaudio",
         "battery",
+        "custom/swaync",
         "tray",
     ],
 
@@ -166,6 +167,27 @@
         "exec": "curl -s https://api.ipify.org",
         "format": "\uf484  {}",
         "tooltip": false
+    },
+
+    "custom/swaync": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification":           "\uf0f3",
+            "none":                   "\uf1f6",
+            "dnd-notification":       "\uf1f6",
+            "dnd-none":               "\uf1f6",
+            "inhibited-notification": "\uf0f3",
+            "inhibited-none":         "\uf1f6",
+            "dnd-inhibited-notification": "\uf0f3",
+            "dnd-inhibited-none":     "\uf1f6"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     }
 
     // "keyboard-state": {

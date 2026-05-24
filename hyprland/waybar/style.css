@@ -48,6 +48,7 @@ window#waybar {
 #backlight,
 #pulseaudio,
 #battery,
+#custom-swaync,
 #keyboard-state {
     padding: 2px 8px;
     margin: 3px 2px;
@@ -238,6 +239,21 @@ window#waybar {
 /*     background-color: #3c3836; */
 /*     font-weight: bold; */
 /* } */
+
+/* ── SwayNC ────────────────────────────────────────────────────────────── */
+
+#custom-swaync {
+    color: #a89984;
+}
+
+#custom-swaync.notification {
+    color: #fabd2f;
+}
+
+#custom-swaync.dnd-none,
+#custom-swaync.dnd-notification {
+    color: #928374;
+}
 
 /* ── Tooltip ───────────────────────────────────────────────────────────── */
 
