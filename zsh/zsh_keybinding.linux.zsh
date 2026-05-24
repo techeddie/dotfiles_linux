@@ -65,3 +65,10 @@ bindkey -s '^o' 'nvim $(fzf)^M'
 
 # NVIM
 bindkey -s '\ev' 'nvim ^M'
+
+#HOME END
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+# Für tmux:
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
