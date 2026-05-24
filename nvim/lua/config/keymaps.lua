@@ -36,6 +36,7 @@ keymap("n", "<C-S-Left>",  ":vertical resize -2<CR>",  { desc = "pane narrower",
 keymap("n", "<S-Right>", ":bnext<CR>",     { desc = "next buffer", silent = true })
 keymap("n", "<S-Left>",  ":bprevious<CR>", { desc = "previous buffer", silent = true })
 keymap("n", "<leader>xk","<cmd>bd<CR>",    { desc = "delete current buffer" })
+keymap("n", "<C-x>","<cmd>bd<CR>",    { desc = "delete current buffer" })
 keymap("n", "<leader>q", ":<C-w>q<CR>",   { desc = "quit current pane" })
 
 vim.keymap.set("n", "<C-l>", function()
