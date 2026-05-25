@@ -30,6 +30,8 @@ return {
       { "<leader>tn",     ":tabnew<CR>",       desc = "New tab"                 },
       { "<leader>nn",     ":a<CR><CR>.<CR>",   desc = "Insert newline below"    },
       { "<leader>nl",     ":a<CR><CR>.<CR>",   desc = "Insert newline below"    },
+      { "<leader>lz",     ":Lazy<CR>",         desc = "Open Lazy"    },
+      { "<leader>lze",     ":LazyExtras<CR>",  desc = "Open LazyExtras"    },
       { "<S-Up>",         "<C-y>",             desc = "Scroll view up"          },
       { "<S-Down>",       "<C-e>",             desc = "Scroll view down"        },
 			{
@@ -38,21 +40,14 @@ return {
 					Snacks.bufdelete()
 				end,
 				{ desc = "Delete Buffer" },
-			}, --buffer
-			{
-				"<leader>db",
+			}, -- close buffer
+      {
+				"X",
 				function()
 					Snacks.bufdelete()
 				end,
 				{ desc = "Delete Buffer" },
-			},
-			{
-				"Q",
-				function()
-					Snacks.bufdelete()
-				end,
-				{ desc = "Delete Buffer" },
-			},
+			}, -- close buffer
 			{
 				"<C-g>",
 				function()
