@@ -1,3 +1,4 @@
+-- Find and replace across files using ripgrep
 return {
 	"MagicDuck/grug-far.nvim",
 	keys = {

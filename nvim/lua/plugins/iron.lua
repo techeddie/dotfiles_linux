@@ -1,3 +1,4 @@
+-- Interactive REPL for running code without leaving the editor
 return {
   "Vigemus/iron.nvim",
   config = function()

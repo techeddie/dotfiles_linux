@@ -1,3 +1,4 @@
+-- Collection of utilities: fuzzy picker, notifier, dashboard, scratch buffers, and more
 return {
   "folke/snacks.nvim",
   keys = {

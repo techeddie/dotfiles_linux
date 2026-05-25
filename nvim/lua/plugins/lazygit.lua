@@ -1,3 +1,4 @@
+-- LazyGit terminal UI integration for git operations
 return {
 	"kdheepak/lazygit.nvim",
 	cmd = "LazyGit",

@@ -1,3 +1,4 @@
+-- Replaces cmdline, messages, and popupmenu with a modern UI
 return {
   "folke/noice.nvim",
   keys = {

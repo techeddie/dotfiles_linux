@@ -1,3 +1,4 @@
+-- lf terminal file manager integration
 return {
   "lmburns/lf.nvim",
   cmd = "Lf",

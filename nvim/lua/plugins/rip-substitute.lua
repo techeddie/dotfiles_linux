@@ -1,3 +1,4 @@
+-- Find and replace in the current buffer using ripgrep regex syntax
 return {
   "chrisgrieser/nvim-rip-substitute",
   keys = {

@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/plugins/glance.lua
+-- Preview definitions, references, and implementations in a floating window
 return {
   "dnlhc/glance.nvim",
   cmd = "Glance",

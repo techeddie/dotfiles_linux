@@ -1,3 +1,4 @@
+-- Colorscheme and custom global keybindings
 return {
 	"tiagovla/tokyodark.nvim",
 	lazy = false,

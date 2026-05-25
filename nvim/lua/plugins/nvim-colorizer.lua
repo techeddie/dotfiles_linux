@@ -1,3 +1,4 @@
+-- Highlight color codes (hex, rgb, etc.) inline with their actual color
 return {
   {
     "norcalli/nvim-colorizer.lua",

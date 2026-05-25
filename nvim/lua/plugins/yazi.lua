@@ -1,3 +1,4 @@
+-- Yazi terminal file manager integration
 return {
 	"mikavilpas/yazi.nvim",
 	event = "VeryLazy",

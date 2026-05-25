@@ -1,3 +1,4 @@
+-- Highlight and search TODO, FIXME, NOTE, and similar comments in code
 return {
   "folke/todo-comments.nvim",
   opts = {},

@@ -1,3 +1,4 @@
+-- Distraction-free focused writing/coding mode
 return {
   "folke/zen-mode.nvim",
   keys = {

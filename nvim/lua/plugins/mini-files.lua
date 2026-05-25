@@ -1,3 +1,4 @@
+-- Lightweight file explorer with buffer-like editing
 return {
   "nvim-mini/mini.files",
   opts = {

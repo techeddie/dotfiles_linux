@@ -1,3 +1,4 @@
+-- Sidebar showing the symbol/code structure of the current file
 return {
   "hedyhli/outline.nvim",
   cmd = { "Outline", "OutlineOpen" },
