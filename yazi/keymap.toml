@@ -160,6 +160,7 @@ keymap = [
   { on = [ "g", "p" ],       run = "cd ~/.config/polybar/",               desc = "Goto polybar"            },
   { on = [ "g", "s" ],       run = "cd ~/scripts",                        desc = "Goto scripts"            },
   { on = [ "g", "t" ],       run = "cd ~/opt/OBSIDIAN_FS01/",             desc = "Goto obsidian sync"      },
+  { on = [ "g", "w" ],       run = "cd ~/.config/wlogout/",               desc = "Goto wlogout"            },
   { on = [ "g", "y" ],       run = "cd ~/.config/yazi/",                  desc = "Goto yazi"               },
 
 	# Tabs
