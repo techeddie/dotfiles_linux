@@ -31,8 +31,7 @@ button:focus, button:active, button:hover {
 	outline-style: none;
 }
 
-
-
+/* icons */
 #lock {
     background-image: url("/home/eddie/.config/wlogout/icons/lock.svg");
 }
