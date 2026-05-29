@@ -22,8 +22,6 @@ keymap("n", "<Tab>",   "<C-w>w",  { desc = "next pane" })
 keymap("n", "<S-Tab>", "<C-w>W",  { desc = "previous pane" })
 keymap("n", "<M-h>", "<C-w>h",    { desc = "left pane" })
 keymap("n", "<M-l>", "<C-w>l",    { desc = "right pane" })
-keymap("n", "<leader>wh",   ":split<CR>",  { desc = "horizontal split" })
-keymap("n", "<leader>wv",   ":vsplit<CR>",  { desc = "vertical split" })
 keymap("n", "<M-s-t>", "<C-w>x",  { desc = "swap panes" })
 keymap("n", "q", "<C-w>c", { desc = "close current pane" })
 
