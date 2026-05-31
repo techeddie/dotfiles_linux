@@ -1,52 +1,82 @@
 return {
-  -- Disable Snacks dashboard
-  {
-    "folke/snacks.nvim",
-    opts = { dashboard = { enabled = false } },
-  },
+	-- Disable Snacks dashboard
+	{
+		"folke/snacks.nvim",
+		opts = { dashboard = { enabled = false } },
+	},
 
-  -- Override LazyVim's alpha snippet completely
-  {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- This stops LazyVim's extras/editor/snacks_picker from touching alpha
-    opts = function()
-      local dashboard = require("alpha.themes.dashboard")
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = function()
+			local dashboard = require("alpha.themes.dashboard")
 
-      dashboard.section.header.val = {
-        [[                                  __]],
-        [[     ___     ___    ___   __  __ /\_\    ___ ___]],
-        [[    / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\]],
-        [[   /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \]],
-        [[   \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-        [[    \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-      }
+			dashboard.section.header.val = {
+				[[                                  __]],
+				[[     ___     ___    ___   __  __ /\_\    ___ ___]],
+				[[    / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\]],
+				[[   /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \]],
+				[[   \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+				[[    \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+			}
 
-      dashboard.section.buttons.val = {
-        dashboard.button("f", "  Find File", "<cmd>lua Snacks.dashboard.pick('files')<cr>"),
-        dashboard.button("r", "  Recent Files", "<cmd>lua Snacks.dashboard.pick('oldfiles')<cr>"),
-        dashboard.button("g", "  Find Text", "<cmd>lua Snacks.dashboard.pick('live_grep')<cr>"),
-        dashboard.button("n", "  New File", "<cmd>ene <BAR> startinsert<cr>"),
-        { type = "padding", val = 1 },
-        dashboard.button("c", "⚙️  Neovim Config", "<cmd>e ~/.config/nvim/init.lua<cr>"),
-        dashboard.button("h", "👑  Hyprland Config", "<cmd>e ~/.config/hypr/hyprland.conf<cr>"),
-        dashboard.button("d", "  Dotfiles", "<cmd>e ~/opt/git/dotfiles_linux/<cr>"),
-        { type = "padding", val = 1 },
-        dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<cr>"),
-        dashboard.button("q", "  Quit", "<cmd>qa<cr>"),
-      }
+			-- dashboard.section.header.val = {}
 
-      dashboard.section.footer.val = "have a good one, eddie"
-      dashboard.section.header.opts.hl = "GruvboxYellow"
-      dashboard.section.buttons.opts.hl = "GruvboxFg1"
-      dashboard.section.footer.opts.hl = "GruvboxGray"
+			dashboard.config.layout = {
+				dashboard.section.header,
+				{ type = "padding", val = 1 },
+				dashboard.section.buttons,
+				dashboard.section.footer,
+				{ type = "padding", val = 8 }, -- pushes everything up by filling the bottom
+			}
 
-      dashboard.config.opts.noautocmd = true
-      return dashboard
-    end,
-    config = function(_, dashboard)
-      require("alpha").setup(dashboard.config)
-    end,
-  },
+			-- Helper: build an edit-file button with no spacing
+			local function file(key, desc, path)
+				local b = dashboard.button(key, desc, "<cmd>e " .. path .. "<cr>")
+				b.opts.hl = "GruvboxFg1"
+				b.opts.shrink_margin = false
+				return b
+			end
+
+			-- Helper: build a command button with no spacing
+			local function cmd(key, desc, command)
+				local b = dashboard.button(key, desc, command)
+				b.opts.spacing = 0
+				return b
+			end
+
+			dashboard.section.buttons.opts.spacing = 0
+			dashboard.section.buttons.val = {
+				file("ic", "  i3 Config", "~/.config/i3/config"),
+				file("kc", "  Karabiner Keymaps", "~/.config/karabiner/karabiner.json"),
+				file("lc", "  Linux Commands", "~/Nextcloud/LINUX/LINUX_COMMANDS.sh"),
+				file("lfc", "  lf Config", "~/.config/lf/lfrc"),
+				file("oh", "  Obsidian Home", "~/opt/OBSIDIAN-T490_FS01/Home.md"),
+				file("os", "  Obsidian Shortcuts", "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md"),
+				file("rb", "  Restic Backup Script", "~/scripts/restic_runBackup.sh"),
+				file("tc", "  Tmux Config", "~/.tmux.conf"),
+				file("yc", "  Yazi Config", "~/.config/yazi/yazi.toml"),
+				file("yk", "  Yazi Keymaps", "~/.config/yazi/keymap.toml"),
+				file("zc", "  Zsh Config", "~/.zshrc"),
+				file("ni", "  Neovim Init", "~/.config/nvim/init.lua"),
+				file("nk", "  Neovim Keymaps", "~/.config/nvim/lua/config/keymaps.lua"),
+				file("no", "  Neovim Options", "~/.config/nvim/lua/config/options.lua"),
+				cmd("sl", "󰒲  Lazy", "<cmd>Lazy<cr>"),
+				cmd("sle", "󰒲  LazyExtras", "<cmd>LazyExtras<cr>"),
+				cmd("q", "  Quit", "<cmd>qa<cr>"),
+			}
+
+			dashboard.section.footer.val = "have a good one, eddie"
+			dashboard.section.header.opts.hl = "GruvboxYellow"
+			dashboard.section.buttons.opts.hl = "GruvboxFg1"
+			dashboard.section.footer.opts.hl = "GruvboxGray"
+
+			dashboard.config.opts.noautocmd = true
+			return dashboard
+		end,
+		config = function(_, dashboard)
+			require("alpha").setup(dashboard.config)
+		end,
+	},
 }
