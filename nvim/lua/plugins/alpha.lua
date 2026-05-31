@@ -1,3 +1,4 @@
+-- Alpha Bookmark dashboard
 return {
 	-- Disable Snacks dashboard
 	{
@@ -49,26 +50,27 @@ return {
 			dashboard.section.buttons.opts.spacing = 0
 			dashboard.section.buttons.val = {
 				{ type = "padding", val = 1 },
-				file("ic", "󰖳 │ i3 Config", "~/.config/i3/config"),
-				file("kc", " │ Karabiner Keymaps", "~/.config/karabiner/karabiner.json"),
-				file("lc", " │ Linux Commands", "~/Nextcloud/LINUX/LINUX_COMMANDS.sh"),
-				file("lfc", "󰙅 │ lf Config", "~/.config/lf/lfrc"),
+				file("ic", "\u{f2d2}  i3 Config", "~/.config/i3/config"),
+				file("hc", "\u{f2d2}  Hypr Config", "~/.config/hypr/hyprland.conf"),
+				file("kc", "\u{f11c}  Karabiner Keymaps", "~/.config/karabiner/karabiner.json"),
+				file("lc", "\u{f120}  Linux Commands", "~/Nextcloud/LINUX/LINUX_COMMANDS.sh"),
+				file("lfc", "\u{f07b}  lf Config", "~/.config/lf/lfrc"),
 				{ type = "padding", val = 1 },
-				file("oh", "󰠮 │ Obsidian Home", "~/opt/OBSIDIAN-T490_FS01/Home.md"),
-				file("os", "󰌌 │ Obsidian Shortcuts", "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md"),
-				file("rb", "󰁯 │ Restic Backup Script", "~/scripts/restic_runBackup.sh"),
-				file("tc", " │ Tmux Config", "~/.tmux.conf"),
-				file("yc", " │ Yazi Config", "~/.config/yazi/yazi.toml"),
-				file("yk", " │ Yazi Keymaps", "~/.config/yazi/keymap.toml"),
-				file("zc", " │ Zsh Config", "~/.zshrc"),
+				file("oh", "\u{f07b}  Obsidian Home", "~/opt/OBSIDIAN-T490_FS01/Home.md"),
+				file("os", "\u{f013}  Obsidian Shortcuts", "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md"),
+				file("rb", "\u{f021}  Restic Backup Script", "~/scripts/restic_runBackup.sh"),
+				file("tc", "\u{f2d0}  Tmux Config", "~/.tmux.conf"),
+				file("yc", "\u{f07b}  Yazi Config", "~/.config/yazi/yazi.toml"),
+				file("yk", "\u{f07b}  Yazi Keymaps", "~/.config/yazi/keymap.toml"),
+				file("zc", "\u{f120}  Zsh Config", "~/.zshrc"),
 				{ type = "padding", val = 1 },
-				file("ni", " │ Neovim Init", "~/.config/nvim/init.lua"),
-				file("nk", "󰌌 │ Neovim Keymaps", "~/.config/nvim/lua/config/keymaps.lua"),
-				file("no", " │ Neovim Options", "~/.config/nvim/lua/config/options.lua"),
+				file("ni", "\u{e62b}  Neovim Init", "~/.config/nvim/init.lua"),
+				file("nk", "\u{e62b}  Neovim Keymaps", "~/.config/nvim/lua/config/keymaps.lua"),
+				file("no", "\u{e62b}  Neovim Options", "~/.config/nvim/lua/config/options.lua"),
 				{ type = "padding", val = 1 },
-				cmd("sl", "󰒲 │ Lazy", "<cmd>Lazy<cr>"),
-				cmd("sle", "󰒲 │ LazyExtras", "<cmd>LazyExtras<cr>"),
-				cmd("q", "󰗼 │ Quit", "<cmd>qa<cr>"),
+				cmd("sl", "\u{f487}  Lazy", "<cmd>Lazy<cr>"),
+				cmd("sle", "\u{f487}  LazyExtras", "<cmd>LazyExtras<cr>"),
+				cmd("q", "\u{f011}  Quit", "<cmd>qa<cr>"),
 			}
 
 			-- dashboard.section.footer.val = "have a good one, eddie"
