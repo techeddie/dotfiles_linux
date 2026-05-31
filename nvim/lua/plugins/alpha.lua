@@ -54,7 +54,7 @@ return {
 				file("hc", "\u{f2d2}  Hypr Config", "~/.config/hypr/hyprland.conf"),
 				file("kc", "\u{f11c}  Karabiner Keymaps", "~/.config/karabiner/karabiner.json"),
 				file("lc", "\u{f120}  Linux Commands", "~/Nextcloud/LINUX/LINUX_COMMANDS.sh"),
-				file("lfc", "\u{f07b}  lf Config", "~/.config/lf/lfrc"),
+				file("lfc", "\u{f07b}  Lf Config", "~/.config/lf/lfrc"),
 				{ type = "padding", val = 1 },
 				file("oh", "\u{f07b}  Obsidian Home", "~/opt/OBSIDIAN-T490_FS01/Home.md"),
 				file("os", "\u{f013}  Obsidian Shortcuts", "~/opt/OBSIDIAN-T490_FS01/_readme/SHORTCUTS TO LEARN.md"),
