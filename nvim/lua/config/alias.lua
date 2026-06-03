@@ -1,73 +1,89 @@
--- AUTOCOMMANDS
--- local M = {}
--- function M.autocmd(event, triggers, operations)
---   local cmd = string.format("autocmd %s %s %s", event, triggers, operations)
---  vim.cmd(cmd)
--- end
+local api = vim.api
 
-local cmd = vim.cmd
+-- ==========================================
+-- MY CUSTOM COMMANDS
+-- ==========================================
 
--- MY ALIASES
-cmd [[
-  "MY CUSTOM COMMANDS
-    command! Gp execute ":echo expand('%:p')"
-    command! I execute "e ~/.config/nvim/init.lua"
-    command! K execute "e ~/.config/nvim/lua/config/keymaps.lua"
-    command! KeymapsReload execute "source ~/.config/nvim/lua/config/keymaps.lua" | echo "Keymaps reloaded"
-    command! ReloadKeymaps execute "source ~/.config/nvim/lua/config/keymaps.lua" | echo "Keymaps reloaded"
+api.nvim_create_user_command("Gp", function()
+    print(vim.fn.expand('%:p')) 
+end, {})
 
-    " OBSIDIAN BASH CODEBLOCKS
-    function ObsidianBash()
-         :let a = ['', 'bash']
-         :%s/```\zs/\=reverse(a)[0]/g
-    endfunction
+api.nvim_create_user_command("I", function()
+    vim.cmd("edit ~/.config/nvim/init.lua")
+end, {})
 
-    command! BashBlock execute ObsidianBash()
+api.nvim_create_user_command("K", function()
+    vim.cmd("edit ~/.config/nvim/lua/config/keymaps.lua")
+end, {})
 
-    " OBSIDIAN POWERSHELL CODEBLOCKS
-    function! ObsidianPowerShell()
+local function reload_keymaps()
+    vim.cmd("source ~/.config/nvim/lua/config/keymaps.lua")
+    print("Keymaps reloaded")
+end
+api.nvim_create_user_command("KeymapsReload", reload_keymaps, {})
+api.nvim_create_user_command("ReloadKeymaps", reload_keymaps, {})
+
+local function obsidian_bash()
+    vim.cmd([[
+        let a = ['', 'bash']
+        silent! %s/```\zs/\=reverse(a)[0]/g
+    ]])
+end
+api.nvim_create_user_command("BashBlock", obsidian_bash, {})
+
+local function obsidian_powershell()
+    vim.cmd([[
         let a = ['', 'powershell']
         silent! %s/```\zs/\=reverse(a)[0]/g
-        
         silent! %s/\_s\+\(\n\s*```$\)/\1/g
-    endfunction
+    ]])
+end
+api.nvim_create_user_command("PowerShellBlock", obsidian_powershell, {})
+api.nvim_create_user_command("PSBlock", obsidian_powershell, {})
 
-    command! PowerShellBlock call ObsidianPowerShell()
-    command! PSBlock call ObsidianPowerShell()
 
-    function! NormalizeMarkdownHeaders()
-    let l:min_level = 7
+-- ==========================================
+-- NORMALIZE MARKDOWN HEADERS
+-- ==========================================
 
-    " DECREASE MARKDOWN HEADERS
-    for l:line in getline(1, '$')
-        let l:match = matchstr(l:line, '^#\+\ze\s')
-        if !empty(l:match)
-            let l:level = len(l:match)
-            if l:level < l:min_level
-                let l:min_level = l:level
-            endif
-        endif
-    endfor
+local function normalize_markdown_headers()
+    local lines = api.nvim_buf_get_lines(0, 0, -1, false)
+    local min_level = 7
 
-    if l:min_level > 1 && l:min_level < 7
-        let l:offset = l:min_level - 1
-        " Ersetze die Rauten durch die (alte Anzahl - Offset)
-        execute 'silent! %s/^#\+\ze\s/\=repeat("#", len(submatch(0)) - ' . l:offset . ')/g'
-        echo "Ueberschriften korrigiert (um " . l:offset . " Ebene(n) angehoben)."
+    -- 1. kleinstes header-level finden (1 bis 6)
+    for _, line in ipairs(lines) do
+        -- lua pattern sucht nach rauten am zeilenanfang, gefolgt von leerzeichen
+        local match = string.match(line, "^(#+)%s")
+        if match then
+            local level = #match
+            if level < min_level then
+                min_level = level
+            end
+        end
+    end
+
+    -- 2. wenn noetig, alle header anpassen
+    if min_level > 1 and min_level < 7 then
+        local offset = min_level - 1
+        
+        for i, line in ipairs(lines) do
+            local match = string.match(line, "^(#+)%s")
+            if match then
+                local new_level = #match - offset
+                local new_hashes = string.rep("#", new_level)
+                -- ersetzt nur die alten rauten durch die neue anzahl
+                lines[i] = string.gsub(line, "^#+", new_hashes, 1)
+            end
+        end
+        
+        -- geänderte zeilen zurück in den buffer schreiben
+        api.nvim_buf_set_lines(0, 0, -1, false, lines)
+        print("Überschriften korrigiert (um " .. offset .. " Ebene(n) angehoben).")
     else
-        echo "Keine Anpassung noetig."
-    endif
-    endfunction
+        print("Keine Anpassung nötig.")
+    end
+end
 
-    command! FixHeaders call NormalizeMarkdownHeaders()
-    command! MarkdownHeadersDecrease call NormalizeMarkdownHeaders()
-    command! DecreaseMarkdownHeaders call NormalizeMarkdownHeaders()
-
-]]
-
-    -- command! P execute "e ~/.config/nvim/lua/config/plugins.lua"
-    -- command! PluginsReload execute "source ~/.config/nvim/lua/config/plugins.lua"  | echo "Plugins reloaded"
-    -- command! S execute "e ~/.config/nvim/lua/config/settings.lua"
-    -- command! SettingsReload execute "source ~/.config/nvim/lua/config/settings.lua" | echo "Settings reloaded"
-    -- command! T execute "e ~/.config/nvim/lua/plugconfig/telescope.lua"
-    -- command! TS execute "e ~/.config/nvim/lua/plugconfig/telescope.lua"
+api.nvim_create_user_command("FixHeaders", normalize_markdown_headers, {})
+api.nvim_create_user_command("MarkdownHeadersDecrease", normalize_markdown_headers, {})
+api.nvim_create_user_command("DecreaseMarkdownHeaders", normalize_markdown_headers, {})
