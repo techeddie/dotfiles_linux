@@ -75,12 +75,22 @@
   cmd file_preview $LESSOPEN='| ~/.config/lf/etc/preview %s' LESS='-cRiX' cls; bat --wrap auto --paging always $f
 
 #toggle preview
-cmd toggle_preview %{{
-    if [ "$lf_preview" = "true" ]; then
-        lf -remote "send $id :set preview false; set ratios 1:5"
-    else
-        lf -remote "send $id :set preview true; set ratios 1:2:3"
-    fi
+# cmd toggle_preview &{{
+# if [ "$lf_preview" = "true" ]; then
+# lf -remote "send $id set preview false; set ratios 1:5"
+# else
+# lf -remote "send $id set preview true; set ratios 1:10:1"
+# fi
+# }}
+#
+# cmd shrink_preview &lf -remote "send $id set ratios 1:10:1"
+
+cmd toggle_ratios &{{
+  if [ "$lf_ratios" = "1:10:1" ]; then
+  lf -remote "send $id set ratios 1:5:2"
+  else
+  lf -remote "send $id set ratios 1:10:1"
+  fi
 }}
 
 #####################
@@ -585,7 +595,9 @@ cmd lf_reload ${{
   map P toggle_preview
   map R reload
   map S :!zsh
-  map V toggle_preview
+  # map V toggle_preview
+  # map V shrink_preview
+  map V toggle_ratios
   map ac push %touch<space>
   map ad push %mkdir<space>
   map af push %mkdir<space>
