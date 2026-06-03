@@ -22,12 +22,15 @@ cmd [[
     endfunction
     command! BashBlock execute ObsidianBash()
 
-    function ObsidianPowerShell()
-         :let a = ['', 'powershell']
-         :%s/```\zs/\=reverse(a)[0]/g
+    function! ObsidianPowerShell()
+        let a = ['', 'powershell']
+        silent! %s/```\zs/\=reverse(a)[0]/g
+        
+        silent! %s/\_s\+\(\n\s*```$\)/\1/g
     endfunction
-    command! PowershellBlock execute ObsidianPowerShell()
-    command! PSBlock execute ObsidianPowerShell()
+
+    command! PowershellBlock call ObsidianPowerShell()
+    command! PSBlock call ObsidianPowerShell()
 
 ]]
 
