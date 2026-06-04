@@ -1,6 +1,8 @@
 keymap:
-  - name: Alt backtick to Alt Shift L in Brave
+  - name: Brave Custom Shortcuts
     application:
       only: [brave-browser]
     remap:
       Alt-grave: Alt-Shift-l
+      Alt-1: Alt-b
+      Alt-2: Alt-Shift-0
