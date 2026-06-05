@@ -649,11 +649,6 @@ run = "plugin fazif fazifile"
 desc = "Find files/directories with fd and fzf"
 
 [[mgr.prepend_keymap]]
-on = [ "/" ]
-run = "plugin fazif fazidir"
-desc = "Find files/directories with fd and fzf"
-
-[[mgr.prepend_keymap]]
 on = [ ";" ]
 run = "plugin fazif fazidir"
 desc = "Find files/directories with fd and fzf"
