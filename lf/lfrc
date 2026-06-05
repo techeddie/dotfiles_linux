@@ -566,6 +566,7 @@ cmd lf_reload ${{
   map <a-p> :file_preview 
   map <a-r> :edit_config
   map <a-t> :tag-toggle
+  map T :tag-toggle
   map <a-v> two_panes
   map <a-x> :make_executeable 
   map <backspace2> updir
