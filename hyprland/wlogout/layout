@@ -26,7 +26,7 @@
     "label" : "logout",
     "action" : "hyprctl dispatch exit",
     "text" : "Logout",
-    "keybind" : "e"
+    "keybind" : "L"
 }
 {
     "label" : "reboot",
