@@ -303,7 +303,7 @@
 
     for_window [app_id="^.*"] border pixel 3
     for_window [class="^.*"] border pixel 3
-    for_window [class="Brave-browser"] border pixel 3, layout tabbed
+    for_window [app_id="brave-browser"] border pixel 3, layout tabbed
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
     for_window [class="TelegramDesktop"] border none
     for_window [class="Virt-manager"] border normal, layout tabbed
@@ -360,9 +360,9 @@
 
     # focus
     focus_on_window_activation focus
-    for_window [class="Brave-browser"] focus
-    for_window [class="Sublime_text"] focus
-    for_window [class="Doublecmd"] focus
+    for_window [app_id="brave-browser"] focus
+    for_window [app_id="Sublime_text"] focus
+    for_window [app_id="Doublecmd"] focus
     for_window [class="Gcr-prompter"] focus
     for_window [app_id="floorp"] focus
     for_window [instance="xfreerdp"] focus
@@ -377,8 +377,8 @@
 
     # always launch app on workspace x
     assign [class="Anydesk"] $workspace4
-    assign [class="Brave-browser" title="Files - Nextcloud"] $workspace10
-    assign [class="Brave-browser" title="Outlook"] $workspace10
+    assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
+    assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="brave-browser"] $workspace2
     assign [app_id="chromium"] $workspace5
     assign [class="Ledger Live"] $workspace6
