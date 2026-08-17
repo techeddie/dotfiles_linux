@@ -177,12 +177,12 @@
     bindsym $mod+Shift+v            exec swaymsg -q '[app_id=vlc] focus' 2>/dev/null || vlc
     bindsym $mod+Shift+w            exec networkmanager_dmenu
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
-    bindsym $mod+b                  exec swaymsg -q '[class=Brave-browser] focus' 2>/dev/null || brave
+    bindsym $mod+b                  exec swaymsg -q '[app_id=brave-browser] focus' 2>/dev/null || brave
     bindsym $mod+c                  exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+d                  exec swaymsg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    bindsym $mod+d                  exec swaymsg -q '[app_id=doublecmd] focus' 2>/dev/null || doublecmd
     bindsym $mod+e                  exec thunar
     bindsym $mod+j                  exec copyq show
-    bindsym $mod+n                  exec swaymsg -q '[class=obsidian] focus' 2>/dev/null || obsidian
+    bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec swaymsg -q '[app_id=thunderbird] focus' 2>/dev/null || thunderbird
     # bindsym $mod+p                exec waybar-msg cmd toggle
     bindsym $mod+shift+i            exec swayprop
@@ -239,7 +239,7 @@
     exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
     exec subl
     exec_always autotiling
-    exec_always waybar
+    exec_always killall waybar && waybar 
     # CHANGE: xset/numlockx removed (handled by input config above)
 
 #-------------------------------------------------
@@ -446,4 +446,9 @@ exec swayidle -w \
 exec {
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+}
+
+input "5215:621:SINOWEALTH_GXT_144_Gaming_Mouse" {
+    # accel_profile flat
+    pointer_accel -0.5
 }
