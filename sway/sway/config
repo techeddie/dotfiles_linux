@@ -127,7 +127,8 @@
     # CHANGE: i3-msg → swaymsg throughout
     # CHANGE: removed --no-startup-id (not needed in Sway)
     # CHANGE: polybar removed (use waybar instead)
-    # bindsym $alt+Shift+p            exec sh ~/.config/waybar/launch.sh
+    # bindsym $alt+Shift+p exec bash -c 'pkill waybar; sleep 0.3; waybar &'
+    bindsym $mod+Shift+F10          exec bash -c 'pkill waybar; sleep 0.3; waybar &'
 
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
@@ -136,12 +137,12 @@
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX2.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
     # CHANGE: display scripts — replace xrandr scripts with swaymsg output commands
-    # bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
-    # bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
-    # bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
-    bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
-    bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
-    bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
+    bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
+    bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
+    bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
+    # bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
+    # bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
+    # bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
     bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
     bindsym $mod+Return             exec $term
@@ -218,8 +219,9 @@
     exec seafile-applet
     exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
     exec subl
+    exec waybar
     exec_always autotiling
-    exec_always killall waybar && waybar 
+    # exec_always killall waybar && waybar 
     # CHANGE: xset/numlockx removed (handled by input config above)
 
 #-------------------------------------------------
@@ -259,12 +261,13 @@
     bindsym $mod+Shift+s exec swaylock -f && systemctl suspend
 
     #logoff shutdown reboot menu
-    bindsym $mod+x exec archlinux-logout
+    # bindsym $mod+x exec wlogout
+    bindsym $mod+x exec wlogout -b 2 -c 2 -r 0 -m 2  --margin-top 400 --margin-bottom 400 --margin-left 600 --margin-right 600
     bindsym $mod+Shift+x exec systemctl poweroff
 
     # reload config
-    bindsym $mod+Shift+r exec notify-send -t 2500 -i "preferences-system" "Sway" "config reloaded" && swaymsg reload
-    bindsym $mod+r reload
+    bindsym $mod+Shift+r     exec notify-send -t 2500 -i "preferences-system" "Sway" "config reloaded" && swaymsg reload
+    bindsym $mod+r           exec notify-send -t 2500 -i "preferences-system" "Sway" "config reloaded" && swaymsg reload
 
     default_orientation horizontal
 
