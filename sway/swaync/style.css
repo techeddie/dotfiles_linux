@@ -1,0 +1,283 @@
+/* ── Arch Dark — SwayNC Theme ───────────────────────────────────────────── */
+/* Matches waybar Arch Dark palette                                         */
+/* bg: #0d1117  bg1: #161b22  bg2: #21262d  bg3: #30363d                   */
+/* fg: #c9d1d9  fg-dim: #8b949e  fg-bright: #f0f6fc                        */
+/* arch: #1793D1  red: #f85149  yellow: #e3b341  green: #56d364             */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    transition: all 150ms ease;
+}
+
+/* ── Control Center Panel ──────────────────────────────────────────────── */
+
+.control-center {
+    background-color: #0d1117;
+    border-radius: 12px;
+    border: 1px solid #21262d;
+    padding: 12px;
+    color: #c9d1d9;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.control-center-list {
+    background-color: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.4;
+    color: #8b949e;
+}
+
+/* ── Widget: Title ─────────────────────────────────────────────────────── */
+
+.widget-title {
+    color: #c9d1d9;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    padding: 4px 4px 10px 4px;
+    border-bottom: 1px solid #21262d;
+}
+
+.widget-title > button {
+    background-color: #21262d;
+    color: #8b949e;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+.widget-title > button:hover {
+    background-color: #f85149;
+    color: #f0f6fc;
+}
+
+/* ── Widget: DND Toggle ────────────────────────────────────────────────── */
+
+.widget-dnd {
+    color: #c9d1d9;
+    padding: 8px 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 8px;
+}
+
+.widget-dnd > switch {
+    border-radius: 14px;
+    border: 2px solid #30363d;
+    background-color: #21262d;
+    min-height: 24px;
+    min-width: 48px;
+}
+
+.widget-dnd > switch:checked {
+    background-color: #1793D1;
+    border-color: #1793D1;
+}
+
+.widget-dnd > switch slider {
+    background-color: #c9d1d9;
+    border-radius: 14px;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 1px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ── Widget: Inhibitors ────────────────────────────────────────────────── */
+
+.widget-inhibitors {
+    color: #c9d1d9;
+    padding: 4px 4px 10px 4px;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 8px;
+}
+
+.widget-inhibitors > button {
+    background-color: #21262d;
+    color: #8b949e;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 12px;
+    font-size: 11px;
+}
+
+.widget-inhibitors > button:hover {
+    background-color: #30363d;
+    color: #c9d1d9;
+}
+
+/* ── Notification Row ──────────────────────────────────────────────────── */
+
+.notification-row {
+    outline: none;
+    margin: 3px 0;
+}
+
+.notification {
+    background-color: #161b22;
+    border-radius: 10px;
+    border: 1px solid #21262d;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.notification.critical {
+    border-color: #f85149;
+    box-shadow: 0 2px 12px rgba(248, 81, 73, 0.3);
+}
+
+.notification:hover {
+    border-color: #30363d;
+}
+
+/* ── Notification Action Button ────────────────────────────────────────── */
+
+.notification-default-action {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #c9d1d9;
+    border: none;
+}
+
+.notification-default-action:hover {
+    background-color: #21262d;
+    border-radius: 10px;
+}
+
+.notification-action-button {
+    background-color: #21262d;
+    color: #8b949e;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.notification-action-button:hover {
+    background-color: #30363d;
+    color: #c9d1d9;
+}
+
+/* ── Close Button ──────────────────────────────────────────────────────── */
+
+.close-button {
+    background-color: transparent;
+    color: #30363d;
+    border-radius: 6px;
+    border: none;
+    padding: 2px 6px;
+    margin: 6px 6px 0 0;
+    font-size: 12px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.close-button:hover {
+    background-color: #f85149;
+    color: #f0f6fc;
+}
+
+/* ── Notification Content ──────────────────────────────────────────────── */
+
+.notification-content {
+    padding: 0;
+}
+
+.app-icon {
+    border-radius: 6px;
+    margin-right: 4px;
+}
+
+.summary {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c9d1d9;
+}
+
+.time {
+    font-size: 11px;
+    color: #30363d;
+    margin-left: 4px;
+}
+
+.body {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 2px;
+}
+
+.body-image {
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+/* ── Inline reply ──────────────────────────────────────────────────────── */
+
+.inline-reply {
+    margin-top: 6px;
+}
+
+.inline-reply-entry {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 4px 8px;
+    caret-color: #1793D1;
+}
+
+.inline-reply-button {
+    background-color: #21262d;
+    color: #8b949e;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-left: 4px;
+}
+
+.inline-reply-button:hover {
+    background-color: #1793D1;
+    color: #f0f6fc;
+}
+
+/* ── Popup Notification ────────────────────────────────────────────────── */
+
+.notification-popup {
+    background-color: #161b22;
+    border-radius: 10px;
+    border: 1px solid #21262d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    margin: 4px;
+}
+
+.notification-popup.critical {
+    border-color: #f85149;
+    box-shadow: 0 4px 20px rgba(248, 81, 73, 0.4);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+
+scrollbar {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+scrollbar slider {
+    background-color: #21262d;
+    border-radius: 4px;
+    min-width: 4px;
+}
+
+scrollbar slider:hover {
+    background-color: #30363d;
+}
