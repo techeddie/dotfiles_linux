@@ -1,5 +1,4 @@
 # ---------------SWAY CONFIG EDDIE---------------------
-# Converted from i3 config — see CHANGE comments for modifications
 
 #windows key
     set $mod Mod4
@@ -25,30 +24,11 @@
 
     set $firstMonitor eDP-1
     set $secondMonitor HDMI-A-2
-    # CHANGE: HDMI-2 → HDMI-A-1 (Wayland naming convention, verify with: swaymsg -t get_outputs)
+
 
 #-------------------------------------------------
-# CHANGE: Sway-native input/output configuration (replaces xset, xinput, numlockx, xbacklight)
-
-    # Keyboard repeat rate (replaces: xset r rate 250 40)
-    input type:keyboard {
-        repeat_delay 250
-        repeat_rate 40
-        xkb_numlock enabled
-    }
-
-    # Touchpad (adjust device name via: swaymsg -t get_inputs)
-    input type:touchpad {
-        dwt enabled
-        tap enabled
-        natural_scroll enabled
-    }
-
-    # Output / wallpaper (replaces: nitrogen --restore)
-    # Option A: static wallpaper
-    # output * bg ~/Pictures/wallpaper.png fill
-    # Option B: swww (animated transitions, install: sudo pacman -S swww)
-    # exec swww-daemon && swww img ~/Pictures/wallpaper.png
+# inputs
+  include ~/.config/sway/input.conf
 
 #-------------------------------------------------
 #lockscreen
@@ -448,7 +428,25 @@ exec {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 }
 
+# INPUTS
 input "5215:621:SINOWEALTH_GXT_144_Gaming_Mouse" {
     # accel_profile flat
     pointer_accel -0.5
+}
+
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    natural_scroll disabled
+    scroll_method two_finger
+    dwt enabled
+}
+
+input type:keyboard {
+    xkb_layout us
+    xkb_model pc105
+    xkb_variant altgr-intl
+    repeat_delay 250
+    repeat_rate 40
+    xkb_numlock enabled
 }
