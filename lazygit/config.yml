@@ -12,25 +12,25 @@ gui:
   timeFormat: '02 Jan 06 15:04 MST' # https://pkg.go.dev/time#Time.Format
   # gruvbox theme
   theme:
-      activeBorderColor:
-        - "#d79921"
-        - bold
-      inactiveBorderColor:
-        - "#504945"
-      optionsTextColor:
-        - "#83a598"
-      selectedLineBgColor:
-        - "#3c3836"
-      selectedRangeBgColor:
-        - "#3c3836"
-      cherryPickedCommitBgColor:
-        - "#689d6a"
-      cherryPickedCommitFgColor:
-        - "#282828"
-      unstagedChangesColor:
-        - "#fb4934"
-      defaultFgColor:
-        - "#ebdbb2"
+    activeBorderColor:
+      - "#d79921"
+      - bold
+    inactiveBorderColor:
+      - "#504945"
+    optionsTextColor:
+      - "#83a598"
+    selectedLineBgColor:
+      - "#3c3836"
+    selectedRangeBgColor:
+      - "#3c3836"
+    cherryPickedCommitBgColor:
+      - "#689d6a"
+    cherryPickedCommitFgColor:
+      - "#282828"
+    unstagedChangesColor:
+      - "#fb4934"
+    defaultFgColor:
+      - "#ebdbb2"
   # theme:
   #   activeBorderColor:
   #     - red
@@ -66,9 +66,10 @@ gui:
   splitDiff: 'auto' # one of 'auto' | 'always'
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
       useConfig: false
+      type: rawGit
   commit:
     signOff: false
     verbose: default # one of 'default' | 'always' | 'never'
