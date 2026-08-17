@@ -1,0 +1,527 @@
+# ---------------SWAY CONFIG EDDIE---------------------
+
+#windows key
+    set $mod Mod4
+#alt key
+    set $alt Mod1
+#font
+    # font pango:System San Francisco Display 15
+#vars
+    # set $term ghostty
+    set $term kitty
+    set $down k
+    set $left j
+    set $right h
+    set $up l
+
+    set $workspace1 "1"
+    set $workspace2 "2"
+    set $workspace3 "3"
+    set $workspace4 "4"
+    set $workspace5 "5"
+    set $workspace6 "6"
+    set $workspace7 "7"
+    set $workspace8 "8"
+    set $workspace9 "9"
+    set $workspace10 "10"
+
+    set $firstMonitor eDP-1
+    set $secondMonitor HDMI-2 
+    # set $qt env QT_QPA_PLATFORM=xcb 
+
+    #alt tab
+    set $i3t_alt_tab        $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py n all
+    set $i3t_alt_shift_tab  $HOME/gitREPO/dotfiles_linux/i3/scripts/i3-alt-tab.py p all
+
+#lockscreen
+    # set $lockscreen ~/.config/i3/wallpaper.png
+    # manual lock via super+l
+    bindsym $mod+l exec swaylock
+    # auto-lock on suspend/lid close via xss-lock
+    # exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh
+
+#workspace
+    workspace_layout default
+
+    #define monitor output
+    workspace 1 output $secondMonitor
+    workspace 2 output $secondMonitor
+    workspace 3 output $secondMonitor
+    workspace 4 output $secondMonitor
+    workspace 6 output $secondMonitor
+    workspace 7 output $secondMonitor
+    workspace 8 output $secondMonitor
+    workspace 9 output $secondMonitor
+    workspace 10 output $firstMonitor
+
+    #switch workspace
+    # bindsym $alt+Ctrl+Left    workspace prev
+    # bindsym $alt+Ctrl+Right   workspace next
+    bindsym $alt+Ctrl+j       workspace prev
+    bindsym $alt+Ctrl+k       workspace next
+    bindsym $alt+Tab          workspace back_and_forth
+    bindsym $mod+Next         workspace next
+    bindsym $mod+Prior        workspace prev
+    bindsym $mod+Shift+End    workspace next
+    bindsym $mod+Shift+Home   workspace prev
+    bindsym $mod+Shift+j      workspace prev
+    bindsym $mod+Shift+k      workspace next
+
+    #switch to workspace
+    bindsym $mod+0              workspace $workspace10
+    bindsym $mod+1		          workspace $workspace1
+    bindsym $mod+2              workspace $workspace2
+    bindsym $mod+3              workspace $workspace3
+    bindsym $mod+4              workspace $workspace4
+    bindsym $mod+5              workspace $workspace5
+    bindsym $mod+6              workspace $workspace6
+    bindsym $mod+7              workspace $workspace7
+    bindsym $mod+8              workspace $workspace8
+    bindsym $mod+9              workspace $workspace9
+    bindsym $mod+Shift+Return		workspace $workspace1
+
+    # move focused container to workspace
+    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+
+
+#-------------------------------------------------
+#gaps
+    #default gap size
+    gaps inner 30
+    gaps outer 10
+    #smart_borders on
+    #smart_gaps on
+    #gaps for workspaces
+    workspace 1 gaps inner 10
+    workspace 2 gaps outer 10
+    workspace 3 gaps inner 15
+    workspace 4 gaps inner 15
+    workspace 5 gaps inner 15
+    workspace 6 gaps inner 15
+    workspace 7 gaps inner 15
+    workspace 8 gaps outer 20
+    workspace 9 gaps outer 20
+    workspace 0 gaps outer 20
+
+    #keybindings toggle gaps - todo
+    bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
+    bindsym $mod+F2 gaps inner current set 35; gaps outer current set 10
+    bindsym $mod+F3 gaps inner current set 100; gaps outer current set 10
+    bindsym $mod+F4 gaps inner current set 180; gaps outer current set 10
+
+    #scratchpad
+    #move current window to background
+      bindsym $mod+z move scratchpad
+      bindsym $mod+y move scratchpad
+    #bring back to foreground
+      bindsym $mod+u     scratchpad show; move position center
+    #toggle keepassxc
+      bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
+      bindsym $mod+a [title="ekah"] scratchpad show, move position center
+    #toggle kitty 
+      # bindsym F12 [instance="floating-term"] scratchpad show
+      bindsym F12 exec --no-startup-id ~/.config/i3/scripts/floating-term.sh
+    #toggle gnome-disks
+      bindsym $mod+Shift+g [class="Gnome-disks"] scratchpad show, move position center
+    #toggle autokey-gtk
+      bindsym $mod+Shift+a [instance="autokey-gtk"] scratchpad show, move position center
+    #toggle sublime_text
+      bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
+      bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
+
+#-------------------------------------------------
+#key bindings to launch applications
+
+    bindsym $alt+Shift+p            exec sh ~/.config/polybar/launch.sh --material
+    bindsym $mod+$alt+c             exec i3-msg -q '[class=elecwhat] focus' 2>/dev/null || elecwhat
+    bindsym $mod+$alt+ctrl+c        exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+$alt+ctrl+l        exec i3-msg -q '[class=ledger live] focus' 2>/dev/null || ledger-live-desktop
+    bindsym $mod+$alt+ctrl+t        exec i3-msg -q '[class=Telegram] focus' 2>/dev/null || Telegram
+    bindsym $mod+$alt+ctrl+m        exec i3-msg -q '[instance=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
+    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
+    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
+    bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
+    bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
+    bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
+    bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
+    bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
+    bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
+    bindsym $mod+Return             exec $term;focus
+    bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
+    bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root/backup.root.sh
+    bindsym $mod+Shift+Tab          exec $i3t_alt_shift_tab
+    bindsym $mod+Shift+b            exec --no-startup-id blueman-manager
+    bindsym $mod+Shift+c            exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+Shift+f            exec i3-msg -q '[class=floorp] focus' 2>/dev/null || floorp
+    bindsym $mod+Shift+l            exec kitty -e lf ~/
+    bindsym $mod+Shift+p            exec kitty -e pacseek
+    bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsym $mod+Shift+v            exec i3-msg -q '[class=vlc] focus' 2>/dev/null || vlc
+    bindsym $mod+Shift+w            exec networkmanager_dmenu
+    bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
+    bindsym $mod+Tab                exec $i3t_alt_tab
+    bindsym $mod+b                  exec i3-msg -q '[class=Brave] focus' 2>/dev/null || brave
+    bindsym $mod+c                  exec i3-msg -q '[class=Chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+d                  exec i3-msg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    bindsym $mod+e                  exec --no-startup-id thunar
+    bindsym $mod+j                  exec copyq show
+    bindsym $mod+n                  exec i3-msg -q '[class=obsidian] focus' 2>/dev/null || obsidian
+    bindsym $mod+o                  exec i3-msg -q '[class=Thunderbird] focus' 2>/dev/null || thunderbird
+    bindsym $mod+p                  exec polybar-msg cmd toggle
+    bindsym $mod+shift+i            exec sh $HOME/gitREPO/dotfiles_linux/i3/scripts/xprop.sh
+    bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
+    bindsym $mod+$alt+Ctrl+f        exec fsearch
+    bindsym control+$alt+m          exec --no-startup-id pavucontrol
+    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources;focus
+
+    # CPU performance profiles
+    bindsym $mod+Shift+F1 exec --no-startup-id "sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Powersave (800MHz)'"
+    bindsym $mod+Shift+F2 exec --no-startup-id "sudo auto-cpufreq --force=reset && sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Auto'"
+    bindsym $mod+Shift+F3 exec --no-startup-id "sudo cpupower frequency-set -u 2300MHz && notify-send 'CPU' 'Balanced (2300MHz)'"
+    bindsym $mod+Shift+F4 exec --no-startup-id "sudo cpupower frequency-set -u 4600MHz && notify-send 'CPU' 'Performance (4600MHz)'"
+
+    #screenshots
+    # auswahl → clipboard
+    bindsym Print exec --no-startup-id bash -c 'maim -s | xclip -selection clipboard -t image/png'
+    # auswahl → datei + clipboard
+    bindsym $mod+Print exec --no-startup-id bash -c 'maim -s | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
+    # ganzer bildschirm → datei + clipboard
+    bindsym $mod+Shift+Print exec --no-startup-id bash -c 'maim | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | xclip -selection clipboard -t image/png'
+
+    #rofi  
+      #running windows
+        bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue 
+        #bindsym $mod+w              exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+        #bindsym $alt+Tab            exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+      #app launcher
+        bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme glue_pro_blue 
+        bindsym $mod+Shift+m        exec --no-startup-id sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
+        #bindsym $mod+m              exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+
+    #dmenu
+        # bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#001f4d' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14' -b
+
+#-------------------------------------------------
+#execute on logon - AUTOSTARTUP - STARTUP
+
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+    exec --no-startup-id blueman-applet
+    exec --no-startup-id brave 
+    exec --no-startup-id copyq
+    exec --no-startup-id dunst
+    exec --no-startup-id flameshot
+    exec --no-startup-id gnome-disks
+    exec --no-startup-id autokey-gtk
+    exec --no-startup-id guake 
+    exec --no-startup-id keepassxc
+    exec --no-startup-id kitty --class floating-term -e tmux new-session -A -s scratchpad
+    exec --no-startup-id nitrogen --restore 
+    exec --no-startup-id nm-applet
+    exec --no-startup-id obsidian
+    exec --no-startup-id picom --daemon
+    exec --no-startup-id seafile-applet
+    exec --no-startup-id sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && i3-msg "move container to workspace 1; workspace 1"'
+    exec --no-startup-id subl
+    exec --no-startup-id xset s off -dpms
+    exec_always --no-startup-id /usr/bin/autokey-gtk
+    exec_always --no-startup-id autotiling 
+    exec_always --no-startup-id numlockx on
+    exec_always --no-startup-id warbar
+    exec_always --no-startup-id xset r rate 250 40
+
+#-------------------------------------------------
+# windows settings and behaviour
+
+    #start workspace on monitor
+    # workspace 1 output HDMI-2
+    # workspace 2 output HDMI-2
+    
+    #show windows icons
+    for_window [all] title_window_icon padding 3px
+
+    #Default Layout mode for new containers
+    # workspace_layout tabbed  #layouts: stacked, tabbed, toggle split
+    title_align right
+    popup_during_fullscreen smart
+    default_border normal 5
+    focus_follows_mouse yes
+    show_marks yes #drawing marks on window decoration
+
+    bindsym $mod+f  fullscreen toggle
+    bindsym $mod+$alt+b exec --no-startup-id i3-msg border toggle
+    bindsym $alt+Shift+b exec --no-startup-id i3-msg border toggle
+    # popup_during_fullscreen smart #popup_during_fullscreen smart|ignore|leave_fullscreen
+
+    # initiate a tiling drag on either titlebar click or held modifier:
+    #tiling_drag modifier titlebar
+
+    # Border control
+    hide_edge_borders both
+    
+    #open new window mode
+    bindsym $mod+h split v 
+    bindsym $mod+v split h 
+
+    #kill current windows
+    bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    bindsym $mod+k			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    bindsym --release $mod+Escape   exec xkill
+
+    #lock screen after x minutes
+    exec_always --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen --lock blur" \
+      -notify 30 -notifier "notify-send -t 15000 --icon=dialog-information -- 'locking screen in 30 seconds'"
+
+    #suspend
+    bindsym $mod+Shift+s  exec i3lock --show-failed-attempts --tiling -i $lockscreen  && systemctl suspend
+
+    #logoff shutdown reboot menu
+    bindsym $mod+x  exec --no-startup-id archlinux-logout
+    bindsym $mod+Shift+x  exec systemctl poweroff
+
+    # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+    #bindsym $mod+r restart
+    # reload the configuration file
+    bindsym $mod+Shift+r exec notify-send -t 2500 -i "preferences-system" "Sway" "config reloaded" && swaymsg reload
+    bindsym $mod+r reload
+
+    # orientation for new workspaces
+    default_orientation horizontal
+    # default_orientation vertical
+
+    # focus windows
+    bindsym $mod+Left focus left
+    bindsym $mod+Right focus right
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+
+    # focus the parent container
+    # bindsym $alt+Shift+f focus parent
+
+    #change container layout (stacked, tabbed, toggle split)
+    # bindsym $mod+Shift+t layout toggle splith splitv tabbed
+    bindsym $mod+s layout stacking
+    bindsym $mod+Shift+t layout tabbed
+
+    ################# resize  
+    #resize window
+    bindsym $mod+$alt+Left resize shrink width 6 px or 6 ppt
+    bindsym $mod+$alt+Up resize grow height 6 px or 6 ppt
+    bindsym $mod+$alt+Down resize shrink height 6 px or 6 ppt
+    bindsym $mod+$alt+Right resize grow width 6 px or 6 ppt
+
+        # window with Shift
+        bindsym $mod+Shift+Left move left
+        bindsym $mod+$alt+h move left
+        bindsym $mod+Shift+Down move down
+        bindsym $mod+$alt+j move down
+        # bindsym $mod+Down move down
+        bindsym $mod+Shift+Up move up
+        bindsym $mod+$alt+k move up
+        # bindsym $mod+Up move up
+        bindsym $mod+Shift+Right move right
+        bindsym $mod+$alt+l move right
+
+            #resize window with mod+space + key
+            # mode "resize" {
+            #     # These bindings trigger as soon as you enter the resize mode
+            #
+            #     # Pressing left will shrink the window’s width.
+            #     # Pressing right will grow the window’s width.
+            #     # Pressing up will shrink the window’s height.
+            #     # Pressing down will grow the window’s height.
+            #     bindsym j resize shrink width 10 px or 10 ppt
+            #     bindsym h resize grow height 10 px or 10 ppt
+            #     bindsym l resize shrink height 10 px or 10 ppt
+            #     bindsym k resize grow width 10 px or 10 ppt
+            #
+            #     # same bindings, but for the arrow keys
+            #     bindsym Left resize shrink width 10 px or 10 ppt
+            #     bindsym Down resize grow height 10 px or 10 ppt
+            #     bindsym Up resize shrink height 10 px or 10 ppt
+            #     bindsym Right resize grow width 10 px or 10 ppt
+            #
+            #     # back to normal: Enter or Escape
+            #     bindsym Return mode "default"
+            #     bindsym Escape mode "default"
+            # }
+            # bindsym $mod+Shift+space mode "resize"
+
+    ################# FOR_WINDOW  
+
+    for_window [class="^.*"] border pixel 3
+    for_window [class="(?i)brave"] title_format "<span foreground='blue'>%title</span>"
+    for_window [class=".*launcher.*"] border none
+    for_window [class="Anydesk"] border normal
+    for_window [class="Brave-browser"] border pixel 3, layout tabbed
+    for_window [class="Geany"] border pixel 5
+    for_window [class="Gnome-disks"] floating enable, resize set 1300 900, move position center
+    for_window [class="Guake"] border pixel 1
+    for_window [class="Navigator"] layout tabbed
+    for_window [class="TelegramDesktop"] border none
+    for_window [class="Virt-manager"] border normal, layout tabbed
+    for_window [class="Wfica"] border normal
+    for_window [class="firefox"] border none, layout tabbed
+    for_window [class="floorp"] border none, layout tabbed
+    for_window [class="ghostty"] border pixel 2
+    for_window [class="gnome-system-monitor"] floating enable, resize set 800 600
+    for_window [class="kitty"] border pixel 1
+    for_window [class="obsidian"] border pixel 1
+    for_window [class="octopi"] floating enable, resize set 1200 900, move position center 
+    for_window [class="resources"] floating enable, resize set 1200 900, move position center 
+    for_window [class="thunderbird"] border pixel 5, layout tabbed
+    for_window [instance="Ledger live"] border normal
+    for_window [instance="xfreerdp"] border normal
+    for_window [window_role="GtkFileChooserDialog"] move position center, resize set 800 600
+    for_window [class="Dunst"] border none
+    no_focus [class="Dunst"]
+
+    # scratchpad move
+    for_window [title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    for_window [instance="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
+    for_window [title="Disks"] floating enable, resize set 800 600, move scratchpad
+    for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
+    for_window [title="system-config-printer"] floating enable, resize set 500 600, move scratchpad
+    for_window [class="urxvt"] move scratchpad
+
+    # floating
+    floating_modifier $mod
+    bindsym $mod+t floating toggle
+    for_window [class="arandr"] floating enable, move position center
+    for_window [class="Baobab"] floating enable, move position center
+    for_window [class="Seafile Client"] floating enable, move position center
+    for_window [class="Grub-customizer"] floating enable, move position center
+    for_window [class="Guake"] floating enable, move position center
+    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
+    for_window [class="Nitrogen"] floating enable, move position center
+    for_window [class="Nm-connection-editor"] floating enable, move position center
+    for_window [class="Pavucontrol"] floating enable, move position center
+    for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
+    for_window [class="TimeShift-gtk"] floating enable, move position center
+    for_window [class="Woeusbgui"] floating enable, move position center
+    for_window [class="Xfce4-appfinder"] floating enable, move position center
+    for_window [class="Xfce4-taskmanager"] floating enable, resize set 800 900, move position center
+    for_window [class="copyq"] floating enable, move position center
+    for_window [class="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
+    for_window [class="doublecmd" title="Edit"] floating enable, move position center
+    for_window [class="flameshot"] floating enable, move position center
+    for_window [class="Gnome-calculator"] floating enable, move position center
+    for_window [class="nextcloud"] floating enable, move position center
+    for_window [class="nitrogen"] floating enable, move position center
+    for_window [class="shutter"] floating enable, move position center
+    for_window [class="urxvt"] floating enable, move position center
+    for_window [instance="autokey-gtk"] floating enable, resize set 1400 900, move position center
+    for_window [instance="Wfica"] resize set 1400 900, move position center
+    for_window [instance="blueman-manager"] floating enable, resize set 900 600, move position center
+    for_window [title="KeePassXC"] floating enable, resize set 900 600, move position center
+    # for_window [instance="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [instance="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [instance="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [instance="urxvt"] floating enable, move position center
+    for_window [title="Citrix"] floating enable, resize set 800 600, move position center
+    for_window [title="Copying"] floating enable, move position center
+    for_window [title="Deleting"] floating enable, move position center
+    for_window [title="Guake Preferences"] floating enable, move position center
+    for_window [title="Moving"] floating enable, move position center
+    for_window [title="Packing"] floating enable, move position center, border normal
+    for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
+    for_window [title="Send Connector"] floating enable, move position center, border normal
+    for_window [window_role="^Preferences$"] floating enable, move position center
+    for_window [window_role="pop-up"] floating enable, move position center
+    for_window [window_role="setup"] floating enable, move position center
+
+    # focus
+    focus_on_window_activation focus
+    for_window [class="Brave-browser"] focus
+    for_window [class="Sublime_text"] focus
+    for_window [class="Doublecmd"] focus
+    for_window [class="Gcr-prompter"] focus
+    for_window [class="floorp"] focus
+    for_window [instance="xfreerdp"] focus
+    for_window [urgent=latest] focus
+
+    # keep thunar copy progress below other floating windows
+    for_window [title="Copying files to"] floating enable
+    for_window [title="This folder already contains"] floating enable, focus
+
+    # full screen
+    for_window [title="crx_nkbihfbeogaeaoehlefnkodbefgpgknn"] fullscreen enable
+    for_window [class="mpv"] fullscreen enable
+
+    #always launch app on workspace x
+    assign [class="Anydesk"] $workspace4
+    assign [class="Autokey-gtk"] $workspace6
+    assign [class="Brave" title="Files - Nextcloud"] $workspace10
+    assign [class="Brave" title="Outlook"] $workspace10
+    assign [class="Brave"] $workspace2
+    assign [class="Chromium"] $workspace5
+    assign [class="Ledger Live"] $workspace6
+    assign [class="Microsoft Teams - Preview"] $workspace4
+    assign [class="Selfservice"] $workspace8
+    assign [class="TelegramDesktop"] $workspace4
+    assign [class="Wfica"] $workspace8
+    assign [class="bauh"] $workspace8
+    assign [class="firefox"] $workspace5
+    assign [class="floorp"] $workspace5
+    assign [class="obsidian"] $workspace3
+    assign [class="thunderbird"] $workspace10
+
+#------------------------------------------------- 
+# pulse audio controls
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% #increase sound volume
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% #decrease sound volume
+    bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+    bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+    bindsym XF86AudioNext exec --no-startup-id playerctl next
+    bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+    bindsym XF86AudioStop exec --no-startup-id playerctl stop
+
+#------------------------------------------------- 
+# brightness control
+  # increase screen brightness
+    bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+  # decrease screen brightness
+    bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+
+#------------------------------------------------- 
+# window color settings
+    ##window colors blue version
+    #class                 border  backgr. text    indicator
+    client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+    client.unfocused        #222222 #222222 #aaaaaa #222222
+    client.focused_inactive #222222 #222222 #a9a9a9 #222222
+    client.placeholder      #222222 #222222 #aaaaaa #222222
+    client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+    client.background       #242424
+    
+      ##window colors red version
+      #client.focused          #555555 #555555 #ffffff #2e9ef4   #CC0000
+      #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+      #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+      #client.urgent           #2f343a #900000 #ffffff #900000   #900000
+      #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+      #client.background       #ffffff
+#------------------------------------------------- 
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+exec swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f'
+
+exec {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+}

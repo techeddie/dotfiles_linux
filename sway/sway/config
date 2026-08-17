@@ -1,0 +1,449 @@
+# ---------------SWAY CONFIG EDDIE---------------------
+# Converted from i3 config — see CHANGE comments for modifications
+
+#windows key
+    set $mod Mod4
+#alt key
+    set $alt Mod1
+#vars
+    set $term kitty
+    set $down k
+    set $left j
+    set $right h
+    set $up l
+
+    set $workspace1 "1"
+    set $workspace2 "2"
+    set $workspace3 "3"
+    set $workspace4 "4"
+    set $workspace5 "5"
+    set $workspace6 "6"
+    set $workspace7 "7"
+    set $workspace8 "8"
+    set $workspace9 "9"
+    set $workspace10 "10"
+
+    set $firstMonitor eDP-1
+    set $secondMonitor HDMI-A-2
+    # CHANGE: HDMI-2 → HDMI-A-1 (Wayland naming convention, verify with: swaymsg -t get_outputs)
+
+#-------------------------------------------------
+# CHANGE: Sway-native input/output configuration (replaces xset, xinput, numlockx, xbacklight)
+
+    # Keyboard repeat rate (replaces: xset r rate 250 40)
+    input type:keyboard {
+        repeat_delay 250
+        repeat_rate 40
+        xkb_numlock enabled
+    }
+
+    # Touchpad (adjust device name via: swaymsg -t get_inputs)
+    input type:touchpad {
+        dwt enabled
+        tap enabled
+        natural_scroll enabled
+    }
+
+    # Output / wallpaper (replaces: nitrogen --restore)
+    # Option A: static wallpaper
+    # output * bg ~/Pictures/wallpaper.png fill
+    # Option B: swww (animated transitions, install: sudo pacman -S swww)
+    # exec swww-daemon && swww img ~/Pictures/wallpaper.png
+
+#-------------------------------------------------
+#lockscreen
+    # manual lock via super+l
+    bindsym $mod+l exec swaylock
+
+#workspace
+    workspace_layout default
+
+    #define monitor output
+    workspace 1 output $secondMonitor
+    workspace 2 output $secondMonitor
+    workspace 3 output $secondMonitor
+    workspace 4 output $secondMonitor
+    workspace 6 output $secondMonitor
+    workspace 7 output $secondMonitor
+    workspace 8 output $secondMonitor
+    workspace 9 output $secondMonitor
+    workspace 10 output $firstMonitor
+
+    #switch workspace
+    bindsym $alt+Ctrl+j       workspace prev
+    bindsym $alt+Ctrl+k       workspace next
+    bindsym $alt+Tab          workspace back_and_forth
+    bindsym $mod+Next         workspace next
+    bindsym $mod+Prior        workspace prev
+    bindsym $mod+Shift+End    workspace next
+    bindsym $mod+Shift+Home   workspace prev
+    bindsym $mod+Shift+j      workspace prev
+    bindsym $mod+Shift+k      workspace next
+
+    #switch to workspace
+    bindsym $mod+0              workspace $workspace10
+    bindsym $mod+1              workspace $workspace1
+    bindsym $mod+2              workspace $workspace2
+    bindsym $mod+3              workspace $workspace3
+    bindsym $mod+4              workspace $workspace4
+    bindsym $mod+5              workspace $workspace5
+    bindsym $mod+6              workspace $workspace6
+    bindsym $mod+7              workspace $workspace7
+    bindsym $mod+8              workspace $workspace8
+    bindsym $mod+9              workspace $workspace9
+    bindsym $mod+Shift+Return   workspace $workspace1
+
+    # move focused container to workspace
+    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+
+#-------------------------------------------------
+#gaps
+    gaps inner 30
+    gaps outer 10
+
+    workspace 1 gaps inner 10
+    workspace 2 gaps outer 10
+    workspace 3 gaps inner 15
+    workspace 4 gaps inner 15
+    workspace 5 gaps inner 15
+    workspace 6 gaps inner 15
+    workspace 7 gaps inner 15
+    workspace 8 gaps outer 20
+    workspace 9 gaps outer 20
+    workspace 0 gaps outer 20
+
+    bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
+    bindsym $mod+F2 gaps inner current set 35; gaps outer current set 10
+    bindsym $mod+F3 gaps inner current set 100; gaps outer current set 10
+    bindsym $mod+F4 gaps inner current set 180; gaps outer current set 10
+
+    #scratchpad
+    bindsym $mod+z move scratchpad
+    bindsym $mod+y move scratchpad
+    bindsym $mod+u     scratchpad show; move position center
+
+    # CHANGE: class/instance → app_id for Wayland-native apps
+    bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
+    bindsym $mod+a [title="ekah"] scratchpad show, move position center
+    bindsym F12 exec ~/.config/sway/scripts/floating-term.sh
+    bindsym $mod+Shift+g [app_id="gnome-disks"] scratchpad show, move position center
+    # CHANGE: autokey-gtk removed (X11 only — consider wtype or ydotool for Wayland)
+    # CHANGE: Sublime Text runs under XWayland, class still works
+    bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
+    bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
+
+#-------------------------------------------------
+#key bindings to launch applications
+
+    # CHANGE: i3-msg → swaymsg throughout
+    # CHANGE: removed --no-startup-id (not needed in Sway)
+    # CHANGE: polybar removed (use waybar instead)
+    # bindsym $alt+Shift+p            exec sh ~/.config/waybar/launch.sh
+
+    bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
+    bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
+    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
+    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX2.sh
+    bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
+    # CHANGE: display scripts — replace xrandr scripts with swaymsg output commands
+    # bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
+    # bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
+    # bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
+    bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
+    bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
+    bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
+    bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
+    bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
+    bindsym $mod+Return             exec $term
+    bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
+    bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root/backup.root.sh
+    # CHANGE: alt-tab script removed (use sway's built-in workspace back_and_forth or install sway-alt-tab)
+    bindsym $mod+Shift+b            exec blueman-manager
+    bindsym $mod+Shift+c            exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+Shift+f            exec swaymsg -q '[app_id=floorp] focus' 2>/dev/null || floorp
+    bindsym $mod+Shift+l            exec kitty -e lf ~/
+    bindsym $mod+Shift+p            exec kitty -e pacseek
+    bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
+    bindsym $mod+Shift+v            exec swaymsg -q '[app_id=vlc] focus' 2>/dev/null || vlc
+    bindsym $mod+Shift+w            exec networkmanager_dmenu
+    bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
+    bindsym $mod+b                  exec swaymsg -q '[class=Brave-browser] focus' 2>/dev/null || brave
+    bindsym $mod+c                  exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+d                  exec swaymsg -q '[class=Doublecmd] focus' 2>/dev/null || ~/opt/_APP_IMAGES/doublecmd/doublecmd-gtk-latest-x86_64.AppImage
+    bindsym $mod+e                  exec thunar
+    bindsym $mod+j                  exec copyq show
+    bindsym $mod+n                  exec swaymsg -q '[class=obsidian] focus' 2>/dev/null || obsidian
+    bindsym $mod+o                  exec swaymsg -q '[app_id=thunderbird] focus' 2>/dev/null || thunderbird
+    # bindsym $mod+p                exec waybar-msg cmd toggle
+    bindsym $mod+shift+i            exec swayprop
+    # CHANGE: keyboard layout toggle — use sway's built-in
+    # bindsym $mod+space            exec swaymsg input type:keyboard xkb_switch_layout next
+    bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
+    bindsym $mod+$alt+Ctrl+f        exec fsearch
+    bindsym control+$alt+m          exec pavucontrol
+    bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources
+
+    # CPU performance profiles
+    bindsym $mod+Shift+F1 exec "sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Powersave (800MHz)'"
+    bindsym $mod+Shift+F2 exec "sudo auto-cpufreq --force=reset && sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Auto'"
+    bindsym $mod+Shift+F3 exec "sudo cpupower frequency-set -u 2300MHz && notify-send 'CPU' 'Balanced (2300MHz)'"
+    bindsym $mod+Shift+F4 exec "sudo cpupower frequency-set -u 4600MHz && notify-send 'CPU' 'Performance (4600MHz)'"
+
+    # CHANGE: screenshots — maim/xclip → grim/slurp/wl-copy
+    # Install: sudo pacman -S grim slurp wl-clipboard
+    # selection → clipboard
+    bindsym Print exec bash -c 'grim -g "$(slurp)" - | wl-copy'
+    # selection → file + clipboard
+    bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
+    # fullscreen → file + clipboard
+    bindsym $mod+Shift+Print exec bash -c 'grim - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
+
+    #rofi
+    bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue
+    bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme glue_pro_blue
+    bindsym $mod+Shift+m        exec sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
+
+#-------------------------------------------------
+#execute on logon - AUTOSTARTUP
+
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    # CHANGE: xfce4-notifyd → swaync or mako recommended for Wayland-native notifications
+    # exec swaync
+    exec /usr/lib/xfce4/notifyd/xfce4-notifyd
+    exec blueman-applet
+    exec brave
+    exec copyq
+    # CHANGE: dunst works under Wayland but consider mako or swaync as native alternatives
+    exec dunst
+    # CHANGE: flameshot removed (poor Wayland support — using grim+slurp instead)
+    exec gnome-disks
+    # CHANGE: autokey-gtk removed (X11 only — see wtype/ydotool for Wayland automation)
+    # CHANGE: guake removed (X11 only — use kitty scratchpad or foot as dropdown terminal)
+    exec keepassxc
+    exec kitty --class floating-term -e tmux new-session -A -s scratchpad
+    # CHANGE: nitrogen removed (wallpaper handled by output bg or swww above)
+    exec nm-applet
+    exec obsidian
+    # CHANGE: picom removed (Sway is its own compositor — no external compositor needed)
+    exec seafile-applet
+    exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
+    exec subl
+    exec_always autotiling
+    exec_always waybar
+    # CHANGE: xset/numlockx removed (handled by input config above)
+
+#-------------------------------------------------
+# windows settings and behaviour
+
+    # CHANGE: title_window_icon not supported in Sway — removed
+    # for_window [all] title_window_icon padding 3px
+
+    title_align right
+    popup_during_fullscreen smart
+    default_border normal 5
+    focus_follows_mouse yes
+    show_marks yes
+
+    bindsym $mod+f  fullscreen toggle
+    # CHANGE: i3-msg → swaymsg
+    bindsym $mod+$alt+b exec swaymsg border toggle
+    bindsym $alt+Shift+b exec swaymsg border toggle
+
+    # CHANGE: floating_modifier needs 'normal' in Sway for move+resize behavior
+    floating_modifier $mod normal
+
+    hide_edge_borders both
+
+    bindsym $mod+h split v
+    bindsym $mod+v split h
+
+    #kill current windows
+    bindsym $mod+q              [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    bindsym $mod+k              [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+    # CHANGE: xkill removed (X11 only) — use swaymsg kill instead
+    bindsym --release $mod+Escape exec swaymsg kill
+
+    # CHANGE: xautolock/betterlockscreen removed — swayidle handles this (see bottom of config)
+
+    #suspend
+    bindsym $mod+Shift+s exec swaylock -f && systemctl suspend
+
+    #logoff shutdown reboot menu
+    bindsym $mod+x exec archlinux-logout
+    bindsym $mod+Shift+x exec systemctl poweroff
+
+    # reload config
+    bindsym $mod+Shift+r exec notify-send -t 2500 -i "preferences-system" "Sway" "config reloaded" && swaymsg reload
+    bindsym $mod+r reload
+
+    default_orientation horizontal
+
+    # focus windows
+    bindsym $mod+Left focus left
+    bindsym $mod+Right focus right
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+
+    bindsym $mod+s layout stacking
+    bindsym $mod+Shift+t layout tabbed
+
+    ################# resize
+    bindsym $mod+$alt+Left resize shrink width 6 px or 6 ppt
+    bindsym $mod+$alt+Up resize grow height 6 px or 6 ppt
+    bindsym $mod+$alt+Down resize shrink height 6 px or 6 ppt
+    bindsym $mod+$alt+Right resize grow width 6 px or 6 ppt
+
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+$alt+h move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+$alt+j move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+$alt+k move up
+    bindsym $mod+Shift+Right move right
+    bindsym $mod+$alt+l move right
+
+    ################# FOR_WINDOW
+    # CHANGE: for Wayland-native apps, class → app_id
+    # For XWayland apps (Electron, Wine, etc.), class still works
+    # Verify per app with: swaymsg -t get_tree | grep -E 'app_id|class'
+
+    for_window [app_id="^.*"] border pixel 3
+    for_window [class="^.*"] border pixel 3
+    for_window [class="Brave-browser"] border pixel 3, layout tabbed
+    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
+    for_window [class="TelegramDesktop"] border none
+    for_window [class="Virt-manager"] border normal, layout tabbed
+    for_window [class="Wfica"] border normal
+    for_window [app_id="floorp"] border none, layout tabbed
+    for_window [app_id="firefox"] border none, layout tabbed
+    for_window [app_id="kitty"] border pixel 1
+    for_window [class="ghostty"] border pixel 2
+    for_window [class="obsidian"] border pixel 1
+    for_window [app_id="thunderbird"] border pixel 5, layout tabbed
+    for_window [class="Ledger Live"] border normal
+    for_window [instance="xfreerdp"] border normal
+    for_window [class="Dunst"] border none
+    no_focus [class="Dunst"]
+
+    # scratchpad move
+    for_window [class="Sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    for_window [app_id="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
+    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
+    for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
+
+    # floating
+    bindsym $mod+t floating toggle
+    for_window [app_id="arandr"] floating enable, move position center
+    for_window [app_id="lxappearance"] floating enable, move position center
+    for_window [class="Seafile Client"] floating enable, move position center
+    for_window [class="Grub-customizer"] floating enable, move position center
+    for_window [app_id="org.gnome.Calculator"] floating enable, move position center
+    for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
+    for_window [app_id="nm-connection-editor"] floating enable, move position center
+    for_window [app_id="pavucontrol"] floating enable, move position center
+    for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
+    for_window [class="TimeShift-gtk"] floating enable, move position center
+    for_window [class="Woeusbgui"] floating enable, move position center
+    for_window [app_id="copyq"] floating enable, move position center
+    for_window [class="Doublecmd" title="Options"] floating enable, resize set 800 600, move position center
+    for_window [class="Doublecmd" title="Edit"] floating enable, move position center
+    for_window [class="nextcloud"] floating enable, move position center
+    for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
+    for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 900 600, move position center
+    for_window [app_id="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [app_id="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [title="Citrix"] floating enable, resize set 800 600, move position center
+    for_window [title="Copying"] floating enable, move position center
+    for_window [title="Deleting"] floating enable, move position center
+    for_window [title="Moving"] floating enable, move position center
+    for_window [title="Packing"] floating enable, move position center, border normal
+    for_window [title="Receive Connector"] floating enable, move position center, border normal
+    for_window [title="Send Connector"] floating enable, move position center, border normal
+    for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
+    # CHANGE: window_role not available in Wayland — using title matching where possible
+    for_window [title="Preferences"] floating enable, move position center
+    for_window [title="^popup$"] floating enable, move position center
+
+    # focus
+    focus_on_window_activation focus
+    for_window [class="Brave-browser"] focus
+    for_window [class="Sublime_text"] focus
+    for_window [class="Doublecmd"] focus
+    for_window [class="Gcr-prompter"] focus
+    for_window [app_id="floorp"] focus
+    for_window [instance="xfreerdp"] focus
+    for_window [urgent=latest] focus
+
+    # thunar copy progress
+    for_window [title="Copying files to"] floating enable
+    for_window [title="This folder already contains"] floating enable, focus
+
+    # full screen
+    for_window [app_id="mpv"] fullscreen enable
+
+    # always launch app on workspace x
+    assign [class="Anydesk"] $workspace4
+    assign [class="Brave-browser" title="Files - Nextcloud"] $workspace10
+    assign [class="Brave-browser" title="Outlook"] $workspace10
+    assign [app_id="brave-browser"] $workspace2
+    assign [app_id="chromium"] $workspace5
+    assign [class="Ledger Live"] $workspace6
+    assign [class="Selfservice"] $workspace8
+    assign [class="TelegramDesktop"] $workspace4
+    assign [class="Wfica"] $workspace8
+    assign [app_id="floorp"] $workspace5
+    assign [app_id="firefox"] $workspace5
+    assign [app_id="md.obsidian.Obsidian"] $workspace3
+    assign [app_id="thunderbird"] $workspace10
+
+#-------------------------------------------------
+# audio controls (unchanged — pipewire/pulseaudio work the same)
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+    bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioStop exec playerctl stop
+
+#-------------------------------------------------
+# CHANGE: brightness — xbacklight → brightnessctl
+# Install: sudo pacman -S brightnessctl
+    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+#-------------------------------------------------
+# window colors
+    client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+    client.unfocused        #222222 #222222 #aaaaaa #222222
+    client.focused_inactive #222222 #222222 #a9a9a9 #222222
+    client.placeholder      #222222 #222222 #aaaaaa #222222
+    client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+    client.background       #242424
+
+#-------------------------------------------------
+# Wayland environment
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# Idle and lockscreen
+exec swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f'
+
+# GTK dark theme
+exec {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+}

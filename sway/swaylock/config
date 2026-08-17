@@ -1,0 +1,31 @@
+# Display
+screenshots
+clock
+indicator
+indicator-radius=100
+indicator-thickness=7
+
+# Blur
+effect-blur=7x5
+
+# Colors
+inside-color=00000000
+inside-clear-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+ring-color=ffffff50
+ring-clear-color=ffffff50
+ring-ver-color=00ff0050
+ring-wrong-color=ff000050
+key-hl-color=ffffff
+text-color=ffffff
+text-clear-color=ffffff
+text-ver-color=ffffff
+text-wrong-color=ff0000
+
+# Font
+font=JetBrains Mono
+font-size=20
+
+# Grace period after screen wakes
+grace=2
