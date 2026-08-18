@@ -245,8 +245,6 @@
     # CHANGE: floating_modifier needs 'normal' in Sway for move+resize behavior
     floating_modifier $mod normal
 
-    hide_edge_borders both
-
     bindsym $mod+h split v
     bindsym $mod+v split h
 
@@ -297,26 +295,25 @@
     bindsym $mod+$alt+l move right
 
     ################# FOR_WINDOW
-    # CHANGE: for Wayland-native apps, class → app_id
-    # For XWayland apps (Electron, Wine, etc.), class still works
+    # BORDER STUFF
     # Verify per app with: swaymsg -t get_tree | grep -E 'app_id|class'
 
-    for_window [app_id="^.*"] border pixel 3
-    for_window [class="^.*"] border pixel 3
-    for_window [app_id="brave-browser"] border pixel 3, layout tabbed
+    # hide_edge_borders both
+    # for_window [app_id="^.*"] border pixel 3
+    # for_window [class="^.*"] border pixel 3
+
+    for_window [app_id="brave-browser"], layout tabbed
+    for_window [app_id="firefox"] border none, layout tabbed
+    for_window [app_id="floorp"] border none, layout tabbed
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
+    for_window [app_id="thunderbird"], layout tabbed
+    for_window [class="Dunst"] border none
+    for_window [class="Ledger Live"] border normal
     for_window [class="TelegramDesktop"] border none
+    for_window [app_id="md.obsidian.Obsidian"] border pixel 1
     for_window [class="Virt-manager"] border normal, layout tabbed
     for_window [class="Wfica"] border normal
-    for_window [app_id="floorp"] border none, layout tabbed
-    for_window [app_id="firefox"] border none, layout tabbed
-    for_window [app_id="kitty"] border pixel 1
-    for_window [class="ghostty"] border pixel 2
-    for_window [class="obsidian"] border pixel 1
-    for_window [app_id="thunderbird"] border pixel 5, layout tabbed
-    for_window [class="Ledger Live"] border normal
     for_window [instance="xfreerdp"] border normal
-    for_window [class="Dunst"] border none
     no_focus [class="Dunst"]
 
     # scratchpad move
@@ -376,19 +373,19 @@
     for_window [app_id="mpv"] fullscreen enable
 
     # always launch app on workspace x
-    assign [class="Anydesk"] $workspace4
     assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
     assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="brave-browser"] $workspace2
     assign [app_id="chromium"] $workspace5
+    assign [app_id="firefox"] $workspace5
+    assign [app_id="floorp"] $workspace5
+    assign [app_id="md.obsidian.Obsidian"] $workspace3
+    assign [app_id="thunderbird"] $workspace10
+    assign [class="Anydesk"] $workspace4
     assign [class="Ledger Live"] $workspace6
     assign [class="Selfservice"] $workspace8
     assign [class="TelegramDesktop"] $workspace4
     assign [class="Wfica"] $workspace8
-    assign [app_id="floorp"] $workspace5
-    assign [app_id="firefox"] $workspace5
-    assign [app_id="md.obsidian.Obsidian"] $workspace3
-    assign [app_id="thunderbird"] $workspace10
 
 #-------------------------------------------------
 # audio controls (unchanged — pipewire/pulseaudio work the same)
