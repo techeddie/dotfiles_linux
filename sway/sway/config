@@ -115,7 +115,7 @@
     bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
     bindsym $mod+a [title="ekah"] scratchpad show, move position center
     bindsym F12 exec ~/.config/sway/scripts/floating-term.sh
-    bindsym $mod+Shift+g [app_id="gnome-disks"] scratchpad show, move position center
+    bindsym $mod+Shift+g [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
     # CHANGE: autokey-gtk removed (X11 only — consider wtype or ydotool for Wayland)
     # CHANGE: Sublime Text runs under XWayland, class still works
     bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
@@ -346,7 +346,7 @@
     for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 900 600, move position center
     for_window [app_id="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [app_id="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
-    for_window [title="Citrix"] floating enable, resize set 800 600, move position center
+    for_window [title="Bitwarden"] floating enable
     for_window [title="Copying"] floating enable, move position center
     for_window [title="Deleting"] floating enable, move position center
     for_window [title="Moving"] floating enable, move position center
@@ -428,29 +428,9 @@ exec swayidle -w \
 
 # GTK dark theme
 exec {
-    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-}
-
-# INPUTS
-input "5215:621:SINOWEALTH_GXT_144_Gaming_Mouse" {
-    # accel_profile flat
-    pointer_accel -0.5
-}
-
-input type:touchpad {
-    tap enabled
-    tap_button_map lrm
-    natural_scroll disabled
-    scroll_method two_finger
-    dwt enabled
-}
-
-input type:keyboard {
-    xkb_layout us
-    xkb_model pc105
-    xkb_variant altgr-intl
-    repeat_delay 250
-    repeat_rate 40
-    xkb_numlock enabled
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    # gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
+    gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 }
