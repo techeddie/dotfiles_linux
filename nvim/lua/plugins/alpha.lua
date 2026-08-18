@@ -50,7 +50,7 @@ return {
 			dashboard.section.buttons.opts.spacing = 0
 			dashboard.section.buttons.val = {
 				{ type = "padding", val = 1 },
-				file("ic", "\u{f2d2}  i3 Config", "~/.config/sway/config"),
+				file("ic", "\u{f2d2}  sway i3 Config", "~/.config/sway/config"),
 				file("kc", "\u{f11c}  Karabiner Keymaps", "~/.config/karabiner/karabiner.json"),
 				file("lc", "\u{f120}  Linux Commands", "~/Nextcloud/LINUX/LINUX_COMMANDS.sh"),
 				file("lfc", "\u{f07b}  Lf Config", "~/.config/lf/lfrc"),
