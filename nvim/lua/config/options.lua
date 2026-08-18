@@ -45,7 +45,7 @@ o.undodir = undodir_path
 o.undofile = true
 o.updatetime = 200
 o.wrap = false
-o.winbar = "%=%m %F"
+-- o.winbar = "%=%m %F"
 o.writebackup = false
 o.foldenable=true
 o.foldmethod = "indent"
