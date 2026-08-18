@@ -111,13 +111,10 @@
     bindsym $mod+y move scratchpad
     bindsym $mod+u     scratchpad show; move position center
 
-    # CHANGE: class/instance → app_id for Wayland-native apps
     bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
     bindsym $mod+a [title="ekah"] scratchpad show, move position center
-    bindsym F12 exec ~/.config/sway/scripts/floating-term.sh
+    bindsym F12 [app_id="floating-term"] scratchpad show, move position center
     bindsym $mod+Shift+g [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
-    # CHANGE: autokey-gtk removed (X11 only — consider wtype or ydotool for Wayland)
-    # CHANGE: Sublime Text runs under XWayland, class still works
     bindsym $mod+g [app_id="sublime_text"] scratchpad show, move position center
     bindsym $mod+Delete [app_id="sublime_text"] scratchpad show, move position center
 
@@ -213,6 +210,7 @@
     # CHANGE: guake removed (X11 only — use kitty scratchpad or foot as dropdown terminal)
     exec keepassxc
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
+
     # CHANGE: nitrogen removed (wallpaper handled by output bg or swww above)
     exec nm-applet
     exec obsidian
@@ -319,9 +317,10 @@
 
     # scratchpad move
     for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    for_window [app_id="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
+    # for_window [app_id="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
     for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
+    for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
 
     # floating
     bindsym $mod+t floating toggle
