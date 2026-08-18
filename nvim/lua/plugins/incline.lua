@@ -8,7 +8,13 @@ return {
       placement = { horizontal = "right", vertical = "top" },
     },
     render = function(props)
-      local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":.")
+      -- -- relative path (from cwd)
+      -- local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":.")
+      -- -- absolute path
+      -- local filename = vim.api.nvim_buf_get_name(props.buf)
+      -- home-relative path (~/...)
+      local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":~")
+
       local modified = vim.bo[props.buf].modified and " ● " or ""
       return { { modified, guifg = "#f85149" }, { filename, guifg = "#8b949e" } }
     end,
