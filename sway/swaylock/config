@@ -27,5 +27,5 @@ text-wrong-color=ff0000
 font=JetBrains Mono
 font-size=20
 
-# Grace period after screen wakes
-grace=2
+# # Grace period after screen wakes
+# grace=2
