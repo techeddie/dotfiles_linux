@@ -118,8 +118,8 @@
     bindsym $mod+Shift+g [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
     # CHANGE: autokey-gtk removed (X11 only — consider wtype or ydotool for Wayland)
     # CHANGE: Sublime Text runs under XWayland, class still works
-    bindsym $mod+g [class="Sublime_text"] scratchpad show, move position center
-    bindsym $mod+Delete [class="Sublime_text"] scratchpad show, move position center
+    bindsym $mod+g [app_id="sublime_text"] scratchpad show, move position center
+    bindsym $mod+Delete [app_id="sublime_text"] scratchpad show, move position center
 
 #-------------------------------------------------
 #key bindings to launch applications
@@ -295,29 +295,30 @@
     bindsym $mod+$alt+l move right
 
     ################# FOR_WINDOW
-    # BORDER STUFF
-    # Verify per app with: swaymsg -t get_tree | grep -E 'app_id|class'
+    # border stuff, verify per app with:
+    # swaymsg -t get_tree | grep -E 'app_id|class'
 
     # hide_edge_borders both
-    # for_window [app_id="^.*"] border pixel 3
-    # for_window [class="^.*"] border pixel 3
+    for_window [app_id="^.*"] border pixel 1
+    for_window [class="^.*"] border pixel 1
 
-    for_window [app_id="brave-browser"], layout tabbed
+    for_window [app_id="brave-browser"] border pixel 1, layout tabbed
     for_window [app_id="firefox"] border none, layout tabbed
     for_window [app_id="floorp"] border none, layout tabbed
+    for_window [app_id="kitty"] border pixel 1
+    for_window [app_id="md.obsidian.Obsidian"] border pixel 1
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
     for_window [app_id="thunderbird"], layout tabbed
-    for_window [class="Dunst"] border none
-    for_window [class="Ledger Live"] border normal
-    for_window [class="TelegramDesktop"] border none
-    for_window [app_id="md.obsidian.Obsidian"] border pixel 1
-    for_window [class="Virt-manager"] border normal, layout tabbed
-    for_window [class="Wfica"] border normal
-    for_window [instance="xfreerdp"] border normal
-    no_focus [class="Dunst"]
+    for_window [app_id="Dunst"] border none
+    for_window [app_id="Ledger Live"] border normal
+    for_window [app_id="TelegramDesktop"] border none
+    for_window [app_id="Virt-manager"] border normal, layout tabbed
+    for_window [app_id="Wfica"] border normal
+    for_window [app_id="xfreerdp"] border normal
+    no_focus   [class="Dunst"]
 
     # scratchpad move
-    for_window [class="Sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
     for_window [app_id="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
     for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
@@ -358,7 +359,7 @@
     # focus
     focus_on_window_activation focus
     for_window [app_id="brave-browser"] focus
-    for_window [app_id="Sublime_text"] focus
+    for_window [app_id="sublime_text"] focus
     for_window [app_id="Doublecmd"] focus
     for_window [class="Gcr-prompter"] focus
     for_window [app_id="floorp"] focus
