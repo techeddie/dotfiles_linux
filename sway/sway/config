@@ -27,8 +27,15 @@
 
 
 #-------------------------------------------------
-# inputs
+# external inputs
   include ~/.config/sway/input.conf
+
+  # hdmi left, notebook right
+    output $secondMonitor position 0,0
+    output $firstMonitor position 2560,0
+  # wallpaper
+    output $secondMonitor bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg fill
+    output $firstMonitor  bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png fill
 
 #-------------------------------------------------
 #lockscreen
@@ -301,6 +308,7 @@
     for_window [class="^.*"] border pixel 1
 
     for_window [app_id="brave-browser"] border pixel 1, layout tabbed
+    for_window [class="Brave-browser"] border none
     for_window [app_id="firefox"] border none, layout tabbed
     for_window [app_id="floorp"] border none, layout tabbed
     for_window [app_id="kitty"] border pixel 1
@@ -317,7 +325,6 @@
 
     # scratchpad move
     for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    # for_window [app_id="floating-term"] floating enable, resize set 1536 400, move position 170 px 680 px, move scratchpad
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
     for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
     for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
