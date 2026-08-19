@@ -33,9 +33,14 @@
   # hdmi left, notebook right
     output $secondMonitor position 0,0
     output $firstMonitor position 2560,0
+
   # wallpaper
-    output $secondMonitor bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg fill
-    output $firstMonitor  bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png fill
+    # output $secondMonitor bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg fill
+    # output $firstMonitor  bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png fill
+
+    exec awww-daemon
+    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg --outputs $secondMonitor
+    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $firstMonitor
 
 #-------------------------------------------------
 #lockscreen
@@ -138,7 +143,7 @@
     bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
     bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
     bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
-    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX2.sh
+    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
     # CHANGE: display scripts — replace xrandr scripts with swaymsg output commands
     bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
@@ -328,7 +333,7 @@
     for_window [app_id="TelegramDesktop"] border none
     for_window [app_id="Virt-manager"] border normal, layout tabbed
     for_window [app_id="Wfica"] border normal
-    for_window [app_id="xfreerdp"] border normal
+    for_window [class="xfreerdp"] border normal
     no_focus   [class="Dunst"]
 
     # scratchpad move
@@ -398,11 +403,11 @@
     assign [app_id="floorp"] $workspace5
     assign [app_id="md.obsidian.Obsidian"] $workspace3
     assign [app_id="org.mozilla.thunderbird_es"] $workspace6
-    assign [class="Anydesk"] $workspace4
-    assign [class="Ledger Live"] $workspace6
-    assign [class="Selfservice"] $workspace8
-    assign [class="TelegramDesktop"] $workspace4
-    assign [class="Wfica"] $workspace8
+    assign [app_id="xfreerdp"] $workspace8
+    assign [app_id="Ledger Live"] $workspace6
+    assign [app_id="Selfservice"] $workspace8
+    assign [app_id="TelegramDesktop"] $workspace4
+    assign [app_id="Wfica"] $workspace8
 
 #-------------------------------------------------
 # audio controls (unchanged — pipewire/pulseaudio work the same)
