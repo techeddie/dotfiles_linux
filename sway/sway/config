@@ -167,7 +167,7 @@
     bindsym $mod+d                  exec swaymsg -q '[app_id=doublecmd] focus' 2>/dev/null || doublecmd
     bindsym $mod+e                  exec thunar
     bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
-    bindsym $mod+o                  exec swaymsg -q '[app_id=thunderbird] focus' 2>/dev/null || thunderbird
+    bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.thunderbird_es] focus' 2>/dev/null || org.mozilla.thunderbird_es
     # bindsym $mod+p                exec waybar-msg cmd toggle
     bindsym $mod+shift+i            exec swayprop
     # CHANGE: keyboard layout toggle — use sway's built-in
@@ -322,7 +322,7 @@
     for_window [app_id="kitty"] border pixel 1
     for_window [app_id="md.obsidian.Obsidian"] border pixel 1
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
-    for_window [app_id="thunderbird"], layout tabbed
+    for_window [app_id="org.mozilla.thunderbird_es"], layout tabbed
     for_window [app_id="Dunst"] border none
     for_window [app_id="Ledger Live"] border normal
     for_window [app_id="TelegramDesktop"] border none
@@ -397,7 +397,7 @@
     assign [app_id="firefox"] $workspace5
     assign [app_id="floorp"] $workspace5
     assign [app_id="md.obsidian.Obsidian"] $workspace3
-    assign [app_id="thunderbird"] $workspace10
+    assign [app_id="org.mozilla.thunderbird_es"] $workspace6
     assign [class="Anydesk"] $workspace4
     assign [class="Ledger Live"] $workspace6
     assign [class="Selfservice"] $workspace8
