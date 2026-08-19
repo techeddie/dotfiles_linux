@@ -316,8 +316,7 @@
     for_window [app_id="^.*"] border pixel 1
     for_window [class="^.*"] border pixel 1
 
-    for_window [app_id="brave-browser"] border pixel 1, layout tabbed
-    for_window [class="Brave-browser"] border none
+    for_window [app_id="brave-browser"] border pixel 1
     for_window [app_id="firefox"] border none, layout tabbed
     for_window [app_id="floorp"] border none, layout tabbed
     for_window [app_id="kitty"] border pixel 1
