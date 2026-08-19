@@ -2,7 +2,7 @@
     "label": "logout",
     "action": "swaymsg exit",
     "text": "Logout",
-    "keybind": "e"
+    "keybind": "l"
 },
 {
     "label": "suspend",
