@@ -204,7 +204,6 @@
 
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec wl-paste --watch cliphist store
-    # exec swaync
     exec /usr/lib/xfce4/notifyd/xfce4-notifyd
     exec blueman-applet
     exec brave
@@ -368,6 +367,8 @@
 
     # focus
     focus_on_window_activation focus
+    for_window [app_id="brave-browser"] focus
+    for_window [app_id="org.gnome.DiskUtility"] focus
     for_window [app_id="brave-browser"] focus
     for_window [app_id="sublime_text"] focus
     for_window [app_id="Doublecmd"] focus
