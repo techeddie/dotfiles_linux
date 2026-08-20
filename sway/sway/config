@@ -140,31 +140,26 @@
 #-------------------------------------------------
 #key bindings to launch applications
 
-    # CHANGE: i3-msg → swaymsg throughout
-    # CHANGE: removed --no-startup-id (not needed in Sway)
-    # CHANGE: polybar removed (use waybar instead)
-    # bindsym $alt+Shift+p exec bash -c 'pkill waybar; sleep 0.3; waybar &'
-    bindsym $mod+Shift+F10          exec bash -c 'pkill waybar; sleep 0.3; waybar &'
-
-    bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
-    bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
-    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
-    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
-    bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
-    # CHANGE: display scripts — replace xrandr scripts with swaymsg output commands
-    bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
-    bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
-    bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
     # bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
     # bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     # bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
+    # bindsym $mod+space            exec swaymsg input type:keyboard xkb_switch_layout next
+    bindsym $alt+Shift+p            exec bash -c 'pkill waybar; sleep 0.3; waybar &'
+    bindsym $mod+$alt+Ctrl+f        exec fsearch
+    bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
+    bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
+    bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
+    bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
+    bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
+    bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
+    bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
+    bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
     bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
     bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
     bindsym $mod+Return             exec $term
-    bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
     bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root/backup.root.sh
-    # CHANGE: alt-tab script removed (use sway's built-in workspace back_and_forth or install sway-alt-tab)
+    bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home/backup.home_auto.sh
     bindsym $mod+Shift+b            exec blueman-manager
     bindsym $mod+Shift+c            exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
     bindsym $mod+Shift+f            exec swaymsg -q '[app_id=floorp] focus' 2>/dev/null || floorp
@@ -180,12 +175,8 @@
     bindsym $mod+e                  exec thunar
     bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.thunderbird_es] focus' 2>/dev/null || org.mozilla.thunderbird_es
-    # bindsym $mod+p                exec waybar-msg cmd toggle
     bindsym $mod+shift+i            exec swayprop
-    # CHANGE: keyboard layout toggle — use sway's built-in
-    # bindsym $mod+space            exec swaymsg input type:keyboard xkb_switch_layout next
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
-    bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym control+$alt+m          exec pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources
 
