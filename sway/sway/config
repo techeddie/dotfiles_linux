@@ -251,7 +251,7 @@
 
     title_align right
     popup_during_fullscreen smart
-    default_border normal 5
+    # default_border normal 5
     focus_follows_mouse yes
     show_marks yes
 
@@ -325,13 +325,13 @@
     for_window [app_id="^.*"] border pixel 2
     for_window [class="^.*"] border pixel 2
 
-    for_window [app_id="brave-browser"] border pixel 1
+    for_window [app_id="brave-browser"] border pixel 2
     for_window [app_id="firefox"] border none, layout tabbed
     for_window [app_id="floorp"] border none, layout tabbed
-    for_window [app_id="kitty"] border pixel 1
-    for_window [app_id="md.obsidian.Obsidian"] border pixel 1
-    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
-    for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 1
+    for_window [app_id="kitty"] border pixel 2
+    for_window [app_id="md.obsidian.Obsidian"] border pixel 2
+    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
+    for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
     for_window [app_id="Dunst"] border none
     for_window [app_id="Ledger Live"] border normal
     for_window [app_id="TelegramDesktop"] border none
