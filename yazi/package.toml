@@ -68,6 +68,11 @@ use = "techeddie/lazygit"
 rev = "f82ad35"
 hash = "1c9bf1ba804af5ad60e8a49200a272ef"
 
+[[plugin.deps]]
+use = "pakhromov/smart-tab"
+rev = "1ec06f1"
+hash = "51665d21a1fb25c5e1b608750fc6f2fa"
+
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
 rev = "619fdc5"
