@@ -121,14 +121,23 @@
     #scratchpad
     bindsym $mod+z move scratchpad
     bindsym $mod+y move scratchpad
-    bindsym $mod+u     scratchpad show; move position center
+    bindsym $mod+u scratchpad show; move position center
 
-    bindsym $mod+grave [title="kdbx"] scratchpad show, move position center
-    bindsym $mod+a [title="ekah"] scratchpad show, move position center
-    bindsym F12 [app_id="floating-term"] scratchpad show, move position center
-    bindsym $mod+Shift+g [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
-    bindsym $mod+g [app_id="sublime_text"] scratchpad show, move position center
-    bindsym $mod+Delete [app_id="sublime_text"] scratchpad show, move position center
+    #scratchpad move
+    for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
+    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
+    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    # for_window [title=".*Sublime Text.*"] floating enable, resize set 1400 900, move scratchpad
+    for_window [title=".*KeePassXC$"] floating enable, resize set 900 600, move scratchpad
+    for_window [title="^(?!.*(Select|Open|ekah|kdbx)).*Locked.*$"] move scratchpad
+
+    #scratchpad toggle maps
+    bindsym $mod+Delete      [app_id="sublime_text"] scratchpad show, move position center
+    bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
+    bindsym $mod+a           [title=".*KeePassXC$"] scratchpad show, move position center
+    bindsym $mod+g           [title=".*Sublime Text.*"] scratchpad show, move position center
+    bindsym $mod+grave       [title=".*KeePassXC$"] scratchpad show, move position center
+    bindsym F12              [app_id="floating-term"] scratchpad show, move position center
 
 #-------------------------------------------------
 #key bindings to launch applications
@@ -201,43 +210,40 @@
     bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme glue_pro_blue
     bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme glue_pro_blue
     bindsym $mod+Shift+m        exec sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
-    # bindsym F1 exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme gruvbox-dark-hard | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
     bindsym F1 exec bash -c '\
         selected=$(cliphist list | awk "!seen[\$0]++" | rofi -dmenu -theme gruvbox-dark-hard); \
         if [ -n "$selected" ]; then \
-            echo "$selected" | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift; \
+            echo "$selected" | cliphist decode | wl-copy; \
+            sleep 0.2; \
+            wtype -M ctrl -P v -p v -m ctrl; \
         fi'
+    # bindsym F1 exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme gruvbox-dark-hard | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
+    # bindsym F1 exec bash -c '\
+    #     selected=$(cliphist list | awk "!seen[\$0]++" | rofi -dmenu -theme gruvbox-dark-hard); \
+    #     if [ -n "$selected" ]; then \
+    #         echo "$selected" | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift; \
+    #     fi'
     bindsym $mod+j exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme gruvbox-dark-hard | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
 
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP
 
+    # exec brave
+    # exec obsidian
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-    exec wl-paste --watch cliphist store
     exec /usr/lib/xfce4/notifyd/xfce4-notifyd
     exec blueman-applet
-    exec brave
-    # exec copyq
-    # CHANGE: dunst works under Wayland but consider mako or swaync as native alternatives
-    exec swaync
-    # CHANGE: flameshot removed (poor Wayland support — using grim+slurp instead)
     exec gnome-disks
-    # CHANGE: autokey-gtk removed (X11 only — see wtype/ydotool for Wayland automation)
-    # CHANGE: guake removed (X11 only — use kitty scratchpad or foot as dropdown terminal)
     exec keepassxc
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
-
-    # CHANGE: nitrogen removed (wallpaper handled by output bg or swww above)
     exec nm-applet
-    exec obsidian
-    # CHANGE: picom removed (Sway is its own compositor — no external compositor needed)
     exec seafile-applet
     exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
     exec subl
+    exec swaync
     exec waybar
+    exec wl-paste --watch cliphist store
     exec_always autotiling
-    # exec_always killall waybar && waybar 
-    # CHANGE: xset/numlockx removed (handled by input config above)
 
 #-------------------------------------------------
 # windows settings and behaviour
@@ -336,15 +342,9 @@
     for_window [class="xfreerdp"] border normal
     no_focus   [class="Dunst"]
 
-    # scratchpad move
-    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
-    for_window [title="^(?!.*(Select|Open|ekah)).*Locked.*$"] move scratchpad
-    for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
-
     # floating
     bindsym $mod+t floating toggle
-    for_window [app_id="arandr"] floating enable, move position center
+    for_window [app_id="com.seafile.seafile-apple"] floating enable, move position center
     for_window [app_id="lxappearance"] floating enable, move position center
     for_window [class="Seafile Client"] floating enable, move position center
     for_window [class="Grub-customizer"] floating enable, move position center
@@ -360,7 +360,6 @@
     for_window [class="Doublecmd" title="Edit"] floating enable, move position center
     for_window [class="nextcloud"] floating enable, move position center
     for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
-    for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 900 600, move position center
     for_window [app_id="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [app_id="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [title="Bitwarden"] floating enable
@@ -380,7 +379,6 @@
     for_window [app_id="brave-browser"] focus
     for_window [app_id="org.gnome.DiskUtility"] focus
     for_window [app_id="brave-browser"] focus
-    for_window [app_id="sublime_text"] focus
     for_window [app_id="Doublecmd"] focus
     for_window [class="Gcr-prompter"] focus
     for_window [app_id="floorp"] focus
