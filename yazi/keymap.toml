@@ -152,7 +152,7 @@ keymap = [
   { on = [ "g", "d" ],       run = "cd ~/opt/git/dotfiles_linux/",        desc = "Goto dotfiles_linux"     },
   { on = [ "g", "e" ],       run = "cd /etc/",                            desc = "Goto etc"                },
   { on = [ "g", "H" ],       run = "cd ~/.config/hypr",                   desc = "Goto hypr config"        },
-  { on = [ "g", "i" ],       run = "cd ~/.config/i3/",                    desc = "Goto i3"                 },
+  { on = [ "g", "i" ],       run = "cd ~/.config/sway/",                    desc = "Goto sway i3"                 },
   { on = [ "g", "k" ],       run = "cd ~/config/karabiner/",              desc = "Goto karabiner"          },
   { on = [ "g", "l" ],       run = "cd ~/.local/share/",                  desc = "Goto local share"        },
   { on = [ "g", "n" ],       run = "cd ~/config/nvim/",                   desc = "Goto nvim"               },

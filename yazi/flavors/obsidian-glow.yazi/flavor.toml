@@ -1,0 +1,189 @@
+[flavor]
+dark = "obsidian-glow"
+
+[app]
+overall = { bg = "#0A0A0D" }
+
+[mgr]
+cwd = { fg = "#5FE8FF", bold = true }
+
+find_keyword  = { fg = "#FFD479", bold = true, italic = true, underline = true}
+find_position = { fg = "#E4E4F0", bg = "reset", bold = true, italic = true}
+
+marker_copied   = { fg = "#8FFFCB", bg = "#8FFFCB" }
+marker_cut      = { fg = "#C44A32", bg = "#C44A32" }
+marker_marked   = { fg = "#5FE8FF", bg = "#5FE8FF" }
+marker_selected = { fg = "#C694FF", bg = "#C694FF" }
+
+count_copied   = { fg = "#0A0A0D", bg = "#8FFFCB" }
+count_cut      = {fg = "#0A0A0D", bg = "#C44A32"} 
+count_selected = {fg = "#0A0A0D", bg = "#C694FF"}
+
+border_symbol = "┃"
+border_style  = { fg = "#1A1A22", bold= true}
+
+symlink_target = {fg = "#C694FF", italic = true}
+
+[indicator]
+parent  = { fg = "#C0C0E0", bg = "#121217" }
+current = { fg = "#FF9F40", bg = "#0E0E11", bold = true}
+preview = { fg = "#E86A4A", bg = "#14141A" }
+
+padding = { open = "█", close = "█" }
+
+[mode]
+normal_main = {fg = "#0A0A0D", bg = "#E86A4A", bold = true}
+normal_alt = {fg = "#5FE8FF", bg = "#121217"}
+
+select_main = {fg = "#0A0A0D", bg = "#5FE8FF", bold = true}
+select_alt = {fg = "#E86A4A", bg = "#121217"}
+
+unset_main = {fg = "#0A0A0D", bg = "#C694FF"}
+unset_alt = {fg ="#C694FF", bg ="#121217"}
+
+[tabs]
+active   = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+inactive = { fg = "#C0C0E0", bg = "#121217" }
+
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = " ", close = " " }
+
+[status]
+overall = { fg = "#C0C0E0", bg = "#121217" }
+
+sep_left  = { open = " ", close = " " }
+sep_right = { open = " ", close = " " }
+
+perm_type  = { fg = "#E86A4A" }
+perm_read  = { fg = "#8FFFCB" }
+perm_write = { fg = "#FFD479" }
+perm_exec  = { fg = "#FF4F70" }
+perm_sep   = { fg = "#5A5A6A" }
+
+progress_label  = { fg = "#E86A4A", bold = true }
+progress_normal = { fg = "#E86A4A", bg = "#1A1A22" }
+progress_error  = { fg = "#FF4F70", bg = "#1A1A22", bold = true }
+
+[which]
+cols = 2
+mask = { bg = "#0A0A0D" }
+
+cand = { fg = "#E86A4A", bold = true }
+rest = { fg = "#C0C0E0" }
+desc = { fg = "#E4E4F0" }
+
+separator       = " → "
+separator_style = { fg = "#5A5A6A" }
+
+[confirm]
+border = { fg = "#1A1A22" }
+title  = { fg = "#E86A4A", bold = true }
+body   = { fg = "#E4E4F0" }
+list   = { fg = "#E4E4F0" }
+
+btn_yes = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+btn_no  = { fg = "#E4E4F0", bg = "#1A1A22" }
+
+btn_labels = ["Yes", "No"]
+
+[spot]
+border   = { fg = "#1A1A22" }
+title    = { fg = "#E86A4A", bold = true }
+tbl_col  = { fg = "#C694FF", bold = true }
+tbl_cell = { fg = "#E4E4F0" }
+
+[notify]
+title_info  = { fg = "#5FE8FF", bold = true }
+title_warn  = { fg = "#FFD479", bold = true }
+title_error = { fg = "#FF4F70", bold = true }
+
+[pick]
+border   = { fg = "#1A1A22" }
+active   = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+inactive = { fg = "#E4E4F0", bg = "#0A0A0D" }
+
+[input]
+border   = { fg = "#1A1A22" }
+title    = { fg = "#E86A4A", bold = true }
+value    = { fg = "#E86A4A" }
+selected = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+
+[cmp]
+border   = { fg = "#1A1A22" }
+active   = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+inactive = { fg = "#E4E4F0", bg = "#0A0A0D" }
+
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+[tasks]
+border  = { fg = "#1A1A22" }
+title   = { fg = "#E86A4A", bold = true }
+hovered = { fg = "#0A0A0D", bg = "#E86A4A", bold = true }
+
+[help]
+on      = { fg = "#FF9F40", bold = true }
+run     = { fg = "#8FFFCB" }
+desc    = { fg = "#E4E4F0" }
+hovered = {  bg = "#0E0E11", bold = true}
+footer  = { fg = "#C694FF" }
+
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+[filetype]
+rules = [
+  # MEDIA
+  { mime = "image/*",        fg = "#5FE8FF" },
+  { mime = "video/*",        fg = "#EF94F9" },
+  { mime = "audio/*",        fg = "#5CFFB3" },
+
+  # ARCHIVES
+  { mime = "application/*tar*", fg = "#FFB35A" },
+  { mime = "application/*zip*", fg = "#FFB35A" },
+  { mime = "application/*7z*", fg = "#FFB35A" },
+  { mime = "application/*{lzop,lzma,xz,zstd}", fg = "#FFB35A" },
+  { url = "*.{cpio,rpm,apk,whl,iso,lz4}", fg = "#FFB35A" },
+  { url = "*.{br,Z,snappy}", fg = "#FFB35A" },
+
+  # CODE
+  { url = "*.rs", fg = "#5FE8FF" },
+  { url = "*.py", fg = "#5FE8FF" },
+  { url = "*.{mjs,js,jsx,cjs,clj,cljs}", fg = "#5FE8FF" },
+  { url = "*.{ts,tsx}", fg = "#5FE8FF" },
+  { url = "*.lua", fg = "#5FE8FF" },
+  { url = "*.go", fg = "#5FE8FF" },
+  { url = "*.{bash,sh,zsh,fish,ps1,bat,psm1,psd1}", fg = "#5FE8FF" },
+  { url = "*.{c,cpp,h}",  fg = "#5FE8FF" },
+  { url = "*.{java,kt,kts,scala}",  fg = "#5FE8FF" },
+  { url = "*.{rb,cs,php}",  fg = "#5FE8FF" },
+  { url = "*.{swift,svelte,vue}",  fg = "#5FE8FF" },
+  { url = "*.{r,jl,dart,hs}",  fg = "#5FE8FF" },
+
+  # CONFIG / DATA
+  { url = "*.{json,conf,cfg,ini,toml,yaml,yml,xml,plist}", fg = "#C694FF" },
+
+  # DOCUMENTS
+  { url = "*.{wiki,rss,atom,ppt,pptx,docs,epub,mobi,rst,md,adoc,tex,pdf,html,htm,css,scss,sass,less,stylus,ejs,jinja,mustache,hbs}",  fg = "#FFD479" },
+
+  # SPECIAL
+  { mime = "inode/empty", fg = "#8FFFCB" },
+  { url = "*", is = "orphan", fg = "#8FA2FF", bold = true },
+  # EXECUTABLES
+  { url = "*", is = "exec", fg = "#FF4F70", bold = true },
+
+  # FALLBACKS
+  { url = "*/", fg = "#E86A4A" },
+  { url = "*",  fg = "#E4E4F0" },
+]
+[icon]
+prepend_dirs = [
+  { name = "Downloads", text = "", fg = "#5FE8FF" },
+]
+
+append_exts = [
+  { name = "mp3", text = "", fg = "#E86A4A" },
+  { name = "mp4", text = "", fg = "#C694FF" },
+]
