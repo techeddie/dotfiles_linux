@@ -99,24 +99,24 @@
 
 #-------------------------------------------------
 #gaps
-    gaps inner 30
+    gaps inner 10
     gaps outer 10
 
     workspace 1 gaps inner 10
     workspace 2 gaps outer 10
-    workspace 3 gaps inner 15
-    workspace 4 gaps inner 15
-    workspace 5 gaps inner 15
-    workspace 6 gaps inner 15
-    workspace 7 gaps inner 15
-    workspace 8 gaps outer 20
-    workspace 9 gaps outer 20
-    workspace 0 gaps outer 20
+    workspace 3 gaps inner 10
+    workspace 4 gaps inner 10
+    workspace 5 gaps inner 10
+    workspace 6 gaps inner 10
+    workspace 7 gaps inner 10
+    workspace 8 gaps outer 10
+    workspace 9 gaps outer 10
+    workspace 0 gaps outer 10
 
     bindsym $mod+F1 gaps inner current set 0; gaps outer current set 0
-    bindsym $mod+F2 gaps inner current set 35; gaps outer current set 10
-    bindsym $mod+F3 gaps inner current set 100; gaps outer current set 10
-    bindsym $mod+F4 gaps inner current set 180; gaps outer current set 10
+    bindsym $mod+F2 gaps inner current set 10; gaps outer current set 10
+    bindsym $mod+F3 gaps inner current set 35; gaps outer current set 10
+    bindsym $mod+F4 gaps inner current set 70; gaps outer current set 10
 
     #scratchpad
     bindsym $mod+z move scratchpad
@@ -124,12 +124,10 @@
     bindsym $mod+u scratchpad show; move position center
 
     #scratchpad move
+    for_window [title="^(?!.*(Open|Select|Save|Import|Export)).*KeePassXC$"] floating enable, resize set 900 600, move scratchpad
     for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
     for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    # for_window [title=".*Sublime Text.*"] floating enable, resize set 1400 900, move scratchpad
-    for_window [title=".*KeePassXC$"] floating enable, resize set 900 600, move scratchpad
-    for_window [title="^(?!.*(Select|Open|ekah|kdbx)).*Locked.*$"] move scratchpad
 
     #scratchpad toggle maps
     bindsym $mod+Delete      [app_id="sublime_text"] scratchpad show, move position center
@@ -324,8 +322,8 @@
     # swaymsg -t get_tree | grep -E 'app_id|class'
 
     # hide_edge_borders both
-    for_window [app_id="^.*"] border pixel 1
-    for_window [class="^.*"] border pixel 1
+    for_window [app_id="^.*"] border pixel 2
+    for_window [class="^.*"] border pixel 2
 
     for_window [app_id="brave-browser"] border pixel 1
     for_window [app_id="firefox"] border none, layout tabbed
@@ -333,7 +331,7 @@
     for_window [app_id="kitty"] border pixel 1
     for_window [app_id="md.obsidian.Obsidian"] border pixel 1
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 1300 900, move position center
-    for_window [app_id="org.mozilla.thunderbird_es"], layout tabbed
+    for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 1
     for_window [app_id="Dunst"] border none
     for_window [app_id="Ledger Live"] border normal
     for_window [app_id="TelegramDesktop"] border none
@@ -344,35 +342,20 @@
 
     # floating
     bindsym $mod+t floating toggle
-    for_window [app_id="com.seafile.seafile-apple"] floating enable, move position center
-    for_window [app_id="lxappearance"] floating enable, move position center
-    for_window [class="Seafile Client"] floating enable, move position center
-    for_window [class="Grub-customizer"] floating enable, move position center
-    for_window [app_id="org.gnome.Calculator"] floating enable, move position center
+    for_window [app_id="^(com\.seafile\.seafile-apple|lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
+    for_window [class="^(Seafile Client|Grub-customizer|TimeShift-gtk|Woeusbgui|nextcloud)$"] floating enable, move position center
+    for_window [title="^(Copying|Deleting|Moving|Preferences)$"] floating enable, move position center
+    for_window [title="^(Packing|Receive Connector|Send Connector)$"] floating enable, move position center, border normal
+    for_window [app_id="^sp-backup\.(root|home)$"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
-    for_window [app_id="nm-connection-editor"] floating enable, move position center
-    for_window [app_id="pavucontrol"] floating enable, move position center
     for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
-    for_window [class="TimeShift-gtk"] floating enable, move position center
-    for_window [class="Woeusbgui"] floating enable, move position center
-    for_window [app_id="copyq"] floating enable, move position center
+    for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
     for_window [class="Doublecmd" title="Options"] floating enable, resize set 800 600, move position center
     for_window [class="Doublecmd" title="Edit"] floating enable, move position center
-    for_window [class="nextcloud"] floating enable, move position center
-    for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
-    for_window [app_id="sp-backup.root"] floating enable, resize set 1536 400, move position 170 px 680 px
-    for_window [app_id="sp-backup.home"] floating enable, resize set 1536 400, move position 170 px 680 px
-    for_window [title="Bitwarden"] floating enable
-    for_window [title="Copying"] floating enable, move position center
-    for_window [title="Deleting"] floating enable, move position center
-    for_window [title="Moving"] floating enable, move position center
-    for_window [title="Packing"] floating enable, move position center, border normal
-    for_window [title="Receive Connector"] floating enable, move position center, border normal
-    for_window [title="Send Connector"] floating enable, move position center, border normal
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
-    # CHANGE: window_role not available in Wayland — using title matching where possible
-    for_window [title="Preferences"] floating enable, move position center
+    for_window [title="Bitwarden|Vaultwarden"] floating enable
     for_window [title="^popup$"] floating enable, move position center
+    for_window [title="New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
 
     # focus
     focus_on_window_activation focus
