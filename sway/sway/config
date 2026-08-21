@@ -144,11 +144,11 @@
     # bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
     # bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
     # bindsym $mod+space            exec swaymsg input type:keyboard xkb_switch_layout next
-    bindsym $alt+Shift+p            exec bash -c 'pkill waybar; sleep 0.3; waybar &'
+    bindsym $alt+Shift+p            exec bash -c 'pkill waybar; pkill swaync; sleep 0.3; waybar & swaync &'
     bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
-    bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[class=TelegramDesktop] focus' 2>/dev/null || telegram-desktop
+    bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[app_id=org.telegram.desktop] focus' 2>/dev/null || telegram-desktop
     bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
@@ -325,7 +325,7 @@
     for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
     for_window [app_id="Dunst"] border none
     for_window [app_id="Ledger Live"] border normal
-    for_window [app_id="TelegramDesktop"] border none
+    for_window [app_id="org.telegram.desktop"] border none
     for_window [app_id="Virt-manager"] border normal, layout tabbed
     for_window [app_id="Wfica"] border normal
     for_window [class="xfreerdp"] border normal
@@ -335,7 +335,8 @@
     bindsym $mod+t floating toggle
     for_window [app_id="^(com\.seafile\.seafile-apple|lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
     for_window [class="^(Seafile Client|Grub-customizer|TimeShift-gtk|Woeusbgui|nextcloud)$"] floating enable, move position center
-    for_window [title="^(Copying|Deleting|Moving|Preferences)$"] floating enable, move position center
+    for_window [title="^(Copying|Deleting|Moving|Preferences|Volume Control)$"] floating enable, move position center
+    for_window [title="Rename|Writing"] floating enable, focus
     for_window [title="^(Packing|Receive Connector|Send Connector)$"] floating enable, move position center, border normal
     for_window [app_id="^sp-backup\.(root|home)$"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
@@ -378,7 +379,7 @@
     assign [app_id="xfreerdp"] $workspace8
     assign [app_id="Ledger Live"] $workspace6
     assign [app_id="Selfservice"] $workspace8
-    assign [app_id="TelegramDesktop"] $workspace4
+    assign [app_id="org.telegram.desktop"] $workspace4
     assign [app_id="Wfica"] $workspace8
 
 #-------------------------------------------------
