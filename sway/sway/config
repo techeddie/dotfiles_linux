@@ -348,6 +348,7 @@
     for_window [title="Bitwarden|Vaultwarden"] floating enable
     for_window [title="^popup$"] floating enable, move position center
     for_window [title="New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [title="\[[0-9]+\]@T490"] floating enable, focus
 
     # focus
     focus_on_window_activation focus
