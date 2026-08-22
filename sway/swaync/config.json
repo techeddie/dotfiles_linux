@@ -22,7 +22,6 @@
     "notification-body-image-width": 200,
     "timeout": 8,
     "timeout-low": 4,
-    // "timeout-critical": 0,
     "timeout-critical": 15,
     "fit-to-screen": false,
     "relative-timestamps": true,
@@ -32,10 +31,7 @@
     "hide-on-clear": false,
     "hide-on-action": true,
     "script-fail-notify": true,
-
     "notification-window-width": 380,
-
-    // disable notifications for app xx
     "notification-visibility": {
         "ignore-seafile": {
             "app-name": "Seafile",

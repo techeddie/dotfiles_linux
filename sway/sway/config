@@ -218,7 +218,6 @@
     # exec brave
     # exec obsidian
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-    exec /usr/lib/xfce4/notifyd/xfce4-notifyd
     exec blueman-applet
     exec gnome-disks
     exec keepassxc
@@ -321,13 +320,11 @@
     for_window [app_id="md.obsidian.Obsidian"] border pixel 2
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
     for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
-    for_window [app_id="Dunst"] border none
     for_window [app_id="Ledger Live"] border normal
     for_window [app_id="org.telegram.desktop"] border none
     for_window [app_id="Virt-manager"] border normal, layout tabbed
     for_window [app_id="Wfica"] border normal
     for_window [class="xfreerdp"] border normal
-    no_focus   [class="Dunst"]
 
     # floating
     bindsym $mod+t floating toggle
