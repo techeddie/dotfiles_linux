@@ -340,8 +340,8 @@
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
     for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
     for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
-    for_window [class="Doublecmd" title="Options"] floating enable, resize set 800 600, move position center
-    for_window [class="Doublecmd" title="Edit"] floating enable, move position center
+    for_window [app_id="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
+    for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
     for_window [title="Bitwarden|Vaultwarden"] floating enable
     for_window [title="^popup$"] floating enable, move position center
@@ -351,11 +351,7 @@
     # focus
     focus_on_window_activation focus
     for_window [app_id="brave-browser"] focus
-    for_window [app_id="org.gnome.DiskUtility"] focus
-    for_window [app_id="brave-browser"] focus
-    for_window [app_id="Doublecmd"] focus
-    for_window [class="Gcr-prompter"] focus
-    for_window [app_id="floorp"] focus
+    for_window [app_id="doublecmd"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
 
