@@ -6,10 +6,6 @@
     set $alt Mod1
 #vars
     set $term kitty
-    set $down k
-    set $left j
-    set $right h
-    set $up l
 
     set $workspace1 "1"
     set $workspace2 "2"
@@ -152,9 +148,9 @@
     bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
-    bindsym $mod+F5               exec swaymsg output HDMI-A-1 enable, output eDP-1 disable
-    bindsym $mod+F6               exec swaymsg output HDMI-A-1 disable
-    bindsym $mod+F7               exec swaymsg output HDMI-A-1 enable, output eDP-1 enable
+    bindsym $mod+F5                 exec swaymsg output $secondMonitor enable, output $firstMonitor disable
+    bindsym $mod+F6                 exec swaymsg output $secondMonitor disable
+    bindsym $mod+F7                 exec swaymsg output $secondMonitor enable, output $firstMonitor enable
     bindsym $mod+F8                 exec sh ~/scripts/restic/restic_runBackupS3.sh
     bindsym $mod+F9                 exec sh ~/scripts/restic/restic_ALL.sh
     bindsym $mod+Return             exec $term
