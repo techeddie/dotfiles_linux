@@ -51,6 +51,7 @@
     workspace 2 output $secondMonitor
     workspace 3 output $secondMonitor
     workspace 4 output $secondMonitor
+    workspace 5 output $firstMonitor
     workspace 6 output $secondMonitor
     workspace 7 output $secondMonitor
     workspace 8 output $secondMonitor
@@ -211,8 +212,9 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP
 
-    # exec brave
-    # exec obsidian
+    exec brave
+    exec obsidian
+    exec /bin/sh -c "sleep 3 && arch-update --tray"
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec blueman-applet
     exec gnome-disks
@@ -337,8 +339,11 @@
     for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
     for_window [title="Bitwarden|Vaultwarden"] floating enable
+    for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
+    for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
     for_window [title="^popup$"] floating enable, move position center
     for_window [title="New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
     for_window [title="\[[0-9]+\]@T490"] floating enable, focus
 
     # focus
@@ -363,7 +368,7 @@
     assign [app_id="firefox"] $workspace5
     assign [app_id="floorp"] $workspace5
     assign [app_id="md.obsidian.Obsidian"] $workspace3
-    assign [app_id="org.mozilla.thunderbird_es"] $workspace6
+    assign [app_id="org.mozilla.thunderbird_es"] $workspace5
     assign [app_id="xfreerdp"] $workspace8
     assign [app_id="Ledger Live"] $workspace6
     assign [app_id="Selfservice"] $workspace8
