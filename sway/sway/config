@@ -338,11 +338,11 @@
     for_window [app_id="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
     for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
-    for_window [title="Bitwarden|Vaultwarden"] floating enable
+    for_window [app_id="brave-browser" title="Bitwarden|Vaultwarden"] floating enable
     for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
     for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
     for_window [title="^popup$"] floating enable, move position center
-    for_window [title="New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="org.mozilla.thunderbird_esr" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
     for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
     for_window [title="\[[0-9]+\]@T490"] floating enable, focus
 
