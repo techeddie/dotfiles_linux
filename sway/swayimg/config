@@ -1,0 +1,5 @@
+[keybindings]
+Right = next_file
+Left = prev_file
+Up = first_file
+Down = last_file
