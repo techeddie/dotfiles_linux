@@ -178,20 +178,20 @@
     bindsym control+$alt+m          exec pavucontrol
     bindsym control+Shift+Escape    exec /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=resources net.nokyan.Resources
 
-    # CPU performance profiles
+    # cpu performance profiles
     bindsym $mod+Shift+F1 exec "sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Powersave (800MHz)'"
     bindsym $mod+Shift+F2 exec "sudo auto-cpufreq --force=reset && sudo cpupower frequency-set -u 800MHz && notify-send 'CPU' 'Auto'"
     bindsym $mod+Shift+F3 exec "sudo cpupower frequency-set -u 2300MHz && notify-send 'CPU' 'Balanced (2300MHz)'"
     bindsym $mod+Shift+F4 exec "sudo cpupower frequency-set -u 4600MHz && notify-send 'CPU' 'Performance (4600MHz)'"
 
-    # CHANGE: screenshots — maim/xclip → grim/slurp/wl-copy
-    # Install: sudo pacman -S grim slurp wl-clipboard
-    # selection → clipboard
+    # screenshots
+    # selection → clipboard only, no editor (previous Print behavior kept)
     bindsym Print exec bash -c 'grim -g "$(slurp)" - | wl-copy'
-    # selection → file + clipboard
-    bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
-    # fullscreen → file + clipboard
-    bindsym $mod+Shift+Print exec bash -c 'grim - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
+    # selection → open directly in Satty for editing
+    bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+    # fullscreen → open directly in Satty for editing
+    bindsym $mod+Shift+Print exec bash -c 'grim -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+
 
     #rofi theme
       set $rofi_theme ~/gitREPO/dotfiles_linux/rofi/themes/sway-arch-dark.rasi
@@ -200,13 +200,14 @@
       bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme $rofi_theme
       bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme $rofi_theme
       bindsym $mod+Shift+m        exec sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
-      bindsym F1 exec bash -c '\
-          selected=$(cliphist list | awk "!seen[\$0]++" | rofi -dmenu -theme '"$rofi_theme"'); \
-          if [ -n "$selected" ]; then \
-              echo "$selected" | cliphist decode | wl-copy; \
-              sleep 0.2; \
-              wtype -M ctrl -P v -p v -m ctrl; \
-          fi'
+      # bindsym F1 exec bash -c '\
+      #     selected=$(cliphist list | awk "!seen[\$0]++" | rofi -dmenu -theme '"$rofi_theme"'); \
+      #     if [ -n "$selected" ]; then \
+      #         echo "$selected" | cliphist decode | wl-copy; \
+      #         sleep 0.2; \
+      #         wtype -M ctrl -P v -p v -m ctrl; \
+      #     fi'
+      bindsym F1 exec ~/scripts/cliphist-picker.sh $rofi_theme
       bindsym Shift+F1 exec bash -c 'cliphist list | rofi -dmenu -theme '"$rofi_theme"' | cliphist delete'
       bindsym $mod+j exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme '"$rofi_theme"' | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
 
@@ -328,24 +329,25 @@
     # floating
     bindsym $mod+t floating toggle
     for_window [app_id="^(com\.seafile\.seafile-apple|lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
-    for_window [class="^(Seafile Client|Grub-customizer|TimeShift-gtk|Woeusbgui|nextcloud)$"] floating enable, move position center
-    for_window [title="^(Copying|Deleting|Moving|Preferences|Volume Control)$"] floating enable, move position center
-    for_window [title="Rename|Writing"] floating enable, focus
-    for_window [title="^(Packing|Receive Connector|Send Connector)$"] floating enable, move position center, border normal
     for_window [app_id="^sp-backup\.(root|home)$"] floating enable, resize set 1536 400, move position 170 px 680 px
+    for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
+    for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable, resize set 400 500, move position center
+    for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
+    for_window [app_id="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
+    for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
+    for_window [app_id="org.mozilla.thunderbird_esr" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="satty"] floating enable, resize set 1200 800, move position center
+    for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
     for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
-    for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
-    for_window [app_id="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
-    for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
+    for_window [class="^(Seafile Client|Grub-customizer|TimeShift-gtk|Woeusbgui|nextcloud)$"] floating enable, move position center
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
-    for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable, resize set 400 500, move position center
-    for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
-    for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
-    for_window [title="^popup$"] floating enable, move position center
-    for_window [app_id="org.mozilla.thunderbird_esr" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
-    for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
+    for_window [title="Rename|Writing"] floating enable, focus
     for_window [title="\[[0-9]+\]@T490"] floating enable, focus
+    for_window [title="^(Copying|Deleting|Moving|Preferences|Volume Control)$"] floating enable, move position center
+    for_window [title="^(Packing|Receive Connector|Send Connector)$"] floating enable, move position center, border normal
+    for_window [title="^popup$"] floating enable, move position center
 
     # focus
     focus_on_window_activation focus
