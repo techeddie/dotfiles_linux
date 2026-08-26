@@ -146,6 +146,7 @@
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+m        exec swaymsg -q '[app_id=mpv] focus' 2>/dev/null || mpv --player-operation-mode=pseudo-gui
     bindsym $mod+$alt+ctrl+t        exec swaymsg -q '[app_id=org.telegram.desktop] focus' 2>/dev/null || telegram-desktop
+    bindsym $mod+$alt+ctrl+l        exec swaymsg -q '[app_id=ledger-wallet] focus' 2>/dev/null || ledger-wallet
     bindsym $mod+F10                exec sh ~/config/rdp/HZ-DC01
     bindsym $mod+F11                exec sh ~/config/rdp/HZ-EX02.sh
     bindsym $mod+F12                exec sh ~/config/rdp/HZ-APP02.sh
@@ -318,7 +319,7 @@
     for_window [app_id="md.obsidian.Obsidian"] border pixel 2
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
     for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
-    for_window [app_id="Ledger Live"] border normal
+    for_window [app_id="ledger-wallet"] border normal
     for_window [app_id="org.telegram.desktop"] border none
     for_window [app_id="Virt-manager"] border normal, layout tabbed
     for_window [app_id="Wfica"] border normal
@@ -338,7 +339,7 @@
     for_window [app_id="doublecmd" title="Options"] floating enable, resize set 800 600, move position center
     for_window [app_id="doublecmd" title="Edit"] floating enable, move position center
     for_window [title="Remmina Remote"] floating enable, resize set 400 500, move position center
-    for_window [app_id="brave-browser" title="Bitwarden|Vaultwarden"] floating enable
+    for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable, resize set 400 500, move position center
     for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
     for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
     for_window [title="^popup$"] floating enable, move position center
@@ -370,7 +371,7 @@
     assign [app_id="md.obsidian.Obsidian"] $workspace3
     assign [app_id="org.mozilla.thunderbird_es"] $workspace5
     assign [app_id="xfreerdp"] $workspace8
-    assign [app_id="Ledger Live"] $workspace6
+    assign [app_id="ledger-wallet"] $workspace6
     assign [app_id="Selfservice"] $workspace8
     assign [app_id="org.telegram.desktop"] $workspace4
     assign [app_id="Wfica"] $workspace8
