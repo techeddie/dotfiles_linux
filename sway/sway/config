@@ -59,8 +59,8 @@
     workspace 10 output $firstMonitor
 
     #switch workspace
-    bindsym $alt+Ctrl+j       workspace prev
-    bindsym $alt+Ctrl+k       workspace next
+    # bindsym $alt+Ctrl+j       workspace prev
+    # bindsym $alt+Ctrl+k       workspace next
     bindsym $alt+Tab          workspace back_and_forth
     bindsym $mod+Next         workspace next
     bindsym $mod+Prior        workspace prev
@@ -353,6 +353,8 @@
     focus_on_window_activation focus
     for_window [app_id="brave-browser"] focus
     for_window [app_id="doublecmd"] focus
+    for_window [app_id="keepassxc"] focus
+    for_window [app_id="org.gnome.DiskUtility"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
 
