@@ -6,6 +6,15 @@ require("zoxide"):setup({
 	update_db = true,
 })
 
+-- date time
+function Linemode:mtime()
+	local time = math.floor(self._file.cha.mtime or 0)
+	if time == 0 then
+		return ""
+	end
+	return os.date("%d.%m.%Y %H:%M", time)
+end
+
 -- sync yank clipboard across instances
 require("session"):setup {
 	sync_yanked = true,
