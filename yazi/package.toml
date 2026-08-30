@@ -1,26 +1,26 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "4848aac"
+rev = "c591a36"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "4848aac"
+rev = "c591a36"
 hash = "45a533508a9840cc5a10cf6129f63e6a"
 
 [[plugin.deps]]
 use = "pirafrank/what-size"
-rev = "c1a8cb6"
-hash = "57056b9728006881d580ccabe8154a9c"
+rev = "ec94d9a"
+hash = "4b546f609ab8630a083cecf9ab5091d2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "4848aac"
+rev = "c591a36"
 hash = "7a4b4237223aaa94e589d1c01a23542a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "4848aac"
+rev = "c591a36"
 hash = "5bb0bfab901d3601c370eafdd66edd31"
 
 [[plugin.deps]]
@@ -35,13 +35,13 @@ hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "4848aac"
+rev = "c591a36"
 hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "e60e122"
-hash = "fbaf0adc8efc59555b748d36aab62d40"
+rev = "80e5268"
+hash = "868db729374b97871bc30b96d0e9061f"
 
 [[plugin.deps]]
 use = "XYenon/yafg"
@@ -50,8 +50,8 @@ hash = "9558dd9169cbf01eac6044583c426716"
 
 [[plugin.deps]]
 use = "Shallow-Seek/fazif"
-rev = "0c622ee"
-hash = "356a6d1be67ae89e73732409355d38c5"
+rev = "7f05d7b"
+hash = "cb57e2c60d374b8852451fc42e340dec"
 
 [[plugin.deps]]
 use = "MasouShizuka/projects"
@@ -110,12 +110,12 @@ hash = "3ba3a757f194a67401c003894b0cc2a4"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:dracula"
-rev = "be0b21d"
+rev = "20b47bf"
 hash = "40136c9a02e166067a36d9ad618887f2"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "be0b21d"
+rev = "20b47bf"
 hash = "ab7c71d442d3a9e16331ea0d95ab36a8"
 
 [[flavor.deps]]
