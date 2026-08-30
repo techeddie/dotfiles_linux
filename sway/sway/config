@@ -331,13 +331,15 @@
     for_window [app_id="^(com\.seafile\.seafile-apple|lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
     for_window [app_id="^sp-backup\.(root|home)$"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
+    for_window [app_id="system-config-printer"] floating enable, resize set 900 600, move position center
     for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable, resize set 400 500, move position center
     for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
     for_window [app_id="doublecmd" title="(Edit|Options)"] floating enable, move position center
     for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
     for_window [app_id="org.mozilla.thunderbird_esr" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="org.mozilla.thunderbird_esr" title="Reminder"] floating enable, resize set 400 600, move position center
+    for_window [class="Xreader"] floating enable, resize set 1200 800, move position center
     for_window [app_id="satty"] floating enable, resize set 1200 800, move position center
-    for_window [app_id="thunar" title="(config|replace|Operation|Progress)"] floating enable, move position center
     for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
     for_window [class="Io.github.cboxdoerfer.FSearch"] floating enable
     for_window [class="TeamViewer"] floating enable, resize set 800 900, move position center
@@ -358,7 +360,9 @@
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus
 
-    # thunar copy progress
+    # thunar jobs
+    for_window [app_id="thunar" title="(config|replace|Operation|Progress)"] floating enable, move position center
+    for_window [title="All Files"] floating enable, resize set 400 600, move position center
     for_window [title="Copying files to"] floating enable
     for_window [title="This folder already contains"] floating enable, focus
 
