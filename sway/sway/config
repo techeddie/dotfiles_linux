@@ -318,7 +318,7 @@
     for_window [app_id="floorp"] border none, layout tabbed
     for_window [app_id="kitty"] border pixel 2
     for_window [app_id="md.obsidian.Obsidian"] border pixel 2
-    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
+    # for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
     for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
     for_window [app_id="ledger-wallet"] border normal
     for_window [app_id="org.telegram.desktop"] border none
@@ -350,6 +350,7 @@
     for_window [title="^(Copying|Deleting|Moving|Preferences|Volume Control)$"] floating enable, move position center
     for_window [title="^(Packing|Receive Connector|Send Connector)$"] floating enable, move position center, border normal
     for_window [title="^popup$"] floating enable, move position center
+    for_window [title="btrfs-assistant"] floating enable, move position center
 
     # focus
     focus_on_window_activation focus
