@@ -49,8 +49,8 @@ rev = "7f05d7b"
 hash = "cb57e2c60d374b8852451fc42e340dec"
 
 [[plugin.deps]]
-use = "ndtoan96/ouch"
-rev = "cfe4f50"
+use = "techeddie/ouch"
+rev = "b257e35"
 hash = "eff5702573b6cfba61e4ac8b1969629a"
 
 [[plugin.deps]]

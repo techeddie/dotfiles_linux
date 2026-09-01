@@ -27,3 +27,6 @@ tmux/.tmux/plugins
 vifm/vifminfo.json
 ~/.cache/nvim.undodir
 /nvim/lazyvim.json
+
+# local fork clone for the yazi ouch plugin (pushed to techeddie/ouch.yazi)
+/ouch.yazi-fork/
