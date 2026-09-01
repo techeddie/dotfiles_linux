@@ -124,10 +124,10 @@
     for_window [title="^(?!.*(Open|Select|Save|Import|Export)).*KeePassXC$"] floating enable, resize set 900 600, move scratchpad
     for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
     for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
-    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    # for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
+    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$" con_mark="^(?!.*sublime_setup).*$"] floating enable, resize set 1400 900, move scratchpad, move position center, mark "sublime_setup"
 
     #scratchpad toggle maps
-    bindsym $mod+Delete      [app_id="sublime_text"] scratchpad show, move position center
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
     bindsym $mod+a           [title=".*KeePassXC$"] scratchpad show, move position center
     bindsym $mod+g           [title=".*Sublime Text.*"] scratchpad show, move position center
