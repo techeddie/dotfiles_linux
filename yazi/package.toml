@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "c591a36"
+rev = "4dc7f1b"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "c591a36"
+rev = "4dc7f1b"
 hash = "45a533508a9840cc5a10cf6129f63e6a"
 
 [[plugin.deps]]
@@ -15,12 +15,12 @@ hash = "4b546f609ab8630a083cecf9ab5091d2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "c591a36"
+rev = "4dc7f1b"
 hash = "7a4b4237223aaa94e589d1c01a23542a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "c591a36"
+rev = "4dc7f1b"
 hash = "5bb0bfab901d3601c370eafdd66edd31"
 
 [[plugin.deps]]
@@ -30,7 +30,7 @@ hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "c591a36"
+rev = "4dc7f1b"
 hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
@@ -40,8 +40,8 @@ hash = "868db729374b97871bc30b96d0e9061f"
 
 [[plugin.deps]]
 use = "XYenon/yafg"
-rev = "e6ba851"
-hash = "9558dd9169cbf01eac6044583c426716"
+rev = "bd03a32"
+hash = "e3b3da408c4bf4adf2f16edc1ec05d45"
 
 [[plugin.deps]]
 use = "Shallow-Seek/fazif"
@@ -51,7 +51,7 @@ hash = "cb57e2c60d374b8852451fc42e340dec"
 [[plugin.deps]]
 use = "techeddie/ouch"
 rev = "b257e35"
-hash = "eff5702573b6cfba61e4ac8b1969629a"
+hash = "4cef6e8555fcfe8fdd5dd9dade4273b8"
 
 [[plugin.deps]]
 use = "techeddie/lazygit"
