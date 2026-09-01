@@ -167,10 +167,11 @@ function M:entry(job)
   -- Get the files that need to be compressed and infer a default archive name
   local paths, default_name = get_compression_target()
 
-  -- Get archive name from user
+  -- Get archive name from user (with a date + time stamp: name_YYYY-MM-DD_HH-MM-SS.ext)
+  local timestamp = os.date("%Y-%m-%d_%H-%M-%S")
   local output_name, name_event = ya.input({
     title = "Create archive:",
-    value = default_name .. "." .. default_fmt,
+    value = default_name .. "_" .. timestamp .. "." .. default_fmt,
     pos = { "top-center", y = 3, w = 40 },
   })
   if name_event ~= 1 then
