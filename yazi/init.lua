@@ -27,7 +27,11 @@ require("git"):setup()
 -- https://github.com/imsi32/yatline.yazi
 -- full default layout, with hovered_name (show_symlink=true) added to
 -- status_line.left.section_b to restore the old "-> target" symlink display
+local gruvbox_material_theme = require("yatline-gruvbox-material"):setup({ mode = "dark", toughness = "hard" }) -- or "light" -- or "hard" | "soft"
+
 require("yatline"):setup({
+
+	theme = gruvbox_material_theme,
 	header_line = {
 		left = {
 			section_a = { { type = "line", name = "tabs" } },
@@ -62,7 +66,6 @@ require("yatline"):setup({
 		},
 	},
 })
-
 
 -- fuzzy find and grep in yazi using ripgrep and fzf. this plugin provides an interactive search interface that allows you to search file contents and open results directly in your configured editor.
 -- https://github.com/XYenon/yafg.yazi
