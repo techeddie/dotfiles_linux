@@ -23,6 +23,46 @@ require("session"):setup {
 -- git plugin
 require("git"):setup()
 
+-- header-line and status-line
+-- https://github.com/imsi32/yatline.yazi
+-- full default layout, with hovered_name (show_symlink=true) added to
+-- status_line.left.section_b to restore the old "-> target" symlink display
+require("yatline"):setup({
+	header_line = {
+		left = {
+			section_a = { { type = "line", name = "tabs" } },
+			section_b = {},
+			section_c = {},
+		},
+		right = {
+			section_a = { { type = "string", name = "date", params = { "%A, %d %B %Y" } } },
+			section_b = { { type = "string", name = "date", params = { "%X" } } },
+			section_c = {},
+		},
+	},
+	status_line = {
+		left = {
+			section_a = { { type = "string", name = "tab_mode" } },
+			section_b = {
+				{ type = "string", name = "hovered_name", params = { true, 30, 10, true } },
+				{ type = "string", name = "hovered_size" },
+			},
+			section_c = {
+				{ type = "string", name = "hovered_path" },
+				{ type = "coloreds", name = "count" },
+			},
+		},
+		right = {
+			section_a = { { type = "string", name = "cursor_position" } },
+			section_b = { { type = "string", name = "cursor_percentage" } },
+			section_c = {
+				{ type = "string", name = "hovered_file_extension", params = { true } },
+				{ type = "coloreds", name = "permissions" },
+			},
+		},
+	},
+})
+
 
 -- fuzzy find and grep in yazi using ripgrep and fzf. this plugin provides an interactive search interface that allows you to search file contents and open results directly in your configured editor.
 -- https://github.com/XYenon/yafg.yazi
@@ -31,30 +71,6 @@ require("yafg"):setup({
   args = {},            -- Additional editor arguments (default: {})
   file_arg_format = "+{row} {file}",  -- File argument format (default: "{file}:{row}:{col}")
 })
-
-Status:children_add(function(self)
-	local h = self._current.hovered
-	if h and h.link_to then
-		return " -> " .. tostring(h.link_to)
-	else
-		return ""
-	end
-end, 3300, Status.LEFT)
-
--- show symlink path in status bar
-function Status:name()
-	local h = self._tab.current.hovered
-	if not h then
-		return ui.Line {}
-	end
-
-  local linked = ""
- 	if h.link_to ~= nil then
- 		linked = " -> " .. tostring(h.link_to)
- 	end
- 	return ui.Line(" " .. h.name .. linked)
-end
-
 
 -- https://yazi-rs.github.io/docs/configuration/yazi/#manager.linemode
 function Linemode:size_and_mtime()
