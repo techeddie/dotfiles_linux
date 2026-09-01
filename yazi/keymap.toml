@@ -704,3 +704,8 @@ desc = "open file explorer"
 on = [ "<A-t>" ]
 run = "shell 'thunar .' --block --confirm"
 desc = "open file explorer"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "C" ]
+run  = "plugin git-files"
+desc = "Show Git file changes"

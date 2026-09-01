@@ -83,6 +83,11 @@ use = "imsi32/yatline-gruvbox-material"
 rev = "2da9ca0"
 hash = "109a401ccbcd4c2271fd00eb194fd760"
 
+[[plugin.deps]]
+use = "ktunprasert/git-files"
+rev = "529444e"
+hash = "a028c3c06630a33b068f4d5bd714a795"
+
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
 rev = "619fdc5"
