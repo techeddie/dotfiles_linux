@@ -1,6 +1,18 @@
 -- Lightweight file explorer with buffer-like editing
 return {
   "nvim-mini/mini.files",
+  keys = {
+    {
+      "<leader>e",
+      function()
+        local mf = require("mini.files")
+        if not mf.close() then
+          mf.open(vim.api.nvim_buf_get_name(0), false)
+        end
+      end,
+      desc = "Explorer (mini.files)",
+    },
+  },
   opts = {
     mappings = {
       go_in_plus = "o",
