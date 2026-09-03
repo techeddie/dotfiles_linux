@@ -203,17 +203,17 @@
 #-------------------------------------------------
 #execute on logon - AUTOSTARTUP
 
-    exec brave
-    exec obsidian
     exec /bin/sh -c "sleep 3 && arch-update --tray"
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec blueman-applet
+    exec brave
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
+    exec kitty --class ws1term -e env -u TMUX sh -c 'exec tmux new-session -A -s WORKSPACE1'
     exec nm-applet
-    exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
-    exec ~/.config/sway/scratchpad-startup.sh
+    exec obsidian
     exec waybar
     exec wl-paste --watch cliphist store
+    exec ~/.config/sway/scratchpad-startup.sh
     exec_always autotiling
 
 #-------------------------------------------------
@@ -357,6 +357,7 @@
 
     # always launch app on workspace x
     assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace1
+    assign [app_id="ws1term"] $workspace1
     assign [app_id="sysmon"] $workspace10
     assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
     assign [app_id="brave-browser" title="Outlook"] $workspace10
