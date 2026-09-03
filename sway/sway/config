@@ -137,10 +137,6 @@
 #-------------------------------------------------
 #key bindings to launch applications
 
-    # bindsym $mod+F5                 exec sh ~/scripts/runHDMI_ONLY.sh
-    # bindsym $mod+F6                 exec sh ~/scripts/runHDMI_OFF.sh
-    # bindsym $mod+F7                 exec sh ~/scripts/runHDMI_AND_NOTEBOOK.sh
-    # bindsym $mod+space            exec swaymsg input type:keyboard xkb_switch_layout next
     bindsym $alt+Shift+p            exec bash -c 'pkill waybar; pkill swaync; sleep 0.3; waybar & swaync &'
     bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
@@ -200,13 +196,6 @@
       bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme $rofi_theme
       bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme $rofi_theme
       bindsym $mod+Shift+m        exec sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
-      # bindsym F1 exec bash -c '\
-      #     selected=$(cliphist list | awk "!seen[\$0]++" | rofi -dmenu -theme '"$rofi_theme"'); \
-      #     if [ -n "$selected" ]; then \
-      #         echo "$selected" | cliphist decode | wl-copy; \
-      #         sleep 0.2; \
-      #         wtype -M ctrl -P v -p v -m ctrl; \
-      #     fi'
       bindsym F1 exec ~/scripts/cliphist-picker.sh $rofi_theme
       bindsym Shift+F1 exec bash -c 'cliphist list | rofi -dmenu -theme '"$rofi_theme"' | cliphist delete'
       bindsym $mod+j exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme '"$rofi_theme"' | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
@@ -222,9 +211,6 @@
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec nm-applet
     exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
-    # starts swaync (after HDMI-A-2 is up) and launches subl / keepassxc /
-    # seafile-applet / gnome-disks, moving each to the scratchpad once.
-    # log: $XDG_RUNTIME_DIR/sway-scratchpad-startup.log
     exec ~/.config/sway/scratchpad-startup.sh
     exec waybar
     exec wl-paste --watch cliphist store
@@ -370,6 +356,8 @@
     for_window [app_id="mpv"] fullscreen enable
 
     # always launch app on workspace x
+    assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace1
+    assign [app_id="sysmon"] $workspace10
     assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
     assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="brave-browser"] $workspace2
