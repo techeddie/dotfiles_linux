@@ -121,17 +121,17 @@
     bindsym $mod+u scratchpad show; move position center
 
     #scratchpad move
-    for_window [title="^(?!.*(Open|Select|Save|Import|Export)).*KeePassXC$"] floating enable, resize set 900 600, move scratchpad
+    # subl / keepassxc / seafile-applet / gnome-disks are moved to the
+    # scratchpad once, at login, by ~/.config/sway/scratchpad-startup.sh
+    # (a bare `for_window ... move scratchpad` re-fires on every title change).
     for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
-    for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 800 600, move scratchpad
-    # for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$"] floating enable, resize set 1400 900, move scratchpad, move position center
-    for_window [app_id="sublime_text" title="^(?!.*(New File|Open File)).*UNREGISTERED.*$" con_mark="^(?!.*sublime_setup).*$"] floating enable, resize set 1400 900, move scratchpad, move position center, mark "sublime_setup"
 
     #scratchpad toggle maps
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
-    bindsym $mod+a           [title=".*KeePassXC$"] scratchpad show, move position center
-    bindsym $mod+g           [title=".*Sublime Text.*"] scratchpad show, move position center
-    bindsym $mod+grave       [title=".*KeePassXC$"] scratchpad show, move position center
+    bindsym $mod+a           [app_id="org.keepassxc.KeePassXC"] scratchpad show, move position center
+    bindsym $mod+g           [app_id="sublime_text"] scratchpad show, move position center
+    bindsym $mod+p           [app_id="com.seafile.seafile-applet"] scratchpad show, move position center
+    bindsym $mod+grave       [app_id="org.keepassxc.KeePassXC"] scratchpad show, move position center
     bindsym F12              [app_id="floating-term"] scratchpad show, move position center
 
 #-------------------------------------------------
@@ -219,14 +219,13 @@
     exec /bin/sh -c "sleep 3 && arch-update --tray"
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec blueman-applet
-    exec gnome-disks
-    exec keepassxc
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec nm-applet
-    exec seafile-applet
     exec sh -c 'kitty -e sh -c "tmux" & sleep 0.5 && swaymsg "move container to workspace 1; workspace 1"'
-    exec subl
-    exec swaync
+    # starts swaync (after HDMI-A-2 is up) and launches subl / keepassxc /
+    # seafile-applet / gnome-disks, moving each to the scratchpad once.
+    # log: $XDG_RUNTIME_DIR/sway-scratchpad-startup.log
+    exec ~/.config/sway/scratchpad-startup.sh
     exec waybar
     exec wl-paste --watch cliphist store
     exec_always autotiling
@@ -328,7 +327,7 @@
 
     # floating
     bindsym $mod+t floating toggle
-    for_window [app_id="^(com\.seafile\.seafile-apple|lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
+    for_window [app_id="^(lxappearance|org\.gnome\.Calculator|nm-connection-editor|pavucontrol|copyq)$"] floating enable, move position center
     for_window [app_id="^sp-backup\.(root|home)$"] floating enable, resize set 1536 400, move position 170 px 680 px
     for_window [app_id="blueman-manager"] floating enable, resize set 900 600, move position center
     for_window [app_id="system-config-printer"] floating enable, resize set 900 600, move position center
