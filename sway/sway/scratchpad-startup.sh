@@ -53,7 +53,7 @@ CLAUDE_ID=fmpnliohjhemenmnlpbfagaolkdacoja
 pgrep -f "app-id=$CLAUDE_ID" >/dev/null \
     || brave --profile-directory=Default "--app-id=$CLAUDE_ID" &
 
-# kitty + tmux session "sysmon", btop | htop side by side -> workspace 10
+# kitty + tmux session "sysmon", btop | htop side by side -> workspace 5
 pgrep -f 'kitty --class sysmon' >/dev/null || kitty --class sysmon -e env -u TMUX sh -c '
     if ! tmux has-session -t sysmon 2>/dev/null; then
         tmux new-session  -d -s sysmon btop
@@ -67,6 +67,6 @@ hide "sublime_text"               1400 900 &
 hide "org.keepassxc.KeePassXC"     900 600 &
 hide "com.seafile.seafile-applet" 1000 640 &
 hide "org.gnome.DiskUtility"       800 600 &
-send "sysmon"                                10 &
+send "sysmon"                                 5 &
 
 wait

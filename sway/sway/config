@@ -358,7 +358,7 @@
     # always launch app on workspace x
     assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace1
     assign [app_id="ws1term"] $workspace1
-    assign [app_id="sysmon"] $workspace10
+    assign [app_id="sysmon"] $workspace5
     assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
     assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="brave-browser"] $workspace2
