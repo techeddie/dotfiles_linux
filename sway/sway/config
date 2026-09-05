@@ -306,7 +306,7 @@
     for_window [app_id="kitty"] border pixel 2
     for_window [app_id="md.obsidian.Obsidian"] border pixel 2
     # for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
-    for_window [app_id="org.mozilla.thunderbird_esr"] border pixel 2
+    for_window [app_id="org.mozilla.Thunderbird"] border pixel 2
     for_window [app_id="ledger-wallet"] border normal
     for_window [app_id="org.telegram.desktop"] border none
     for_window [app_id="Virt-manager"] border normal, layout tabbed
@@ -323,8 +323,8 @@
     for_window [app_id="com.shellyorg.shelly"] floating enable, resize set 1536 800, move position center
     for_window [app_id="doublecmd" title="(Edit|Options)"] floating enable, move position center
     for_window [app_id="kitty" title="arch-update"] floating enable, resize set 800 900, move position center
-    for_window [app_id="org.mozilla.thunderbird_esr" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
-    for_window [app_id="org.mozilla.thunderbird_esr" title="Reminder"] floating enable, resize set 400 600, move position center
+    for_window [app_id="org.mozilla.Thunderbird" title="Edit Event|New Event|Edit Calendar|Write:"] floating enable, resize set 1536 800, move position center
+    for_window [app_id="org.mozilla.Thunderbird" title="Reminder"] floating enable, resize set 400 600, move position center
     for_window [class="Xreader"] floating enable, resize set 1200 800, move position center
     for_window [app_id="satty"] floating enable, resize set 1200 800, move position center
     for_window [app_id="xarchive"] floating enable, resize set 600 700, move position center
