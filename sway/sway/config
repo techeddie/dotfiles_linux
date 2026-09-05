@@ -182,7 +182,9 @@
 
     # screenshots
     # selection → clipboard only, no editor (previous Print behavior kept)
-    bindsym Print exec bash -c 'grim -g "$(slurp)" - | wl-copy'
+    # bindsym Print exec bash -c 'grim -g "$(slurp)" - | wl-copy'
+    # selection → clipboard and save to picitures folder
+    bindsym Print exec bash -c 'grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
     # selection → open directly in Satty for editing
     bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
     # fullscreen → open directly in Satty for editing
