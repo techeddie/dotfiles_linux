@@ -10,8 +10,8 @@ hash = "45a533508a9840cc5a10cf6129f63e6a"
 
 [[plugin.deps]]
 use = "pirafrank/what-size"
-rev = "ec94d9a"
-hash = "4b546f609ab8630a083cecf9ab5091d2"
+rev = "1cb456f"
+hash = "7699acf73a1079f8a4afef5cec84ce73"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
