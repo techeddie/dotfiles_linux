@@ -128,10 +128,10 @@
 
     #scratchpad toggle maps
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
-    bindsym $mod+a           [app_id="org.keepassxc.KeePassXC"] scratchpad show, move position center
+    bindsym $mod+a           [class="KeePassXC"] scratchpad show, move position center
     bindsym $mod+g           [app_id="sublime_text"] scratchpad show, move position center
     bindsym $mod+p           [app_id="com.seafile.seafile-applet"] scratchpad show, move position center
-    bindsym $mod+grave       [app_id="org.keepassxc.KeePassXC"] scratchpad show, move position center
+    bindsym $mod+grave       [app_id="KeePassXC"] scratchpad show, move position center
     bindsym F12              [app_id="floating-term"] scratchpad show, move position center
 
 #-------------------------------------------------
@@ -343,7 +343,7 @@
     focus_on_window_activation focus
     for_window [app_id="brave-browser"] focus
     for_window [app_id="doublecmd"] focus
-    for_window [app_id="keepassxc"] focus
+    for_window [app_id="KeePassXC"] focus
     for_window [app_id="org.gnome.DiskUtility"] focus
     for_window [instance="xfreerdp"] focus
     for_window [urgent=latest] focus

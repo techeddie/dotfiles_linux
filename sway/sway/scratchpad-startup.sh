@@ -64,7 +64,7 @@ pgrep -f 'kitty --class sysmon' >/dev/null || kitty --class sysmon -e env -u TMU
 
 # --- place windows once they appear ------------------------------------
 hide "sublime_text"               1400 900 &
-hide "org.keepassxc.KeePassXC"     900 600 &
+hide "KeePassXC"     900 600 &
 hide "com.seafile.seafile-applet" 1000 640 &
 hide "org.gnome.DiskUtility"       800 600 &
 send "sysmon"                                 5 &
