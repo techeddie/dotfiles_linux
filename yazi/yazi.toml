@@ -172,6 +172,11 @@ previewers = [
 	{ url = "*", run = "file" },
 ]
 
+# Markdown via glow (piper.yazi pipes any shell command as a previewer)
+[[plugin.prepend_previewers]]
+url = "*.md"
+run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s="$([ "$t" = "light" ] && echo light || echo dark)" "$1"'
+
 [input]
 cursor_blink = false
 
