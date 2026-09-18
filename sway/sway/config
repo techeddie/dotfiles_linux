@@ -99,7 +99,7 @@
     gaps inner 10
     gaps outer 10
 
-    workspace 1 gaps inner 10
+    workspace 1 gaps inner 0
     workspace 2 gaps outer 10
     workspace 3 gaps inner 10
     workspace 4 gaps inner 10
