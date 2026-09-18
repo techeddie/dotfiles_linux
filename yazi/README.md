@@ -1,3 +1,8 @@
+---
+# preview of this amazing tool
+![yazi file manager](./.img/yazi_filemanager.png)
+---
+
 
 <div align="center">
   <sup>Special thanks to:</sup><br>
