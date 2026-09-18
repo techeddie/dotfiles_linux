@@ -1,7 +1,43 @@
 # preview of this amazing tool
 ![yazi file manager](./.img/yazi_filemanager.png)
----
 
+---
+# packages and themes installed
+```bash
+ $ ya pkg list
+Plugins:
+	yazi-rs/plugins:smart-enter (f703392)
+	yazi-rs/plugins:piper (f703392)
+	pirafrank/what-size (1cb456f)
+	yazi-rs/plugins:jump-to-char (f703392)
+	yazi-rs/plugins:git (f703392)
+	GrzegorzKozub/mdcat (7b7380a)
+	yazi-rs/plugins:full-border (f703392)
+	KKV9/compress (80e5268)
+	XYenon/yafg (bd03a32)
+	Shallow-Seek/fazif (7f05d7b)
+	techeddie/ouch (b257e35)
+	techeddie/lazygit (f82ad35)
+	pakhromov/smart-tab (1ec06f1)
+	MasouShizuka/projects (22a4006)
+	dedukun/bookmarks (9ef1254)
+	imsi32/yatline (c5d4b48)
+	imsi32/yatline-gruvbox-material (2da9ca0)
+	ktunprasert/git-files (529444e)
+Flavors:
+	bennyyip/gruvbox-dark (619fdc5)
+	BennyOe/onedark (668d71d)
+	Mintass/rose-pine (d91f8f2)
+	tomer-ben-david/neon (50f2e60)
+	6ruby1/eldritch (7b5bf34)
+	ZimCodes/yazi-flavors:obsidian-glow (c64630b)
+	Raideeen/dimidium (a9a7a22)
+	yazi-rs/flavors:dracula (20b47bf)
+	yazi-rs/flavors:catppuccin-frappe (20b47bf)
+	BennyOe/tokyo-night (8e6296f)
+```
+
+---
 </div>
 
 ## Yazi - ⚡️ Blazing Fast Terminal File Manager
