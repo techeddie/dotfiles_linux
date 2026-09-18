@@ -1,14 +1,6 @@
----
 # preview of this amazing tool
 ![yazi file manager](./.img/yazi_filemanager.png)
 ---
-
-
-<div align="center">
-  <sup>Special thanks to:</sup><br>
-
-| <a href="https://go.warp.dev/yazi" target="_blank"><img alt="Warp sponsorship" width=350 src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png"><br><b>Warp, built for coding with multiple AI agents</b><br><sup>Available for macOS, Linux and Windows</sup></a> |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 </div>
 
