@@ -65,8 +65,8 @@ hash = "51665d21a1fb25c5e1b608750fc6f2fa"
 
 [[plugin.deps]]
 use = "MasouShizuka/projects"
-rev = "22a4006"
-hash = "195d1b8c8fc1a944883b5ce3d92d7ca7"
+rev = "181ebaf"
+hash = "ae9710a3a76e48c1db50f5ed6fe6dc23"
 
 [[plugin.deps]]
 use = "dedukun/bookmarks"
