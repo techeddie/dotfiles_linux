@@ -168,7 +168,7 @@
     bindsym $mod+d                  exec swaymsg -q '[app_id=doublecmd] focus' 2>/dev/null || doublecmd
     bindsym $mod+e                  exec thunar
     bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
-    bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.thunderbird_es] focus' 2>/dev/null || org.mozilla.thunderbird_es
+    bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.Thunderbird] focus' 2>/dev/null || org.mozilla.Thunderbird
     bindsym $mod+shift+i            exec swayprop
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym control+$alt+m          exec pavucontrol
@@ -364,13 +364,13 @@
     assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
     assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="brave-browser"] $workspace2
-    assign [app_id="chromium"] $workspace5
+    assign [app_id="chromium"] $workspace6
     assign [app_id="firefox"] $workspace5
     assign [app_id="floorp"] $workspace5
     assign [app_id="md.obsidian.Obsidian"] $workspace3
     assign [app_id="org.mozilla.thunderbird_es"] $workspace5
     assign [app_id="xfreerdp"] $workspace8
-    assign [app_id="ledger-wallet"] $workspace6
+    assign [app_id="ledger-wallet"] $workspace7
     assign [app_id="Selfservice"] $workspace8
     assign [app_id="org.telegram.desktop"] $workspace4
     assign [app_id="Wfica"] $workspace8
