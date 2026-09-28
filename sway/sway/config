@@ -198,7 +198,7 @@
       bindsym $mod+w              exec rofi -combi-modi window -show combi -show-icons -theme $rofi_theme
       bindsym $mod+m              exec rofi -combi-modi window -show drun -show-icons -theme $rofi_theme
       bindsym $mod+Shift+m        exec sh ~/gitREPO/dotfiles_linux/i3/scripts/rofi.pkill.sh
-      bindsym F1 exec ~/scripts/cliphist-picker.sh $rofi_theme
+      bindsym F1 exec ~/gitREPO/dotfiles_linux/sway/sway/cliphist-picker.sh $rofi_theme
       bindsym Shift+F1 exec bash -c 'cliphist list | rofi -dmenu -theme '"$rofi_theme"' | cliphist delete'
       bindsym $mod+j exec bash -c 'cliphist list | awk '"'"'!seen[$0]++'"'"' | rofi -dmenu -theme '"$rofi_theme"' | cliphist decode | wl-copy && sleep 0.1 && wtype -M shift -P Insert -p Insert -m shift'
 
