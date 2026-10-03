@@ -21,25 +21,27 @@ swaync >> "$LOG" 2>&1 &
 log "swaync started (pid $!)"
 
 # --- helpers --------------------------------------------------------------
-wait_for_app() {
+# $1 is a sway criteria key, e.g. app_id or class — XWayland apps (KeePassXC)
+# report app_id: null and only expose a class, so the key can't be hardcoded.
+wait_for_app() {   # key  value
     i=0
     while [ "$i" -lt 60 ]; do
-        swaymsg -t get_tree | grep -q "\"app_id\": \"$1\"" && return 0
+        swaymsg -t get_tree | grep -q "\"$1\": \"$2\"" && return 0
         i=$((i + 1)); sleep 1
     done
-    log "timeout waiting for $1"; return 1
+    log "timeout waiting for $1=$2"; return 1
 }
 
-hide() {   # app_id  w  h
-    wait_for_app "$1" || return 1
-    swaymsg "[app_id=\"$1\"] floating enable, resize set $2 $3, move scratchpad, move position center" >> "$LOG" 2>&1
-    log "$1 -> scratchpad"
+hide() {   # key  value  w  h
+    wait_for_app "$1" "$2" || return 1
+    swaymsg "[$1=\"$2\"] floating enable, resize set $3 $4, move scratchpad, move position center" >> "$LOG" 2>&1
+    log "$1=$2 -> scratchpad"
 }
 
-send() {   # app_id  workspace
-    wait_for_app "$1" || return 1
-    swaymsg "[app_id=\"$1\"] move container to workspace $2" >> "$LOG" 2>&1
-    log "$1 -> workspace $2"
+send() {   # key  value  workspace
+    wait_for_app "$1" "$2" || return 1
+    swaymsg "[$1=\"$2\"] move container to workspace $3" >> "$LOG" 2>&1
+    log "$1=$2 -> workspace $3"
 }
 
 # --- launch apps (if not already running) -------------------------------
@@ -63,10 +65,10 @@ pgrep -f 'kitty --class sysmon' >/dev/null || kitty --class sysmon -e env -u TMU
     exec tmux attach -t sysmon' &
 
 # --- place windows once they appear ------------------------------------
-hide "sublime_text"               1400 900 &
-hide "KeePassXC"     900 600 &
-hide "com.seafile.seafile-applet" 1000 640 &
-hide "org.gnome.DiskUtility"       800 600 &
-send "sysmon"                                 5 &
+hide app_id "sublime_text"               1400 900 &
+hide class  "KeePassXC"                   900 600 &
+hide app_id "com.seafile.seafile-applet" 1000 640 &
+hide app_id "org.gnome.DiskUtility"       800 600 &
+send app_id "sysmon"                                 5 &
 
 wait
