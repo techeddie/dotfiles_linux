@@ -15,8 +15,8 @@ return {
   },
   opts = {
     mappings = {
-      go_in_plus = "o",
-      go_in      = "l",
+      go_in_plus = "l",
+      go_in      = "o",
     },
   },
   config = function(_, opts)
