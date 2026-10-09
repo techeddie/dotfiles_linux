@@ -6,7 +6,6 @@
     set $alt Mod1
 #vars
     set $term kitty
-
     set $workspace1 "1"
     set $workspace2 "2"
     set $workspace3 "3"
@@ -18,22 +17,19 @@
     set $workspace9 "9"
     set $workspace10 "10"
 
-    set $firstMonitor eDP-1
-    set $secondMonitor HDMI-A-2
-
-
 #-------------------------------------------------
 # external inputs
-  include ~/.config/sway/input.conf
+    include ~/.config/sway/input.conf
 
-  # hdmi left, notebook right
-    output $secondMonitor position 0,0
-    output $firstMonitor position 2560,0
+  # hdmi left, notebook center, portable up
+    set $firstMonitor eDP-1
+    set $secondMonitor HDMI-A-2
+    set $thirdMonitor DP-1
+    output $firstMonitor position 2560,1080
+    output $secondMonitor position 0,1080
+    output $thirdMonitor position 2560,0
 
   # wallpaper
-    # output $secondMonitor bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg fill
-    # output $firstMonitor  bg ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png fill
-
     exec awww-daemon
     exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg --outputs $secondMonitor
     exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $firstMonitor
@@ -46,17 +42,29 @@
 #workspace
     workspace_layout default
 
-    #define monitor output
-    workspace 1 output $secondMonitor
-    workspace 2 output $secondMonitor
-    workspace 3 output $secondMonitor
-    workspace 4 output $secondMonitor
-    workspace 5 output $firstMonitor
-    workspace 6 output $secondMonitor
-    workspace 7 output $secondMonitor
-    workspace 8 output $secondMonitor
-    workspace 9 output $secondMonitor
-    workspace 10 output $firstMonitor
+    # main monitor output
+    # workspace 1 output $secondMonitor
+    # workspace 2 output $secondMonitor
+    # workspace 3 output $secondMonitor
+    # workspace 4 output $secondMonitor
+    # workspace 5 output $secondMonitor
+    # workspace 6 output $secondMonitor
+    # workspace 7 output $secondMonitor
+    # workspace 8 output $secondMonitor
+    # workspace 9 output $secondMonitor
+    # workspace 10 output $firstMonitor
+
+        #mobile setup
+        workspace 1 output $firstMonitor
+        workspace 2 output $thirdMonitor
+        workspace 3 output $thirdMonitor
+        workspace 4 output $firstMonitor
+        workspace 5 output $firstMonitor
+        workspace 6 output $firstMonitor
+        workspace 7 output $firstMonitor
+        workspace 8 output $firstMonitor
+        workspace 9 output $firstMonitor
+        workspace 10 output $thirdMonitor
 
     #switch workspace
     # bindsym $alt+Ctrl+j       workspace prev
