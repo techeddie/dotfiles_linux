@@ -43,28 +43,28 @@
     workspace_layout default
 
     # main monitor output
-    # workspace 1 output $secondMonitor
-    # workspace 2 output $secondMonitor
-    # workspace 3 output $secondMonitor
-    # workspace 4 output $secondMonitor
-    # workspace 5 output $secondMonitor
-    # workspace 6 output $secondMonitor
-    # workspace 7 output $secondMonitor
-    # workspace 8 output $secondMonitor
-    # workspace 9 output $secondMonitor
-    # workspace 10 output $firstMonitor
+    workspace 1 output $secondMonitor
+    workspace 2 output $secondMonitor
+    workspace 3 output $secondMonitor
+    workspace 4 output $secondMonitor
+    workspace 5 output $secondMonitor
+    workspace 6 output $secondMonitor
+    workspace 7 output $secondMonitor
+    workspace 8 output $secondMonitor
+    workspace 9 output $secondMonitor
+    workspace 10 output $firstMonitor
 
         #mobile setup
-        workspace 1 output $firstMonitor
-        workspace 2 output $thirdMonitor
-        workspace 3 output $thirdMonitor
-        workspace 4 output $firstMonitor
-        workspace 5 output $firstMonitor
-        workspace 6 output $firstMonitor
-        workspace 7 output $firstMonitor
-        workspace 8 output $firstMonitor
-        workspace 9 output $firstMonitor
-        workspace 10 output $thirdMonitor
+        # workspace 1 output $firstMonitor
+        # workspace 2 output $thirdMonitor
+        # workspace 3 output $thirdMonitor
+        # workspace 4 output $firstMonitor
+        # workspace 5 output $firstMonitor
+        # workspace 6 output $firstMonitor
+        # workspace 7 output $firstMonitor
+        # workspace 8 output $firstMonitor
+        # workspace 9 output $firstMonitor
+        # workspace 10 output $thirdMonitor
 
     #switch workspace
     # bindsym $alt+Ctrl+j       workspace prev
@@ -145,7 +145,7 @@
 #-------------------------------------------------
 #key bindings to launch applications
 
-    bindsym $alt+Shift+p            exec bash -c 'pkill waybar; pkill swaync; sleep 0.3; waybar & swaync &'
+    bindsym $alt+Shift+p            exec pkill -SIGUSR1 -x waybar
     bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
     bindsym $mod+$alt+ctrl+l        exec swaymsg -q '[app_id=ledger-wallet] focus' 2>/dev/null || ledger-wallet
