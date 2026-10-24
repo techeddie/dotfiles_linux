@@ -66,6 +66,7 @@ return {
 				file("ni", "\u{e62b}  Neovim Init", "~/.config/nvim/init.lua"),
 				file("nk", "\u{e62b}  Neovim Keymaps", "~/.config/nvim/lua/config/keymaps.lua"),
 				file("no", "\u{e62b}  Neovim Options", "~/.config/nvim/lua/config/options.lua"),
+				file("ns", "\u{e62b}  Neovim Options (Settings)", "~/.config/nvim/lua/config/options.lua"),
 				{ type = "padding", val = 1 },
 				cmd("sl", "\u{f487}  Lazy", "<cmd>Lazy<cr>"),
 				cmd("sle", "\u{f487}  LazyExtras", "<cmd>LazyExtras<cr>"),
