@@ -55,20 +55,20 @@ CLAUDE_ID=fmpnliohjhemenmnlpbfagaolkdacoja
 pgrep -f "app-id=$CLAUDE_ID" >/dev/null \
     || brave --profile-directory=Default "--app-id=$CLAUDE_ID" &
 
-# kitty + tmux session "sysmon", btop | htop side by side -> workspace 5
-pgrep -f 'kitty --class sysmon' >/dev/null || kitty --class sysmon -e env -u TMUX sh -c '
-    if ! tmux has-session -t sysmon 2>/dev/null; then
-        tmux new-session  -d -s sysmon btop
-        tmux split-window -h -t sysmon htop
-        tmux set-option   -t sysmon status off
-    fi
-    exec tmux attach -t sysmon' &
+# # kitty + tmux session "sysmon", btop | htop side by side -> workspace 5
+# pgrep -f 'kitty --class sysmon' >/dev/null || kitty --class sysmon -e env -u TMUX sh -c '
+#     if ! tmux has-session -t sysmon 2>/dev/null; then
+#         tmux new-session  -d -s sysmon btop
+#         tmux split-window -h -t sysmon htop
+#         tmux set-option   -t sysmon status off
+#     fi
+#     exec tmux attach -t sysmon' &
 
 # --- place windows once they appear ------------------------------------
 hide app_id "sublime_text"               1400 900 &
 hide class  "KeePassXC"                   900 600 &
 hide app_id "com.seafile.seafile-applet" 1000 640 &
 hide app_id "org.gnome.DiskUtility"       800 600 &
-send app_id "sysmon"                                 5 &
+# send app_id "sysmon"                                 5 &
 
 wait
