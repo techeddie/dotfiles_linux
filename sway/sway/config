@@ -143,7 +143,7 @@
 
     #scratchpad toggle maps
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
-    bindsym $mod+a           [class="KeePassXC"] scratchpad show, move position center
+    bindsym $mod+a           [app_id="org.keepassxc.KeePassXC"] scratchpad show, move position center
     bindsym $mod+g           [app_id="sublime_text"] scratchpad show, move position center
     bindsym $mod+p           [app_id="com.seafile.seafile-applet"] scratchpad show, move position center
     bindsym $mod+grave       [class="KeePassXC"] scratchpad show, move position center
@@ -226,7 +226,7 @@
     exec blueman-applet
     exec brave
     # exec gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default
-    # exec kitty --class floating-term -e tmux new-session -A -s scratchpad
+    exec kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec kitty --class ws1term -e env -u TMUX sh -c 'exec tmux new-session -A -s WORKSPACE1'
     exec nm-applet
     exec obsidian
