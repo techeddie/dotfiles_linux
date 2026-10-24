@@ -22,17 +22,17 @@
     include ~/.config/sway/input.conf
 
   # hdmi left, notebook center, portable up
+    # portable left (portrait), hdmi center (2K), notebook right (FHD)
     set $firstMonitor eDP-1
     set $secondMonitor HDMI-A-2
     set $thirdMonitor DP-1
-    output $firstMonitor position 2560,1080
-    output $secondMonitor position 0,1080
-    output $thirdMonitor position 2560,0
 
-  # wallpaper
-    exec awww-daemon
-    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg --outputs $secondMonitor
-    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $firstMonitor
+    # portable: 1920x1080 rotated -> 1080x1920 logical
+    output $thirdMonitor transform 90 position 0,0
+    # hdmi: 2560x1440, x = 1080, bottom aligned (y = 1920 - 1440)
+    output $secondMonitor position 1080,480
+    # notebook: 1920x1080, x = 1080 + 2560, bottom aligned (y = 1920 - 1080)
+    output $firstMonitor position 3640,840
 
 #-------------------------------------------------
 #lockscreen
@@ -47,12 +47,13 @@
     workspace 2 output $secondMonitor
     workspace 3 output $secondMonitor
     workspace 4 output $secondMonitor
-    workspace 5 output $secondMonitor
-    workspace 6 output $secondMonitor
+    workspace 5 output $thirdMonitor
+    workspace 6 output $thirdMonitor
     workspace 7 output $secondMonitor
     workspace 8 output $secondMonitor
     workspace 9 output $secondMonitor
     workspace 10 output $firstMonitor
+
 
         #mobile setup
         # workspace 1 output $firstMonitor
@@ -102,6 +103,11 @@
     bindsym $mod+Shift+8 move container to workspace 8; workspace 8
     bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 
+  # wallpaper
+    exec awww-daemon
+    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg --outputs $secondMonitor
+    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $firstMonitor
+
 #-------------------------------------------------
 #gaps
     gaps inner 10
@@ -132,7 +138,8 @@
     # subl / keepassxc / seafile-applet / gnome-disks are moved to the
     # scratchpad once, at login, by ~/.config/sway/scratchpad-startup.sh
     # (a bare `for_window ... move scratchpad` re-fires on every title change).
-    for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
+    # for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
+    for_window [app_id="floating-term"] floating enable, resize set 800 500, move scratchpad
 
     #scratchpad toggle maps
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
@@ -144,7 +151,6 @@
 
 #-------------------------------------------------
 #key bindings to launch applications
-
     bindsym $alt+Shift+p            exec pkill -SIGUSR1 -x waybar
     bindsym $mod+$alt+Ctrl+f        exec fsearch
     bindsym $mod+$alt+ctrl+c        exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
@@ -164,7 +170,6 @@
     bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home_btrfs/backup.home_auto.sh
     bindsym $mod+Shift+b            exec blueman-manager
     bindsym $mod+Shift+c            exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+Shift+f            exec swaymsg -q '[app_id=floorp] focus' 2>/dev/null || floorp
     bindsym $mod+Shift+l            exec kitty -e lf ~/
     bindsym $mod+Shift+p            exec kitty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
@@ -176,7 +181,8 @@
     bindsym $mod+d                  exec swaymsg -q '[app_id=doublecmd] focus' 2>/dev/null || doublecmd
     bindsym $mod+e                  exec thunar
     bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
-    bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.Thunderbird] focus' 2>/dev/null || org.mozilla.Thunderbird
+    bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.Thunderbird] focus' 2>/dev/null || thunderbird
+    bindsym $mod+shift+f            exec swaymsg -q '[app_id=firefox] focus' 2>/dev/null || firefox
     bindsym $mod+shift+i            exec swayprop
     bindsym $mod+space              exec sh ~/scripts/runToggleKeyboardLayout.sh
     bindsym control+$alt+m          exec pavucontrol
@@ -196,9 +202,9 @@
     # selection → clipboard and save to picitures folder
     bindsym Print exec bash -c 'grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png | wl-copy'
     # selection → open directly in Satty for editing
-    bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+    bindsym ctrl+Print exec bash -c 'grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
     # fullscreen → open directly in Satty for editing
-    bindsym $mod+Shift+Print exec bash -c 'grim -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
+    bindsym $mod+Print exec bash -c 'grim -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/screenshot_$(date +%Y%m%d_%H%M%S).png'
 
 
     #rofi theme
@@ -219,8 +225,8 @@
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec blueman-applet
     exec brave
-    exec gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default
-    exec kitty --class floating-term -e tmux new-session -A -s scratchpad
+    # exec gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default
+    # exec kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec kitty --class ws1term -e env -u TMUX sh -c 'exec tmux new-session -A -s WORKSPACE1'
     exec nm-applet
     exec obsidian
