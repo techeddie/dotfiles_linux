@@ -66,7 +66,7 @@ pgrep -f "app-id=$CLAUDE_ID" >/dev/null \
 
 # --- place windows once they appear ------------------------------------
 hide app_id "sublime_text"               1400 900 &
-hide class  "KeePassXC"                   900 600 &
+hide app_id "org.keepassxc.KeePassXC"    900 600 &
 hide app_id "com.seafile.seafile-applet" 1000 640 &
 hide app_id "org.gnome.DiskUtility"       800 600 &
 # send app_id "sysmon"                                 5 &
