@@ -1,0 +1,24 @@
+# Skip asking for username and session, use the last used ones
+skip_selection = true
+timezone = "Europe/Berlin"
+label_width = 150
+
+[background]
+path = "/usr/share/wallpapers/cachyos-wallpapers/splash.png"
+# Available values: "Fill", "Contain", "Cover", "ScaleDown"
+fit = "Fill"
+
+[GTK]
+application_prefer_dark_theme = true
+theme_name = "adw-gtk3-dark"
+icon_theme_name = "Papirus"
+font_name = "Noto Sans 11"
+cursor_theme_name = "Breeze_Light"
+cursor_size = 32
+
+[appearance]
+greeting_msg = "Welcome back, Eddie"
+
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]

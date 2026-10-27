@@ -138,8 +138,7 @@
     # subl / keepassxc / seafile-applet / gnome-disks are moved to the
     # scratchpad once, at login, by ~/.config/sway/scratchpad-startup.sh
     # (a bare `for_window ... move scratchpad` re-fires on every title change).
-    # for_window [app_id="floating-term"] floating enable, resize set 1400 500, move scratchpad
-    for_window [app_id="floating-term"] floating enable, resize set 800 500, move scratchpad
+    for_window [app_id="floating-term"] floating enable, resize set 200 200, move scratchpad
 
     #scratchpad toggle maps
     bindsym $mod+Shift+g     [app_id="org.gnome.DiskUtility"] scratchpad show, move position center
@@ -322,7 +321,6 @@
     for_window [app_id="floorp"] border none, layout tabbed
     for_window [app_id="kitty"] border pixel 2
     for_window [app_id="md.obsidian.Obsidian"] border pixel 2
-    # for_window [app_id="org.gnome.DiskUtility"] floating enable, resize set 2300 900, move position center
     for_window [app_id="org.mozilla.Thunderbird"] border pixel 2
     for_window [app_id="ledger-wallet"] border normal
     for_window [app_id="org.telegram.desktop"] border none
