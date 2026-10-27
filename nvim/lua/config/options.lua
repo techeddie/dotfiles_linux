@@ -46,6 +46,7 @@ o.undofile = true
 o.updatetime = 200
 o.wrap = false
 -- o.winbar = "%=%m %F"
+o.linebreak = true -- wrap at word boundaries
 o.writebackup = false
 o.foldenable=true
 o.foldmethod = "indent"
