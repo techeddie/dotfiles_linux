@@ -310,9 +310,9 @@ return {
 			end
 
 			if bookmarks[selected].is_parent then
-				ya.emit("cd", { bookmarks[selected].path })
+				ya.mgr_emit("cd", { bookmarks[selected].path })
 			else
-				ya.emit("reveal", { bookmarks[selected].path })
+				ya.mgr_emit("reveal", { bookmarks[selected].path })
 			end
 		elseif action == "delete" then
 			delete_bookmark(selected)

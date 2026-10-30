@@ -60,8 +60,8 @@ hash = "1c9bf1ba804af5ad60e8a49200a272ef"
 
 [[plugin.deps]]
 use = "pakhromov/smart-tab"
-rev = "1ec06f1"
-hash = "51665d21a1fb25c5e1b608750fc6f2fa"
+rev = "628fad1"
+hash = "862ffec0f2a54f4adb067d5dc4d2c223"
 
 [[plugin.deps]]
 use = "MasouShizuka/projects"
@@ -75,8 +75,8 @@ hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "c5d4b48"
-hash = "e6e98d12b1648d1894c2b560d85eeaa7"
+rev = "dc44b73"
+hash = "fa488655544e367e5439a9748d28519e"
 
 [[plugin.deps]]
 use = "imsi32/yatline-gruvbox-material"
@@ -90,8 +90,8 @@ hash = "a028c3c06630a33b068f4d5bd714a795"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
-rev = "619fdc5"
-hash = "d4c7003ec6dc4efd5d3a050d5c2f2575"
+rev = "71b03f6"
+hash = "fc8fb278e5e1ede76b7a57c76a6db28b"
 
 [[flavor.deps]]
 use = "BennyOe/onedark"
@@ -110,8 +110,8 @@ hash = "d23c566ce5c46db6dd854bf75df426e6"
 
 [[flavor.deps]]
 use = "6ruby1/eldritch"
-rev = "7b5bf34"
-hash = "d73a2192b13f0267461d5424a7f10cd1"
+rev = "9a76a97"
+hash = "c3abec27ff084820f1c8dd7a2866bab8"
 
 [[flavor.deps]]
 use = "ZimCodes/yazi-flavors:obsidian-glow"
