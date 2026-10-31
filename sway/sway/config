@@ -224,6 +224,7 @@
     exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     exec blueman-applet
     exec brave
+    exec thunderbird
     # exec gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default
     exec kitty --class floating-term -e tmux new-session -A -s scratchpad
     exec kitty --class ws1term -e env -u TMUX sh -c 'exec tmux new-session -A -s WORKSPACE1'
@@ -380,11 +381,11 @@
     assign [app_id="brave-browser"] $workspace2
     assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace10
     assign [app_id="chromium"] $workspace6
+    assign [app_id="org.mozilla.Thunderbird"] $workspace0
     assign [app_id="firefox"] $workspace5
     assign [app_id="floorp"] $workspace5
     assign [app_id="ledger-wallet"] $workspace7
     assign [app_id="md.obsidian.Obsidian"] $workspace3
-    assign [app_id="org.mozilla.thunderbird_es"] $workspace5
     assign [app_id="org.telegram.desktop"] $workspace4
     assign [app_id="sysmon"] $workspace5
     assign [app_id="ws1term"] $workspace1
