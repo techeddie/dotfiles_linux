@@ -374,12 +374,10 @@
     for_window [app_id="mpv"] fullscreen enable
 
     # always launch app on workspace x
-    # assign [app_id="brave-browser" title="Files - Nextcloud"] $workspace10
-    # assign [app_id="brave-browser" title="Outlook"] $workspace10
     assign [app_id="Selfservice"] $workspace8
     assign [app_id="Wfica"] $workspace8
     assign [app_id="brave-browser"] $workspace2
-    assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace10
+    assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace5
     assign [app_id="chromium"] $workspace6
     assign [app_id="org.mozilla.Thunderbird"] $workspace0
     assign [app_id="firefox"] $workspace5
