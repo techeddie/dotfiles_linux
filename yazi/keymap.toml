@@ -590,7 +590,7 @@ desc = "Jump to a bookmark"
 [[mgr.prepend_keymap]]
 on = ["<F5>"]
 run = "plugin ouch tar.gz"
-desc = "Compress with ouch"
+desc = "archive with ouch"
 
      # yazi compress - https://github.com/KKV9/compress.yazi
      # [[mgr.prepend_keymap]]

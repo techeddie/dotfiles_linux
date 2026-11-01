@@ -126,9 +126,16 @@ local get_compression_target = ya.sync(function()
     for _, file in pairs(tab.selected) do
       table.insert(paths, tostring(file.url))
     end
-    -- The compression targets are aquired, now unselect them
     ya.emit("escape", {})
   end
+
+  if #paths == 1 then
+    local base = string.match(tostring(paths[1]), "([^/\\]+)$")
+    if base then
+      default_name = string.match(base, "^(.+)%.[^.]+$") or base
+    end
+  end
+
   return paths, default_name
 end)
 

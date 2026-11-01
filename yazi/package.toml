@@ -50,8 +50,8 @@ hash = "cb57e2c60d374b8852451fc42e340dec"
 
 [[plugin.deps]]
 use = "techeddie/ouch"
-rev = "b257e35"
-hash = "4cef6e8555fcfe8fdd5dd9dade4273b8"
+rev = "4336aa9"
+hash = "2fe9cbe60f9b0122033ef52b9e352d29"
 
 [[plugin.deps]]
 use = "techeddie/lazygit"
