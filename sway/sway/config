@@ -107,6 +107,7 @@
     exec awww-daemon
     exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/car-with-full-moon-background.jpg --outputs $secondMonitor
     exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $firstMonitor
+    exec_always awww img ~/Pictures/WALLPAPER_FS01/HYPRLAND/shaded_landscape.png --outputs $thirdMonitor
 
 #-------------------------------------------------
 #gaps
