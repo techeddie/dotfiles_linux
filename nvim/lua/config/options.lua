@@ -38,6 +38,7 @@ o.splitbelow = true
 o.splitright = true
 o.swapfile = false
 o.tabstop = 2
+o.ttimeoutlen = 10
 o.termguicolors = true
 o.textwidth = 300
 o.timeoutlen = 300
