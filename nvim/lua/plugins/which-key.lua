@@ -1,10 +1,15 @@
--- Show a popup with available keybindings based on the current prefix
-return
-{
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {
-    preset = "helix",
-    -- preset = "classic", --show below
-  },
+return {
+	"folke/which-key.nvim",
+	lazy = false,
+	opts = {
+		preset = "helix",
+		-- Only show popup for <leader>; native g-mappings (gcc etc.) pass through
+		triggers = {
+			{ "<leader>", mode = { "n", "v" } },
+			{ "]", mode = "n" },
+			{ "[", mode = "n" },
+			{ "z", mode = "n" },
+			{ "h", mode = "n" },
+		},
+	},
 }
