@@ -534,10 +534,10 @@ on = [ "i" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd" 
 
-# make file executable (chmod +x)
+# make selected files executable (chmod +x)
 [[mgr.prepend_keymap]]
 on   = [ "X" ]
-run = 'shell "chmod +x \"$@\"" --block'
+run  = "shell --block -- chmod +x %s"
 desc = "Make file executable (chmod +x)"
 
 # execute current file
