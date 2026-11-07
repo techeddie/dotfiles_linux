@@ -60,11 +60,8 @@ bindkey -s '\e2' 'yazi ^M'
 bindkey -s '\el' 'yazi ^M'
 bindkey -s '\ee' 'yazi ^M'
 
-# NVIM OPEN FILES VIA FZF
-bindkey -s '^o' 'nvim $(fzf)^M'
-
-# NVIM
-bindkey -s '\ev' 'nvim ^M'
+# ZSH FUZZY ALIASES
+bindkey -s '\ec' 'Get-Command ^M'
 
 #HOME END
 bindkey "^[[H" beginning-of-line
