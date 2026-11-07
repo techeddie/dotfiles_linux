@@ -169,7 +169,7 @@
     bindsym $mod+Shift+F11          exec $term --class sp-backup.root -e doas bash /home/eddie/scripts/btrfs/root_btrfs/backup.root.sh
     bindsym $mod+Shift+F12          exec $term --class sp-backup.home -e doas bash /home/eddie/scripts/btrfs/home_btrfs/backup.home_auto.sh
     bindsym $mod+Shift+b            exec blueman-manager
-    bindsym $mod+Shift+c            exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
+    bindsym $mod+Shift+c            exec swaymsg -q '[app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] focus' 2>/dev/null || /opt/brave-bin/brave --profile-directory=Default --app-id=fmpnliohjhemenmnlpbfagaolkdacoja
     bindsym $mod+Shift+l            exec kitty -e lf ~/
     bindsym $mod+Shift+p            exec kitty -e pacseek
     bindsym $mod+Shift+u            exec sh ~/scripts/runRemoveUSB.sh
