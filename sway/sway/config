@@ -380,7 +380,7 @@
     assign [app_id="brave-browser"] $workspace2
     assign [app_id="brave-fmpnliohjhemenmnlpbfagaolkdacoja-Default"] $workspace5
     assign [app_id="chromium"] $workspace6
-    assign [app_id="org.mozilla.Thunderbird"] $workspace0
+    assign [app_id="org.mozilla.Thunderbird"] $workspace10
     assign [app_id="firefox"] $workspace5
     assign [app_id="floorp"] $workspace5
     assign [app_id="ledger-wallet"] $workspace7
