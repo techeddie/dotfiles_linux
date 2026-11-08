@@ -178,7 +178,7 @@
     bindsym $mod+Shift+z            exec sh ~/scripts/runTogglePowerMode.sh
     bindsym $mod+b                  exec swaymsg -q '[app_id=brave-browser] focus' 2>/dev/null || brave
     bindsym $mod+c                  exec swaymsg -q '[app_id=chromium] focus' 2>/dev/null || chromium
-    bindsym $mod+d                  exec swaymsg -q '[app_id=doublecmd] focus' 2>/dev/null || doublecmd
+    bindsym $mod+d                  exec swaymsg -q '[app_id=dolphin] focus' 2>/dev/null || dolphin
     bindsym $mod+e                  exec thunar
     bindsym $mod+n                  exec swaymsg -q '[app_id=obsidian] focus' 2>/dev/null || obsidian
     bindsym $mod+o                  exec swaymsg -q '[app_id=org.mozilla.Thunderbird] focus' 2>/dev/null || thunderbird
