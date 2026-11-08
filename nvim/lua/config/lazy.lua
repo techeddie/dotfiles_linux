@@ -16,6 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
+  {
+    -- fix:  lazy.nvim Failed to run config for alpha-nvim
+    "goolord/alpha-nvim",
+    opts = function()
+      return require("alpha.themes.dashboard")
+    end,
+  },
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import/override with your plugins
