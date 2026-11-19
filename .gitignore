@@ -2,6 +2,11 @@
 *.zwc
 .DS_Store
 .\wezterm
+/fish/fish_variables
+/nvim/lazyvim.json
+/ouch.yazi-fork/
+/zsh/fzf.zsh.zwc
+/zsh/zsh_keybinding.mac.zsh.zwc
 autokey/autokey.json
 autokey/autokey.json~
 autokey/data/SHELL/hz.json
@@ -27,9 +32,3 @@ rofi.old
 tmux/.tmux/plugins
 vifm/vifminfo.json
 ~/.cache/nvim.undodir
-/nvim/lazyvim.json
-
-# local fork clone for the yazi ouch plugin (pushed to techeddie/ouch.yazi)
-/ouch.yazi-fork/
-/fish/fish_variables
-/fish/fish_variables
